@@ -1,0 +1,234 @@
+.careers-reasons {
+  @include margin(90px null null null);
+  counter-reset: reasons;
+
+  .careers-reasons-header {
+    @include margin(null null 90px null);
+
+    .content-wrapper {
+      max-width: 320px;
+      margin-top: -12px;
+      margin-left: auto;
+
+      @include mq($until: 'm') {
+        margin-top: 30px;
+      }
+    }
+
+    p {
+      color: rgba($color-blue, .8);
+    }
+  }
+
+  .title-wrapper {
+    max-width: 540px;
+
+    .fx-parent {
+      @include font(serif, medium);
+      color: $color-black;
+      font-size: rem(80px);
+      letter-spacing: ls(-40);
+      line-height: .92;
+  
+      @include mq($until: 'l') {
+        font-size: rem(64px);
+      }
+  
+      @include mq($until: 'm') {
+        max-width: 360px;
+        font-size: rem(48px);
+      }
+  
+      .quoted {
+        @include position(relative);
+  
+        @include mq($until: 's') {
+          display: block;
+        }
+  
+        .fx-letter--30 {
+          @include position(absolute, 0 null null -50px);
+  
+          @include mq($until: 'l') {
+            left: -32px;
+          }
+        }
+  
+        .fx-letter--49 {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  .headline {
+    @include font('alternative', 'bold');
+    @include margin(null null 20px);
+    display: block;
+    color: $color-red;
+    font-size: rem(9);
+    letter-spacing: 4px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+}
+
+.careers-reasons-list {
+  @include position(relative);
+}
+
+.reasons-number {
+  display: none;
+
+  @include mq($from: 'm') {
+    @include position(absolute, 0 null null 0);
+    @include size(100%, auto);
+    @include font('alternative', 'light');
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    transition: opacity .15s $ease-out-quad;
+    color: black;
+    font-size: rem(23px);
+    letter-spacing: ls(-40);
+    line-height: 1;
+
+    &.is-fixed {
+      @include position(fixed, 50% null null 0);
+      transform: translateY(-50%);
+    }
+
+    &.is-hidden {
+      opacity: 0;
+    }
+
+    .text {
+      flex-shrink: 0;
+    }
+
+    .reasons-line {
+      @include margin(null null null 20px);
+      @include position(relative);
+      @include size(100%, 1px);
+      display: block;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .3s .1s $ease-out-quad;
+      background-color: black;
+    }
+
+    .scroll-indicator {
+      @include size(100%, 1px);
+      @include position(absolute, 0 null null 0);
+      display: block;
+      transform: scaleX(0);
+      transform-origin: left center;
+      background-color: $color-red;
+    }
+
+    &.in-view {
+      .reasons-line {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.reasons-list {
+  @include margin(null 90px null auto);
+  width: 100%;
+  max-width: 710px;
+
+  @include mq($until: 'xl') {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 230px;
+  }
+
+  @include mq($until: 'm') {
+    padding-left: 0;
+  }
+
+  li {
+    @include position(relative);
+    @include padding(null null null 130px);
+    counter-increment: reasons;
+
+    @include mq($until: 'm') {
+      padding-left: 80px;
+    }
+
+    &::before {
+      @include font('alternative', 'light');
+      @include position(absolute, -10px null null 0);
+      content: counter(reasons, decimal-leading-zero) ' /';
+      transform: translateY(30px);
+      transition: opacity .5s $ease-out-quad, transform .5s $ease-out-quad, color .3s $ease-out-quad;
+      opacity: 0;
+      color: $color-black;
+      font-size: rem(25px);
+      letter-spacing: ls(-40);
+      line-height: 1.6;
+
+      @include mq($until: 'm') {
+        top: 43px;
+      }
+
+      .disable-motion & {
+        transform: none;
+        opacity: 1;
+      }
+    }
+
+    &:first-child {
+      margin-top: -43px;
+    }
+
+    &:last-child {
+      .reason-content {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+
+    &.in-view {
+      &::before {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    &.is-active {
+      &::before {
+        color: $color-red;
+      }
+
+      h3 {
+        opacity: 1;
+      }
+    }
+  }
+
+  .reason-content {
+    @include padding(43px null null null);
+    border-bottom: 1px solid rgba(#2e424e, .1);
+
+    .link {
+      margin-top: 35px;
+    }
+  }
+
+  h3 {
+    @include font('alternative', 'light');
+    transition: opacity .3s $ease-out-quad;
+    opacity: .35;
+    color: $color-black;
+    font-size: rem(30px);
+    line-height: 1.33;
+
+    @include mq($until: 'm') {
+      font-size: rem(24px);
+    }
+  }
+}

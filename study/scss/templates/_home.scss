@@ -1,0 +1,58 @@
+[data-router-view="home"] {
+  .home-background {
+    @include position(absolute, 0 null null 0);
+    z-index: -3;
+
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        position: fixed;
+      }
+    }
+  }
+
+  .disable-dog & {
+    &::before {
+      @include position(absolute, 80px 45px null null);
+      @include size(600px, 674px);
+      z-index: -1;
+      background-image: url('../assets/images/home/dog.png');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+
+      // MQ
+      @include mq($until: 'xl') {
+        content: '';
+      }
+
+      @include mq($until: 'l') {
+        @include position(absolute, 50px 0 null null);
+        @include size(500px, 562px);
+      }
+
+      @include mq($until: 'xs') {
+        @include position(absolute, 50px auto null 50%);
+        @include size(400px, 450px);
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+// MX style adaptation
+[lang="es-MX"] {
+  .home-hero-content {
+    @include mq($from: 'm') {
+      span {
+        display: inline;
+      }
+    }
+  }
+  
+  .home-about-title {
+    br {
+      display: none;
+    }
+  }
+}

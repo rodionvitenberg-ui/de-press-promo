@@ -1,0 +1,57 @@
+.cases-quote {
+  margin-bottom: 80px;
+
+  // MQ
+  @include mq($until: 'm') {
+    margin-bottom: 75px;
+  }
+
+  &-text {
+    @include position(relative);
+    @include font('serif', 'regular');
+    color: $color-white;
+    font-size: rem(50px);
+    line-height: 1;
+
+    @include mq($from: 'l') {
+      max-width: 920px;
+    }
+
+    // MQ
+    @include mq($until: 'm') {
+      font-size: rem(35px);
+    }
+
+    br {
+      // MQ
+      @include mq($until: 'l') {
+        display: none;
+      }
+    }
+
+    .start-quote {
+      position: absolute;
+      top: 0;
+      left: -33px;
+
+      // MQ
+      @include mq($until: 'xl') {
+        left: -25px;
+      }
+    }
+
+    .end-quote {
+      content: '”';
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  &-author {
+    @include margin(35px null null);
+    @include font('alternative', 'light');
+    color: $color-blue-a;
+    font-size: rem(15px);
+    line-height: 1;
+  }
+}

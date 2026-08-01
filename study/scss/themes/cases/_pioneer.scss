@@ -1,0 +1,293 @@
+[data-theme="case-pioneer"] {
+  background-color: #fff;
+
+  &.header-sticky:not(.menu-open) {
+    .site-header {
+      @include mq($until: 'm') {
+        background-color: shade(#000000, 20%);
+      }
+    }
+  }
+
+  .case-header,
+  .case-footer {
+    .post-text {
+      &-title,
+      &-tagline {
+        color: #fff;
+      }
+
+      &-content {
+        p {
+          color: rgba(#fff, .6);
+        }
+      }
+
+      &-categories {
+        color: #fff;
+      }
+    }
+
+    .post-cover {
+      background-color: darken(#000000, 2%);
+    }
+
+    .post-content {
+      &-headline {
+        color: rgba(#fff, .5);
+
+        b {
+          color: #66e8ba;
+        }
+      }
+    }
+  }
+
+  .case-header {
+    background-color: #160218;
+
+    &-metas {
+      color: #66e8ba;
+    }
+
+    &-back {
+      .svg {
+        fill: #66e8ba;
+      }
+    }
+  }
+
+  .case-footer {
+    .post-credits {
+      .center {
+        padding-top: 0;
+        border-top: none;
+      }
+
+      dd {
+        color: rgba(#fff, .6);
+      }
+      
+      dt {
+        color: rgba(#fff, .45);
+      }
+    }
+
+    .post-quote {
+      &-content {
+        p {
+          color: #fff;
+
+          &::before {
+            color: #66e8ba;
+          }
+        }
+  
+        cite {
+          color: rgba(#fff, .45);
+  
+          b {
+            color: #fff;
+          }
+        }
+      }
+
+      + .post-credits {
+        .center {
+          padding-top: 65px;
+          border-top: 1px solid rgba(#fff, 0.2);
+        }
+      }
+    }
+
+    .post-stats,
+    .post-awards,
+    .post-credits {
+      +.post-stats,
+      +.post-awards,
+      +.post-credits {
+        margin-top: 65px;
+      }
+    }
+
+    .post-stats,
+    .post-awards {
+      .center {
+        padding-top: 65px;
+        border-top: 1px solid rgba(#fff, 0.2);
+      }
+    }
+
+    .post-awards {
+      &-logo {
+        background-color: rgba(#fff, .1);
+      }
+  
+      &-content {
+        color: rgba(#fff, .5);
+  
+        b {
+          color: #fff;
+        }
+      }
+    }
+
+    .post-stats {
+      &-value {
+        color: #fff;
+      }
+
+      &-label {
+        color: rgba(#fff, 0.5);
+      }
+    }
+
+    &-content {
+      background-color: #160218;
+
+      &::before {
+        background-color: #160218;
+      }
+    }
+  }
+
+  .case-next {
+    &-headline {
+      color: rgba(#160218, .5);
+    }
+
+    &-title {
+      color: #160218;
+    }
+
+    &-link {
+      color: #160218;
+      
+      &::after {
+        background-color: #66e8ba;
+      }
+
+      .svg {
+        fill: #66e8ba;
+      }
+    }
+  }
+
+  .site-footer {
+    &-title {
+      .baseline {
+        fill: #66e8ba;
+      }
+    }
+
+    &-block--social {
+      li {
+        color: #160218;
+      }
+
+      a {
+        border-color: #66e8ba;
+      }
+
+      .svg {
+        fill: #66e8ba;
+      }
+    }
+
+    &-block--address {
+      h3 {
+        color: #66e8ba;
+      }
+
+      p {
+        color: rgba(#160218, 0.6);
+      }
+    }
+
+    &-bottom {
+      border-color: rgba(#160218, 0.3);
+    }
+
+    &-contact {
+      color: rgba(#160218, 0.6);
+
+      a {
+        color: #66e8ba;
+      }
+
+      a::before {
+        opacity: 0.5;
+        background-color: #160218;
+      }
+    }
+
+    &-newsletter {
+      color: #66e8ba;
+
+      .svg {
+        fill: #66e8ba;
+      }
+    }
+  }
+
+  .plyr {
+    &--full-ui input[type=range] {
+      color: #66e8ba;
+    }
+
+    &--video {
+      .plyr__control:hover,
+      .plyr__control.plyr__tab-focus,
+      .plyr__control[aria-expanded=true] {
+        background: #160218;
+      }
+    }
+    
+    &--stopped {
+      .plyr__poster::before {
+        background-color: #fff;
+      }
+
+      .plyr__poster::after {
+        border-left-color: #160218;
+      }
+    }
+  }
+
+  .post-contents {
+    .post-medias:first-child {
+      &::before {
+        background-color: #160218;
+        height: 25%;
+      }
+    }
+
+    .post-content {
+      &-headline {
+        color: rgba(#160218, .5);
+    
+        b {
+          color: #66e8ba;
+        }
+      }
+
+      + .post-content {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .post-text {
+    &-title,
+    &-tagline {
+      color: #160218;
+    }
+
+    &-content {
+      p {
+        color: rgba(#160218, .6);
+      }
+    }
+  }
+}
+  

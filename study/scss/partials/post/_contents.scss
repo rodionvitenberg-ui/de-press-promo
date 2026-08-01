@@ -1,0 +1,73 @@
+.post-header,
+.post-footer {
+  .post-content + .post-content {
+    @include margin(105px null null);
+
+    // MQ
+    @include mq($until: 'l') {
+      @include margin(80px null null);
+    }
+
+    @include mq($until: 'm') {
+      @include margin(65px null null);
+    }
+  }
+}
+
+.post-contents {
+  .post-content {
+    @include padding(105px null);
+
+    // MQ
+    @include mq($until: 'l') {
+      @include padding(80px null);
+    }
+
+    @include mq($until: 'm') {
+      @include padding(65px null);
+    }
+  }
+
+  .post-phone,
+  .post-medias {
+    &:nth-child(1) {
+      padding-top: 0;
+
+      &::before {
+        content: '';
+      }
+    }
+  }
+}
+
+.post-content {
+  position: relative;
+
+  .center:not(.post-cover-credit) {
+    position: relative;
+    z-index: 1;
+  }
+
+  &-headline {
+    @include font('sans-serif', 'bold');
+    font-size: rem(9px);
+    letter-spacing: ls(370px);
+    line-height: 1;
+    text-transform: uppercase;
+
+    b {
+      margin-right: 12px;
+    }
+  }
+}
+
+@import 'partials/post/contents/text';
+@import 'partials/post/contents/phone';
+@import 'partials/post/contents/stats';
+@import 'partials/post/contents/quote';
+@import 'partials/post/contents/cover';
+@import 'partials/post/contents/awards';
+@import 'partials/post/contents/medias';
+@import 'partials/post/contents/credits';
+@import 'partials/post/contents/opensea';
+@import 'partials/post/contents/four-medias';

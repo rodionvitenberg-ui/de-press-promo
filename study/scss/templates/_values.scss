@@ -1,0 +1,101 @@
+[data-router-view="values"] {
+  // MQ
+  @include mq($from: 'l') {
+    @include padding(null null 480px);
+  }
+
+  .disable-dog & {
+    &::before {
+      @include position(absolute, 580px null null 45px);
+      @include size(600px, 599px);
+      z-index: 0;
+      background-image: url('../assets/images/values/dog.png');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+
+      // MQ
+      @include mq($until: 'xl') {
+        content: '';
+      }
+
+      @include mq($until: 'l') {
+        @include position(absolute, 420px null null -80px);
+        @include size(500px, 499px);
+      }
+
+      @include mq($until: 'm') {
+        @include position(absolute, 225px null null 50%);
+        @include size(500px, 499px);
+        transform: translateX(-50%);
+      }
+
+      @include mq($until: 's') {
+        @include position(absolute, 420px null null 50%);
+        @include size(400px, 399px);
+      }
+
+      @include mq($until: 'xxs') {
+        top: 360px;
+      }
+    }
+  }
+
+  .line-anim {
+    background-color: $black;
+  }
+
+  .values-headline,
+  .values-subtitle {
+    @include font('sans-serif', 'bold');
+    color: $black;
+    font-size: rem(9px);
+    letter-spacing: ls(400);
+    line-height: 2;
+    text-transform: uppercase;
+  }
+
+  .values-headline {
+    @include margin(null null 30px);
+  }
+
+  .values-subtitle {
+    @include margin(16px null null);
+
+    // MQ
+    @include mq($until: 'xxs') {
+      font-size: rem(8px);
+    }
+  }
+
+  .values-title {
+    @include font('serif', 'medium');
+    color: $color-white;
+    letter-spacing: ls(-40);
+    line-height: (120 / 130);
+
+    + .values-subtitle {
+      @include margin(30px null null);
+    }
+  }
+
+  .values-text {
+    @include font('alternative', 'light');
+    color: $color-white;
+    font-size: rem(23px);
+    line-height: (35 / 23);
+  }
+
+  .values-link {
+    .link-line,
+    .link-line--anim {
+      background-color: $black;
+    }
+  }
+}
+
+// Manage Shared DOM for Values Theme
+// -----------------------------------------------------------------------------
+[data-theme="values"] {
+  background-color: color(body-values);
+}

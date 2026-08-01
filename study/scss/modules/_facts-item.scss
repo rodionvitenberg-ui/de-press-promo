@@ -1,0 +1,269 @@
+.facts-card {
+  @include position(relative, 0 null null 0);
+}
+
+.facts-card-frame {
+  @include position(absolute, 0 null null 0);
+  @include size(100%, 100%);
+  z-index: -1;
+  transform: scale(.9445, .7625);
+  transition: background .4s $ease-out-quad, transform .6s $ease-out-expo;
+  border-radius: 8px;
+  background-color: white;
+
+  &::before,
+  &::after {
+    @include position(absolute, 0 null null 0);
+    @include size(100%, 100%);
+    content: '';
+    transition: opacity .3s $ease-out-expo;
+    border-radius: 8px;
+  }
+
+  &::before {
+    opacity: 0;
+    background-color: color(facts-frame-active);
+    // background-image: image('facts-active@2x.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-size: 100% auto;
+    box-shadow: 0 0 35px rgba($color-black, .08),
+                0 15px 18px rgba($color-black, .25);
+  }
+
+  &::after {
+    box-shadow: 0 0 18px rgba($color-black, .06),
+                0 6px 10px rgba($color-black, .07);
+  }
+
+  .tns-slide-active & {
+    transform: scale(1, 1);
+    background: $color-black;
+
+    &::before {
+      transition-delay: .1s;
+      opacity: 1;
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.facts-card-dots {
+  @include size(100%, 7px);
+  position: absolute;
+  left: 0;
+  transition: opacity .4s $ease-out-quart;
+  opacity: 0;
+
+  &::before,
+  &::after {
+    @include size(8px);
+    content: '';
+    position: absolute;
+    border: 1px solid color(orange);
+    border-radius: 50%;
+  }
+
+  .tns-slide-active & {
+    opacity: 1;
+  }
+}
+
+.facts-card-dots--top {
+  top: 0;
+
+  &::before {
+    top: 15px;
+    left: 15px;
+  }
+
+  &::after {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.facts-card-dots--bottom {
+  bottom: 0;
+
+  &::before {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  &::after {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+.facts-card-inner {
+  @include size(100%, 100%);
+  @include padding(57px 10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.facts-card-content {
+  @include margin(auto null null);
+  @include padding(null 40px);
+  transform: translate(0, 50px);
+
+  // MQ
+  @include mq($until: 'm') {
+    @include padding(null 20px);
+  }
+}
+
+.facts-card-number {
+  @include position(relative);
+  @include margin(110px null null);
+  @include font('sans-serif', 'medium');
+  transition: color .4s $ease-out-quart, transform .6s $ease-out-expo;
+  color: $color-red;
+  font-size: rem(65px);
+  letter-spacing: ls(-20);
+  line-height: 1;
+  text-align: center;
+
+  // MQ
+  @include mq($until: 'm') {
+    @include margin(65px null null);
+  }
+
+  &::before {
+    @include position(absolute, 50% null null 50%);
+    @include size(150px, 150px);
+    @include margin(-75px null null -75px);
+    content: '';
+    transition: opacity .4s $ease-out-quart;
+    border: 1px solid rgba(black, .2);
+    border-radius: 50%;
+  }
+
+  sup {
+    margin-left: 6px;
+    font-size: rem(42px);
+    vertical-align: super;
+  }
+
+  .tns-slide-active & {
+    transform: translate(0, -50px);
+    color: white;
+
+    // MQ
+    @include mq($until: 'm') {
+      transform: translate(0, -20px);
+    }
+
+    @include mq($until: 'xxs') {
+      transform: translate(0, -35px);
+    }
+
+    &::before {
+      transform: scale(1.4);
+      border-color: $color-orange;
+    }
+  }
+}
+
+.facts-card-title {
+  @include size(100%, 32px);
+  @include font('sans-serif', 'bold');
+  color: $color-red;
+  font-size: rem(12px);
+  letter-spacing: ls(400);
+  line-height: (25 / 12);
+  text-align: center;
+  text-transform: uppercase;
+
+  .tns-slide-active & {
+    color: white;
+  }
+}
+
+.facts-card-text {
+  @include size(100%, 60px);
+  @include font('sans-serif', 'regular');
+  transition: opacity .4s $ease-out-quart;
+  opacity: 0;
+  color: color(facts-text);
+  font-size: rem(14px);
+  line-height: (20 / 14);
+  text-align: center;
+
+  // MQ
+  @include mq($until: 'm') {
+    @include margin(15px null null);
+  }
+
+  .tns-slide-active & {
+    opacity: 1;
+    color: rgba(white, .6);
+  }
+}
+
+.facts-card-index {
+  @include margin(35px null null);
+  @include font('sans-serif', 'bold');
+  transform: translate(0, -90px);
+  transition: color .4s $ease-out-quart, transform .6s $ease-out-expo;
+  color: color(orange);
+  font-size: rem(13px);
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+
+  span {
+    display: block;
+    transform: translate(0, -60px);
+    transition: transform .4s $ease-out-expo;
+  }
+
+  &::before {
+    @include size(1px, 65px);
+    @include margin(null auto 15px);
+    content: '';
+    display: block;
+    max-height: 10px;
+    transition: opacity .4s $ease-out-quart, max-height .6s $ease-out-expo;
+    background: rgba(black, .4);
+  }
+
+  &::after {
+    @include position(absolute, 0 null null 50%);
+    @include size(1px, 70px);
+    content: '';
+    transform: scale(1, .15);
+    transform-origin: 50% 0%;
+    transition: opacity .4s $ease-out-quart, transform .6s $ease-out-expo;
+    opacity: 0;
+    background: color(orange);
+  }
+
+  .tns-slide-active & {
+    transform: translate(0, 0);
+    color: color(facts-index-active);
+
+    span {
+      transform: translate(0, 0);
+    }
+
+    &::before,
+    &::after {
+      transform: scale(1, 1);
+    }
+
+    &::before {
+      max-height: 70px;
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}

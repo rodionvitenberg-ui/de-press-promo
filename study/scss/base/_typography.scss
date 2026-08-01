@@ -1,0 +1,126 @@
+// Default typography settings, to be included as soon as possible in the HTML
+// 1. Make type rendering look crisper
+// 2. The default font size is 16px
+// 3. Prevent iOS and IE text size adjust after device orientation change, without disabling user zoom.
+//
+// @requires {variable} $base-font-size
+html {
+  @include font-smoothing; /* 1 */
+  font-size: strip-units($base-font-size) / 16 * 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+
+// Default text styles
+// -----------------------------------------------------------------------------
+body {
+  @include font('alternative', 'regular');
+  color: $white;
+  font-size: rem(14px);
+  line-height: 2.1;
+}
+
+
+// Typeset
+// -----------------------------------------------------------------------------
+.typeset {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    b,
+    strong {
+      @include font('serif', 'bold');
+    }
+  }
+
+  h2 {
+    @include font('serif', 'medium');
+    font-size: rem(50px);
+    line-height: (43 / 50);
+  }
+
+  h3 {
+    @include font('serif', 'regular');
+    font-size: rem(30px);
+    line-height: (40 / 30);
+
+    + * {
+      margin-top: 50px;
+    }
+  }
+
+  p {
+    @include font('alternative', 'regular');
+    color: rgba($color-blue-a, .4);
+    font-size: rem(14px);
+    line-height: (25 / 14);
+
+    b,
+    strong {
+      @include font('alternative', 'bold');
+    }
+
+    i,
+    em {
+      font-style: italic;
+    }
+
+    a {
+      color: inherit;
+    }
+    
+    + p,
+    + ul,
+    + ol {
+      @include margin(30px null null);
+    }
+  }
+
+  ul,
+  ol {
+    li {
+      @include position(relative);
+      @include padding(null null null 36px);
+      color: rgba($color-blue-a, .4);
+      font-size: rem(14px);
+      line-height: (25 / 14);
+    }
+
+    li + li {
+      @include margin(12px null null null);
+    }
+
+    + * {
+      margin-top: 30px;
+    }
+  }
+
+  ul {
+    li::before {
+      @include size(6px);
+      @include position(absolute, 14px null null 0);
+      content: '';
+      border: 1px solid $color-blue-a;
+      border-radius: 50%;
+    }
+  }
+
+  ol {
+    counter-reset: count;
+
+    li {
+      counter-increment: count;
+    }
+
+    li::before {
+      content: counter(count) '.';
+      position: absolute;
+      top: 0;
+      left: 0;
+      // font-weight: 700;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link--right {
+  @include position(relative);
+  @include font('alternative', 'bold');
+  color: $color-white;
+  font-size: rem(13px);
+  font-weight: 700;
+  line-height: 1;
+
+  // Label
+  .link-label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  // Line
+  .link-line {
+    @include margin(null null null 10px);
+    @include size(20px, 1px);
+    display: inline-block;
+    transform-origin: 0% 50%;
+    transition: transform .5s $ease-out-expo;
+    background-color: $color-white;
+    vertical-align: middle;
+  }
+
+  .link-line--anim {
+    @include position(absolute, 7px 0 null null);
+    @include size(20px, 1px);
+    display: none;
+    transform-origin: 0% 50%;
+    background-color: $color-white;
+  }
+
+  .link-line--animation {
+    display: none;
+  }
+}
+
+.link--under {
+  @include position(relative);
+  @include font('alternative', 'medium');
+  color: $color-white;
+  font-size: rem(14px);
+  line-height: 1;
+
+  // Line
+  .link-line {
+    @include margin(15px null null);
+    @include size(100%, 2px);
+    content: '';
+    display: block;
+    transform: translateX(-20%) scaleX(1.2);
+    transform-origin: 0% 50%;
+    background-color: $color-orange;
+
+    // MQ
+    @include mq($until: 'l') {
+      transform: translate(0, 0);
+    }
+  }
+
+  .link-line--anim {
+    @include position(absolute, null null 0 0);
+    @include size(100%, 2px);
+    visibility: hidden;
+    transform: translateX(-20%) scaleX(1.2);
+    transform-origin: 0% 50%;
+    background-color: $color-orange;
+  }
+
+  .no-touchevents & {
+    .link-line {
+      transition: transform 0.6s $ease-out-quart;
+    }
+
+    &:hover,
+    &:focus {
+      .link-line {
+        transform: translateX(0) scaleX(1);
+      }
+    }
+  }
+}
+
+.link--caret {
+  @include position(relative);
+  @include font('alternative', 'medium');
+  @include padding(12px 38px 19px null);
+  color: color(body);
+  font-size: rem(15px);
+  line-height: 1;
+  text-decoration: none;
+
+  @include mq($until: 's') {
+    white-space: nowrap;
+  }
+
+  .svg {
+    @include position(absolute, 14px 0 null null);
+    fill: $color-red;
+  }
+
+  .link--caret-text {
+    display: inline-block;
+  }
+
+  &::before,
+  &::after {
+    @include position(absolute, null null 0 0);
+    @include size(100%, 2px);
+    content: '';
+  }
+
+  &::before {
+    z-index: 1;
+    background-color: $color-white;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+  }
+
+  &::after {
+    background-color: $color-red;
+  }
+
+  .no-touchevents & {
+    &::before {
+      transition: transform 0.4s $ease-out-quart;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        transform: scaleX(1);
+        transform-origin: 0% 50%;
+      }
+    }
+  }
+}

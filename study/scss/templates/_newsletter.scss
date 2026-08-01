@@ -1,0 +1,288 @@
+[data-router-view="newsletter"] {
+  @include position(relative);
+  @include padding(200px null 110px);
+
+  // MQ
+  @include mq($until: 'l') {
+    padding-bottom: 0;
+  }
+
+  @include mq($until: 's') {
+    padding-top: 160px;
+  }
+
+  .center {
+    position: relative;
+  }
+
+  .line {
+    // MQ
+    @include mq($until: 'l') {
+      display: none;
+    }
+  }
+
+  .line--1 {
+    @include position(absolute, -200px null null 50%);
+    @include size(180px, 1px);
+    @include margin(null null null -140px);
+    transform: rotate(45deg);
+  }
+
+  .newsletter-video {
+    @include position(fixed, 0 null null 0);
+    @include size(100%);
+    z-index: -1;
+    overflow: hidden;
+
+    // MQ
+    @include mq($until: 'xl') {
+      display: none;
+    }
+
+    video {
+      @include object-fit(cover);
+      @include size(100%);
+      opacity: 0;
+      transition: opacity 0.6s $ease-out-quad;
+
+      &.loaded {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      @include position(absolute, 0 null nul 0);
+      @include size(100%);
+      content: '';
+      z-index: 1;
+      background-color: rgba($color-black, 0.95);
+    }
+  }
+
+  .newsletter-content {
+    max-width: 355px;
+    margin-bottom: 30px;
+
+    // MQ
+    @include mq($until: 'xl') {
+      margin-bottom: 80px;
+    }
+
+    @include mq($until: 'm') {
+      max-width: 100%;
+    }
+  }
+
+  .newsletter-title {
+    @include margin(null null 30px);
+    @include font('serif', 'regular');
+    color: $color-white;
+    font-size: rem(50px);
+    line-height: 1;
+  }
+
+  .newsletter-text {
+    color: $text-light;
+  }
+
+  .newsletter-form {
+    margin-top: 20px;
+
+    form {
+      @include position(relative);
+    }
+
+    input[type="email"] {
+      @include size(100%, 45px);
+      @include margin(0);
+      @include padding(0 120px 0 0);
+      @include font('alternative', 'light');
+      display: block;
+      max-width: 100%;
+      border: 0 none;
+      border-radius: 0;
+      border-bottom: 1px solid rgba($text-light, .5);
+      outline: none;
+      background: none;
+      color: $color-white;
+      font-size: rem(20px);
+      line-height: 45px;
+      transition: border-color 0.6s $ease-out-quart;
+
+      // MQ
+      @include mq($until: 'm') {
+        font-size: rem(16px);
+      }
+
+      &:focus {
+        border-color: $color-white;
+      }
+    }
+
+    input[type="email"]::placeholder {
+      color: $text-light;
+    }
+
+    button[type="submit"] {
+      @include position(absolute, 0 0 null null);
+      @include size(100px, auto);
+      @include margin(0);
+      @include padding(13px 0 13px 25px);
+      @include font('alternative', 'regular');
+      background: none;
+      border: 0 none;
+      border-radius: 0;
+      outline: none;
+      color: $color-white;
+      font-size: rem(15px);
+      text-align: left;
+      cursor: pointer;
+
+      &::before {
+        @include position(absolute, 50% null null 0);
+        @include size(6px, 10px);
+        @include margin(-5px 15px 2px null);
+        content: '';
+        display: inline-block;
+        background-image: url('../assets/images/newsletter/caret-right.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100% auto;
+        vertical-align: middle;
+      }
+
+      .no-touchevents & {
+        &::before {
+          transition: transform 0.6s $ease-out-quart;
+        }
+  
+        &:hover,
+        &:focus {
+          &::before {
+            transform: translateX(6px);
+          }
+        }
+      }
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: rem(12px);
+    }
+
+    .mc4wp-notice {
+      color: $text-light;
+    }
+  }
+
+  .newsletter-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-right: -22px;
+    margin-left: -22px;
+
+    @include mq($until: 'xl') {
+      margin-bottom: 30px;
+    }
+  }
+
+  .newsletter-email {
+    @include size(50%, auto);
+    @include padding(null 22px);
+    @include font('alternative', 'light');
+    color: $color-white;
+    font-size: rem(22px);
+    line-height: 1;
+    text-decoration: none;
+
+    @include mq($until: 'xl') {
+      width: 100%;
+      margin-bottom: 37px;
+    }
+  }
+
+  .newsletter-column {
+    @include size(16.66%, auto);
+    @include padding(null 22px);
+
+    @include mq($until: 'xl') {
+      width: 33.33%;
+    }
+
+    @include mq($until: 's') {
+      width: 100%;
+
+      + .newsletter-column {
+        margin-top: 30px;
+      }
+    }
+
+    h2 {
+      @include margin(7px null null);
+      @include font('alternative', 'bold');
+      color: rgba($color-white, .9);
+      font-size: rem(13px);
+      line-height: 1;
+
+      + p,
+      + ul {
+        margin-top: 20px;
+      }
+    }
+
+    p,
+    ul {
+      @include font('alternative', 'regular');
+      color: $text-light;
+      font-size: rem(13px);
+      font-weight: 400;
+      line-height: 1.9;
+
+      + p {
+        margin-top: 25px;
+      }
+    }
+
+    li + li {
+      @include margin(5px null null);
+    }
+
+    a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    b {
+      @include font('sans-serif', 'medium');
+      color: $color-red;
+      font-size: rem(12px);
+      line-height: 1;
+    }
+  }
+
+  .newsletter-column--social {
+    @include padding(null 0);
+
+    a {
+      .no-touchevents & {
+        transition: color 0.6s $ease-out-quart;
+
+        &:hover,
+        &:focus {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+// Manage Shared DOM for Newsletter Theme
+// -----------------------------------------------------------------------------
+[data-theme="newsletter"] {
+  .site-footer-top {
+    display: none;
+  }
+}

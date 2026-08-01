@@ -1,0 +1,55 @@
+.careers-quote {
+  @include margin(120px null 250px null);
+  text-align: right;
+
+  @include mq($until: 'l') {
+    margin-bottom: 120px;
+  }
+
+  .center {
+    position: relative;
+  }
+
+  .quote {
+    @include position(relative);
+
+    .end-quote {
+      @include position(absolute, null null 15px calc(100% + 10px));
+    }
+  }
+
+  blockquote {
+    @include font('serif', 'medium');
+    @include margin(null null null auto);
+    max-width: 740px;
+    color: $color-blue;
+    font-size: rem(110px);
+    letter-spacing: ls(-40);
+    line-height: 1;
+
+    @include mq($until: 'l') {
+      font-size: rem(80px);
+    }
+
+    @include mq($until: 'm') {
+      font-size: rem(62px);
+    }
+
+    @include mq($until: 's') {
+      font-size: rem(48px);
+    }
+  }
+
+  cite {
+    @include font('alternative', 'regular');
+    @include margin(30px null null null);
+    display: block;
+    color: $color-red;
+    font-size: rem(20px);
+    letter-spacing: ls(-20);
+
+    @include mq($until: 's') {
+      font-size: rem(16px);
+    }
+  }
+}

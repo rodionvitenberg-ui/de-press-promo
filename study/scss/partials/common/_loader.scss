@@ -1,0 +1,163 @@
+.site-loader {
+  @include position(fixed, 0 null null 0);
+  @include size(100vw, 100vh);
+  z-index: 2000;
+  background-color: $color-blue-g;
+  pointer-events: none;
+
+  &.is-visible {
+    .site-loader-sprite {
+      opacity: 1;
+      transition: opacity 1s 0.2s $ease-out-quart;
+    }
+
+    .site-loader-stroke {
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.7s $ease-out-quart;
+    }
+  }
+
+  &.is-hidden {
+    transform: translateX(-100%);
+    transition: transform 0.7s $ease-in-quart;
+
+    .site-loader-sprite {
+      opacity: 1;
+      transition: opacity 1s 0.2s $ease-out-quart;
+    }
+
+    .site-loader-stroke {
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.7s $ease-out-quart;
+    }
+
+    .site-loader-content {
+      opacity: 0;
+      transition: opacity 0.7s $ease-out-quart;
+    }
+  }
+
+  &.slide-in {
+    animation: 0.7s $ease-in-quart both;
+
+    @include animation-keyframes {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .site-loader-content {
+      opacity: 0;
+    }
+  }
+
+  &.slide-out {
+    animation: 0.7s $ease-in-quart both;
+
+    @include animation-keyframes {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .site-loader-content {
+      opacity: 0;
+    }
+  }
+
+  &.no-transition {
+    transition: none;
+  }
+
+  &-content {
+    @include position(absolute, 50% null null 50%);
+    @include size(134px);
+    @include margin(-67px null null -67px);
+  }
+
+  &-dog {
+    @include position(absolute, 50% null null 50%);
+    @include size(130px);
+    @include margin(-65px null nul -65px);
+    z-index: 0;
+  }
+
+  &-sprite {
+    @include position(absolute, 50% null null 50%);
+    @include size(130px);
+    @include margin(-70px null null -65px);
+    opacity: 0;
+
+    &::before {
+      @include position(absolute, null null 27px 50%);
+      @include size(128px, 16px);
+      @include margin(null null null -64px);
+      content: '';
+      background-image: url('../assets/images/loader/shadow.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 100% auto;
+    }
+
+    &::after {
+      @include position(absolute, 0 null null 0);
+      @include size(100%);
+      content: '';
+      background-image: url('../assets/images/loader/dog.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 2080px auto;
+      animation: .7s steps(16) linear infinite;
+
+      @include animation-keyframes {
+        from {
+          background-position: 0 0;
+        }
+  
+        to {
+          background-position: -2080px 0;
+        }
+      }
+    }
+  }
+
+  &-progress {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+
+    svg {
+      @include position(absolute, 0 null null 0);
+      @include size(136px);
+      fill: transparent;
+      transform: rotate(-90deg);
+    }
+
+    circle {
+      @include position(absolute, 0 null null 0);
+    }
+  }
+
+  &-stroke {
+    z-index: 0;
+    stroke: rgba($color-white, .2);
+    stroke-width: 1px;
+    stroke-dasharray: 134px * 3.14159265359;
+    stroke-dashoffset: 134px * 3.14159265359;
+  }
+
+  &-percent {
+    z-index: 1;
+    stroke: $color-red;
+    stroke-width: 1px;
+    stroke-dasharray: 134px * 3.14159265359;
+    stroke-dashoffset: 134px * 3.14159265359;
+  }
+}

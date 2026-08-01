@@ -1,0 +1,82 @@
+.values-hero {
+  @include position(relative);
+  @include margin(null null 30px);
+  @include padding(240px null null);
+
+  // MQ
+  @include mq($until: 'm') {
+    margin-bottom: 65px;
+    padding-top: 115px;
+  }
+
+  .line--1 {
+    @include position(absolute, 0 null null 50%);
+    @include size(375px, 1px);
+    transform: rotate(-45deg) translate(-250px, -120px);
+  }
+
+  .line--2 {
+    @include position(absolute, null null 210px 50%);
+    @include size(160px, 1px);
+    transform: rotate(45deg) translate(-100px, 90px);
+  }
+
+  &-header {
+    .values-headline {
+      @include margin(null null 30px);
+    }
+
+    .values-title {
+      max-width: 760px;
+      font-size: rem(130px);
+
+      // MQ
+      @include mq($until: 'xl') {
+        font-size: rem(100px);
+      }
+
+      @include mq($until: 'l') {
+        font-size: rem(65px);
+      }
+
+      @include mq($until: 'xxs') {
+        font-size: rem(50px);
+      }
+
+      .fx-word:nth-child(5),
+      .fx-word:nth-child(6),
+      .fx-word:nth-child(7) {
+        position: relative;
+        z-index: 10;
+      }
+    }
+  }
+
+  &-content {
+    @include size(260px, auto);
+    @include margin(145px 26px null auto);
+
+    // MQ
+    @include mq($until: 'xl') {
+      width: 255px;
+      margin-right: 0;
+    }
+
+    @include mq($until: 'l') {
+      width: 50%;
+      padding-left: 40px;
+    }
+
+    @include mq($until: 'm') {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin-top: 320px;
+      padding-left: 0;
+    }
+
+    .values-headline {
+      margin-bottom: 20px;
+    }
+  }
+}

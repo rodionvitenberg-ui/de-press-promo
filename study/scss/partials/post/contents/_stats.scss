@@ -1,0 +1,48 @@
+.post-stats {
+  &-headline {
+    @include margin(null null 65px);
+  }
+
+  &-list {
+    // MQ
+    @include mq($from: 'l') {
+      display: flex;
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+  }
+
+  &-item {
+    // MQ
+    @include mq($from: 'l') {
+      width: 25%;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @include mq($until: 'l') {
+      text-align: center;
+    }
+
+    + .post-stats-item {
+      // MQ
+      @include mq($until: 'l') {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &-value {
+    @include font('alternative', 'light');
+    font-size: rem(60px);
+    line-height: 1;
+    letter-spacing: ls(-40);
+  }
+
+  &-label {
+    @include margin(25px null null);
+    @include font('alternative', 'light');
+    font-size: rem(16px);
+    line-height: (23 / 16);
+  }
+}

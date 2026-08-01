@@ -1,0 +1,75 @@
+.facts-slider {
+  @include margin(70px null 125px null);
+
+  .content-wrapper {
+    @include margin(null null 60px null);
+    max-width: 300px;
+
+    p + p {
+      margin-top: 20px;
+    }
+  }
+  // Tiny Slider
+  .tns-ovh {
+    overflow: visible;
+  }
+
+  .tns-slider {
+    cursor: move;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  .tns-item {
+    outline: 0;
+
+    &[tabindex] {
+      outline: 0;
+    }
+  }
+
+  .tns-outer {
+    width: 280px;
+    margin: 0 auto;
+
+    // MQ
+    @include mq($from: 'xxs') {
+      width: 315px;
+    }
+
+    @include mq($from: 'm') {
+      width: 360px;
+    }
+  }
+}
+
+.facts-wrapper {
+  @include size(100%, auto);
+  @include margin(null auto);
+  max-width: 280px;
+
+  // MQ
+  @include mq($from: 'xxs') {
+    max-width: 315px;
+  }
+
+  @include mq($from: 'm') {
+    max-width: 360px;
+  }
+}
+
+.facts-slide {
+  height: 480px;
+
+  // MQ
+  @include mq($until: 'm') {
+    height: 420px;
+  }
+
+  .facts-card {
+    @include size(100%, 100%);
+  }
+}

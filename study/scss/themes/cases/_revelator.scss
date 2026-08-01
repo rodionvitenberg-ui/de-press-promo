@@ -1,0 +1,276 @@
+[data-theme="case-revelator"] {
+  background-color: #fff;
+
+  &.header-sticky:not(.menu-open) {
+    .site-header {
+      @include mq($until: 'm') {
+        background-color: shade(#1a1034, 20%);
+      }
+    }
+  }
+
+  .case-header,
+  .case-footer {
+    .post-text {
+      &-title,
+      &-tagline {
+        color: #fff;
+      }
+
+      &-content {
+        p {
+          color: #b0a6c9;
+        }
+      }
+
+      &-categories {
+        color: #8558ff;
+      }
+    }
+
+    .post-content {
+      &-headline {
+        color: #b0a6c9;
+
+        b {
+          color: #8558ff;
+        }
+      }
+    }
+
+    .post-cover {
+      background-color: darken(#1a1034, 2%);
+    }
+  }
+
+  .case-header {
+    background-color: #1a1034;
+
+    &-metas {
+      color: #8558ff;
+    }
+
+    &-back {
+      .svg {
+        fill: #8558ff;
+      }
+    }
+  }
+
+  .post-contents {
+    .post-phone:first-child,
+    .post-medias:first-child {
+      &::before {
+        background-color: #1a1034;
+      }
+    }
+
+    .post-content:last-child {
+      padding-bottom: 0;
+    }
+
+    .post-content:nth-child(8),
+    .post-content:nth-child(9) {
+      background-color: #1a1034;
+
+      .post-text {
+        &-title,
+        &-tagline {
+          color: #fff;
+        }
+  
+        &-content {
+          p {
+            color: rgba(#b0a6c9, 0.8);
+          }
+        }
+  
+        &-categories {
+          color: #8558ff;
+        }
+      }
+    }
+
+    .post-content:not(:nth-child(7)):not(:nth-child(9)) {
+      + .post-content {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .post-content {
+    &-headline {
+      color: #9194a8;
+
+      b {
+        color: #8558ff;
+      }
+    }
+  }
+
+  .post-text {
+    &-title,
+    &-tagline {
+      color: #030d26;
+    }
+
+    &-content {
+      p {
+        color: rgba(#030d26, 0.6);
+      }
+    }
+  }
+
+  .case-footer {
+    .post-quote {
+      &-content {
+        p {
+          color: #fff;
+
+          &::before {
+            color: #8558ff;
+          }
+        }
+  
+        cite {
+          color: #8558ff;
+  
+          b {
+            color: #fff;
+          }
+        }
+      }
+  
+      + .post-awards {
+        .center {
+          border-color: rgba(#9194a8, 0.4);
+        }
+      }
+    }
+
+    .post-awards {
+      &-logo {
+        background-color: #191816;
+      }
+  
+      &-content {
+        color: #8558ff;
+  
+        b {
+          color: #fff;
+        }
+      }
+    }
+
+    &-content {
+      background-color: #1a1034;
+
+      &::before {
+        background-color: #1a1034;
+      }
+    }
+  }
+
+  .case-next {
+    &-headline {
+      color: #9194a8;
+    }
+
+    &-title {
+      color: #000;
+    }
+
+    &-link {
+      color: #000;
+      
+      &::after {
+        background-color: #8558ff;
+      }
+
+      .svg {
+        fill: #8558ff;
+      }
+    }
+  }
+
+  .site-footer {
+    &-title {
+      .baseline {
+        fill: #8558ff;
+      }
+    }
+
+    &-block--social {
+      li {
+        color: #000;
+      }
+
+      a {
+        border-color: #8558ff;
+      }
+
+      .svg {
+        fill: #8558ff;
+      }
+    }
+
+    &-block--address {
+      h3 {
+        color: #8558ff;
+      }
+
+      p {
+        color: rgba(#000, 0.6);
+      }
+    }
+
+    &-bottom {
+      border-color: rgba(#000, 0.3);
+    }
+
+    &-contact {
+      color: rgba(#000, 0.6);
+
+      a {
+        color: #8558ff;
+      }
+
+      a::before {
+        opacity: 0.5;
+        background-color: #9194a8;
+      }
+    }
+
+    &-newsletter {
+      color: #8558ff;
+
+      .svg {
+        fill: #8558ff;
+      }
+    }
+  }
+
+  .plyr {
+    &--full-ui input[type=range] {
+      color: #8558ff;
+    }
+
+    &--video {
+      .plyr__control:hover,
+      .plyr__control.plyr__tab-focus,
+      .plyr__control[aria-expanded=true] {
+        background: #8558ff;
+      }
+    }
+    
+    &--stopped {
+      .plyr__poster::before {
+        background-color: #1a1034;
+      }
+
+      .plyr__poster::after {
+        border-left-color: #8558ff;
+      }
+    }
+  }
+}

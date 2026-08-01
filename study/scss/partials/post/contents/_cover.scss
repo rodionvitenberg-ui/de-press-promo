@@ -1,0 +1,93 @@
+.post-cover {
+  @include position(relative);
+
+  picture {
+    @include position(relative);
+    @include size(100%, 840px);
+    display: block;
+    overflow: hidden;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    // MQ
+    @include mq($until: 'xxl') {
+      height: 695px;
+    }
+
+    @include mq($until: 'l') {
+      height: 500px;
+    }
+
+    @include mq($until: 'm') {
+      height: 400px;
+    }
+
+    @include mq($until: 's') {
+      height: 300px;
+    }
+
+    @include mq($until: 'xs') {
+      height: 240px;
+    }
+  }
+
+  img {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    @include object-fit(cover, 50% 0%);
+    transition: opacity .6s $ease-out-quad;
+    opacity: 0;
+  }
+
+  .js-lazy {
+    &.loaded {
+      opacity: 1;
+    }
+  }
+
+  &-credit {
+    @include margin(12px null null null);
+    @include position(absolute, calc(100% + 10px) null null 0);
+    @include size(100%, auto);
+    @include padding(null 60px null null);
+    text-align: right;
+
+    @include mq($until: 'xl') {
+      padding-right: 45px;
+    }
+
+    @include mq($until: 'l') {
+      padding-right: 35px;
+    }
+
+    @include mq($until: 's') {
+      text-align: center;
+      padding-right: 0;
+    }
+
+    p {
+      @include font('alternative', 'regular');
+      font-size: rem(13px);
+      line-height: 1;
+      color: $color-white;
+
+      a {
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--center{
+    picture img{
+      @include object-fit(cover, 50% 50%);
+    }
+  }
+
+  &--bottom{
+    picture img{
+      @include object-fit(cover, 50% 100%);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+[data-router-view="cases"] {
+  @include padding(225px null 500px);
+
+  @include mq($until: 'l') {
+    padding-bottom: 0;
+  }
+
+  // MQ
+  @include mq($until: 'm') {
+    padding-top: 115px;
+  }
+
+  .cases-background {
+    @include position(absolute, 0 null null 0);
+    z-index: -1;
+  }
+
+  .line {
+    @include position(absolute, 0 null null 50%);
+    @include size(400px, 1px);
+    @include margin(null null null -500px);
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+}

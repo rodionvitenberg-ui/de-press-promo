@@ -1,0 +1,118 @@
+.careers-intro {
+  @include padding(255px null null null);
+  color: $color-blue;
+
+  @include mq($until: 'l') {
+    padding-top: 200px;
+  }
+
+  @include mq($until: 's') {
+    padding-top: 160px;
+  }
+
+  .title-wrapper {
+    max-width: 760px;
+
+    @include mq($from: 'xl') {
+      margin-left: auto;
+    }
+
+    .fx-parent {
+      @include position(relative);
+      @include font(serif, medium);
+      @include margin(null null 90px null);
+      font-size: rem(130px);
+      letter-spacing: ls(-40);
+      line-height: .92;
+  
+      @include mq($until: 'xl') {
+        font-size: rem(106px);
+      }
+  
+      @include mq($until: 'm') {
+        font-size: rem(72px);
+      }
+  
+      @include mq($until: 's') {
+        font-size: rem(64px);
+      }
+    }
+  }
+
+  .headline {
+    @include font('alternative', 'bold');
+    @include margin(null null 38px);
+    display: block;
+    color: rgba(#121318, .53);
+    font-size: rem(9);
+    letter-spacing: 4px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .line {
+    @include position(absolute, 85px calc(100% - 20px) null null);
+    @include size(370px, 1px);
+    transform: rotate(45deg);
+  }
+
+  p {
+    @include font('alternative', 'regular');
+    font-size: rem(14px);
+    line-height: 1.78;
+  }
+
+  .lead {
+    @include font('alternative', 'light');
+    font-size: rem(23px);
+    line-height: 1.52;
+  }
+
+  .content-left {
+    max-width: 270px;
+    margin-left: 50px;
+
+    @include mq($until: 'l') {
+      max-width: calc(50% - 30px);
+      margin-left: 0;
+    }
+
+    @include mq($from: 's') {
+      text-align: right;
+    }
+
+    @include mq($until: 's') {
+      max-width: 100%;
+    }
+
+    .headline {
+      margin-bottom: 30px;
+      color: $color-red;
+    }
+  }
+
+  .content-right {
+    @include margin(-47px null null null);
+    max-width: 300px;
+    margin-right: 205px;
+    margin-left: auto;
+
+    @include mq($until: 'xl') {
+      margin-right: 50px;
+    }
+
+    @include mq($until: 'l') {
+      max-width: calc(50% - 30px);
+      margin-right: 0;
+    }
+
+    @include mq($until: 's') {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    p {
+      opacity: .8;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.case-header {
+  @include position(relative);
+  // @include margin(null null 105px);
+  @include padding(54px null 145px);
+  z-index: 2;
+
+  // MQ
+  @include mq($until: 'l') {
+    padding-top : 150px;
+    padding-bottom: 80px;
+  }
+
+  @include mq($until: 'm') {
+    padding-top : 90px;
+  }
+
+  &-inner {
+    &-content {
+      margin-left: auto;
+
+      // MQ
+      @include mq($from: 'l') {
+        max-width: 580px;
+      }
+    }
+  }
+
+  &-headline {
+    @include margin(null null 75px);
+    @include font('serif', 'medium');
+    color: $color-white;
+    font-size: rem(15px);
+    line-height: 1.3;
+
+    // MQ
+    @include mq($until: 'l') {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-introduction {
+    @include font('alternative', 'thin');
+    color: $color-white;
+    font-size: rem(35px);
+    line-height: (40 / 35);
+
+    // MQ
+    @include mq($until: 'm') {
+      font-size: rem(30px);
+    }
+
+    br {
+      // MQ
+      @include mq($until: 'm') {
+        display: none;
+      }
+    }
+  }
+
+  &-metas {
+    @include position(relative);
+    @include margin(100px null 60px);
+    @include font('alternative', 'regular');
+    font-size: rem(13px);
+    line-height: 1;
+    
+    // MQ
+    @include mq($until: 'l') {
+      margin-top: 65px;
+    }
+
+    a {
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      text-decoration: none;
+
+      .svg {
+        fill: #fff;
+        margin-left: 10px;
+        margin-bottom: -1px;
+      }
+
+      .no-touchevents & {
+        .svg {
+          transition: transform 0.6s $ease-out-quart;
+        }
+
+        &:hover,
+        &:focus {
+          .svg {
+            transform: translateX(6px);
+          }
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+
+      // MQ
+      @include mq($until: 'l') {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &-location {
+    // MQ
+    @include mq($from: 'l') {
+      flex-grow: 1;
+    }
+  }
+
+  &-year,
+  &-website {
+    // MQ
+    @include mq($from: 'l') {
+      width: 580px;
+    }
+  }
+
+  &-website {
+    + .case-header-year {
+      // MQ
+      @include mq($from: 'l') {
+        @include position(absolute, null 45px 0 null);
+        @include size(auto);
+      }
+
+      @include mq($until: 'l') {
+        display: none;
+      }
+    }
+  }
+
+  .post-content {
+    &-headline {
+      margin-bottom: 20px;
+    }
+  }
+}

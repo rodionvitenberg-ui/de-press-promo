@@ -1,0 +1,322 @@
+.site-menu {
+  @include position(fixed, 0 null null 0);
+  @include size(100vw, 100vh);
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  z-index: 995;
+  pointer-events: none;
+
+  &::before {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    z-index: -2;
+    background: linear-gradient(to top, rgba($color-black, 1) 0%, rgba($color-black, 0) 100%);
+
+    // MQ
+    @include mq($until: 'xl') {
+      content: '';
+    }
+  }
+
+  .disable-dog &::after {
+    @include position(absolute, 0 null null 0);
+    @include size(100%, 100%);
+    z-index: -1;
+    background-image: url('../assets/images/menu/dog.png');
+    background-repeat: no-repeat;
+    background-position: 25% 50%;
+    background-size: cover;
+
+    // MQ
+    @include mq($until: 'xl') {
+      content: '';
+    }
+  }
+
+  .center {
+    @include position(relative);
+    @include size(auto, 100%);
+    @include padding(null 45px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+
+    // MQ
+    @include mq($until: 'l') {
+      @include padding(null 35px 55px);
+      justify-content: flex-end;
+    }
+
+    @include mq($until: 'l', $and: '(max-height: 400px)') {
+      display: block;
+      padding-top: 50vh;
+      overflow: auto;
+    }
+
+    @include mq($until: 'xs') {
+      padding-bottom: 35px;
+    }
+  }
+  
+  &-back {
+    @include position(fixed, 0 null null 0);
+    @include size(100vw, 100vh);
+    content: '';
+    z-index: 990;
+    background-color: $color-black;
+    pointer-events: none;
+  }
+
+  &-panel {
+    @include position(fixed, 0 null null 0);
+    @include size(100vw, 100vh);
+    z-index: 999;
+    pointer-events: none;
+    background-color: $color-black;
+  }
+
+  &-list {
+    // MQ
+    @include mq($from: 'xl') {
+      margin-top: 15px;
+      margin-left: 10%;
+    }
+  }
+
+  &-item {
+    counter-increment: menu-item;
+
+    a {
+      @include padding(13px null);
+      @include font('alternative', 'thin');
+      display: inline-block;
+      transition: color .6s $ease-out-quart;
+      color: rgba($color-blue-f, .8);
+      font-size: rem(60px);
+      letter-spacing: ls(-20);
+      line-height: .92;
+      text-decoration: none;
+
+      &::before {
+        @include mq($from: 'xl') {
+          @include position(absolute, 20px calc(100% + 30px) null null);
+          @include font('sans-serif', 'bold');
+          content: '0' counter(menu-item);
+          transition: color .6s $ease-out-quart;
+          color: rgba($color-grey, .15);
+          font-size: rem(10px);
+          letter-spacing: ls(360);
+        }
+      }
+
+      // MQ
+      @include mq($until: 1180px) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: rem(45px);
+      }
+
+      @include mq($and: '(max-height: 800px)') {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: rem(45px);
+      }
+
+      @include mq($until: 'xs') {
+        font-size: rem(40px);
+      }
+
+      @include mq($until: 'xs', $and: '(max-height: 500px)') {
+        font-size: rem(30px);
+      }
+    }
+
+    .no-touchevents & {
+      a:hover,
+      a:focus {
+        color: $color-white;
+
+        &::before {
+          color: white;
+        }
+      }
+    }
+
+    a.is-active {
+      color: $color-white;
+
+      &::before {
+        color: white;
+      }
+    }
+  }
+
+  &-footer {
+    pointer-events: none;
+
+    // MQ
+    @include mq($from: 'l') {
+      @include position(absolute, null 45px 45px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    @include mq($from: 'xl') {
+      bottom: 70px;
+    }
+
+    @include mq($until: 'l') {
+      margin-top: 35px;
+    }
+
+    @include mq($until: 'xs') {
+      margin-top: 25px;
+    }
+  }
+
+  &-showreel {
+    @include font('alternative', 'medium');
+    color: $color-white;
+    font-size: rem(13px);
+    line-height: 1;
+    text-decoration: none;
+
+    // MQ
+    @include mq($until: 'l') {
+      display: block;
+      margin-bottom: 50px;
+    }
+
+    @include mq($until: 'xs') {
+      margin-bottom: 40px;
+    }
+
+    .menu-open & {
+      pointer-events: auto;
+    }
+
+    .svg {
+      fill: $color-red;
+      margin-right: 15px;
+      margin-bottom: -1px;
+    }
+
+    .no-touchevents & {
+      .svg {
+        transition: transform 0.6s $ease-out-quart;
+      }
+
+      &:hover,
+      &:focus {
+        .svg {
+          transform: translateX(6px);
+        }
+      }
+    }
+  }
+
+  &-content {
+    img {
+      @include size(52px, auto);
+      @include margin(null null 55px auto);
+      display: block;
+
+      // MQ
+      @include mq($until: 'l') {
+        display: none;
+      }
+    }
+
+    ul {
+      @include font('alternative', 'regular');
+      display: flex;
+      flex-wrap: wrap;
+      color: rgba($color-blue-a, .4);
+      font-size: rem(11px);
+      line-height: 1;
+      
+      .menu-open & {
+        pointer-events: auto;
+      }
+
+      // MQ
+      @include mq($until: 'l') {
+        color: rgba($color-blue-a, .2);
+      }
+    }
+
+    li + li {
+      // MQ
+      @include mq($until: 'l') {
+        margin-left: 10px;
+      }
+
+      &::before {
+        content: '/';
+        display: inline-block;
+        margin-right: 10px;
+        margin-left: 10px;
+        vertical-align: middle;
+
+        // MQ
+        @include mq($until: 'l') {
+          content: none;
+        }
+      }
+    }
+
+    a {
+      position: relative;
+      transition: color 0.3s $ease-out-quart;
+      color: rgba($color-blue-f, .8);
+      text-decoration: none;
+
+      // MQ
+      @include mq($until: 'l') {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 2px solid rgba($color-blue-a, .2);
+        border-radius: 50%;
+      }
+    }
+
+    .no-touchevents & {
+      a {
+        transition: color 0.6s $ease-out-quart;
+      }
+
+      a:hover,
+      a:focus {
+        color: $color-white;
+      }
+    }
+
+    .svg {
+      @include position(absolute, 50% null null 50%);
+      transform: translate(-50%, -50%);
+      fill: rgba($color-blue-a, .2);
+    }
+  }
+
+  &-lang {
+    pointer-events: auto;
+
+    a {
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
+body.menu-open {
+  .site-menu {
+    .site-menu-showreel {
+      pointer-events: auto;
+    }
+  }
+}

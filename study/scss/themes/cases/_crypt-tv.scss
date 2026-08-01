@@ -1,0 +1,276 @@
+[data-theme="case-crypt-tv"] {
+  background-color: #fff;
+
+  &.header-sticky:not(.menu-open) {
+    .site-header {
+      @include mq($until: 'm') {
+        background-color: shade(#131313, 20%);
+      }
+    }
+  }
+
+  .case-header,
+  .case-footer {
+    .post-text {
+      &-title,
+      &-tagline {
+        color: #fff;
+      }
+
+      &-content {
+        p {
+          color: #9194a8;
+        }
+      }
+
+      &-categories {
+        color: #ff2131;
+      }
+    }
+
+    .post-content {
+      &-headline {
+        color: #808080;
+
+        b {
+          color: #ff2131;
+        }
+      }
+    }
+
+    .post-cover {
+      background-color: darken(#131313, 2%);
+    }
+  }
+
+  .case-header {
+    background-color: #131313;
+
+    &-metas,
+    &-year,
+    &-location {
+      color: #ff2131;
+    }
+
+    &-back {
+      .svg {
+        fill: #ff2131;
+      }
+    }
+  }
+
+  .post-contents {
+    .post-medias:first-child {
+      &::before {
+        background-color: #131313;
+      }
+    }
+
+    .post-content {
+      + .post-content {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .post-content {
+    &-headline {
+      color: #9194a8;
+
+      b {
+        color: #ff2131;
+      }
+    }
+  }
+
+  .post-text {
+    &-title,
+    &-tagline {
+      color: #131313;
+    }
+
+    &-content {
+      p {
+        color: rgba(#131313, 0.6);
+      }
+    }
+  }
+
+  .post-medias {
+    &-dots {
+      button {
+        &::before {
+          background-color: #9194a8;
+        }
+
+        &::after {
+          border-color: rgba(#9194a8, 0.5);
+        }
+
+        .no-touchevents & {
+          &:hover,
+          &:focus {
+            &::before {
+              background-color: #3caedc;
+            }
+          }
+        }
+
+        &.is-active {
+          &::before {
+            background-color: #3caedc;
+          }
+        }
+      }
+    }
+  }
+
+  .case-footer {
+    .post-quote {
+      &-content {
+        p {
+          color: #fff;
+
+          &::before {
+            color: #ff2131;
+          }
+        }
+  
+        cite {
+          color: #ff2131;
+  
+          b {
+            color: #fff;
+          }
+        }
+      }
+  
+      + .post-stats {
+        .center {
+          border-color: rgba(#9194a8, 0.4);
+        }
+      }
+    }
+
+    .post-stats {
+      &-value {
+        color: #ff2131;
+      }
+  
+      &-label {
+        color: #fff;
+      }
+    }
+
+    &-content {
+      background-color: #131313;
+
+      &::before {
+        background-color: #131313;
+      }
+    }
+  }
+
+  .case-next {
+    &-headline {
+      color: #9194a8;
+    }
+
+    &-title {
+      color: #131313;
+    }
+
+    &-link {
+      color: #131313;
+
+      &::after {
+        background-color: #ff2131;
+      }
+
+      .svg {
+        fill: #ff2131;
+      }
+    }
+  }
+
+  .site-footer {
+    &-title {
+      .baseline {
+        fill: #ff2131;
+      }
+    }
+
+    &-block--social {
+      li {
+        color: #131313;
+      }
+
+      a {
+        border-color: #ff2131;
+      }
+
+      .svg {
+        fill: #ff2131;
+      }
+    }
+
+    &-block--address {
+      h3 {
+        color: #ff2131;
+      }
+
+      p {
+        color: rgba(#131313, 0.6);
+      }
+    }
+
+    &-bottom {
+      border-color: rgba(#131313, 0.3);
+    }
+
+    &-contact {
+      color: rgba(#131313, 0.6);
+
+      a {
+        color: #ff2131;
+      }
+
+      a::before {
+        opacity: 0.5;
+        background-color: #9194a8;
+      }
+    }
+
+    &-newsletter {
+      color: #ff2131;
+
+      .svg {
+        fill: #ff2131;
+      }
+    }
+  }
+
+  .plyr {
+    &--full-ui input[type=range] {
+      color: #ff2131;
+    }
+
+    &--video {
+      .plyr__control:hover,
+      .plyr__control.plyr__tab-focus,
+      .plyr__control[aria-expanded=true] {
+        background: #ff2131;
+      }
+    }
+    
+    &--stopped {
+      .plyr__poster::before {
+        background-color: #131313;
+      }
+
+      .plyr__poster::after {
+        border-left-color: #ff2131;
+      }
+    }
+  }
+}

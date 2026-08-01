@@ -1,0 +1,21 @@
+.line {
+  transform: rotate(45deg);
+  pointer-events: none;
+
+  &--revert {
+    transform: rotate(-45deg);
+
+    .line-anim {
+      transform-origin: right center;
+    }
+  }
+}
+
+.line-anim {
+  @include position(absolute, 0 null null 0);
+  @include size(100%, 100%);
+  display: block;
+  transform-origin: left center;
+  transition: transform .75s .3s $ease-out-quart;
+  background-color: color(orange);
+}

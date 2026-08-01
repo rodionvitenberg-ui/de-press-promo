@@ -1,0 +1,369 @@
+.home-cases {
+  // Styles
+  @include position(relative);
+  @include size(100%, auto);
+  @include margin(80px null null);
+
+  .touchevents & {
+    // MQ
+    @include mq($from: 'xl') {
+      @include margin(50px null null);
+    }
+  }
+
+  .no-touchevents & {
+    // MQ
+    @include mq($from: 'xl') {
+      @include margin(0 null null);
+      @include padding(calc(50vh - 45px) null calc(50vh - 85px));
+    }
+  }
+
+  .line {
+    @include position(absolute, null -400px 100px null);
+    @include size(680px, 1px);
+    transform: rotate(-45deg);
+
+    @include mq($until: 'xl') {
+      display: none;
+    }
+
+    .line-anim {
+      transition-delay: .5s;
+    }
+  }
+
+  .center {
+    position: relative;
+  }
+
+  &-title {
+    @include position(relative);
+    @include font('serif', 'bold');
+    z-index: 2;
+    color: $color-blue-e;
+    font-size: rem(8px);
+    letter-spacing: ls(500px);
+    line-height: 1;
+    text-transform: uppercase;
+
+    // MQ
+    @include mq($until: 'xl') {
+      margin-bottom: 40px;
+      font-size: rem(10px);
+    }
+
+    .touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        margin-bottom: 40px;
+      }
+    }
+
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        @include position(absolute, -65px null null 10px);
+      }
+    }
+  }
+
+  &-list {
+    @include position(relative);
+    @include size(100%, auto);
+    @include font('alternative', 'thin');
+    display: none;
+    z-index: 2;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        display: flex;
+      }
+    }
+
+    li {
+      @include position(relative);
+      @include size(100%, 140px);
+      color: rgba($color-blue-a, .3);
+      font-size: rem(84px);
+      line-height: 60px;
+
+      @include mq($until: 'xxl') {
+        height: 130px;
+        font-size: rem(80px);
+      }
+
+      // MQ
+      @include mq($until: 'xl') {
+        font-size: rem(70px);
+      }
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+
+      .no-touchevents & {
+        transition: color 0.6s $ease-out-quart;
+
+        &:hover,
+        &:focus {
+          color: $color-white;
+        }
+      }
+    }
+
+    span {
+      @include position(absolute, 2px null null 0);
+      @include font('sans-serif', 'bold');
+      transform: translateX(calc(-100% - 70px));
+      font-size: rem(10px);
+      letter-spacing: ls(360px);
+      line-height: 1;
+      text-transform: uppercase;
+
+      @include mq($until: 'xxl') {
+        font-size: rem(9px);
+      }
+    }
+  }
+
+  &-scenes {
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        @include position(absolute, 0 null null 0);
+        @include size(100%, 100vh);
+      }
+    }
+
+    .no-touchevents &.on-top {
+      // MQ
+      @include mq($from: 'xl') {
+        top: 0;
+        bottom: auto;
+      }
+    }
+
+    .no-touchevents &.on-bottom {
+      // MQ
+      @include mq($from: 'xl') {
+        top: auto;
+        bottom: 0;
+      }
+    }
+
+    .no-touchevents &.is-sticky {
+      // MQ
+      @include mq($from: 'xl') {
+        position: fixed;
+      }
+    }
+  }
+
+  &-scene {
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        @include position(absolute, 0 null null 0);
+        @include size(100%);
+      }
+    }
+
+    .no-touchevents &.is-hidden {
+      .home-cases-picture {
+        z-index: 0;
+      }
+    }
+
+    .inner {
+      @include position(relative);
+      @include size(100%);
+      z-index: 0;
+
+      // MQ
+      @include mq($from: 'm') {
+        display: flex;
+      }
+
+      .no-touchevents & {
+        // MQ
+        @include mq($from: 'xl') {
+          display: block;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      .inner {
+        // MQ
+        @include mq($from: 'm') {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .home-cases-content {
+        .touchevents & {
+          // MQ
+          @include mq($from: 'xl') {
+            padding: 60px calc((100vw - 1024px) * 0.5) 60px 60px;
+          }
+        }
+      }
+    }
+  }
+
+  &-link {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    display: none;
+    z-index: 2;
+
+    .touchevents & {
+      display: block;
+    }
+
+    .no-touchevents & {
+      // MQ
+      @include mq($until: 'xl') {
+        display: block;
+      }
+    }
+  }
+
+  &-name {
+    @include margin(null null 20px);
+    @include font('serif', 'bold');
+    color: $color-white;
+    font-size: rem(40px);
+    line-height: 1;
+
+    // MQ
+    @include mq($until: 'm') {
+      font-size: rem(30px);
+    }
+
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        display: none;
+      }
+    }
+  }
+
+  &-picture {
+    display: block;
+
+    // MQ
+    @include mq($from: 'm') {
+      @include size(50%, auto);
+    }
+
+    @include mq($until: 'm') {
+      @include position(absolute, 0 null null 0);
+      @include size(100%, 100%);
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        @include position(absolute, 50% null null 50%);
+        @include size(100%);
+        transform: translate(-50%, -50%);
+        max-width: 1440px;
+        max-height: 780px;
+      }
+    }
+    
+    img {
+      @include size(100%);
+      @include object-fit(cover);
+      display: block;
+    }
+  }
+
+  &-content {
+    // MQ
+    @include mq($from: 'm') {
+      width: 50%;
+    }
+
+    @include mq($until: 'xl') {
+      padding: 45px;
+      min-height: 300px;
+    }
+    
+    @include mq($until: 'l') {
+      padding: 45px 35px;
+    }
+
+    .link--caret {
+      color: $color-white;
+      margin-top: 20px;
+
+      .no-touchevents & {
+        display: none;
+      }
+    }
+
+    .touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        padding: 60px 60px 60px calc((100vw - 1024px) * 0.5);
+      }
+    }
+
+    .no-touchevents & {
+      // MQ
+      @include mq($from: 'xl') {
+        @include position(absolute, null 45px 100px null);
+        @include size(500px, auto);
+        z-index: 1;
+        text-align: right;
+      }
+    }
+  }
+
+  &-headline {
+    @include margin(null null 25px);
+    @include font('sans-serif', 'bold');
+    color: rgba($color-white, 0.8);
+    font-size: rem(8px);
+    letter-spacing: ls(600);
+    line-height: 1;
+    text-transform: uppercase;
+
+    // MQ
+    @include mq($until: 'xxl') {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-text {
+    @include font('alternative', 'light');
+    color: $color-white;
+    font-size: rem(22px);
+    line-height: (30 / 22);
+
+    // MQ
+    @include mq($until: 1450px) {
+      font-size: rem(20px);
+      line-height: 27px;
+    }
+  }
+
+  &-line {
+    // MQ
+    @include mq($from: 'l') {
+      display: block;
+    }
+  }
+}

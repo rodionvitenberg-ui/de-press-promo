@@ -1,0 +1,122 @@
+.careers-list {
+  @include margin(170px null null null);
+
+  @include mq($until: 'm') {
+    margin-top: 90px;
+  }
+
+  &-title {
+    @include position(relative);
+    @include font(serif, medium);
+    @include margin(null null 115px null);
+    max-width: 600px;
+    font-size: rem(110px);
+    letter-spacing: ls(-40);
+    line-height: .92;
+
+    @include mq($until: 'l') {
+      @include margin(null null 50px null);
+      font-size: rem(72px);
+    }
+
+    @include mq($until: 's') {
+      font-size: rem(52px);
+    }
+  }
+
+  .careers-list-location {
+    @include margin(null 50px null auto);
+    @include padding(null null null 70px);
+    @include position(relative);
+    max-width: 850px;
+
+    @include mq($until: 'xl') {
+      @include padding(null null null 0);
+      @include margin(null auto);
+      max-width: 100%;
+      padding-left: 0;
+    }
+
+    + .careers-list-location {
+      @include margin(150px null null null);
+
+      @include mq($until: 'm') {
+        margin-top: 90px;
+      }
+    }
+  }
+
+  .careers-list-location-label {
+    @include margin(null null 30px null);
+    @include font('serif', 'regular');
+    display: block;
+    color: #9194a8;
+    font-size: rem(14px);
+    line-height: 1;
+    white-space: nowrap;
+
+    @include mq($until: 'm') {
+      margin-bottom: 40px;
+    }
+
+    @include mq($from: 'xl') {
+      @include margin(null null 0 null);
+      @include position(absolute, 70px 100% null null);
+    }
+  }
+
+  a {
+    @include font('alternative', 'thin');
+    @include position(relative);
+    @include padding(50px null);
+    display: block;
+    color: rgba(#373d5d, .5);
+    font-size: rem(80px);
+    letter-spacing: ls(-40);
+    line-height: 1;
+    text-decoration: none;
+
+    @include mq($until: 'xl') {
+      font-size: rem(52px);
+    }
+
+    @include mq($until: 'l') {
+      @include padding(40px null);
+    }
+
+    @include mq($until: 'm') {
+      font-size: rem(38px);
+    }
+
+    &::after {
+      @include position(absolute, null null 0 0);
+      @include size(100%, 1px);
+      content: '';
+      background-image: image('decorations/dots.png');
+      background-size: 12px 1px;
+    }
+
+    .no-touchevents & {
+      transition: color 0.6s $ease-out-quart;
+
+      &:hover,
+      &:focus {
+        color: rgba(#373d5d, .8);
+      }
+    }
+  }
+
+  li {
+    &:first-child {
+      margin-top: -50px;
+    }
+
+    &:last-child {
+      margin-bottom: -50px;
+
+      a::after {
+        display: none;
+      }
+    }
+  }
+}

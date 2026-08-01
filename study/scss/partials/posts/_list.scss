@@ -1,0 +1,147 @@
+.posts-list {
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    margin-bottom: -85px;
+    margin-left: -20px;
+    transition: opacity 0.6s $ease-out-quart;
+
+    // MQ
+    @include mq($until: 'm') {
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: -45px;
+    }
+
+    &.fade-out {
+      opacity: 0;
+    }
+
+    &.no-inview {
+      .posts-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+
+  &-title {
+    @include margin(null null 50px);
+    @include font('serif', 'medium');
+    color: $color-black;
+    font-size: rem(50px);
+    line-height: (60 / 50);
+
+    // MQ
+    @include mq($until: 'm') {
+      margin-bottom: 30px;
+      font-size: rem(40px);
+    }
+  }
+}
+
+.posts-item {
+  @include position(relative);
+  @include size(calc(50% - 40px), auto);
+  @include margin(null 20px 85px);
+
+  // MQ
+  @include mq($until: 'm') {
+    margin-bottom: 45px;
+  }
+
+  @include mq($until: 's') {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &-link {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+    z-index: 1;
+  }
+
+  &-medium {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &-picture {
+    @include aspect-ratio(1, 1);
+    overflow: hidden;
+
+    img {
+      @include position(absolute, 0 null null 0);
+      @include size(100%);
+      @include object-fit(cover, 50% 0);
+      display: block;
+      transition: opacity .6s $ease-out-quad;
+
+      .no-touchevents & {
+        transition: transform 1s $ease-out-expo;
+      }
+
+      &.js-lazy {
+        &.loaded {
+          + img {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &-content {
+    @include margin(30px null null);
+  }
+
+  &-date {
+    @include margin(null null 15px);
+    @include font('sans-serif', 'bold');
+    color: $color-red;
+    font-size: rem(9px);
+    line-height: (18 / 9);
+    letter-spacing: ls(400);
+    text-transform: uppercase;
+  }
+
+  &-title {
+    @include font('serif', 'medium');
+    color: $color-white;
+    font-size: rem(30px);
+    line-height: 1.2;
+
+    // MQ
+    @include mq($until: 'm') {
+      font-size: rem(24px);
+    }
+  }
+
+  &-text {
+    @include margin(15px null null);
+    @include font('alternative', 'regular');
+    color: rgba($color-blue-a, 0.4);
+    font-size: rem(15px);
+    line-height: (25 / 15);
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  .no-touchevents & {
+    &:hover {
+      .posts-item-picture {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

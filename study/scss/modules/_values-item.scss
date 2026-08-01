@@ -1,0 +1,51 @@
+.values-item {
+  &-title {
+    @include margin(null null 25px);
+    @include font('alternative', 'light');
+    color: $color-white;
+    font-size: rem(35px);
+    letter-spacing: ls(-40);
+    line-height: (45 / 35);
+  }
+
+  &-index {
+    @include position(relative);
+    @include margin(null null 20px);
+    @include font('alternative', 'light');
+    color: $black;
+    font-size: rem(25px);
+    letter-spacing: ls(-40);
+    line-height: 1;
+    text-align: right;
+  }
+
+  &-cross {
+    @include position(absolute, null null 3px 0);
+    @include size(10px, 10px);
+    transform: rotate(45deg);
+
+    &::before,
+    &::after {
+      @include position(absolute, 50% null null 50%);
+      content: '';
+      transform: translate(-50%, -50%);
+      background-color: $color-white;
+    }
+
+    &::before {
+      @include size(100%, 1px);
+    }
+
+    &::after {
+      @include size(1px, 100%);
+    }
+  }
+
+  &-text {
+    @include padding(null 10px null null);
+    @include font('alternative', 'regular');
+    color: rgba($color-white, .6);
+    font-size: rem(14px);
+    line-height: (25 / 14);
+  }
+}

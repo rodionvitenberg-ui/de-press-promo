@@ -1,0 +1,260 @@
+[data-router-view="contact"] {
+  @include position(relative);
+  @include padding(330px null 110px);
+
+  // MQ
+  @include mq($until: 'l') {
+    padding-top: 200px;
+    padding-bottom: 0;
+  }
+
+  @include mq($until: 's') {
+    padding-top: 160px;
+  }
+
+  .center {
+    position: relative;
+  }
+
+  .line {
+    // MQ
+    @include mq($until: 'l') {
+      display: none;
+    }
+  }
+
+  .line--1 {
+    @include position(absolute, -200px null null 50%);
+    @include size(180px, 1px);
+    @include margin(null null null -140px);
+    transform: rotate(45deg);
+  }
+
+  .line--2 {
+    @include position(absolute, 290px null null -60px);
+    @include size(180px, 1px);
+    @include margin(null null null -140px);
+    transform: rotate(-45deg);
+  }
+
+  .contact-background {
+    @include position(absolute, 0 null null 0);
+    z-index: -1;
+  }
+
+  .contact-title {
+    @include size(100%, 150px);
+    @include margin(null null 100px);
+    @include font('serif', 'regular');
+    max-width: 540px;
+    color: $color-white;
+    font-size: rem(50px);
+    line-height: 1;
+
+    @include mq($until: 'm') {
+      margin-bottom: 120px;
+    }
+  }
+
+  .contact-footer {
+    display: flex;
+    margin-right: -20px;
+    margin-left: -20px;
+
+    @include mq($until: 'xl') {
+      @include padding(null 20px);
+      margin-bottom: 30px;
+      flex-direction: column;
+    }
+    
+    &__title {
+      @include padding(null 20px);
+      @include size(25%, auto);
+      margin-right: 15px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+
+      @include mq($until: 'xl') {
+        @include padding(null 0);
+        width: 100%;
+        margin-bottom: 37px;
+      }
+
+      ul {
+        @include font('alternative', 'regular');
+        color: $text-light;
+        font-size: rem(13px);
+        font-weight: 400;
+        line-height: 1.9;
+        margin-top: auto;
+
+        @include mq($until: 'xl') {
+          padding-top: 20px;
+        }
+      }
+
+      a {
+        @include padding(4px null);
+        display: block;
+        color: inherit;
+        text-decoration: none;
+  
+        .no-touchevents & {
+          transition: color 0.6s $ease-out-quart;
+  
+          &:hover,
+          &:focus {
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-email {
+    @include font('alternative', 'light');
+    color: $color-white;
+    font-size: rem(22px);
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .contact-column {
+    @include size(25%, auto);
+    @include padding(null 20px);
+
+    @include mq($until: 'xl') {
+      width: 33.33%;
+    }
+
+    @include mq($until: 's') {
+      width: 100%;
+
+      + .contact-column {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .contact-countries {
+    flex-grow: 1;
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
+
+  .contact-country {
+    @include padding(30px null);
+    @include position(relative);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba($color-blue-a, .3);
+    }
+
+    &__link {
+      @include position(absolute, 0 null null 0);
+      @include size(100%);
+      display: block;
+      z-index: 2;
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+
+      @include mq($until: 'xl') {
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      @include mq($until: 's') {
+        flex-direction: column;
+      }
+
+      p {
+        width: calc(100% - 175px);
+
+        @include mq($until: 's') {
+          @include margin(10px null);
+          width: 100%;
+        }
+      }
+    }
+
+    &__phone {
+      @include position(relative);
+      z-index: 3;
+      flex-shrink: 0;
+
+      @include mq($until: 'xl') {
+        padding-left: 175px;
+        width: 100%;
+      }
+
+      @include mq($until: 's') {
+        padding-left: 0;
+      }
+    }
+
+    h2 {
+      @include font('alternative', 'light');
+      color: $color-white;
+      font-size: rem(22px);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 160px;
+      margin-right: 15px;
+    }
+
+    p,
+    ul {
+      @include font('alternative', 'regular');
+      color: $text-light;
+      font-size: rem(13px);
+      font-weight: 400;
+      line-height: 1.9;
+    }
+
+    li + li {
+      @include margin(5px null null);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      .no-touchevents & {
+        transition: color 0.6s $ease-out-quart;
+
+        &:hover,
+        &:focus {
+          color: $color-white;
+        }
+      }
+    }
+
+    b {
+      @include font('sans-serif', 'medium');
+      color: $color-red;
+      font-size: rem(12px);
+      line-height: 1;
+    }
+  }
+
+  .contact-column--social {
+    @include padding(null 0);
+  }
+}
+
+// Manage Shared DOM for Contact Theme
+// -----------------------------------------------------------------------------
+[data-theme="contact"] {
+  .site-footer-top {
+    display: none;
+  }
+}

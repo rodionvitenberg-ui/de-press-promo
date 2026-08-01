@@ -1,0 +1,300 @@
+[data-theme="case-quanta"] {
+  background-color: #fff;
+
+  &.header-sticky:not(.menu-open) {
+    .site-header {
+      @include mq($until: 'm') {
+        background-color: shade(#100211, 20%);
+      }
+    }
+  }
+
+  .case-header,
+  .case-footer {
+    .post-text {
+      &-title,
+      &-tagline {
+        color: #fff;
+      }
+
+      &-content {
+        p {
+          color: rgba(#808080, 0.8);
+        }
+      }
+
+      &-categories {
+        color: #ff8600;
+      }
+    }
+
+    .post-content {
+      &-headline {
+        color: #fff;
+
+        b {
+          color: #ff8600;
+        }
+      }
+    }
+
+    .post-cover {
+      background-color: darken(#100211, 2%);
+    }
+  }
+
+  .case-header {
+    background-color: #fff;
+    overflow: hidden;
+
+    .post-cover {
+      @include position(relative);
+
+      &::before {
+        @include position(absolute, 100% null null 0);
+        @include size(100%, 200vh);
+        content: '';
+        background-color: #100211;
+        z-index: -1;
+      }
+    }
+    
+    &-introduction,
+    &-headline {
+      color: #1a1a1a;
+    }
+
+    &-metas {
+      color: #ff8600;
+
+      a {
+        color: #1a1a1a;
+      }
+    }
+
+    &-back {
+      color: #1a1a1a;
+      
+      .svg {
+        fill: #ff8600;
+      }
+    }
+  }
+
+  .post-contents {
+    .post-medias:first-child {
+      &::before {
+        height: 50%;
+        background-color: #100211;
+      }
+    }
+
+    .post-content:nth-child(7) {
+      background-color: #edefef;
+    }
+
+    .post-content {
+      + .post-content:not(:nth-child(7)) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .post-content {
+    &-headline {
+      color: #666666;
+
+      b {
+        color: #ff8600;
+      }
+    }
+  }
+
+  .post-cover-credit {  
+    p {
+      color: $color-white;
+
+      a {
+        color: #ff8600;
+      }
+    }
+  }
+
+  .post-text {
+    &-title,
+    &-tagline {
+      color: #030d26;
+    }
+
+    &-content {
+      p {
+        color: rgba(#808080, 0.8);
+      }
+    }
+  }
+
+  .case-footer {
+    .post-quote {
+      &-content {
+        p {
+          color: #fff;
+
+          &::before {
+            color: #ff8600;
+          }
+        }
+  
+        cite {
+          color: rgba(#808080, 0.8);
+  
+          b {
+            color: #fff;
+          }
+        }
+      }
+  
+      + .post-awards {
+        .center {
+          border-color: rgba(#666666, 0.4);
+        }
+      }
+    }
+
+    .post-awards {
+      &-logo {
+        background-color: #271924;
+      }
+  
+      &-content {
+        color: #ff8600;
+  
+        b {
+          color: #fff;
+        }
+      }
+    }
+
+    &-content {
+      background-color: #100211;
+
+      &::before {
+        background-color: #100211;
+      }
+    }
+  }
+
+  .case-next {
+    &-headline {
+      color: #666;
+    }
+
+    &-title {
+      color: #1a1a1a;
+    }
+
+    &-link {
+      color: #1a1a1a;
+      
+      &::after {
+        background-color: #ff8600;
+      }
+
+      .svg {
+        fill: #ff8600;
+      }
+    }
+  }
+
+  .site-footer {
+    &-title {
+      .baseline {
+        fill: #ff8600;
+      }
+    }
+
+    &-block--social {
+      li {
+        color: #1a1a1a;
+      }
+
+      a {
+        border-color: #ff8600;
+      }
+
+      .svg {
+        fill: #ff8600;
+      }
+    }
+
+    &-block--address {
+      h3 {
+        color: #ff8600;
+      }
+
+      p {
+        color: rgba(#1a1a1a, 0.6);
+      }
+    }
+
+    &-bottom {
+      border-color: rgba(#1a1a1a, 0.3);
+    }
+
+    &-contact {
+      color: rgba(#1a1a1a, 0.6);
+
+      a {
+        color: #ff8600;
+      }
+
+      a::before {
+        opacity: 0.5;
+        background-color: #9194a8;
+      }
+    }
+
+    &-newsletter {
+      color: #ff8600;
+
+      .svg {
+        fill: #ff8600;
+      }
+    }
+
+    &-languages {
+      color: rgba(#1a1a1a, 0.6);
+      
+      a {
+        color: #1a1a1a;
+      }
+  
+      .svg-caret-right {
+        fill: rgba(#1a1a1a, .3);
+      }
+    }
+  }
+
+  .plyr {
+    &--full-ui input[type=range] {
+      color: #b1b1b1;
+    }
+
+    &--video {
+      .plyr__control:hover,
+      .plyr__control.plyr__tab-focus,
+      .plyr__control[aria-expanded=true] {
+        background: #b1b1b1;
+      }
+    }
+    
+    &--stopped {
+      .plyr__poster::before {
+        background-color: #ff8600;
+      }
+
+      .plyr__poster::after {
+        border-left-color: #fff;
+      }
+    }
+  }
+}

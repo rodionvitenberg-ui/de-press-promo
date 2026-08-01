@@ -1,0 +1,86 @@
+.post-awards {
+  &-headline {
+    @include margin(null null 65px);
+  }
+
+  &-list {
+    // MQ
+    @include mq($from: 'l') {
+      display: flex;
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+  }
+
+  &-item {
+    // MQ
+    @include mq($from: 'l') {
+      display: flex;
+      align-items: center;
+      width: 33.33%;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    + .post-awards-item {
+      // MQ
+      @include mq($until: 'l') {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &-logo {
+    @include position(relative);
+    @include size(110px);
+    @include margin(null 30px null null);
+    border-radius: 50%;
+
+    // MQ
+    @include mq($until: 'l') {
+      @include margin(null auto 15px);
+    }
+
+    // MQ
+    @include mq($until: 'xxs') {
+      @include size(70px);
+    }
+
+    img {
+      @include position(absolute, 50% null null 50%);
+      @include size(100%, auto);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-content {
+    @include font('alternative', 'regular');
+    font-size: rem(14px);
+    line-height: (23 / 14);
+
+    // MQ
+    @include mq($until: 'l') {
+      text-align: center;
+    }
+
+    b {
+      font-size: rem(16px);
+      line-height: (23 / 16);
+    }
+  }
+
+  &--narrow-layout {
+    .post-awards-item {
+      @include mq($from: 'l') {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .post-awards-logo {
+      @include mq($from: 'l') {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

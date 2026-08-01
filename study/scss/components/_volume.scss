@@ -1,0 +1,83 @@
+.site-volume {
+  @include position(fixed, null 45px 35px null);
+  @include size(30px);
+  z-index: 989;
+  border: 0 none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: all;
+
+  // MQ
+  @include mq($until: 'l') {
+    right: 15px;
+    bottom: 25px;
+  }
+
+  &::before {
+    @include position(absolute, 50% null null 50%);
+    @include size(6px);
+    content: '';
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .pulsing-ui {
+    @include position(absolute, 50% null null 50%);
+    @include size(6px);
+    transform: translate(-50%, -50%);
+    transition: opacity .3s $ease-out-quad;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .pulsing-ui::after,
+  .pulsing-ui::before {
+    @include position(absolute, 50% null null 50%);
+    @include size(30px);
+    content: '';
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+    animation: 1.6s linear infinite;
+    border: 2px solid white;
+    border-radius: 50%;
+
+    @include animation-keyframes {
+      from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+      }
+    }
+  }
+
+  .pulsing-ui::before {
+    animation-delay: .5s;
+  }
+
+  &.is-playing {
+    .pulsing-ui {
+      opacity: 1;
+    }
+  }
+}
+
+[data-theme="careers"],
+[data-theme="careers-detail"] {
+  .site-volume {
+    .pulsing-ui {
+      background-color: $color-blue;
+    }
+
+    .pulsing-ui::after,
+    .pulsing-ui::before {
+      border-color: $color-blue;
+    }
+  }
+}
+

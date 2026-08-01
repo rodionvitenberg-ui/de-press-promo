@@ -1,0 +1,58 @@
+.post-credits {
+  .center {
+    padding-top: 80px;
+    border-top: 1px solid rgba(white, .3);
+
+    @include mq($from: 'l') {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 100px;
+    }
+  }
+
+  .post-content-headline {
+    flex-grow: 1;
+  }
+
+  .post-credits-list {
+    width: 580px;
+    color: white;
+    font-size: rem(13px);
+    margin-top: -10px;
+
+    @include mq($until: 'l') {
+      width: 100%;
+      padding-top: 40px;
+      margin-top: 0;
+    }
+  }
+
+  dl {
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 27px;
+    
+    @include mq($until: 'm') {
+      margin-bottom: 6px;
+    }
+  }
+
+  dd {
+    @include font('alternative', 'medium');
+    width: 190px;
+    flex-shrink: 0;
+  }
+
+  dt {
+    @include font('alternative', 'light');
+    @include margin(null null null 20px);
+    flex-grow: 1;
+  }
+
+  + .post-awards {
+    .center {
+      padding-top: 65px;
+      border-top: 1px solid transparent;
+    }
+  }
+}
