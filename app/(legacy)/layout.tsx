@@ -11,6 +11,10 @@ export default function LegacyLayout({ children }: { children: ReactNode }) {
         rel="stylesheet"
         href="/app/themes/portfolio-2018/static/css/main.css"
       />
+      <link
+        rel="stylesheet"
+        href="/app/themes/portfolio-2018/static/css/depress.css"
+      />
       {children}
     </>
   );

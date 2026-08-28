@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: {
-    default: "promo-depress — Dogstudio study lab",
-    template: "%s",
+    default: "de-press.co — тихая гавань",
+    template: "%s — de-press.co",
   },
   description:
-    "Local study clone of dogstudio.co + Next.js lab for reverse-engineering.",
+    "Некоммерческая эмпатичная платформа для эмоциональной поддержки. Тишина вместо лайков, истории вместо лент, контроль у автора.",
   icons: {
     icon: "/app/themes/portfolio-2018/static/assets/images/favicon.png",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-US" suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );

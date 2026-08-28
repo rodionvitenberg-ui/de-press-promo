@@ -1,0 +1,103 @@
+/*
+ * de-press.co overrides — loaded AFTER main.css via <link> (never via bundler).
+ * Only product-specific additions live here; original rules stay untouched.
+ * Prefix: dp- (de-press).
+ */
+
+/* --- /safety (crisis page): self-contained, readable regardless of theme --- */
+
+.dp-safety {
+  min-height: 100vh;
+  background: #0e0e10;
+  color: #f2f2f0;
+  font-family: "Gilroy", "Heebo", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.dp-safety__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8vh 24px 12vh;
+}
+
+.dp-safety__tag {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8a8e;
+  margin: 0 0 24px;
+}
+
+.dp-safety h1 {
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+
+.dp-safety__lead {
+  font-size: 18px;
+  color: #c9c9cc;
+  margin: 0 0 40px;
+}
+
+.dp-safety h2 {
+  font-size: 22px;
+  margin: 48px 0 16px;
+  font-weight: 700;
+}
+
+.dp-safety p {
+  margin: 0 0 16px;
+  color: #c9c9cc;
+}
+
+.dp-safety ol {
+  margin: 0 0 16px;
+  padding-left: 22px;
+  color: #c9c9cc;
+}
+
+.dp-safety ol li {
+  margin-bottom: 12px;
+}
+
+.dp-safety__phones {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 24px 0 8px;
+}
+
+.dp-safety__phone {
+  display: inline-block;
+  padding: 14px 22px;
+  border: 1px solid #3a3a3e;
+  border-radius: 999px;
+  color: #f2f2f0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.dp-safety__phone:hover {
+  border-color: #f2f2f0;
+}
+
+.dp-safety__note {
+  font-size: 14px;
+  color: #8a8a8e;
+}
+
+.dp-safety__back {
+  display: inline-block;
+  margin-top: 56px;
+  color: #f2f2f0;
+  text-decoration: none;
+  border-bottom: 1px solid #3a3a3e;
+  padding-bottom: 2px;
+}
+
+.dp-safety__back:hover {
+  border-color: #f2f2f0;
+}
