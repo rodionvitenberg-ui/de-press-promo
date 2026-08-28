@@ -1,0 +1,126 @@
+[
+  {
+    "device": "desktop",
+    "state": "top",
+    "route": "/",
+    "booted": true,
+    "locked": false,
+    "canvas": true,
+    "loaderWait": "done"
+  },
+  {
+    "device": "desktop",
+    "state": "menu",
+    "route": "/"
+  },
+  {
+    "device": "desktop",
+    "state": "scroll-1",
+    "route": "/"
+  },
+  {
+    "device": "desktop",
+    "state": "scroll-2",
+    "route": "/"
+  },
+  {
+    "device": "desktop",
+    "state": "case-hover",
+    "route": "/",
+    "expectedTheme": "tomorrowland",
+    "bodyTheme": "tomorrowland"
+  },
+  {
+    "device": "desktop",
+    "state": "top",
+    "route": "/studio/",
+    "booted": true,
+    "locked": false,
+    "canvas": true,
+    "loaderWait": "done"
+  },
+  {
+    "device": "desktop",
+    "state": "top",
+    "route": "/careers/",
+    "booted": false,
+    "locked": true,
+    "canvas": false,
+    "loaderWait": "timeout"
+  },
+  {
+    "device": "desktop",
+    "state": "forced-top",
+    "route": "/careers/",
+    "loaderWait": "forced"
+  },
+  {
+    "device": "desktop",
+    "state": "top",
+    "route": "/values/",
+    "booted": false,
+    "locked": true,
+    "canvas": false,
+    "loaderWait": "timeout"
+  },
+  {
+    "device": "desktop",
+    "state": "forced-top",
+    "route": "/values/",
+    "loaderWait": "forced"
+  },
+  {
+    "device": "desktop",
+    "state": "top",
+    "route": "/contact/",
+    "booted": true,
+    "locked": false,
+    "canvas": true,
+    "loaderWait": "done"
+  },
+  {
+    "device": "mobile",
+    "state": "top",
+    "route": "/",
+    "booted": true,
+    "locked": false,
+    "canvas": false,
+    "loaderWait": "done"
+  },
+  {
+    "device": "mobile",
+    "state": "top",
+    "route": "/studio/",
+    "booted": true,
+    "locked": false,
+    "canvas": false,
+    "loaderWait": "done"
+  },
+  {
+    "device": "mobile",
+    "state": "top",
+    "route": "/careers/",
+    "booted": true,
+    "locked": false,
+    "canvas": false,
+    "loaderWait": "done"
+  },
+  {
+    "device": "mobile",
+    "state": "top",
+    "route": "/values/",
+    "booted": true,
+    "locked": false,
+    "canvas": false,
+    "loaderWait": "done"
+  },
+  {
+    "device": "mobile",
+    "state": "top",
+    "route": "/contact/",
+    "booted": true,
+    "locked": false,
+    "canvas": false,
+    "loaderWait": "done"
+  }
+]

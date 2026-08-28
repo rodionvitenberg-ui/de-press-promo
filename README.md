@@ -300,7 +300,7 @@ components/lab/MyFeature.tsx
 - [x] Внешний бэкап репозитория (создан пользователем)
 - [x] **Защита от mirror**: `dog.glb`, `dog.drc.glb`, `matcap-*.jpg` убраны из `KNOWN_ASSETS`
 - [x] Пересобрать README под новое направление (этот документ)
-- [ ] Скриншоты/видео всех состояний (эталон регрессий) — рекомендуется до изменения рантайма
+- [x] Скриншоты всех состояний (эталон регрессий) — `npm run screenshots` → `study/screenshots/` (desktop + mobile; интерактив: меню, скролл, matcap-hover; манифест состояний — `manifest.json`)
 
 ### Фаза 1 — Данные наружу ✅
 
@@ -351,6 +351,7 @@ components/lab/MyFeature.tsx
 | `npm run study:js` | Beautify → `study/js/` |
 | `npm run study:dog-data` | Из `main.js` → `public/data/dog/*.json` |
 | `npm run study:extract` | scss + js + dog-data |
+| `npm run screenshots` | Эталонные скриншоты (CDP, нужен запущенный dev/start) → `study/screenshots/` |
 
 ---
 

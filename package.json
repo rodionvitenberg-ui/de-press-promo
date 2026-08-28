@@ -13,7 +13,8 @@
     "study:scss": "node scripts/extract-scss-from-map.mjs",
     "study:js": "node scripts/beautify-js.mjs",
     "study:dog-data": "node scripts/extract-dog-data.mjs",
-    "study:extract": "npm run study:scss && npm run study:js && npm run study:dog-data"
+    "study:extract": "npm run study:scss && npm run study:js && npm run study:dog-data",
+    "screenshots": "node scripts/reference-screenshots.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
