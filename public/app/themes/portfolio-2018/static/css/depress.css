@@ -2,15 +2,17 @@
  * de-press.co overrides — loaded AFTER main.css via <link> (never via bundler).
  * Only product-specific additions live here; original rules stay untouched.
  * Prefix: dp- (de-press).
+ * Tokens are 1:1 from main.css: bg #131417, text #fff, accent #ff4940,
+ * fonts Gilroy (headings) / Heebo (body).
  */
 
 /* --- /safety (crisis page): self-contained, readable regardless of theme --- */
 
 .dp-safety {
   min-height: 100vh;
-  background: #0e0e10;
-  color: #f2f2f0;
-  font-family: "Gilroy", "Heebo", system-ui, sans-serif;
+  background-color: #131417;
+  color: #fff;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -21,14 +23,17 @@
 }
 
 .dp-safety__tag {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
   font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #8a8a8e;
+  color: #fff;
+  opacity: 0.5;
   margin: 0 0 24px;
 }
 
 .dp-safety h1 {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
   font-size: clamp(32px, 6vw, 56px);
   line-height: 1.1;
   margin: 0 0 24px;
@@ -37,11 +42,13 @@
 
 .dp-safety__lead {
   font-size: 18px;
-  color: #c9c9cc;
+  color: #fff;
+  opacity: 0.8;
   margin: 0 0 40px;
 }
 
 .dp-safety h2 {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
   font-size: 22px;
   margin: 48px 0 16px;
   font-weight: 700;
@@ -49,13 +56,15 @@
 
 .dp-safety p {
   margin: 0 0 16px;
-  color: #c9c9cc;
+  color: #fff;
+  opacity: 0.8;
 }
 
 .dp-safety ol {
   margin: 0 0 16px;
   padding-left: 22px;
-  color: #c9c9cc;
+  color: #fff;
+  opacity: 0.8;
 }
 
 .dp-safety ol li {
@@ -72,32 +81,29 @@
 .dp-safety__phone {
   display: inline-block;
   padding: 14px 22px;
-  border: 1px solid #3a3a3e;
+  border: 1px solid #ff4940;
   border-radius: 999px;
-  color: #f2f2f0;
+  color: #fff;
   text-decoration: none;
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 20px;
 }
 
 .dp-safety__phone:hover {
-  border-color: #f2f2f0;
+  background-color: #ff4940;
 }
 
 .dp-safety__note {
   font-size: 14px;
-  color: #8a8a8e;
+  opacity: 0.5;
 }
 
 .dp-safety__back {
   display: inline-block;
   margin-top: 56px;
-  color: #f2f2f0;
+  color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid #3a3a3e;
+  border-bottom: 1px solid #ff4940;
   padding-bottom: 2px;
-}
-
-.dp-safety__back:hover {
-  border-color: #f2f2f0;
 }
