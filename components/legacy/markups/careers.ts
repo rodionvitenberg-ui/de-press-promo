@@ -5,13 +5,13 @@
 export const BODY_CLASS = "page-template page-template-page-careers page-template-page-careers-php page page-id-902 page--light lock-scroll";
 export const DATA_THEME = "careers";
 export const DATA_PAGE = "careers";
-export const PAGE_TITLE = "Careers - Dogstudio";
+export const PAGE_TITLE = "Помогать — de-press";
 export const MARKUP = `<!-- Wrapper -->
     <div class="site-wrapper">
               <div class="site-header">
   <div class="site-header-title">
-    <a href="/" class="site-header-logo" title="Return to Dogstudio's homepage">
-      <span class="u-visually-hidden">Dogstudio</span>
+    <a href="/" class="site-header-logo" title="На главную — de-press">
+      <span class="u-visually-hidden">de-press</span>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.23099 116.838">
         <path d="M97.9212,84.4793c0-13.21301-7.2132-23.3924-25.54961-23.3924h-19.6172v46.7851h19.6172c18.3364,0,25.54961-10.1797,25.54961-23.3927Zm-13.3478,0c0,9.2356-5.1908,12.6737-12.404,12.6737h-6.6739v-25.3474h6.6739c7.2132,0,12.404,3.4381,12.404,12.6737Z"/>
@@ -33,29 +33,29 @@ export const MARKUP = `<!-- Wrapper -->
     </a>
   </div>
 
-  <a href="/news/" class="site-header-posts">  <span class="svg svg-caret-left">
+  <a href="/safety/" class="site-header-posts">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our news</a>
-  <a href="/cases/" class="site-header-cases">  <span class="svg svg-caret-left">
+ Безопасность</a>
+  <a href="/" class="site-header-cases">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our cases</a>
+ Как устроено</a>
 
-  <button type="button" class="site-header-button" title="Toggle menu">
-    <span class="u-visually-hidden">Toggle menu</span>
+  <button type="button" class="site-header-button" title="Открыть меню">
+    <span class="u-visually-hidden">Открыть меню</span>
     <span class="button-bar button-bar--1"></span>
     <span class="button-bar button-bar--2"></span>
     <span class="button-bar button-bar--3"></span>
   </button>
 </div>
 
-<button type="button" class="site-volume" title="Toggle sound">
-  <span class="u-visually-hidden">Toggle sound</span>
+<button type="button" class="site-volume" title="Звук">
+  <span class="u-visually-hidden">Звук</span>
   <span class="pulsing-ui"></span>
 </button>
       
@@ -96,30 +96,30 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <ul class="site-menu-list">
                       
-        <li class="site-menu-item"><a href="/studio/" class="">The Studio</a></li>
+        <li class="site-menu-item"><a href="/studio/" class="">О проекте</a></li>
                       
-        <li class="site-menu-item"><a href="/cases/" class="">Our Cases</a></li>
+        <li class="site-menu-item"><a href="/" class="">Истории</a></li>
                                         
-        <li class="site-menu-item"><a href="/careers/" class="is-active">Careers</a></li>
+        <li class="site-menu-item"><a href="/careers/" class="is-active">Помогать</a></li>
                       
-        <li class="site-menu-item"><a href="/values/" class="">Our Values</a></li>
+        <li class="site-menu-item"><a href="/values/" class="">Принципы</a></li>
                       
-        <li class="site-menu-item"><a href="/contact/" class="">Contact</a></li>
+        <li class="site-menu-item"><a href="/contact/" class="">Связаться</a></li>
           </ul>
 
     <div class="site-menu-footer">
       <a href="https://vimeo.com/836218697" target="_blank" class="site-menu-showreel js-show-showreel">  <span class="svg svg-caret-right">
-  	<svg width="6" height="10" aria-label="dogstudio">
+  	<svg width="6" height="10" aria-label="de-press">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
- Watch our Showreel</a>
+ Манифест</a>
 
       <div class="site-menu-content">
         <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="We Make Good Shit">
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -128,11 +128,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Facebook</span>
+              <span class="u-from-desktop">Telegram</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -141,11 +141,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Instagram</span>
+              <span class="u-from-desktop">YouTube</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -154,11 +154,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Dribbble</span>
+              <span class="u-from-desktop">GitHub</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -167,7 +167,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Twitter</span>
+              <span class="u-from-desktop">E-mail</span>
             </a>
           </li>
           <li>
@@ -180,7 +180,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Newsletter</span>
+              <span class="u-from-desktop">Рассылка</span>
             </a>
           </li>
         </ul>
@@ -192,11 +192,11 @@ export const MARKUP = `<!-- Wrapper -->
       <div class="site-container" data-router-wrapper>
           <main data-router-view="careers">
     <section class="careers-intro">
-  <h1 class="u-visually-hidden">Wanna join the greatest band of misfits around these parts?</h1>
+  <h1 class="u-visually-hidden">Хочешь быть тем, кто слышит?</h1>
 
   <div class="center">
     <div class="title-wrapper js-in-view">
-      <span class="headline appear-fade-up">Careers</span>
+      <span class="headline appear-fade-up">Помогать</span>
 
       <div class="fx-parent">
         <div class="line"><span class="line-anim"></span></div>
@@ -276,13 +276,13 @@ export const MARKUP = `<!-- Wrapper -->
     </div>
 
     <div class="content-left js-in-view">
-      <span class="headline appear-fade-up">Before anything</span>
+      <span class="headline appear-fade-up">Для начала</span>
 
-      <p class="lead appear-fade-up appear-delay--2">We do pretty amazing shit from our offices in Belgium and Chicago, and for the record, we’re being modest you know. Just sayin’, JS. Now, we guess you don’t know where Belgium is, hu?</p>
+      <p class="lead appear-fade-up appear-delay--2">de-press — некоммерческий проект волонтёров. Мы не лечим и не ставим диагнозов: Helper — не терапевт. Наша работа — присутствие: услышать, ответить тихой фразой, быть рядом.</p>
     </div>
 
     <div class="content-right js-in-view appear-fade-up">
-      <p>Caesar was right, Belgians are the bravest and we’re all on a mission to make a difference. For you, for us, for your mom, your neighbours, for the rich, for the poor., for the curious, for the reluctant, for everyone. If you love us, you can strongly recommend us to the people you love, and if you hate us, you can strongly recommend us to the people you hate.</p>
+      <p>Принимать чужую боль непросто — поэтому у каждого Helper’а есть Anti-Panic, супервизия и право не отвечать. Границы здесь часть культуры, а не слабость.</p>
     </div>
   </div>
 </section>
@@ -291,149 +291,149 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="image-slider-wrapper js-dragzone">
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/writing.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/writing@2x.jpg 2x" alt="Sometimes we write shit on paper">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/writing.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/writing@2x.jpg 2x" alt="Иногда мы пишем от руки">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/writing-xs.jpg">
       </div>
 
-      <figcaption>Sometimes we write shit on paper</figcaption>
+      <figcaption>Иногда мы пишем от руки</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/pirates.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/pirates@2x.jpg 2x" alt="Pirates">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/pirates.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/pirates@2x.jpg 2x" alt="Тихая комната">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/pirates.jpg">
       </div>
 
-      <figcaption>Pirates</figcaption>
+      <figcaption>Тихая комната</figcaption>
     </figure>
 
     <figure>
       <div class="line line--revert"><span class="line-anim"></span></div>
       <div class="image-wrapper">
-        <img class="js-lazy" data-sgsrc="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry@2x.jpg 2x" alt="Isn't he cute ?">
+        <img class="js-lazy" data-sgsrc="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry@2x.jpg 2x" alt="Кружка чая">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry-xs.jpg">
       </div>
 
-      <figcaption>Isn't he cute ?</figcaption>
+      <figcaption>Просто портрет</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/thierry.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/thierry@2x.jpg 2x" alt="Faster Thierry, Faster !!">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/thierry.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/thierry@2x.jpg 2x" alt="Первый монолог">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/thierry-xs.jpg">
       </div>
 
-      <figcaption>Faster Thierry, Faster !!</figcaption>
+      <figcaption>Спокойнее, не спеши</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-1.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-1@2x.jpg 2x" alt="When temperatures go agove 25°c for the first time of the year, we’re throwing a BBQ. That’s right.">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-1.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-1@2x.jpg 2x" alt="Когда за окном дождь — завариваем чай и слушаем.">
       </div>
 
-      <figcaption>When temperatures go agove 25°c for the first time of the year, we’re throwing a BBQ. That’s right.</figcaption>
+      <figcaption>Когда становится тепло, мы просто гуляем. Без повода.</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/dinner.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/dinner@2x.jpg 2x" alt="Fancy Christmas diner night">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/dinner.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/dinner@2x.jpg 2x" alt="Вечер супервизии">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/dinner-xs.jpg">
       </div>
 
-      <figcaption>Fancy Christmas diner night</figcaption>
+      <figcaption>Тихий вечер вместе</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-sandwich.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-sandwich@2x.jpg 2x" alt="Barbecue²">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-sandwich.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-sandwich@2x.jpg 2x" alt="Тихие фразы²">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/barbecue-sandwich-xs.jpg">
       </div>
 
-      <figcaption>Barbecue²</figcaption>
+      <figcaption>Ужин²</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry-and-fox.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry-and-fox@2x.jpg 2x" alt="Chicago Tourist mode: enabled">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry-and-fox.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry-and-fox@2x.jpg 2x" alt="Режим тишины: включён">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry-and-fox-xs.jpg">
       </div>
 
-      <figcaption>Chicago Tourist mode: enabled</figcaption>
+      <figcaption>Прогулка по городу: включена</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/lego.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/lego@2x.jpg 2x" alt="We can also build with Lego bricks">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/lego.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/lego@2x.jpg 2x" alt="Мы тоже собираем слова по кусочкам">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/lego-xs.jpg">
       </div>
 
-      <figcaption>We can also build with Lego bricks</figcaption>
+      <figcaption>Строим из простых кубиков</figcaption>
     </figure>
 
     <figure>  
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/nico-and-brian-canada.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/nico-and-brian-canada@2x.jpg 2x" alt="The Chicago lads in Canada">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/nico-and-brian-canada.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/nico-and-brian-canada@2x.jpg 2x" alt="Helper’ы на разборе кейса">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/nico-and-brian-canada-xs.jpg">
       </div>
 
-      <figcaption>The Chicago lads in Canada</figcaption>
+      <figcaption>Команда в дороге</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/presentation.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/presentation@2x.jpg 2x" alt="Sometimes we give some talks">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/presentation.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/presentation@2x.jpg 2x" alt="Иногда мы просто молчим вместе">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/presentation-xs.jpg">
       </div>
 
-      <figcaption>Sometimes we give some talks</figcaption>
+      <figcaption>Иногда мы просто слушаем</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/mario-kart.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/mario-kart@2x.jpg 2x" alt="We also won a Mario Kart competition">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/mario-kart.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/mario-kart@2x.jpg 2x" alt="Наша Anti-Panic комната">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/mario-kart-xs.jpg">
       </div>
 
-      <figcaption>We also won a Mario Kart competition</figcaption>
+      <figcaption>И даже играем вместе</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/workshop.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/workshop@2x.jpg 2x" alt="Focused team">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/workshop.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/workshop@2x.jpg 2x" alt="Сфокусированное слушание">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/workshop-xs.jpg">
       </div>
 
-      <figcaption>Focused team</figcaption>
+      <figcaption>Сосредоточенная тишина</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/christmas-meal.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/christmas-meal@2x.jpg 2x" alt="Fancy Christmas diner night²">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/christmas-meal.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/christmas-meal@2x.jpg 2x" alt="Вечер супервизии²">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/christmas-meal-xs.jpg">
       </div>
 
-      <figcaption>Fancy Christmas diner night²</figcaption>
+      <figcaption>Тихий вечер вместе²</figcaption>
     </figure>
 
     <figure>
       <div class="image-wrapper">
-        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/brian-suitcases.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/brian-suitcases@2x.jpg 2x" alt="Transporting weirdly-green suitcases in airport, what could be in there ?">
+        <img class="js-lazy" data-src="/app/themes/portfolio-2018/static/assets/images/careers/slider/brian-suitcases.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/brian-suitcases@2x.jpg 2x" alt="Тихие планы на пилот — что там внутри?">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/brian-suitcases-xs.jpg">
       </div>
 
-      <figcaption>Transporting weirdly-green suitcases in airport, what could be in there ?</figcaption>
+      <figcaption>Странные зелёные чемоданы в аэропорту. Что там, как думаешь?</figcaption>
     </figure>
   </div>
 </section>
 
     
 <section class="careers-reasons">
-  <h2 class="u-visually-hidden">Now, our famous never-seen-on-tv "Seven Reasons Why"</h2>
+  <h2 class="u-visually-hidden">Семь причин стать Helper’ом</h2>
 
   <div class="center">
     <div class="careers-reasons-header">
       <div class="title-wrapper js-in-view">
-        <span class="headline appear-fade-up">A new blockbuster</span>
+        <span class="headline appear-fade-up">Маленький манифест</span>
 
         <p class="fx-parent">
 
@@ -511,19 +511,19 @@ export const MARKUP = `<!-- Wrapper -->
       </div>
 
       <div class="content-wrapper js-in-view appear-fade-up">
-        <p>We like that you tame unicorns at night, we love that you drive for hours listening to country music, we already crave you crazy motherf…WE SAID NO CURSING. We are always looking for new talent and we were expecting you. Time to apply, buddy!</p>
+        <p>Мы всегда рады людям, которые умеют слушать без оценок. Если это про тебя — время откликнуться, друг.</p>
       </div>
     </div>
 
     <div class="careers-reasons-list js-advantages">
-      <span class="reasons-number js-side-text js-in-view"><span class="text">Reason N°</span><span class="reasons-line"><span class="scroll-indicator js-scroll-indicator"></span></span></span>
+      <span class="reasons-number js-side-text js-in-view"><span class="text">Причина №</span><span class="reasons-line"><span class="scroll-indicator js-scroll-indicator"></span></span></span>
 
       <ol class="reasons-list reasons-list--1">
         <li class="is-active js-in-view link-on-active">
           <div class="reason-content appear-fade-up">
-            <h3>You get to join an amazing band of Pirates with a capital P.</h3>
-            <a href="mailto:hello@dogstudio.co" class="link link--caret">
-              <span class="link--caret-text">Let me apply now !</span>
+            <h3>Ты научишься слышать так, что людям станет легче.</h3>
+            <a href="mailto:hello@de-press.co" class="link link--caret">
+              <span class="link--caret-text">Откликнуться</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -536,9 +536,9 @@ export const MARKUP = `<!-- Wrapper -->
 
         <li class="js-in-view link-on-active">
           <div class="reason-content appear-fade-up">
-            <h3>You get your very own dog name. That’ll remind you of your summer camp days.</h3>
-            <a href="mailto:hello@dogstudio.co" class="link link--caret">
-              <span class="link--caret-text">Let me apply now !</span>
+            <h3>Ты войдёшь в сообщество, где границы уважают, а тишину не считают пустотой.</h3>
+            <a href="mailto:hello@de-press.co" class="link link--caret">
+              <span class="link--caret-text">Откликнуться</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -551,9 +551,9 @@ export const MARKUP = `<!-- Wrapper -->
 
         <li class="js-in-view link-on-active">
           <div class="reason-content appear-fade-up">
-            <h3>We believe in family-time before anything. We’re not into crazy late-night hours.</h3>
-            <a href="mailto:hello@dogstudio.co" class="link link--caret">
-              <span class="link--caret-text">Let me apply now !</span>
+            <h3>Помощь — не ночной созвон. Свои часы, свой темп.</h3>
+            <a href="mailto:hello@de-press.co" class="link link--caret">
+              <span class="link--caret-text">Откликнуться</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -566,9 +566,9 @@ export const MARKUP = `<!-- Wrapper -->
 
         <li class="js-in-view link-on-active">
           <div class="reason-content appear-fade-up">
-            <h3>We’re part on-location / part-remote, because life doesn’t always happen where we decide it should.</h3>
-            <a href="mailto:hello@dogstudio.co" class="link link--caret">
-              <span class="link--caret-text">Let me apply now !</span>
+            <h3>Часть смен онлайн, часть офлайн — жизнь случается там, где ты есть.</h3>
+            <a href="mailto:hello@de-press.co" class="link link--caret">
+              <span class="link--caret-text">Откликнуться</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -582,9 +582,9 @@ export const MARKUP = `<!-- Wrapper -->
 
       <div class="facts-slider js-facts-slider">
         <div class="content-wrapper js-in-view appear-fade-up">
-          <p>Because we heard it was mandatory to have a « facts » section, we decided to have one. You’re in for a treat with those totally irrelevant facts about us.</p>
+          <p>А ещё у нас есть раздел «фактов». Обещаем: только честные цифры про то, как устроена тишина.</p>
 
-          <p>Enjoy !</p>
+          <p>Поехали!</p>
         </div>
 
         <div class="facts-wrapper js-in-view appear-fade-up">
@@ -597,14 +597,14 @@ export const MARKUP = `<!-- Wrapper -->
   </div>
 
   <div class="facts-card-inner">
-    <p class="facts-card-number">543</p>
+    <p class="facts-card-number">1</p>
 
     <div class="facts-card-content">
               <h3 class="facts-card-title">
-          Times
+          Раз
         </h3>
       
-              <p class="facts-card-text">Is the number of times people asked us why we were called Dogstudio.<br/>Believe us, it’s not that interesting</p>
+              <p class="facts-card-text">Сколько раз нас спрашивали, почему мы называемся de-press.<br/>Поверь, история совсем не интересная</p>
       
       <p class="facts-card-index">
         01
@@ -626,10 +626,10 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="facts-card-content">
               <h3 class="facts-card-title">
-          Calories
+          Лайков
         </h3>
       
-              <p class="facts-card-text">Is around the number of calories you’ll ingest if you decide to follow team members going for a « fat » lunch.</p>
+              <p class="facts-card-text">Ровно ноль лайков и рейтингов страдания. Здесь не соревнуются в боли.</p>
       
       <p class="facts-card-index">
         02
@@ -651,10 +651,10 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="facts-card-content">
               <h3 class="facts-card-title">
-          Times
+          Шуток
         </h3>
       
-              <p class="facts-card-text">Is the number of times we laughed at your « dog-centered » jokes.<br/>Writing « lol » after them in your mail isn’t making it any better. Sorry.</p>
+              <p class="facts-card-text">Сколько раз мы слышали шутки про «ну это же просто лента».<br/>«Lol» в конце письма не делает их смешнее. Правда.</p>
       
       <p class="facts-card-index">
         03
@@ -676,10 +676,10 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="facts-card-content">
               <h3 class="facts-card-title">
-          Times
+          Номер
         </h3>
       
-              <p class="facts-card-text">Is the number of times Mathieu rolled on the floor of the office when he learned we won a site of the year with Dragone.</p>
+              <p class="facts-card-text">Номер, который мы напоминаем при кризисе — вместе с 103. И страница /safety всегда рядом.</p>
       
       <p class="facts-card-index">
         04
@@ -701,10 +701,10 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="facts-card-content">
               <h3 class="facts-card-title">
-          Languages
+          Пометок
         </h3>
       
-              <p class="facts-card-text">Is the number of official languages in Belgium, so, to make it simpler, we’re speaking both French and English. </p>
+              <p class="facts-card-text">ИИ-ответы всегда помечены: без скрытых роботов-собеседников и без диагнозов. </p>
       
       <p class="facts-card-index">
         05
@@ -722,14 +722,14 @@ export const MARKUP = `<!-- Wrapper -->
   </div>
 
   <div class="facts-card-inner">
-    <p class="facts-card-number">32</p>
+    <p class="facts-card-number">ZK</p>
 
     <div class="facts-card-content">
               <h3 class="facts-card-title">
-          Freaks & geeks
+          карты эмоций
         </h3>
       
-              <p class="facts-card-text">Is around the number of freaks & geeks we are, give or take.</p>
+              <p class="facts-card-text">Эмоциональные карты живут только на устройстве пользователя — сервер их не видит.</p>
       
       <p class="facts-card-index">
         06
@@ -747,14 +747,14 @@ export const MARKUP = `<!-- Wrapper -->
   </div>
 
   <div class="facts-card-inner">
-    <p class="facts-card-number">16</p>
+    <p class="facts-card-number">0 ₽</p>
 
     <div class="facts-card-content">
               <h3 class="facts-card-title">
-          Yearly planes
+          Ноль
         </h3>
       
-              <p class="facts-card-text">Is the number of yearly planes taken by Nico to meet with our clients from all over the United States.</p>
+              <p class="facts-card-text">Проект некоммерческий: без рекламы, без продажи данных, без подписок за внимание.</p>
       
       <p class="facts-card-index">
         07
@@ -770,9 +770,9 @@ export const MARKUP = `<!-- Wrapper -->
       <ol class="reasons-list reasons-list--2">
         <li class="js-in-view link-on-active">
           <div class="reason-content appear-fade-up">
-            <h3>You get paid to make people’s life easier and more exciting. Isn’t that great?</h3>
-            <a href="mailto:hello@dogstudio.co" class="link link--caret">
-              <span class="link--caret-text">Let me apply now !</span>
+            <h3>Ты помогаешь людям почувствовать, что они не одни. Разве это не лучшая причина?</h3>
+            <a href="mailto:hello@de-press.co" class="link link--caret">
+              <span class="link--caret-text">Откликнуться</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -785,9 +785,9 @@ export const MARKUP = `<!-- Wrapper -->
 
         <li class="js-in-view link-on-active">
           <div class="reason-content appear-fade-up">
-            <h3>Independence is everything. We’re adults, right? We’ll treat you like one.</h3>
-            <a href="mailto:hello@dogstudio.co" class="link link--caret">
-              <span class="link--caret-text">Let me apply now !</span>
+            <h3>Самостоятельность — всё. Мы работаем со взрослыми людьми и уважаем их границы.</h3>
+            <a href="mailto:hello@de-press.co" class="link link--caret">
+              <span class="link--caret-text">Откликнуться</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -800,9 +800,9 @@ export const MARKUP = `<!-- Wrapper -->
 
         <li class="js-in-view link-on-active">
           <div class="reason-content appear-fade-up">
-            <h3>Female, transgender, male, gay, straight, POC, white, human or alien, however your identities intersect, we welcome your difference here.</h3>
-            <a href="mailto:hello@dogstudio.co" class="link link--caret">
-              <span class="link--caret-text">Let me apply now !</span>
+            <h3>Кем бы ты ни был(а) и как бы ни определял(а) себя — здесь рады твоей особенности. Тишина принимает всех.</h3>
+            <a href="mailto:hello@de-press.co" class="link link--caret">
+              <span class="link--caret-text">Откликнуться</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -895,13 +895,13 @@ export const MARKUP = `<!-- Wrapper -->
         <span class="end-quote fx-letter fx-letter--48">„</span>
       </span>
 
-      <cite class="appear-fade-up appear-delay--10">Jean Claude Van Damme</cite>
+      <cite class="appear-fade-up appear-delay--10">Тихий час</cite>
     </blockquote>
   </div>
 </section>
 
           <section class="careers-location" id="">
-  <h2 class="u-visually-hidden">Chicago</h2>
+  <h2 class="u-visually-hidden">Онлайн</h2>
 
   <div class="center">
     <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-2.png" class="js-in-view appear-fade branch branch--2" />
@@ -912,10 +912,10 @@ export const MARKUP = `<!-- Wrapper -->
     
     <div class="content-wrapper">
       <div class="js-in-view">
-        <span class="headline appear-fade appear-delay--3">Midwest is best</span>
+        <span class="headline appear-fade appear-delay--3">Слушание — это навык</span>
 
         <div class="careers-location-title fx-parent">
-          <span class="u-visually-hidden">Open positions in</span>
+          <span class="u-visually-hidden">Роль: Helper (слушающий)</span>
                     
                                   <span class="fx-word">
                                               <span class="fx-letter fx-letter--1">C</span>
@@ -927,14 +927,14 @@ export const MARKUP = `<!-- Wrapper -->
                                               <span class="fx-letter fx-letter--7">o</span>
                           </span>
                   </div>
-        <p class="appear-fade-up appear-delay--4">Because we wanted to retain our small-town charm, we chose the lovely neighborhood of Lincoln Park to be our Chicagoan landmark, and we must say that so far, we love every part of it. All it needs now is you, in there.</p>
+        <p class="appear-fade-up appear-delay--4">Проводишь тихие смены в inbox: читаешь монологи, отвечаешь «Я слышу тебя» и тихими фразами. Обучение и супервизия — прилагаются. Терапевтом быть не придётся, обещаем.</p>
       </div>
 
           </div>
   </div>
 </section>
           <section class="careers-location is-reversed" id="">
-  <h2 class="u-visually-hidden">Netherlands</h2>
+  <h2 class="u-visually-hidden">Пилот</h2>
 
   <div class="center">
     <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-3.png" class="js-in-view appear-fade branch branch--3" />
@@ -945,10 +945,10 @@ export const MARKUP = `<!-- Wrapper -->
     
     <div class="content-wrapper">
       <div class="js-in-view">
-        <span class="headline appear-fade appear-delay--3">Bikes and Bitterballen</span>
+        <span class="headline appear-fade appear-delay--3">Меньше шума — больше смысла</span>
 
         <div class="careers-location-title fx-parent">
-          <span class="u-visually-hidden">Open positions in</span>
+          <span class="u-visually-hidden">Роль: Модератор тишины</span>
                     
                                   <span class="fx-word">
                                               <span class="fx-letter fx-letter--1">N</span>
@@ -964,7 +964,7 @@ export const MARKUP = `<!-- Wrapper -->
                                               <span class="fx-letter fx-letter--11">s</span>
                           </span>
                   </div>
-        <p class="appear-fade-up appear-delay--4">Who has ever been in Amsterdam can recognize at least two things: 1) It's such an exciting and active city, and 2) watch where you step or you'll crash into a biker. Let's say we couldn't get enough "Bitterballen" and decided to give it a shot.
+        <p class="appear-fade-up appear-delay--4">Следишь, чтобы инварианты работали: без лайков, без оценок, без toxic positivity. Мягко и по правилам, которые открыты всем.
 </p>
       </div>
 
@@ -972,7 +972,7 @@ export const MARKUP = `<!-- Wrapper -->
   </div>
 </section>
           <section class="careers-location" id="">
-  <h2 class="u-visually-hidden">Mexico</h2>
+  <h2 class="u-visually-hidden">Продукт</h2>
 
   <div class="center">
     <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-3.png" class="js-in-view appear-fade branch branch--3" />
@@ -983,10 +983,10 @@ export const MARKUP = `<!-- Wrapper -->
     
     <div class="content-wrapper">
       <div class="js-in-view">
-        <span class="headline appear-fade appear-delay--3">Te gusta la Cerveza?</span>
+        <span class="headline appear-fade appear-delay--3">Код — тоже забота</span>
 
         <div class="careers-location-title fx-parent">
-          <span class="u-visually-hidden">Open positions in</span>
+          <span class="u-visually-hidden">Роль: Разработчик</span>
                     
                                   <span class="fx-word">
                                               <span class="fx-letter fx-letter--1">M</span>
@@ -997,14 +997,14 @@ export const MARKUP = `<!-- Wrapper -->
                                               <span class="fx-letter fx-letter--6">o</span>
                           </span>
                   </div>
-        <p class="appear-fade-up appear-delay--4">We love Mexico, how vibrant it is, and how much it seems to align with our values and interest for great people, food, design and art scene. Don't hesitate to drop by even to say hi... we love meeting new people.</p>
+        <p class="appear-fade-up appear-delay--4">Помогаешь строить платформу и собственный GL-модуль промо. Открытый код, спокойный темп, никакой гонки фич.</p>
       </div>
 
           </div>
   </div>
 </section>
           <section class="careers-location is-reversed" id="">
-  <h2 class="u-visually-hidden">Namur</h2>
+  <h2 class="u-visually-hidden">История</h2>
 
   <div class="center">
     <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-3.png" class="js-in-view appear-fade branch branch--3" />
@@ -1015,10 +1015,10 @@ export const MARKUP = `<!-- Wrapper -->
     
     <div class="content-wrapper">
       <div class="js-in-view">
-        <span class="headline appear-fade appear-delay--3">Where it all began</span>
+        <span class="headline appear-fade appear-delay--3">Там, где всё началось</span>
 
         <div class="careers-location-title fx-parent">
-          <span class="u-visually-hidden">Open positions in</span>
+          <span class="u-visually-hidden">Роль: Автор</span>
                     
                                   <span class="fx-word">
                                               <span class="fx-letter fx-letter--1">N</span>
@@ -1028,7 +1028,7 @@ export const MARKUP = `<!-- Wrapper -->
                                               <span class="fx-letter fx-letter--5">r</span>
                           </span>
                   </div>
-        <p class="appear-fade-up appear-delay--4">Our headquarters are located in Namur, where, a while ago, it all started. You know the extra good news though? It's that twice a week, if you want it, you get to work from Brussels or Liege. Isn’t it cool? First you gotta apply though. JS. Just sayin’.</p>
+        <p class="appear-fade-up appear-delay--4">Пишешь монологи и тихие фразы, ведёшь манифест и историю проекта. Твой опыт может стать чьей-то «похожей историей».</p>
       </div>
 
           </div>
@@ -1041,8 +1041,8 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="showreel-backdrop js-close-showreel"></div>
 
   <div class="showreel-wrapper">
-    <button type="button" class="showreel-close js-close-showreel" title="Close showreel">
-      <span class="u-visually-hidden">Close showreel</span>
+    <button type="button" class="showreel-close js-close-showreel" title="Закрыть манифест">
+      <span class="u-visually-hidden">Закрыть манифест</span>
     </button>
 
     <div class="showreel-video">
@@ -1052,12 +1052,12 @@ export const MARKUP = `<!-- Wrapper -->
 </div>
       <div class="site-cookie js-cookie">
   <p class="site-cookie__text">
-    We use functional cookies to make the website work properly and analytical cookies to measure your behavior. We collect data on how you use our website to make our website easier to use. By clicking accept you agree to this. More information? <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">Read our cookie policy</a>.
+    Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. <a href="/values/" target="_blank">Подробнее о приватности</a>.
   </p>
 
   <div class="site-cookie__buttons">
-    <button type="button" class="site-cookie__button js-cookie-accept">Accept</button>
-    <button type="button" class="site-cookie__button js-cookie-deny">Deny</button>
+    <button type="button" class="site-cookie__button js-cookie-accept">Хорошо</button>
+    <button type="button" class="site-cookie__button js-cookie-deny">Отклонить</button>
   </div>
 </div>
 
@@ -1067,28 +1067,28 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <div class="site-footer-top">
       <div class="site-footer-block site-footer-block--address appear-fade-up">
-        <h3>Chicago <b>.</b></h3>
+        <h3>Тишина <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--1">
-        <h3>Amsterdam <b>.</b></h3>
+        <h3>Эмпатия <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--2">
-        <h3>Paris <b>.</b></h3>
+        <h3>Забота <b>.</b></h3>
               </div>
 
       
       
       <div class="site-footer-block site-footer-block--social appear-fade-up appear-delay--3">
         <h2 class="site-footer-title">
-          <span class="u-visually-hidden">Contact us</span>
+          <span class="u-visually-hidden">Написать нам</span>
           <svg class="baseline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.67 54.43"><path d="M592.66,694.59l-3-9.13-.81-.69h4.06l-.89.69,2.17,7.06,1.4-5-.7-2.15-.78-.59h4.06l-.92.59,2.21,7.17,2.17-7.09-1-.66h2.28l-.91.66-2.74,8.86-1.35.3L595.77,688,594,694.29Z" transform="translate(-575.91 -684.77)"/><path d="M604,694.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,690a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,694.53,604,694.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M585.52,700.74l-3.23,8.77h-1l-3.43-9.09v8.46l.93.57h-2.09l.87-.57v-8.4l-.87-.71h3.22l2.93,7.43,2.75-7.43h3l-.9.71v8.4l.9.57h-3.84l.79-.57Z" transform="translate(-575.91 -684.77)"/><path d="M592.23,702.71a3.85,3.85,0,0,1,.6.09,1.86,1.86,0,0,1,.44.16,1.67,1.67,0,0,1,.33.23,2,2,0,0,1,.47,1.53v3a3.81,3.81,0,0,0,0,.61,7.26,7.26,0,0,0,.14.72l.65.39h-2.47l-.33-1-1.89,1.22a2.77,2.77,0,0,1-.77-.1,1.77,1.77,0,0,1-.63-.32,1.48,1.48,0,0,1-.42-.54,1.76,1.76,0,0,1-.15-.75,2.15,2.15,0,0,1,.16-.8,1.65,1.65,0,0,1,.6-.72l3.05-.91v-1.24c0-.18,0-.33,0-.48a.89.89,0,0,0-.1-.36.52.52,0,0,0-.26-.22,1.21,1.21,0,0,0-.48-.08l-.28,0-.32.09-1.17,2-.92-1.37s.8-.46,1.44-.77A3.87,3.87,0,0,1,592.23,702.71Zm-.18,3s-1.3.25-1.6,1a2,2,0,0,0-.14.75,1.51,1.51,0,0,0,.21.86.65.65,0,0,0,.56.32,1,1,0,0,0,.41-.1,1.76,1.76,0,0,0,.33-.19l.22-.15Z" transform="translate(-575.91 -684.77)"/><path d="M596.69,705.72l2.67-2-.59-.85h2.18l-2.72,2,2.75,3.95.69.63H599l-2.28-3.58v2.83l.73.75H594l.73-.62v-8.19L594,700l2.46-.4h.22Z" transform="translate(-575.91 -684.77)"/><path d="M604,709.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,705a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,709.53,604,709.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M583.69,723.76c-.27.09-.55.17-.86.25a9,9,0,0,1-1,.19,8.66,8.66,0,0,1-1.15.07,5.17,5.17,0,0,1-1.82-.32,4.46,4.46,0,0,1-1.53-.95,4.53,4.53,0,0,1-1-1.52,5.11,5.11,0,0,1-.39-2,4.89,4.89,0,0,1,1.41-3.72,6.4,6.4,0,0,1,4-1.58,6.83,6.83,0,0,1,1.78.2,7.27,7.27,0,0,1,1.34.5v2.58l-1.34-2.25a2.43,2.43,0,0,0-.72-.56,2.27,2.27,0,0,0-1.05-.21,2.21,2.21,0,0,0-1.2.34,2.94,2.94,0,0,0-.93,1,5.1,5.1,0,0,0-.6,1.5,8.24,8.24,0,0,0-.21,2,10.63,10.63,0,0,0,.16,1.88,5.76,5.76,0,0,0,.48,1.54,2.88,2.88,0,0,0,.82,1A1.88,1.88,0,0,0,581,724a1.73,1.73,0,0,0,1.34-.57v-3.11l-1-.73h3.87l-.75.73v3.14C584.22,723.56,584,723.67,583.69,723.76Z" transform="translate(-575.91 -684.77)"/><path d="M588.45,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.73,3.73,0,0,1-.23-1.35,3.45,3.45,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.28,4.28,0,0,1,1.15-.7,9.18,9.18,0,0,1,1.4-.46,3.13,3.13,0,0,1,1.23.24,2.93,2.93,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.52,3.52,0,0,1-.28,1.47,3.07,3.07,0,0,1-.77,1,4.1,4.1,0,0,1-1.15.7A9.36,9.36,0,0,1,588.45,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.19,5.19,0,0,0-.3,2.05,6.36,6.36,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.27,6.27,0,0,0-.43-2.65Q589.16,717.67,588.57,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M595.39,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.72,3.72,0,0,1-.24-1.35,3.46,3.46,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.29,4.29,0,0,1,1.15-.7,9.19,9.19,0,0,1,1.4-.46,3.12,3.12,0,0,1,1.23.24,2.94,2.94,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.5,3.5,0,0,1-.28,1.47,3,3,0,0,1-.77,1,4.08,4.08,0,0,1-1.15.7A9.39,9.39,0,0,1,595.39,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.21,5.21,0,0,0-.3,2.05,6.34,6.34,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.29,6.29,0,0,0-.43-2.65Q596.09,717.67,595.5,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M602,724.25a2.37,2.37,0,0,1-1.05-.23,2.58,2.58,0,0,1-.84-.66,3.21,3.21,0,0,1-.57-1,3.73,3.73,0,0,1-.21-1.26,5.08,5.08,0,0,1,.17-1.31,3.39,3.39,0,0,1,.53-1.12,3.29,3.29,0,0,1,.93-.86,4.17,4.17,0,0,1,1.39-.53,2.54,2.54,0,0,1,1.4.38v-2.52l-.75-.54,2.46-.4h.21v8.08a3.87,3.87,0,0,0,0,.64,5.56,5.56,0,0,0,.16.55l.74.21-2.43.48-.39-1.34Zm-.54-3.85a6.51,6.51,0,0,0,.08,1.07,3.29,3.29,0,0,0,.25.84,1.54,1.54,0,0,0,.4.54.82.82,0,0,0,.54.19,1,1,0,0,0,.39-.06,2.54,2.54,0,0,0,.43-.25l.19-.14v-4.47a1,1,0,0,0-.3-.29.83.83,0,0,0-.46-.12,1.21,1.21,0,0,0-1.15.73A4.38,4.38,0,0,0,601.45,720.4Z" transform="translate(-575.91 -684.77)"/><path d="M586.22,737.57a5.06,5.06,0,0,0,.93.85,2,2,0,0,0,1.2.37,1.74,1.74,0,0,0,1.22-.42,1.45,1.45,0,0,0,.46-1.12,1.71,1.71,0,0,0-.3-1,3.5,3.5,0,0,0-1-.89l-1.84-1.22c-.23-.16-.44-.31-.63-.46a3,3,0,0,1-.49-.5,2.14,2.14,0,0,1-.32-.6,2.24,2.24,0,0,1-.12-.76,2.42,2.42,0,0,1,.17-.91,2.09,2.09,0,0,1,.57-.78,3.77,3.77,0,0,1,1-.62,5,5,0,0,1,3-.32,5.54,5.54,0,0,1,.63.15l.69.23v2.51l-1.12-2a2.43,2.43,0,0,0-.7-.52,2,2,0,0,0-.87-.19,1.69,1.69,0,0,0-1.13.37,1.3,1.3,0,0,0-.44,1.05,1.36,1.36,0,0,0,.34.95,4.12,4.12,0,0,0,.92.74l1.8,1.19a4.07,4.07,0,0,1,1.21,1.08,2.42,2.42,0,0,1,.38,1.39,2.54,2.54,0,0,1-.19,1,2.43,2.43,0,0,1-.61.85,4.18,4.18,0,0,1-1.11.7,8.58,8.58,0,0,1-1.68.53,5.37,5.37,0,0,1-1.53-.2,5.71,5.71,0,0,1-1.37-.64v-2.57Z" transform="translate(-575.91 -684.77)"/><path d="M591.63,739l.72-.57V730l-.75-.44,2.46-.4h.22v4.6l2.45-1.52a2.3,2.3,0,0,1,.81.11,1.32,1.32,0,0,1,.46.29,1.16,1.16,0,0,1,.19.24,1.14,1.14,0,0,1,.12.31,3.24,3.24,0,0,1,.06.44c0,.17,0,.38,0,.63v4.17l.8.57h-3.33l.51-.57v-4.24a1,1,0,0,0-.16-.64.58.58,0,0,0-.48-.19,1.2,1.2,0,0,0-.53.11l-.53.29-.39.24v4.43l.53.57Z" transform="translate(-575.91 -684.77)"/><path d="M598.69,739l.73-.57v-5l-.77-.56,2.47-.52h.23v6.11l.73.57Z" transform="translate(-575.91 -684.77)"/><path d="M601.84,732.8v-.22h.86v-.94l1.94-1.76v2.7h1.75v.22h-1.75v4.45a.82.82,0,0,0,.21.63.77.77,0,0,0,.55.2A2,2,0,0,0,606,738a3.52,3.52,0,0,0,.54-.22l.1.19-2.31,1.19a1.42,1.42,0,0,1-1.21-.48,2.12,2.12,0,0,1-.37-1.31V732.8Z" transform="translate(-575.91 -684.77)"/><circle cx="24.46" cy="45.67" r="0.97"/></svg>
         </h2>
 
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -1097,11 +1097,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Fb</span>
+              <span class="u-from-desktop">Tg</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -1110,11 +1110,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Ins</span>
+              <span class="u-from-desktop">Yt</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -1123,11 +1123,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Dri</span>
+              <span class="u-from-desktop">Gh</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -1136,7 +1136,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Tw</span>
+              <span class="u-from-desktop">@</span>
             </a>
           </li>
         </ul>
@@ -1145,25 +1145,25 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="site-footer-bottom">
       <p class="site-footer-contact appear-fade-up">
-        We'd love to hear from you
-        <a href="mailto:biz@dogstudio.be">biz@dogstudio.be</a>
+        Хочешь помочь проекту — напиши:
+        <a href="mailto:hello@de-press.co">hello@de-press.co</a>
       </p>
 
       <div class="site-footer-right">
         <p class="site-footer-newsletter appear-fade-up appear-delay--4">
-          <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">
-            Privacy Policy
+          <a href="/values/" target="_blank">
+            Приватность
                       </a>
         </p>
 
         <div class="site-footer-languages appear-fade-up appear-delay--5">
-          Language:
+          Язык:
 
                                 <ul>
                               <li class="is-active">
-                  <a href="/careers/" title="English" data-router-disabled>
+                  <a href="/careers/" title="Русский" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-en.jpg" />
-                    English
+                    Русский
 
                                             <span class="svg svg-caret-right">
   	<svg width="5" height="9">
@@ -1174,9 +1174,9 @@ export const MARKUP = `<!-- Wrapper -->
                                       </a>
                 </li>
                               <li>
-                  <a href="/mx/careers/" title="Español" data-router-disabled>
+                  <a href="/mx/careers/" title="English" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-mx.jpg" />
-                    Español
+                    English
 
                                       </a>
                 </li>

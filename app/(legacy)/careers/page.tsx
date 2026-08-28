@@ -4,7 +4,8 @@ import * as page from "@/components/legacy/markups/careers";
 
 export const metadata: Metadata = {
   title: page.PAGE_TITLE,
-  description: "Careers at Dogstudio.",
+  description:
+    "Помогать в de-press: стать Helper’ом, модератором тишины, разработчиком или автором. Helper ≠ терапевт.",
 };
 
 export default createLegacyPage(page);

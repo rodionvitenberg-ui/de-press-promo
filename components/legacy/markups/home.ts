@@ -5,13 +5,13 @@
 export const BODY_CLASS = "home page-template page-template-page-home page-template-page-home-php page page-id-5  lock-scroll";
 export const DATA_THEME = "home";
 export const DATA_PAGE = "home";
-export const PAGE_TITLE = "Dogstudio. Multidisciplinary Creative Studio.";
+export const PAGE_TITLE = "de-press — тебя услышат";
 export const MARKUP = `<!-- Wrapper -->
     <div class="site-wrapper">
               <div class="site-header">
   <div class="site-header-title">
-    <a href="/" class="site-header-logo" title="Return to Dogstudio's homepage">
-      <span class="u-visually-hidden">Dogstudio</span>
+    <a href="/" class="site-header-logo" title="На главную — de-press">
+      <span class="u-visually-hidden">de-press</span>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.23099 116.838">
         <path d="M97.9212,84.4793c0-13.21301-7.2132-23.3924-25.54961-23.3924h-19.6172v46.7851h19.6172c18.3364,0,25.54961-10.1797,25.54961-23.3927Zm-13.3478,0c0,9.2356-5.1908,12.6737-12.404,12.6737h-6.6739v-25.3474h6.6739c7.2132,0,12.404,3.4381,12.404,12.6737Z"/>
@@ -33,29 +33,29 @@ export const MARKUP = `<!-- Wrapper -->
     </a>
   </div>
 
-  <a href="/news/" class="site-header-posts">  <span class="svg svg-caret-left">
+  <a href="/safety/" class="site-header-posts">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our news</a>
-  <a href="/cases/" class="site-header-cases">  <span class="svg svg-caret-left">
+ Безопасность</a>
+  <a href="/" class="site-header-cases">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our cases</a>
+ Как устроено</a>
 
-  <button type="button" class="site-header-button" title="Toggle menu">
-    <span class="u-visually-hidden">Toggle menu</span>
+  <button type="button" class="site-header-button" title="Открыть меню">
+    <span class="u-visually-hidden">Открыть меню</span>
     <span class="button-bar button-bar--1"></span>
     <span class="button-bar button-bar--2"></span>
     <span class="button-bar button-bar--3"></span>
   </button>
 </div>
 
-<button type="button" class="site-volume" title="Toggle sound">
-  <span class="u-visually-hidden">Toggle sound</span>
+<button type="button" class="site-volume" title="Звук">
+  <span class="u-visually-hidden">Звук</span>
   <span class="pulsing-ui"></span>
 </button>
       
@@ -96,30 +96,30 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <ul class="site-menu-list">
                       
-        <li class="site-menu-item"><a href="/studio/" class="">The Studio</a></li>
+        <li class="site-menu-item"><a href="/studio/" class="">О проекте</a></li>
                       
-        <li class="site-menu-item"><a href="/cases/" class="">Our Cases</a></li>
+        <li class="site-menu-item"><a href="/" class="">Истории</a></li>
                       
-        <li class="site-menu-item"><a href="/careers/" class="">Careers</a></li>
+        <li class="site-menu-item"><a href="/careers/" class="">Помогать</a></li>
                       
-        <li class="site-menu-item"><a href="/values/" class="">Our Values</a></li>
+        <li class="site-menu-item"><a href="/values/" class="">Принципы</a></li>
                       
-        <li class="site-menu-item"><a href="/contact/" class="">Contact</a></li>
+        <li class="site-menu-item"><a href="/contact/" class="">Связаться</a></li>
           </ul>
 
     <div class="site-menu-footer">
       <a href="https://vimeo.com/836218697" target="_blank" class="site-menu-showreel js-show-showreel">  <span class="svg svg-caret-right">
-  	<svg width="6" height="10" aria-label="dogstudio">
+  	<svg width="6" height="10" aria-label="de-press">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
- Watch our Showreel</a>
+ Манифест</a>
 
       <div class="site-menu-content">
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="We Make Good Shit">
+        <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="Тебя услышат">
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -128,11 +128,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Facebook</span>
+              <span class="u-from-desktop">Telegram</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -141,11 +141,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Instagram</span>
+              <span class="u-from-desktop">YouTube</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -154,11 +154,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Dribbble</span>
+              <span class="u-from-desktop">GitHub</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -167,7 +167,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Twitter</span>
+              <span class="u-from-desktop">E-mail</span>
             </a>
           </li>
           <li>
@@ -180,7 +180,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Newsletter</span>
+              <span class="u-from-desktop">Рассылка</span>
             </a>
           </li>
         </ul>
@@ -191,7 +191,7 @@ export const MARKUP = `<!-- Wrapper -->
       
       <div class="site-container" data-router-wrapper>
           <main data-router-view="home" role="main">
-    <h1 class="u-visually-hidden">Dogstudio</h1>
+    <h1 class="u-visually-hidden">de-press</h1>
 
     <picture class="home-background js-in-view appear-fade">
       <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/background-xxs.png" media="(max-width: 450px)">
@@ -202,7 +202,7 @@ export const MARKUP = `<!-- Wrapper -->
 
         
 <section class="home-hero js-in-view">
-  <h2 class="u-visually-hidden">We Make Good Shit</h2>
+  <h2 class="u-visually-hidden">Тебя услышат</h2>
 
   <div class="center">
     <div class="line line--revert line--1"><span class="line-anim"></span></div>
@@ -235,30 +235,30 @@ export const MARKUP = `<!-- Wrapper -->
           </p>
 
     <a href="https://vimeo.com/836218697" target="_blank" class="home-hero-showreel js-show-showreel">  <span class="svg svg-caret-right">
-  	<svg width="6" height="10" aria-label="dogstudio">
+  	<svg width="6" height="10" aria-label="de-press">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
- Our Showreel</a>
+ Манифест</a>
 
     <div class="home-hero-content">
       <p class="lead">
-        <span>Dogstudio is a multidisciplinary</span>
-        <span>creative studio at the intersection</span>
-        <span>of art, design and technology.</span>
+        <span>de-press — тихая гавань</span>
+        <span>для тех, кому сейчас</span>
+        <span>эмоционально тяжело.</span>
       </p>
 
       <p>
-        <span>Our goal is to deliver amazing experiences that make</span>
-        <span>people talk, and build strategic value for brands, tech,</span>
-        <span>entertainment, arts & culture.</span>
+        <span>Вместо лайков, рейтингов и публичных реакций —</span>
+        <span>тишина, истории и человек рядом, который скажет:</span>
+        <span>«Я слышу тебя».</span>
       </p>
       <ul>
-        <li><a href="https://www.facebook.com/dogstudio/" target="_blank">Facebook</a></li>
-        <li><a href="https://www.instagram.com/dogstudio.co/" target="_blank">Instagram</a></li>
-        <li><a href="https://dribbble.com/dogstudio" target="_blank">Dribbble</a></li>
-        <li><a href="https://twitter.com/Dogstudio" target="_blank">Twitter</a></li>
-        <li><a href="/newsletter/">Newsletter</a></li>
+        <li><a href="https://t.me/depressco" target="_blank">Telegram</a></li>
+        <li><a href="https://youtube.com/@depressco" target="_blank">YouTube</a></li>
+        <li><a href="https://github.com/de-press" target="_blank">GitHub</a></li>
+        <li><a href="mailto:hello@de-press.co" target="_blank">E-mail</a></li>
+        <li><a href="/newsletter/">Рассылка</a></li>
       </ul>
     </div>
   </div>
@@ -267,42 +267,42 @@ export const MARKUP = `<!-- Wrapper -->
         
 <section class="home-cases">
   <div class="center">
-    <h2 class="home-cases-title js-in-view appear-fade-up">Featured projects</h2>
+    <h2 class="home-cases-title js-in-view appear-fade-up">Истории</h2>
 
     <div class="line line--revert js-in-view"><span class="line-anim"></span></div>
 
     <ul class="home-cases-list js-cases-list">
-              <li class="js-in-view appear-fade-up"><a href="/cases/tomorrowland/" data-theme="tomorrowland" data-matcap="18, 18"><span>2020 - Ongoing</span> Tomorrowland</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/cases/navy-pier/" data-theme="navy-pier" data-matcap="7, 7"><span>2018 - Today</span> Navy Pier</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/cases/msi-chicago/" data-theme="msi-chicago" data-matcap="8, 8"><span>2015 - Today</span> MSI Chicago</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/cases/voo/" data-theme="this-was-louises-phone" data-matcap="11, 11"><span>2016</span> This Was Louise’s Phone</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/cases/kikk-festival-2018/" data-theme="kikk-18" data-matcap="9, 9"><span>2012 - Today</span> KIKK Festival 2018</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/cases/the-kennedy-center/" data-theme="the-kennedy-center" data-matcap="10, 10"><span>2017</span> The Kennedy Center</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/cases/royal-opera-of-wallonia/" data-theme="orw" data-matcap="12, 12"><span>2016 - Ongoing</span> Royal Opera Of Wallonia</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="tomorrowland" data-matcap="18, 18"><span>Публичное</span> Монолог</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="navy-pier" data-matcap="7, 7"><span>Публичное</span> Я слышу тебя</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="msi-chicago" data-matcap="8, 8"><span>Публичное</span> Тихие фразы</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="this-was-louises-phone" data-matcap="11, 11"><span>Публичное</span> Похожая история</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="kikk-18" data-matcap="9, 9"><span>Автору</span> Pulse</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="the-kennedy-center" data-matcap="10, 10"><span>Автору</span> Hearers</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="orw" data-matcap="12, 12"><span>Безопасность</span> Anti-Panic</a></li>
           </ul>
   </div>
 
   <div class="home-cases-scenes">
           <div class="home-cases-scene home-cases-scene--tomorrowland">
-        <h3 class="u-visually-hidden">Tomorrowland</h3>
+        <h3 class="u-visually-hidden">Монолог</h3>
 
         <div class="inner">
-          <a href="/cases/tomorrowland/" class="home-cases-link"><span class="u-visually-hidden">Tomorrowland</span></a>
+          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Монолог</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Web</p>
+                          <p class="home-cases-headline">Облачко</p>
             
-            <p class="home-cases-name">Tomorrowland</p>
+            <p class="home-cases-name">Монолог</p>
             <p class="home-cases-text">
                             
-                              <span class="home-cases-line">Building a new kind of</span>
+                              <span class="home-cases-line">Твоя история — без лайков,</span>
                               <span class="home-cases-line">
-immersive experience for</span>
+без оценок и без гонки</span>
                               <span class="home-cases-line">
-the famous music festival</span>
+за вниманием.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Discover</span>
+              <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -321,25 +321,25 @@ the famous music festival</span>
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--navy-pier">
-        <h3 class="u-visually-hidden">Navy Pier</h3>
+        <h3 class="u-visually-hidden">Я слышу тебя</h3>
 
         <div class="inner">
-          <a href="/cases/navy-pier/" class="home-cases-link"><span class="u-visually-hidden">Navy Pier</span></a>
+          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Я слышу тебя</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Strategy</p>
+                          <p class="home-cases-headline">Реакция</p>
             
-            <p class="home-cases-name">Navy Pier</p>
+            <p class="home-cases-name">Я слышу тебя</p>
             <p class="home-cases-text">
                             
-                              <span class="home-cases-line">&quot;Enchanted Waters&quot; is an immersive</span>
+                              <span class="home-cases-line">Единственная реакция здесь —</span>
                               <span class="home-cases-line">
-and uplifting reflection on Chicago’s</span>
+не лайк, а присутствие:</span>
                               <span class="home-cases-line">
-relationship with Lake Michigan</span>
+«я рядом, я услышал».</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Discover</span>
+              <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -358,25 +358,25 @@ relationship with Lake Michigan</span>
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--msi-chicago">
-        <h3 class="u-visually-hidden">MSI Chicago</h3>
+        <h3 class="u-visually-hidden">Тихие фразы</h3>
 
         <div class="inner">
-          <a href="/cases/msi-chicago/" class="home-cases-link"><span class="u-visually-hidden">MSI Chicago</span></a>
+          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Тихие фразы</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Strategy</p>
+                          <p class="home-cases-headline">Поддержка</p>
             
-            <p class="home-cases-name">MSI Chicago</p>
+            <p class="home-cases-name">Тихие фразы</p>
             <p class="home-cases-text">
                             
-                              <span class="home-cases-line">Rethinking, redesigning and improving </span>
+                              <span class="home-cases-line">Короткие слова поддержки. </span>
                               <span class="home-cases-line">
-the website of the great &amp; famous </span>
+Бережно, без споров </span>
                               <span class="home-cases-line">
-Museum of Science and Industry of Chicago</span>
+и без публичных тредов.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Discover</span>
+              <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -395,25 +395,25 @@ Museum of Science and Industry of Chicago</span>
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--this-was-louises-phone">
-        <h3 class="u-visually-hidden">This Was Louise’s Phone</h3>
+        <h3 class="u-visually-hidden">Похожая история</h3>
 
         <div class="inner">
-          <a href="/cases/voo/" class="home-cases-link"><span class="u-visually-hidden">This Was Louise’s Phone</span></a>
+          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Похожая история</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Design</p>
+                          <p class="home-cases-headline">Резонанс</p>
             
-            <p class="home-cases-name">This Was Louise’s Phone</p>
+            <p class="home-cases-name">Похожая история</p>
             <p class="home-cases-text">
                             
-                              <span class="home-cases-line">Creating a heart-moving immersive </span>
+                              <span class="home-cases-line">Чужой опыт, похожий на твой. </span>
                               <span class="home-cases-line">
-experience to educate people about </span>
+Связь через резонанс, </span>
                               <span class="home-cases-line">
-the hell of cyber-bullying</span>
+а не обсуждение.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Discover</span>
+              <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -432,21 +432,21 @@ the hell of cyber-bullying</span>
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--kikk-18">
-        <h3 class="u-visually-hidden">KIKK Festival 2018</h3>
+        <h3 class="u-visually-hidden">Pulse</h3>
 
         <div class="inner">
-          <a href="/cases/kikk-festival-2018/" class="home-cases-link"><span class="u-visually-hidden">KIKK Festival 2018</span></a>
+          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Pulse</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Design</p>
+                          <p class="home-cases-headline">Автору</p>
             
-            <p class="home-cases-name">KIKK Festival 2018</p>
+            <p class="home-cases-name">Pulse</p>
             <p class="home-cases-text">
                             
-                              <span class="home-cases-line">Another KIKK Festival yearly revamp: The “Species and Beyond” edition</span>
+                              <span class="home-cases-line">Тихий пульс истории: её слышат — и это видно только тебе.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Discover</span>
+              <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -465,25 +465,25 @@ the hell of cyber-bullying</span>
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--the-kennedy-center">
-        <h3 class="u-visually-hidden">The Kennedy Center</h3>
+        <h3 class="u-visually-hidden">Hearers</h3>
 
         <div class="inner">
-          <a href="/cases/the-kennedy-center/" class="home-cases-link"><span class="u-visually-hidden">The Kennedy Center</span></a>
+          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Hearers</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Design</p>
+                          <p class="home-cases-headline">Автору</p>
             
-            <p class="home-cases-name">The Kennedy Center</p>
+            <p class="home-cases-name">Hearers</p>
             <p class="home-cases-text">
                             
-                              <span class="home-cases-line">Building an immersive website</span>
+                              <span class="home-cases-line">Те, кто услышал историю.</span>
                               <span class="home-cases-line">
-to celebrate the memory of the</span>
+Список виден</span>
                               <span class="home-cases-line">
-unforgettable John F. Kennedy</span>
+только её автору.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Discover</span>
+              <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -502,25 +502,25 @@ unforgettable John F. Kennedy</span>
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--orw">
-        <h3 class="u-visually-hidden">Royal Opera Of Wallonia</h3>
+        <h3 class="u-visually-hidden">Anti-Panic</h3>
 
         <div class="inner">
-          <a href="/cases/royal-opera-of-wallonia/" class="home-cases-link"><span class="u-visually-hidden">Royal Opera Of Wallonia</span></a>
+          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Anti-Panic</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Design</p>
+                          <p class="home-cases-headline">Безопасность</p>
             
-            <p class="home-cases-name">Royal Opera Of Wallonia</p>
+            <p class="home-cases-name">Anti-Panic</p>
             <p class="home-cases-text">
                             
-                              <span class="home-cases-line">Imagining and designing an oniric</span>
+                              <span class="home-cases-line">Режим тишины, когда всё</span>
                               <span class="home-cases-line">
-universe to promote the upcoming</span>
+слишком. Лента и уведомления</span>
                               <span class="home-cases-line">
-season of a renown Belgian opera house</span>
+молчат, помощь — рядом.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Discover</span>
+              <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -542,7 +542,7 @@ season of a renown Belgian opera house</span>
 </section>
 
         <section class="home-about js-in-view">
-  <h2 class="u-visually-hidden">We're crafting emotional experiences aimed at improving results</h2>
+  <h2 class="u-visually-hidden">Мы делаем место, где не бывает оценок</h2>
 
   <picture class="home-about-background js-in-view appear-fade">
     <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/about-xxs.png" media="(max-width: 450px)">
@@ -553,7 +553,7 @@ season of a renown Belgian opera house</span>
 
   <div class="center">
     <header class="home-about-header js-in-view">
-      <p class="home-about-headline appear-fade-up">This is how we do it</p>
+      <p class="home-about-headline appear-fade-up">Так это устроено</p>
       <p class="home-about-title fx-parent">
 
                 
@@ -644,12 +644,12 @@ season of a renown Belgian opera house</span>
       <div class="line"><span class="line-anim"></span></div>
 
       <div class="home-about-text typeset">
-        <p class="appear-fade-up appear-delay--3">Dogstudio is a design & technology firm working globally from our offices based in Belgium and Chicago.<br> Our strong focus on producing high quality & emotional brandings, digital products and experiences became a signature.</p>
-        <p class="appear-fade-up appear-delay--4">We’re passionate about moving people and solving problems for the likes of Microsoft, The Museum of Science And Industry Of Chicago, The Kennedy Center of Washington, Dragone, Quanta Magazine, and many more.</p>
+        <p class="appear-fade-up appear-delay--3">de-press — некоммерческая эмпатичная платформа.<br> Мы против токсичных механик соцсетей: вместо лайков, рейтингов и публичных комментариев здесь тишина, истории и бережная поддержка.</p>
+        <p class="appear-fade-up appear-delay--4">Проект живёт на энтузиазме волонтёров и открытом коде. Мы верим: просить о помощи — нормально, а слышать друг друга — навык, которому можно учиться.</p>
       </div>
 
-      <a href="/values/" class="home-about-link link link--under" title="Discover our values">
-        <span class="link-label">Discover our values</span>
+      <a href="/values/" class="home-about-link link link--under" title="Читать принципы">
+        <span class="link-label">Принципы</span>
         <span class="link-line"></span>
         <span class="link-line--anim"></span>
       </a>
@@ -663,8 +663,8 @@ season of a renown Belgian opera house</span>
   <div class="showreel-backdrop js-close-showreel"></div>
 
   <div class="showreel-wrapper">
-    <button type="button" class="showreel-close js-close-showreel" title="Close showreel">
-      <span class="u-visually-hidden">Close showreel</span>
+    <button type="button" class="showreel-close js-close-showreel" title="Закрыть манифест">
+      <span class="u-visually-hidden">Закрыть манифест</span>
     </button>
 
     <div class="showreel-video">
@@ -674,12 +674,12 @@ season of a renown Belgian opera house</span>
 </div>
       <div class="site-cookie js-cookie">
   <p class="site-cookie__text">
-    We use functional cookies to make the website work properly and analytical cookies to measure your behavior. We collect data on how you use our website to make our website easier to use. By clicking accept you agree to this. More information? <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">Read our cookie policy</a>.
+    Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. <a href="/values/" target="_blank">Подробнее о приватности</a>.
   </p>
 
   <div class="site-cookie__buttons">
-    <button type="button" class="site-cookie__button js-cookie-accept">Accept</button>
-    <button type="button" class="site-cookie__button js-cookie-deny">Deny</button>
+    <button type="button" class="site-cookie__button js-cookie-accept">Хорошо</button>
+    <button type="button" class="site-cookie__button js-cookie-deny">Отклонить</button>
   </div>
 </div>
 
@@ -689,28 +689,28 @@ season of a renown Belgian opera house</span>
   <div class="center">
     <div class="site-footer-top">
       <div class="site-footer-block site-footer-block--address appear-fade-up">
-        <h3>Chicago <b>.</b></h3>
+        <h3>Тишина <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--1">
-        <h3>Amsterdam <b>.</b></h3>
+        <h3>Эмпатия <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--2">
-        <h3>Paris <b>.</b></h3>
+        <h3>Забота <b>.</b></h3>
               </div>
 
       
       
       <div class="site-footer-block site-footer-block--social appear-fade-up appear-delay--3">
         <h2 class="site-footer-title">
-          <span class="u-visually-hidden">Contact us</span>
+          <span class="u-visually-hidden">Написать нам</span>
           <svg class="baseline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.67 54.43"><path d="M592.66,694.59l-3-9.13-.81-.69h4.06l-.89.69,2.17,7.06,1.4-5-.7-2.15-.78-.59h4.06l-.92.59,2.21,7.17,2.17-7.09-1-.66h2.28l-.91.66-2.74,8.86-1.35.3L595.77,688,594,694.29Z" transform="translate(-575.91 -684.77)"/><path d="M604,694.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,690a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,694.53,604,694.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M585.52,700.74l-3.23,8.77h-1l-3.43-9.09v8.46l.93.57h-2.09l.87-.57v-8.4l-.87-.71h3.22l2.93,7.43,2.75-7.43h3l-.9.71v8.4l.9.57h-3.84l.79-.57Z" transform="translate(-575.91 -684.77)"/><path d="M592.23,702.71a3.85,3.85,0,0,1,.6.09,1.86,1.86,0,0,1,.44.16,1.67,1.67,0,0,1,.33.23,2,2,0,0,1,.47,1.53v3a3.81,3.81,0,0,0,0,.61,7.26,7.26,0,0,0,.14.72l.65.39h-2.47l-.33-1-1.89,1.22a2.77,2.77,0,0,1-.77-.1,1.77,1.77,0,0,1-.63-.32,1.48,1.48,0,0,1-.42-.54,1.76,1.76,0,0,1-.15-.75,2.15,2.15,0,0,1,.16-.8,1.65,1.65,0,0,1,.6-.72l3.05-.91v-1.24c0-.18,0-.33,0-.48a.89.89,0,0,0-.1-.36.52.52,0,0,0-.26-.22,1.21,1.21,0,0,0-.48-.08l-.28,0-.32.09-1.17,2-.92-1.37s.8-.46,1.44-.77A3.87,3.87,0,0,1,592.23,702.71Zm-.18,3s-1.3.25-1.6,1a2,2,0,0,0-.14.75,1.51,1.51,0,0,0,.21.86.65.65,0,0,0,.56.32,1,1,0,0,0,.41-.1,1.76,1.76,0,0,0,.33-.19l.22-.15Z" transform="translate(-575.91 -684.77)"/><path d="M596.69,705.72l2.67-2-.59-.85h2.18l-2.72,2,2.75,3.95.69.63H599l-2.28-3.58v2.83l.73.75H594l.73-.62v-8.19L594,700l2.46-.4h.22Z" transform="translate(-575.91 -684.77)"/><path d="M604,709.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,705a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,709.53,604,709.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M583.69,723.76c-.27.09-.55.17-.86.25a9,9,0,0,1-1,.19,8.66,8.66,0,0,1-1.15.07,5.17,5.17,0,0,1-1.82-.32,4.46,4.46,0,0,1-1.53-.95,4.53,4.53,0,0,1-1-1.52,5.11,5.11,0,0,1-.39-2,4.89,4.89,0,0,1,1.41-3.72,6.4,6.4,0,0,1,4-1.58,6.83,6.83,0,0,1,1.78.2,7.27,7.27,0,0,1,1.34.5v2.58l-1.34-2.25a2.43,2.43,0,0,0-.72-.56,2.27,2.27,0,0,0-1.05-.21,2.21,2.21,0,0,0-1.2.34,2.94,2.94,0,0,0-.93,1,5.1,5.1,0,0,0-.6,1.5,8.24,8.24,0,0,0-.21,2,10.63,10.63,0,0,0,.16,1.88,5.76,5.76,0,0,0,.48,1.54,2.88,2.88,0,0,0,.82,1A1.88,1.88,0,0,0,581,724a1.73,1.73,0,0,0,1.34-.57v-3.11l-1-.73h3.87l-.75.73v3.14C584.22,723.56,584,723.67,583.69,723.76Z" transform="translate(-575.91 -684.77)"/><path d="M588.45,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.73,3.73,0,0,1-.23-1.35,3.45,3.45,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.28,4.28,0,0,1,1.15-.7,9.18,9.18,0,0,1,1.4-.46,3.13,3.13,0,0,1,1.23.24,2.93,2.93,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.52,3.52,0,0,1-.28,1.47,3.07,3.07,0,0,1-.77,1,4.1,4.1,0,0,1-1.15.7A9.36,9.36,0,0,1,588.45,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.19,5.19,0,0,0-.3,2.05,6.36,6.36,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.27,6.27,0,0,0-.43-2.65Q589.16,717.67,588.57,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M595.39,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.72,3.72,0,0,1-.24-1.35,3.46,3.46,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.29,4.29,0,0,1,1.15-.7,9.19,9.19,0,0,1,1.4-.46,3.12,3.12,0,0,1,1.23.24,2.94,2.94,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.5,3.5,0,0,1-.28,1.47,3,3,0,0,1-.77,1,4.08,4.08,0,0,1-1.15.7A9.39,9.39,0,0,1,595.39,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.21,5.21,0,0,0-.3,2.05,6.34,6.34,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.29,6.29,0,0,0-.43-2.65Q596.09,717.67,595.5,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M602,724.25a2.37,2.37,0,0,1-1.05-.23,2.58,2.58,0,0,1-.84-.66,3.21,3.21,0,0,1-.57-1,3.73,3.73,0,0,1-.21-1.26,5.08,5.08,0,0,1,.17-1.31,3.39,3.39,0,0,1,.53-1.12,3.29,3.29,0,0,1,.93-.86,4.17,4.17,0,0,1,1.39-.53,2.54,2.54,0,0,1,1.4.38v-2.52l-.75-.54,2.46-.4h.21v8.08a3.87,3.87,0,0,0,0,.64,5.56,5.56,0,0,0,.16.55l.74.21-2.43.48-.39-1.34Zm-.54-3.85a6.51,6.51,0,0,0,.08,1.07,3.29,3.29,0,0,0,.25.84,1.54,1.54,0,0,0,.4.54.82.82,0,0,0,.54.19,1,1,0,0,0,.39-.06,2.54,2.54,0,0,0,.43-.25l.19-.14v-4.47a1,1,0,0,0-.3-.29.83.83,0,0,0-.46-.12,1.21,1.21,0,0,0-1.15.73A4.38,4.38,0,0,0,601.45,720.4Z" transform="translate(-575.91 -684.77)"/><path d="M586.22,737.57a5.06,5.06,0,0,0,.93.85,2,2,0,0,0,1.2.37,1.74,1.74,0,0,0,1.22-.42,1.45,1.45,0,0,0,.46-1.12,1.71,1.71,0,0,0-.3-1,3.5,3.5,0,0,0-1-.89l-1.84-1.22c-.23-.16-.44-.31-.63-.46a3,3,0,0,1-.49-.5,2.14,2.14,0,0,1-.32-.6,2.24,2.24,0,0,1-.12-.76,2.42,2.42,0,0,1,.17-.91,2.09,2.09,0,0,1,.57-.78,3.77,3.77,0,0,1,1-.62,5,5,0,0,1,3-.32,5.54,5.54,0,0,1,.63.15l.69.23v2.51l-1.12-2a2.43,2.43,0,0,0-.7-.52,2,2,0,0,0-.87-.19,1.69,1.69,0,0,0-1.13.37,1.3,1.3,0,0,0-.44,1.05,1.36,1.36,0,0,0,.34.95,4.12,4.12,0,0,0,.92.74l1.8,1.19a4.07,4.07,0,0,1,1.21,1.08,2.42,2.42,0,0,1,.38,1.39,2.54,2.54,0,0,1-.19,1,2.43,2.43,0,0,1-.61.85,4.18,4.18,0,0,1-1.11.7,8.58,8.58,0,0,1-1.68.53,5.37,5.37,0,0,1-1.53-.2,5.71,5.71,0,0,1-1.37-.64v-2.57Z" transform="translate(-575.91 -684.77)"/><path d="M591.63,739l.72-.57V730l-.75-.44,2.46-.4h.22v4.6l2.45-1.52a2.3,2.3,0,0,1,.81.11,1.32,1.32,0,0,1,.46.29,1.16,1.16,0,0,1,.19.24,1.14,1.14,0,0,1,.12.31,3.24,3.24,0,0,1,.06.44c0,.17,0,.38,0,.63v4.17l.8.57h-3.33l.51-.57v-4.24a1,1,0,0,0-.16-.64.58.58,0,0,0-.48-.19,1.2,1.2,0,0,0-.53.11l-.53.29-.39.24v4.43l.53.57Z" transform="translate(-575.91 -684.77)"/><path d="M598.69,739l.73-.57v-5l-.77-.56,2.47-.52h.23v6.11l.73.57Z" transform="translate(-575.91 -684.77)"/><path d="M601.84,732.8v-.22h.86v-.94l1.94-1.76v2.7h1.75v.22h-1.75v4.45a.82.82,0,0,0,.21.63.77.77,0,0,0,.55.2A2,2,0,0,0,606,738a3.52,3.52,0,0,0,.54-.22l.1.19-2.31,1.19a1.42,1.42,0,0,1-1.21-.48,2.12,2.12,0,0,1-.37-1.31V732.8Z" transform="translate(-575.91 -684.77)"/><circle cx="24.46" cy="45.67" r="0.97"/></svg>
         </h2>
 
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -719,11 +719,11 @@ season of a renown Belgian opera house</span>
   </span>
 
               </span>
-              <span class="u-from-desktop">Fb</span>
+              <span class="u-from-desktop">Tg</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -732,11 +732,11 @@ season of a renown Belgian opera house</span>
   </span>
 
               </span>
-              <span class="u-from-desktop">Ins</span>
+              <span class="u-from-desktop">Yt</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -745,11 +745,11 @@ season of a renown Belgian opera house</span>
   </span>
 
               </span>
-              <span class="u-from-desktop">Dri</span>
+              <span class="u-from-desktop">Gh</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -758,7 +758,7 @@ season of a renown Belgian opera house</span>
   </span>
 
               </span>
-              <span class="u-from-desktop">Tw</span>
+              <span class="u-from-desktop">@</span>
             </a>
           </li>
         </ul>
@@ -767,25 +767,25 @@ season of a renown Belgian opera house</span>
 
     <div class="site-footer-bottom">
       <p class="site-footer-contact appear-fade-up">
-        We'd love to hear from you
-        <a href="mailto:biz@dogstudio.be">biz@dogstudio.be</a>
+        Хочешь помочь проекту — напиши:
+        <a href="mailto:hello@de-press.co">hello@de-press.co</a>
       </p>
 
       <div class="site-footer-right">
         <p class="site-footer-newsletter appear-fade-up appear-delay--4">
-          <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">
-            Privacy Policy
+          <a href="/values/" target="_blank">
+            Приватность
                       </a>
         </p>
 
         <div class="site-footer-languages appear-fade-up appear-delay--5">
-          Language:
+          Язык:
 
                                 <ul>
                               <li class="is-active">
-                  <a href="/" title="English" data-router-disabled>
+                  <a href="/" title="Русский" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-en.jpg" />
-                    English
+                    Русский
 
                                             <span class="svg svg-caret-right">
   	<svg width="5" height="9">
@@ -796,9 +796,9 @@ season of a renown Belgian opera house</span>
                                       </a>
                 </li>
                               <li>
-                  <a href="/" title="Español" data-router-disabled>
+                  <a href="/" title="English" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-mx.jpg" />
-                    Español
+                    English
 
                                       </a>
                 </li>

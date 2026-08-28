@@ -5,13 +5,13 @@
 export const BODY_CLASS = "page-template page-template-page-about page-template-page-about-php page page-id-129  lock-scroll";
 export const DATA_THEME = "about";
 export const DATA_PAGE = "about";
-export const PAGE_TITLE = "The Studio. We are Dogstudio.";
+export const PAGE_TITLE = "О проекте — de-press";
 export const MARKUP = `<!-- Wrapper -->
     <div class="site-wrapper">
               <div class="site-header">
   <div class="site-header-title">
-    <a href="/" class="site-header-logo" title="Return to Dogstudio's homepage">
-      <span class="u-visually-hidden">Dogstudio</span>
+    <a href="/" class="site-header-logo" title="На главную — de-press">
+      <span class="u-visually-hidden">de-press</span>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.23099 116.838">
         <path d="M97.9212,84.4793c0-13.21301-7.2132-23.3924-25.54961-23.3924h-19.6172v46.7851h19.6172c18.3364,0,25.54961-10.1797,25.54961-23.3927Zm-13.3478,0c0,9.2356-5.1908,12.6737-12.404,12.6737h-6.6739v-25.3474h6.6739c7.2132,0,12.404,3.4381,12.404,12.6737Z"/>
@@ -33,29 +33,29 @@ export const MARKUP = `<!-- Wrapper -->
     </a>
   </div>
 
-  <a href="/news/" class="site-header-posts">  <span class="svg svg-caret-left">
+  <a href="/safety/" class="site-header-posts">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our news</a>
-  <a href="/cases/" class="site-header-cases">  <span class="svg svg-caret-left">
+ Безопасность</a>
+  <a href="/" class="site-header-cases">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our cases</a>
+ Как устроено</a>
 
-  <button type="button" class="site-header-button" title="Toggle menu">
-    <span class="u-visually-hidden">Toggle menu</span>
+  <button type="button" class="site-header-button" title="Открыть меню">
+    <span class="u-visually-hidden">Открыть меню</span>
     <span class="button-bar button-bar--1"></span>
     <span class="button-bar button-bar--2"></span>
     <span class="button-bar button-bar--3"></span>
   </button>
 </div>
 
-<button type="button" class="site-volume" title="Toggle sound">
-  <span class="u-visually-hidden">Toggle sound</span>
+<button type="button" class="site-volume" title="Звук">
+  <span class="u-visually-hidden">Звук</span>
   <span class="pulsing-ui"></span>
 </button>
       
@@ -96,30 +96,30 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <ul class="site-menu-list">
                                         
-        <li class="site-menu-item"><a href="/studio/" class="is-active">The Studio</a></li>
+        <li class="site-menu-item"><a href="/studio/" class="is-active">О проекте</a></li>
                       
-        <li class="site-menu-item"><a href="/cases/" class="">Our Cases</a></li>
+        <li class="site-menu-item"><a href="/" class="">Истории</a></li>
                       
-        <li class="site-menu-item"><a href="/careers/" class="">Careers</a></li>
+        <li class="site-menu-item"><a href="/careers/" class="">Помогать</a></li>
                       
-        <li class="site-menu-item"><a href="/values/" class="">Our Values</a></li>
+        <li class="site-menu-item"><a href="/values/" class="">Принципы</a></li>
                       
-        <li class="site-menu-item"><a href="/contact/" class="">Contact</a></li>
+        <li class="site-menu-item"><a href="/contact/" class="">Связаться</a></li>
           </ul>
 
     <div class="site-menu-footer">
       <a href="https://vimeo.com/836218697" target="_blank" class="site-menu-showreel js-show-showreel">  <span class="svg svg-caret-right">
-  	<svg width="6" height="10" aria-label="dogstudio">
+  	<svg width="6" height="10" aria-label="de-press">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
- Watch our Showreel</a>
+ Манифест</a>
 
       <div class="site-menu-content">
         <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="We Make Good Shit">
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -128,11 +128,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Facebook</span>
+              <span class="u-from-desktop">Telegram</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -141,11 +141,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Instagram</span>
+              <span class="u-from-desktop">YouTube</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -154,11 +154,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Dribbble</span>
+              <span class="u-from-desktop">GitHub</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -167,7 +167,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Twitter</span>
+              <span class="u-from-desktop">E-mail</span>
             </a>
           </li>
           <li>
@@ -180,7 +180,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Newsletter</span>
+              <span class="u-from-desktop">Рассылка</span>
             </a>
           </li>
         </ul>
@@ -200,11 +200,11 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="center">
       <header class="about-header about-header--1 js-in-view">
-        <h1 class="u-visually-hidden">We're just making Good Shit like it's 1996</h1>
+        <h1 class="u-visually-hidden">Мы строим тихую гавань — без лайков и рейтингов</h1>
 
         <div class="line"><span class="line-anim"></span></div>
 
-        <p class="about-headline about-headline--blue appear-fade-up">Our commitment</p>
+        <p class="about-headline about-headline--blue appear-fade-up">Наше обязательство</p>
         <p class="about-title about-title--large fx-parent">
                     
                                   <span class="fx-word">
@@ -262,33 +262,33 @@ export const MARKUP = `<!-- Wrapper -->
       </header>
 
       <div class="about-item about-item--1 js-in-view">
-        <p class="about-headline appear-fade-up">To start with</p>
-        <p class="about-tagline appear-fade-up appear-delay--2">Dogstudio is a multidisciplinary creative studio at the intersection of art, design and technology. We are on a mission to explore, create meaning and provoke emotions through design and storytelling.</p>
+        <p class="about-headline appear-fade-up">Для начала</p>
+        <p class="about-tagline appear-fade-up appear-delay--2">de-press — эмпатичная платформа для эмоциональной поддержки. Наша миссия — исследовать, как тишина, истории и контроль автора заменяют механику лайков и рейтингов.</p>
       </div>
 
       <div class="about-item about-item--2 js-in-view">
         <div class="line line--revert"><span class="line-anim"></span></div>
         <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-1.png" class="branch branch--1 js-lazy" />
         
-        <p class="about-title about-title--small appear-fade-up">Soo... What?</p>
+        <p class="about-title about-title--small appear-fade-up">И что это значит?</p>
         <div class="about-text typeset appear-fade-up appear-delay--2">
-          <p>We believe in the power of leveraging design, stories and emotions  to help small & major brands, organisations and businesses engage human beings on any kind of medium.</p>
-          <p>Are you tired of reading the same descriptions about those company claiming they’re different from another but really they’re not?<br> Fine!  Because we’re tired too, so why don’t we directly skip to the part where you understand how we can help you?</p>
+          <p>Мы верим в силу истории и присутствия: «Я слышу тебя» заменяет лайк, тихая фраза — комментарий, а решение всегда за автором истории.</p>
+          <p>Устал читать одинаковые описания проектов, которые притворяются другими?<br> Хорошая новость: мы тоже. Поэтому сразу к делу — как устроена помощь здесь.</p>
         </div>
       </div>
 
       <div class="about-products">
         <ul class="about-products-list">
-          <li class="about-products-item js-in-view appear-fade-right">Brand Strategy</li>
-          <li class="about-products-item js-in-view appear-fade-right">Branding & Art Direction</li>
-          <li class="about-products-item js-in-view appear-fade-right">Digital Products</li>
-          <li class="about-products-item js-in-view appear-fade-right">Emerging Technologies<br><small>(You know... AR, VR, AI etc...)</small></li>
-          <li class="about-products-item js-in-view appear-fade-right">Interactive Installations</li>
-          <li class="about-products-item js-in-view appear-fade-right">Visual Design</li>
-          <li class="about-products-item js-in-view appear-fade-right">Animation & Illustration</li>
+          <li class="about-products-item js-in-view appear-fade-right">Нет публичных лайков и рейтингов</li>
+          <li class="about-products-item js-in-view appear-fade-right">Нет публичных комментариев</li>
+          <li class="about-products-item js-in-view appear-fade-right">Чат инициирует только автор</li>
+          <li class="about-products-item js-in-view appear-fade-right">Открытые технологии<br><small>(открытый код, ИИ с честной меткой, WebRTC)</small></li>
+          <li class="about-products-item js-in-view appear-fade-right">Эмоциональные карты — только на устройстве</li>
+          <li class="about-products-item js-in-view appear-fade-right">Anti-Panic важнее ленты</li>
+          <li class="about-products-item js-in-view appear-fade-right">Helper ≠ терапевт по умолчанию</li>
         </ul>
-        <a href="/cases/" class="link link--caret js-in-view">
-          <span class="link--caret-text">Check our projects</span>
+        <a href="/" class="link link--caret js-in-view">
+          <span class="link--caret-text">Смотреть, как устроено</span>
             <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -299,9 +299,9 @@ export const MARKUP = `<!-- Wrapper -->
       </div>
 
       <header class="about-header about-header--2 js-in-view">
-        <h2 class="u-visually-hidden">Our Swagger, Ho we're sorry. Awards, right ?</h2>
+        <h2 class="u-visually-hidden">Инварианты и решения. Да, снова принципы.</h2>
 
-        <p class="about-headline appear-fade-up">It's time to shine</p>
+        <p class="about-headline appear-fade-up">Что уже решено</p>
     
         <p class="about-title fx-parent">
                     
@@ -372,7 +372,7 @@ export const MARKUP = `<!-- Wrapper -->
 
       <div class="about-item about-item--3 js-in-view appear-fade-up">
         <div class="about-text typeset">
-          <p>Well, this is more or less a list of the stuff we won (and hopefully earned a bit), the places we talked at, and the publications we weirdly got into. Let’s not get awkward about it... Here’s the thing</p>
+          <p>Таблица — это наши принципы и статус проекта: что принято навсегда, что в работе, чего не будет. Не награды — обещания.</p>
         </div>
       </div>
 
@@ -383,1176 +383,217 @@ export const MARKUP = `<!-- Wrapper -->
           <table cellpadding="0" cellspacing="0">
             <thead>
               <tr>
-                <th>Year</th>
-                <th>Organization</th>
-                <th>Type</th>
-                <th>Project</th>
-                <th>Location</th>
+                <th>Год</th>
+                <th>Решение</th>
+                <th>Статус</th>
+                <th>Суть</th>
+                <th>Комментарий</th>
               </tr>
             </thead>
 
             <tbody>
-                              <tr>
+                <tr>
                   <td data-after="">2024</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"BOSS Dubai Immersive Experience"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"BOSS Dubai Immersive Experience"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"PRIDE & SEEK"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="Honoree - Best Use of Web3 Technology">Webby Awards</td>
-                  <td data-after="">Honoree - Best Use of Web3 Technology</td>
-                  <td data-after="">"Meebits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="People's Voice Winner - Travel & Lifestyle">Webby Awards</td>
-                  <td data-after="">People's Voice Winner - Travel & Lifestyle</td>
-                  <td data-after="">"Virgin Galactic"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="Webby Winner - Travel & Lifestyle">Webby Awards</td>
-                  <td data-after="">Webby Winner - Travel & Lifestyle</td>
-                  <td data-after="">"Virgin Galactic"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="Winner People's Voice - Best Art Direction">Webby Awards</td>
-                  <td data-after="">Winner People's Voice - Best Art Direction</td>
-                  <td data-after="">"Prepare to Pioneer"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="Honoree - Experimental & Innovation">Webby Awards</td>
-                  <td data-after="">Honoree - Experimental & Innovation</td>
-                  <td data-after="">"Prepare to Pioneer"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2024</td>
-                  <td data-after="Conference">OFFF Barcelona</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Barcelona, Spain">""This Could've Been An Email""</td>
-                  <td data-after="">Barcelona, Spain</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="SOTM">Awwwards</td>
-                  <td data-after="">SOTM</td>
-                  <td data-after="">"The Hall of Zero Limits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"The Hall of Zero Limits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Adobe: Taking Shape"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Prepare to Pioneer"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Meebits 1.2"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Meebits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"The Hall of Zero Limits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Prepare to Pioneer"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Meebits 1.2"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Virgin Galactic"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Vault.xyz"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Winner People's Voice - Games">Webby Awards</td>
-                  <td data-after="">Winner People's Voice - Games</td>
-                  <td data-after="">"DIG: Cloud Castles"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Winner People's Voice - Technical Achievement">Webby Awards</td>
-                  <td data-after="">Winner People's Voice - Technical Achievement</td>
-                  <td data-after="">"DIG: Cloud Castles"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Entertainment">Webby Awards</td>
-                  <td data-after="">Honoree - Entertainment</td>
-                  <td data-after="">"DIG: Cloud Castles"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Best Experiential Design">Webby Awards</td>
-                  <td data-after="">Honoree - Best Experiential Design</td>
-                  <td data-after="">"Adobe: Taking Shape"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Best Visual Design - Aesthetic">Webby Awards</td>
-                  <td data-after="">Honoree - Best Visual Design - Aesthetic</td>
-                  <td data-after="">"Adobe: Taking Shape"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Technical Achievement">Webby Awards</td>
-                  <td data-after="">Honoree - Technical Achievement</td>
-                  <td data-after="">"Panasonic - AV Digital World"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Retail & Shopping">Webby Awards</td>
-                  <td data-after="">Honoree - Retail & Shopping</td>
-                  <td data-after="">"Panasonic - AV Digital World"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Best Partnership or Collaboration">Webby Awards</td>
-                  <td data-after="">Honoree - Best Partnership or Collaboration</td>
-                  <td data-after="">"The Hall of Zero Limits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Best NFT or Web3 Campaign">Webby Awards</td>
-                  <td data-after="">Honoree - Best NFT or Web3 Campaign</td>
-                  <td data-after="">"Meebits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Best NFT or Web3 Campaign">Webby Awards</td>
-                  <td data-after="">Honoree - Best NFT or Web3 Campaign</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Honoree - Arts, Fashion & Culture">Webby Awards</td>
-                  <td data-after="">Honoree - Arts, Fashion & Culture</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Shortlist (Web3 Features-Best Launch / Airdrop / Mint)">Lovie Awards</td>
-                  <td data-after="">Shortlist (Web3 Features-Best Launch / Airdrop / Mint)</td>
-                  <td data-after="">"Meebits 1.2"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Bronze, People's Lovie (Website & Mobile Site Craft-Best Use of Photography or Video)">Lovie Awards</td>
-                  <td data-after="">Bronze, People's Lovie (Website & Mobile Site Craft-Best Use of Photography or Video)</td>
-                  <td data-after="">"Virgin Galactic"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Bronze, People's Lovie (Campaigns-Best Use of Web3)">Lovie Awards</td>
-                  <td data-after="">Bronze, People's Lovie (Campaigns-Best Use of Web3)</td>
-                  <td data-after="">"Meebits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Gold, People's Lovie (Web3 Features-Best Innovation or Use of Technology)">Lovie Awards</td>
-                  <td data-after="">Gold, People's Lovie (Web3 Features-Best Innovation or Use of Technology)</td>
-                  <td data-after="">"Prepare to Pioneer"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Gold, People's Lovie (XR Experience-Weird & Experimental)">Lovie Awards</td>
-                  <td data-after="">Gold, People's Lovie (XR Experience-Weird & Experimental)</td>
-                  <td data-after="">"Prepare to Pioneer"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Gold, People's Lovie (Web3 Features-Best Brand Integration / Brand Strategy)">Lovie Awards</td>
-                  <td data-after="">Gold, People's Lovie (Web3 Features-Best Brand Integration / Brand Strategy)</td>
-                  <td data-after="">"Prepare to Pioneer"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Conference">Let's Talk Design</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Antwerp, Belgium">""This Could've Been An Email""</td>
-                  <td data-after="">Antwerp, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Conference">Awwwards Conference</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Toronto, Canada">""This Could've Been An Email""</td>
-                  <td data-after="">Toronto, Canada</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="Conference">KIKK Festival</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Namur, Belgium">""A Deep Dive into the Generative AI Landscape""</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"DIG: Cloud Castles"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Panasonic - AV Digital World"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="SOTM">Awwwards</td>
-                  <td data-after="">SOTM</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2023</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Vault.xyz"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Virtual Expo Dubai 2020"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="PCA">FWA</td>
-                  <td data-after="">PCA</td>
-                  <td data-after="">"Virtual Expo Dubai 2020"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTM">FWA</td>
-                  <td data-after="">FOTM</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Adobe: Taking Shape"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Panasonic - AV Digital World"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Mythical Games"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"DIG: Cloud Castles"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTM">FWA</td>
-                  <td data-after="">FOTM</td>
-                  <td data-after="">"Adobe: Taking Shape"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Meebits"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Nominee - Technical Achievement">Webby Awards</td>
-                  <td data-after="">Nominee - Technical Achievement</td>
-                  <td data-after="">"Virtual Expo Dubai 2020"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Shortlist (Website Craft-Best User Experience)">Lovie Awards</td>
-                  <td data-after="">Shortlist (Website Craft-Best User Experience)</td>
-                  <td data-after="">"Virtual Expo Dubai 2020"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Shortlist (Website Single-Fashion & Beauty)">Lovie Awards</td>
-                  <td data-after="">Shortlist (Website Single-Fashion & Beauty)</td>
-                  <td data-after="">"Jaeger-Lecoultre: Reverso Hybris Mechanica"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Gold, People's Lovie (Website Craft-Best Use of Animation & Motion Graphics)">Lovie Awards</td>
-                  <td data-after="">Gold, People's Lovie (Website Craft-Best Use of Animation & Motion Graphics)</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Silver, People's Lovie (Web3 / NFTs Individual-Entertainment, Gaming & Sport)">Lovie Awards</td>
-                  <td data-after="">Silver, People's Lovie (Web3 / NFTs Individual-Entertainment, Gaming & Sport)</td>
-                  <td data-after="">"HAPE Prime"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Silver, People's Lovie (Metaverse Individual-Art, Culture, Music & Film)">Lovie Awards</td>
-                  <td data-after="">Silver, People's Lovie (Metaverse Individual-Art, Culture, Music & Film)</td>
-                  <td data-after="">"Virtual Expo Dubai 2020"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Gold, People's Lovie (Website Craft-Best User Experience)">Lovie Awards</td>
-                  <td data-after="">Gold, People's Lovie (Website Craft-Best User Experience)</td>
-                  <td data-after="">"Tomorrowland"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Gold, People's Lovie (Metaverse Individual-Conference, Festival or Party)">Lovie Awards</td>
-                  <td data-after="">Gold, People's Lovie (Metaverse Individual-Conference, Festival or Party)</td>
-                  <td data-after="">"Tomorrowland"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Silver (Website Craft-Best Design - Aesthetic)">Lovie Awards</td>
-                  <td data-after="">Silver (Website Craft-Best Design - Aesthetic)</td>
-                  <td data-after="">"Tomorrowland"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2022</td>
-                  <td data-after="Conference">Experience Valencia</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Valencia, Spain">""Find Your Dogma""</td>
-                  <td data-after="">Valencia, Spain</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Amsterdam, Netherlands">"De Bijenkorf: Magical Forest"</td>
-                  <td data-after="">Amsterdam, Netherlands</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Motley Crowd"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Hulu Pride"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="San Francisco, USA">"Zoox"</td>
-                  <td data-after="">San Francisco, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Tecate Pa'l Norte Virtual 2021"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="">"Naoz - The digital venue"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Worldwide">"Naoz"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Seattle, USA">"Microsoft"</td>
-                  <td data-after="">Seattle, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Worldwide">"Tecate Pa'l Norte"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="San Francisco, USA">"Zoox"</td>
-                  <td data-after="">San Francisco, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Geneva, Switzerland">"Reverso Hybris Mechanica"</td>
-                  <td data-after="">Geneva, Switzerland</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Worldwide">"Hulu"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTM">FWA</td>
-                  <td data-after="">FOTM</td>
-                  <td data-after="">"Virtual Expo Dubai 2020"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Worldwide">"Virtual Expo Dubai 2020"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Amsterdam, Netherlands">"De Bijenkorf: Magical Forest"</td>
-                  <td data-after="">Amsterdam, Netherlands</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="">"Motley Crowd"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="Winner People's Voice - Science">Webby Awards</td>
-                  <td data-after="">Winner People's Voice - Science</td>
-                  <td data-after="New York, USA">"Quanta Magazine"</td>
-                  <td data-after="">New York, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="Winner - Car Sites & Car Culture">Webby Awards</td>
-                  <td data-after="">Winner - Car Sites & Car Culture</td>
-                  <td data-after="San Francisco, USA">"Zoox"</td>
-                  <td data-after="">San Francisco, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="Winner - Best Visual Design - Function">Webby Awards</td>
-                  <td data-after="">Winner - Best Visual Design - Function</td>
-                  <td data-after="San Francisco, USA">"Zoox"</td>
-                  <td data-after="">San Francisco, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="Honoree - Best Visual Design - Aesthetic">Webby Awards</td>
-                  <td data-after="">Honoree - Best Visual Design - Aesthetic</td>
-                  <td data-after="Worldwide">"Tomorrowland"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="Winner People's Voice - Technical Achievement">Webby Awards</td>
-                  <td data-after="">Winner People's Voice - Technical Achievement</td>
-                  <td data-after="Worldwide">"Tomorrowland"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2021</td>
-                  <td data-after="Conference">AIGA Chicago</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Chicago, USA">""Art Of The Kickoff""</td>
-                  <td data-after="">Chicago, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Worldwide">"Cover My Meds"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2020"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Namur, Belgium">"Kikk Festival 2020"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="FOTM">FWA</td>
-                  <td data-after="">FOTM</td>
-                  <td data-after="Worldwide">"Tomorrowland"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Worldwide">"Tomorrowland"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="Webby Finalist"></td>
-                  <td data-after="">Webby Finalist</td>
-                  <td data-after="Columbus, USA">"Dogstudio"</td>
-                  <td data-after="">Columbus, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="Conference">Awwwards</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Worldwide">""F*** Digital Sameness""</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="Conference">Awwwards</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Tokyo, Japan">""F*** Digital Sameness""</td>
-                  <td data-after="">Tokyo, Japan</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="Conference">Awwwards</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Tokyo, Japan">""One in a Melon""</td>
-                  <td data-after="">Tokyo, Japan</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2020</td>
-                  <td data-after="Conference">Awwwards</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Amsterdam, Netherlands">""One in a Melon""</td>
-                  <td data-after="">Amsterdam, Netherlands</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Chicago, USA">"Snoop Dogs"</td>
-                  <td data-after="">Chicago, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2019"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="SOTM">Awwwards</td>
-                  <td data-after="">SOTM</td>
-                  <td data-after="Namur, Belgium">"Dogstudio"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"Dogstudio"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="NYC, USA">""New York Times - The Idea Vault""</td>
-                  <td data-after="">NYC, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Mexico City, Mexico">"Rappi Pay"</td>
-                  <td data-after="">Mexico City, Mexico</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2019"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Namur, Belgium">"Dogstudio"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Chicago, USA">"Snoop Dogs"</td>
-                  <td data-after="">Chicago, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="SOTD">FWWWARDS</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Chicago, USA">"Snoop Dogs"</td>
-                  <td data-after="">Chicago, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="Conference">OFFF Festival Tel Aviv</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Tel Aviv, Israël">""Right In The Feels""</td>
-                  <td data-after="">Tel Aviv, Israël</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2019</td>
-                  <td data-after="Conference">KIKK Festival</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Namur, Belgium">""An-e-motion""</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2018"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Worldwide">"KIKK Festival AR Exhibit"</td>
-                  <td data-after="">Worldwide</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Chicago, USA">"Navy Pier - Enchanted Waters"</td>
-                  <td data-after="">Chicago, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2018"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="Webpicks">Communication Arts</td>
-                  <td data-after="">Webpicks</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2018"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="Conference">KIKK Festival</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Namur, Belgium">""Right In The Feels""</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="Conference">Digital Labin</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Labin, Croatia">""Right In The Feels""</td>
-                  <td data-after="">Labin, Croatia</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="Conference">Awwwards NYC</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="NYC, USA">""Right In The Feels""</td>
-                  <td data-after="">NYC, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="Conference">OFFF Festival Barcelona</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Barcelona, Spain">""Right In The Feels""</td>
-                  <td data-after="">Barcelona, Spain</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2018</td>
-                  <td data-after="Webpicks">Communication Arts</td>
-                  <td data-after="">Webpicks</td>
-                  <td data-after="Tel Aviv, Israël">"Galia Lahav"</td>
-                  <td data-after="">Tel Aviv, Israël</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Dubai, UAE">"Bouguessa - Eshop"</td>
-                  <td data-after="">Dubai, UAE</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Washington, USA">"The Kennedy Center - JFKC"</td>
-                  <td data-after="">Washington, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Brussels, Belgium">"50 Ans De Cinema"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2017"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Liege, Belgium">"Creative Wallonia"</td>
-                  <td data-after="">Liege, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Washington, USA">"The Kennedy Center - JFKC"</td>
-                  <td data-after="">Washington, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Brussels, Belgium">"50 Ans De Cinema"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2017"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Dubai, UAE">"Bouguessa - Eshop"</td>
-                  <td data-after="">Dubai, UAE</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="SOTD">FWWWARDS</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2017"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="SOTM">CSS Design Awards</td>
-                  <td data-after="">SOTM</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2017"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="Webpicks">Communication Arts</td>
-                  <td data-after="">Webpicks</td>
-                  <td data-after="NYC, USA">"Quanta Magazine"</td>
-                  <td data-after="">NYC, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2017</td>
-                  <td data-after="Conference">Solvay Business School</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Brussels, Belgium">""The End of Design""</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"Dogstudio"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="SOTY (User's Choice)">Awwwards</td>
-                  <td data-after="">SOTY (User's Choice)</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2016"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Brussels, Belgium">"VOO - This Was Louise Phone"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Brussels, Belgium">"Natan - Eshop"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Brussels, Belgium">"VOO - This Was Louise Phone"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Brussels, Belgium">"Natan - Eshop"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Liege, Belgium">"Riiot Labs"</td>
-                  <td data-after="">Liege, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="Shortlist (Websites General-Fashion & Beauty)">Lovie Awards</td>
-                  <td data-after="">Shortlist (Websites General-Fashion & Beauty)</td>
-                  <td data-after="">"NATAN"</td>
-                  <td data-after=""></td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="Shortlist (Best Design)">Cannes Lions</td>
-                  <td data-after="">Shortlist (Best Design)</td>
-                  <td data-after="Brussels, Belgium">"VOO - This Was Louise Phone"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="Workshop">Awwwards Amsterdam</td>
-                  <td data-after="">Workshop</td>
-                  <td data-after="Amsterdam, Netherlands">""Design For Emotions""</td>
-                  <td data-after="">Amsterdam, Netherlands</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2016</td>
-                  <td data-after="Conference">Digital Design Days</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Milano, Italy">""Design For Emotions""</td>
-                  <td data-after="">Milano, Italy</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="SOTY (User's Choice)">Awwwards</td>
-                  <td data-after="">SOTY (User's Choice)</td>
-                  <td data-after="Macau, China">"Dragone"</td>
-                  <td data-after="">Macau, China</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Macau, China">"Dragone"</td>
-                  <td data-after="">Macau, China</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Macau, China">"Dragone"</td>
-                  <td data-after="">Macau, China</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="SOTD">FWA</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Macau, China">"Dragone - Wishcard"</td>
-                  <td data-after="">Macau, China</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2015"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="Conference">KIKK Festival</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Namur, Belgium">""Design For Emotions""</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="Conference">Hookedfest</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Ghent, Belgium">""Design For Emotions""</td>
-                  <td data-after="">Ghent, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="Conference">Awwwards Barcelona</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Barcelona, Spain">"Dogstudio"</td>
-                  <td data-after="">Barcelona, Spain</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2015</td>
-                  <td data-after="Conference">OFFF Festival Barcelona</td>
-                  <td data-after="">Conference</td>
-                  <td data-after="Barcelona, Spain">"Dogstudio"</td>
-                  <td data-after="">Barcelona, Spain</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2014</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Waterloo, Belgium">"Waterloo"</td>
-                  <td data-after="">Waterloo, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2014</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Waterloo, Belgium">"Waterloo"</td>
-                  <td data-after="">Waterloo, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2014</td>
-                  <td data-after="Shortlist">Lovie Awards</td>
-                  <td data-after="">Shortlist</td>
-                  <td data-after="Waterloo, Belgium">"Waterloo"</td>
-                  <td data-after="">Waterloo, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2013</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Tel Aviv, Israël">"The Congress"</td>
-                  <td data-after="">Tel Aviv, Israël</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2013</td>
-                  <td data-after="SOTM">Awwwards</td>
-                  <td data-after="">SOTM</td>
-                  <td data-after="NYC, USA">"Escape Flight"</td>
-                  <td data-after="">NYC, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2013</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="NYC, USA">"Escape Flight"</td>
-                  <td data-after="">NYC, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2013</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"Bark to Work"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2013</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="Tel Aviv, Israël">"The Congress"</td>
-                  <td data-after="">Tel Aviv, Israël</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2013</td>
-                  <td data-after="FOTD">FWA</td>
-                  <td data-after="">FOTD</td>
-                  <td data-after="NYC, USA">"Escape Flight"</td>
-                  <td data-after="">NYC, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2013</td>
-                  <td data-after="Adobe Cutting Edge Award">FWA</td>
-                  <td data-after="">Adobe Cutting Edge Award</td>
-                  <td data-after="NYC, USA">"Escape Flight"</td>
-                  <td data-after="">NYC, USA</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2012</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Brussels, Belgium">"Ernest et Célestine"</td>
-                  <td data-after="">Brussels, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2012</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"KIKK Festival 2012"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                              <tr>
-                  <td data-after="">2012</td>
-                  <td data-after="SOTD">Awwwards</td>
-                  <td data-after="">SOTD</td>
-                  <td data-after="Namur, Belgium">"Best Wishes Dogstudio"</td>
-                  <td data-after="">Namur, Belgium</td>
-                </tr>
-                          </tbody>
+                  <td data-after="старт">Проект</td>
+                  <td data-after="">Родился</td>
+                  <td data-after="">de-press переосмыслен как «тихая гавань»</td>
+                  <td data-after="">Некоммерческий, открытый код</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">Лайки</td>
+                  <td data-after="">Навсегда отменены</td>
+                  <td data-after="">Нет публичных лайков и рейтингов страдания</td>
+                  <td data-after="">Боль не собирает очки</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">Комментарии</td>
+                  <td data-after="">Навсегда отменены</td>
+                  <td data-after="">Нет публичных комментариев под историей</td>
+                  <td data-after="">Только тихие фразы</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">Чат</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">Чат инициирует только автор</td>
+                  <td data-after="">accept или Author Outreach</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">ИИ</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">ИИ всегда помечен</td>
+                  <td data-after="">Без диагнозов и toxic positivity</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">Карты эмоций</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">Только на устройстве пользователя</td>
+                  <td data-after="">ZK: сервер не видит</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">Anti-Panic</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">Важнее ленты и realtime</td>
+                  <td data-after="">Тишина важнее охвата</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">Кризис</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">112/103 и страница /safety</td>
+                  <td data-after="">Честность вместо запретов</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="инвариант">Helper</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">Helper ≠ терапевт</td>
+                  <td data-after="">Присутствие, не лечение</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="не будет">Треды</td>
+                  <td data-after="">Отменено</td>
+                  <td data-after="">Публичные обсуждения историй</td>
+                  <td data-after="">Приватно всё, кроме тишины</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="не будет">Карта травм</td>
+                  <td data-after="">Отменено</td>
+                  <td data-after="">Серверное хранение состояний</td>
+                  <td data-after="">Только устройство</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="не будет">AI-peer</td>
+                  <td data-after="">Отменено</td>
+                  <td data-after="">Скрытые роботы-собеседники</td>
+                  <td data-after="">Только помеченный ИИ</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="не будет">Open matching</td>
+                  <td data-after="">Отменено</td>
+                  <td data-after="">Публичный поиск собеседников</td>
+                  <td data-after="">Решение за автором</td>
+                </tr>
+                <tr>
+                  <td data-after="">2025</td>
+                  <td data-after="не будет">Голосовые</td>
+                  <td data-after="">Отменено</td>
+                  <td data-after="">WebRTC-комнаты</td>
+                  <td data-after="">Слишком шумно</td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="в работе">GL-модуль</td>
+                  <td data-after="">Пишется</td>
+                  <td data-after="">Собственная сцена вместо бандлов</td>
+                  <td data-after="">API 1:1 window.DogGL</td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="в работе">Сцена</td>
+                  <td data-after="">Пишется</td>
+                  <td data-after="">JSON-стейты: камера, сплайны, matcap</td>
+                  <td data-after="">Catmull-Rom</td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="в работе">Нарратив</td>
+                  <td data-after="">Пишется</td>
+                  <td data-after="">История проекта вместо кейсов</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="в работе">Модель</td>
+                  <td data-after="">Ищем</td>
+                  <td data-after="">3D-модель вместо собаки</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="готово">/safety</td>
+                  <td data-after="">Живёт</td>
+                  <td data-after="">Кризисная страница 112/103</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="в работе">Промо</td>
+                  <td data-after="">Пишется</td>
+                  <td data-after="">Тексты и метаданные страниц</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="решение">Приватность</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">Минимум данных, без трекеров</td>
+                  <td data-after="">Навсегда</td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="решение">Хостинг</td>
+                  <td data-after="">Принято</td>
+                  <td data-after="">Без рекламы и продажи данных</td>
+                  <td data-after="">Навсегда</td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="в работе">Доступность</td>
+                  <td data-after="">Пишется</td>
+                  <td data-after="">Контраст, клавиатура, читаемость</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="идея">Локализация</td>
+                  <td data-after="">Открыто</td>
+                  <td data-after="">Сначала русский, потом English</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="открыто">Исследование</td>
+                  <td data-after="">Идёт</td>
+                  <td data-after="">Что помогает: слушание vs советы</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="скоро">Пилот</td>
+                  <td data-after="">2026</td>
+                  <td data-after="">Закрытый пилот сообщества</td>
+                  <td data-after="">Стучитесь на /careers/</td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="дизайн">Hearers</td>
+                  <td data-after="">Рисуем</td>
+                  <td data-after="">Виден только автору облачка</td>
+                  <td data-after=""></td>
+                </tr>
+                <tr>
+                  <td data-after="">2026</td>
+                  <td data-after="дизайн">Pulse</td>
+                  <td data-after="">Рисуем</td>
+                  <td data-after="">Пульс истории — только автору</td>
+                  <td data-after=""></td>
+                </tr>
+            </tbody>
           </table>
         </div>
       </div>
 
-      <button class="about-table-more js-table-expand">Browse more   <span class="svg svg-cross">
+      <button class="about-table-more js-table-expand">Смотреть ещё   <span class="svg svg-cross">
   	<svg width="12" height="12">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#cross"></use> 
   	</svg>
@@ -1560,14 +601,14 @@ export const MARKUP = `<!-- Wrapper -->
 </button>
 
       <div class="about-item about-item--4 js-in-view">
-        <p class="about-headline appear-fade-up">To start with</p>
-        <p class="about-tagline appear-fade-up appear-delay--2">Our goal is to deliver amazing experiences that make people talk, and build strategic value for brands, tech, entertainment, arts & culture.</p>
+        <p class="about-headline appear-fade-up">Для начала</p>
+        <p class="about-tagline appear-fade-up appear-delay--2">Наша цель — бережные опыты, о которых хочется рассказать тихо: без лайков и рейтингов, но с реальной пользой для тех, кому сейчас трудно.</p>
       </div>
 
       <div class="about-item about-item--5 js-in-view">
-        <h2 class="about-title about-title--small appear-fade-up">Dog is in the details</h2>
+        <h2 class="about-title about-title--small appear-fade-up">Тишина — в деталях</h2>
         <div class="about-text typeset appear-fade-up appear-delay--2">
-          <p>Eleanor said, “Be flexible, but stick to your principles”, and she was damn right.<br> Over the years, we built our own mindset, born from our past experiences, both in success and failures, but all inspired by the same backbone : the more you get in the details of every layer of a brand, product or experience, and the more you’re likely to leave a strong mark on your audience. Peace.</p>
+          <p>«Будь гибкой, но держись своих принципов» — тут Элеонора права.<br> Наш уклад вырос из опыта: успехов и провалов, тихих смен и чужих историй. Чем глубже понимаешь чужую боль, тем бережнее должна быть помощь. Вот и весь принцип.</p>
         </div>
       </div>
 
@@ -1575,21 +616,21 @@ export const MARKUP = `<!-- Wrapper -->
         <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-2.png" class="branch branch--2 js-lazy" />
         <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-3.png" class="branch branch--3 js-lazy" />
         
-        <h2 class="about-title about-title--small appear-fade-up">This is how we roll </h2>
+        <h2 class="about-title about-title--small appear-fade-up">Как здесь устроено </h2>
         <div class="about-text typeset appear-fade-up appear-delay--2">
-          <p>We know our business, but we surely don’t know yours, but it’s great, because we also strongly believe amazing work comes from great relationships and we’re convinced our full potential can only be released when we all work together, inside and outside the company (or during buzzed late-night discussions)</p>
-          <p>Before collaborating on anything, we always start with getting to know each other.</p>
+          <p>Мы знаем своё дело, но не твою историю — и это правильно: настоящая помощь начинается со знакомства. Работать можно только вместе: с автором, с Helper’ами и теми, кто просто рядом (даже если это ночная переписка)</p>
+          <p>Прежде чем что-то делать, мы всегда начинаем со знакомства.</p>
         </div>
       </div>
 
       <div class="about-item about-item--7 js-in-view appear-fade-up">
         <div class="about-text typeset">
-          <p>Your needs, your goals, your expectations, your story, your team, and even, hopefully maybe your taste in Belgian beers.</p>
-          <p>Now, you’re looking for a team to produce whatever you want without taking the time to get to know us, and thoroughly tell us more about your situation? Well...here’s the way out.</p>
+          <p>Твоя история, твои ожидания, твой темп и твои границы — всё это важно, вплоть до любимого чая.</p>
+          <p>Если тебе нужен просто исполнитель задач — без доверия и разговора, честно покажем, куда идти дальше.</p>
         </div>
 
         <a href="/values/" class="link link--caret">
-          <span class="link--caret-text">More of our values</span>
+          <span class="link--caret-text">Ещё о принципах</span>
             <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
@@ -1600,12 +641,12 @@ export const MARKUP = `<!-- Wrapper -->
       </div>
 
       <header class="about-header about-header--3 js-in-view">
-        <h2 class="u-visually-hidden">Selected clients</h2>
+        <h2 class="u-visually-hidden">Кто с нами</h2>
 
         <div class="line line--revert"><span class="line-anim"></span></div>
         <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-4.png" class="branch branch--4 js-lazy" />
         <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-5.png" class="branch branch--5 js-lazy" />
-        <p class="about-headline appear-fade-up">They trust us</p>
+        <p class="about-headline appear-fade-up">Нам доверяют истории</p>
         <p class="about-title">
                     
                                   <span class="fx-word">
@@ -1685,8 +726,8 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="showreel-backdrop js-close-showreel"></div>
 
   <div class="showreel-wrapper">
-    <button type="button" class="showreel-close js-close-showreel" title="Close showreel">
-      <span class="u-visually-hidden">Close showreel</span>
+    <button type="button" class="showreel-close js-close-showreel" title="Закрыть манифест">
+      <span class="u-visually-hidden">Закрыть манифест</span>
     </button>
 
     <div class="showreel-video">
@@ -1696,12 +737,12 @@ export const MARKUP = `<!-- Wrapper -->
 </div>
       <div class="site-cookie js-cookie">
   <p class="site-cookie__text">
-    We use functional cookies to make the website work properly and analytical cookies to measure your behavior. We collect data on how you use our website to make our website easier to use. By clicking accept you agree to this. More information? <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">Read our cookie policy</a>.
+    Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. <a href="/values/" target="_blank">Подробнее о приватности</a>.
   </p>
 
   <div class="site-cookie__buttons">
-    <button type="button" class="site-cookie__button js-cookie-accept">Accept</button>
-    <button type="button" class="site-cookie__button js-cookie-deny">Deny</button>
+    <button type="button" class="site-cookie__button js-cookie-accept">Хорошо</button>
+    <button type="button" class="site-cookie__button js-cookie-deny">Отклонить</button>
   </div>
 </div>
 
@@ -1711,28 +752,28 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <div class="site-footer-top">
       <div class="site-footer-block site-footer-block--address appear-fade-up">
-        <h3>Chicago <b>.</b></h3>
+        <h3>Тишина <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--1">
-        <h3>Amsterdam <b>.</b></h3>
+        <h3>Эмпатия <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--2">
-        <h3>Paris <b>.</b></h3>
+        <h3>Забота <b>.</b></h3>
               </div>
 
       
       
       <div class="site-footer-block site-footer-block--social appear-fade-up appear-delay--3">
         <h2 class="site-footer-title">
-          <span class="u-visually-hidden">Contact us</span>
+          <span class="u-visually-hidden">Написать нам</span>
           <svg class="baseline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.67 54.43"><path d="M592.66,694.59l-3-9.13-.81-.69h4.06l-.89.69,2.17,7.06,1.4-5-.7-2.15-.78-.59h4.06l-.92.59,2.21,7.17,2.17-7.09-1-.66h2.28l-.91.66-2.74,8.86-1.35.3L595.77,688,594,694.29Z" transform="translate(-575.91 -684.77)"/><path d="M604,694.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,690a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,694.53,604,694.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M585.52,700.74l-3.23,8.77h-1l-3.43-9.09v8.46l.93.57h-2.09l.87-.57v-8.4l-.87-.71h3.22l2.93,7.43,2.75-7.43h3l-.9.71v8.4l.9.57h-3.84l.79-.57Z" transform="translate(-575.91 -684.77)"/><path d="M592.23,702.71a3.85,3.85,0,0,1,.6.09,1.86,1.86,0,0,1,.44.16,1.67,1.67,0,0,1,.33.23,2,2,0,0,1,.47,1.53v3a3.81,3.81,0,0,0,0,.61,7.26,7.26,0,0,0,.14.72l.65.39h-2.47l-.33-1-1.89,1.22a2.77,2.77,0,0,1-.77-.1,1.77,1.77,0,0,1-.63-.32,1.48,1.48,0,0,1-.42-.54,1.76,1.76,0,0,1-.15-.75,2.15,2.15,0,0,1,.16-.8,1.65,1.65,0,0,1,.6-.72l3.05-.91v-1.24c0-.18,0-.33,0-.48a.89.89,0,0,0-.1-.36.52.52,0,0,0-.26-.22,1.21,1.21,0,0,0-.48-.08l-.28,0-.32.09-1.17,2-.92-1.37s.8-.46,1.44-.77A3.87,3.87,0,0,1,592.23,702.71Zm-.18,3s-1.3.25-1.6,1a2,2,0,0,0-.14.75,1.51,1.51,0,0,0,.21.86.65.65,0,0,0,.56.32,1,1,0,0,0,.41-.1,1.76,1.76,0,0,0,.33-.19l.22-.15Z" transform="translate(-575.91 -684.77)"/><path d="M596.69,705.72l2.67-2-.59-.85h2.18l-2.72,2,2.75,3.95.69.63H599l-2.28-3.58v2.83l.73.75H594l.73-.62v-8.19L594,700l2.46-.4h.22Z" transform="translate(-575.91 -684.77)"/><path d="M604,709.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,705a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,709.53,604,709.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M583.69,723.76c-.27.09-.55.17-.86.25a9,9,0,0,1-1,.19,8.66,8.66,0,0,1-1.15.07,5.17,5.17,0,0,1-1.82-.32,4.46,4.46,0,0,1-1.53-.95,4.53,4.53,0,0,1-1-1.52,5.11,5.11,0,0,1-.39-2,4.89,4.89,0,0,1,1.41-3.72,6.4,6.4,0,0,1,4-1.58,6.83,6.83,0,0,1,1.78.2,7.27,7.27,0,0,1,1.34.5v2.58l-1.34-2.25a2.43,2.43,0,0,0-.72-.56,2.27,2.27,0,0,0-1.05-.21,2.21,2.21,0,0,0-1.2.34,2.94,2.94,0,0,0-.93,1,5.1,5.1,0,0,0-.6,1.5,8.24,8.24,0,0,0-.21,2,10.63,10.63,0,0,0,.16,1.88,5.76,5.76,0,0,0,.48,1.54,2.88,2.88,0,0,0,.82,1A1.88,1.88,0,0,0,581,724a1.73,1.73,0,0,0,1.34-.57v-3.11l-1-.73h3.87l-.75.73v3.14C584.22,723.56,584,723.67,583.69,723.76Z" transform="translate(-575.91 -684.77)"/><path d="M588.45,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.73,3.73,0,0,1-.23-1.35,3.45,3.45,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.28,4.28,0,0,1,1.15-.7,9.18,9.18,0,0,1,1.4-.46,3.13,3.13,0,0,1,1.23.24,2.93,2.93,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.52,3.52,0,0,1-.28,1.47,3.07,3.07,0,0,1-.77,1,4.1,4.1,0,0,1-1.15.7A9.36,9.36,0,0,1,588.45,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.19,5.19,0,0,0-.3,2.05,6.36,6.36,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.27,6.27,0,0,0-.43-2.65Q589.16,717.67,588.57,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M595.39,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.72,3.72,0,0,1-.24-1.35,3.46,3.46,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.29,4.29,0,0,1,1.15-.7,9.19,9.19,0,0,1,1.4-.46,3.12,3.12,0,0,1,1.23.24,2.94,2.94,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.5,3.5,0,0,1-.28,1.47,3,3,0,0,1-.77,1,4.08,4.08,0,0,1-1.15.7A9.39,9.39,0,0,1,595.39,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.21,5.21,0,0,0-.3,2.05,6.34,6.34,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.29,6.29,0,0,0-.43-2.65Q596.09,717.67,595.5,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M602,724.25a2.37,2.37,0,0,1-1.05-.23,2.58,2.58,0,0,1-.84-.66,3.21,3.21,0,0,1-.57-1,3.73,3.73,0,0,1-.21-1.26,5.08,5.08,0,0,1,.17-1.31,3.39,3.39,0,0,1,.53-1.12,3.29,3.29,0,0,1,.93-.86,4.17,4.17,0,0,1,1.39-.53,2.54,2.54,0,0,1,1.4.38v-2.52l-.75-.54,2.46-.4h.21v8.08a3.87,3.87,0,0,0,0,.64,5.56,5.56,0,0,0,.16.55l.74.21-2.43.48-.39-1.34Zm-.54-3.85a6.51,6.51,0,0,0,.08,1.07,3.29,3.29,0,0,0,.25.84,1.54,1.54,0,0,0,.4.54.82.82,0,0,0,.54.19,1,1,0,0,0,.39-.06,2.54,2.54,0,0,0,.43-.25l.19-.14v-4.47a1,1,0,0,0-.3-.29.83.83,0,0,0-.46-.12,1.21,1.21,0,0,0-1.15.73A4.38,4.38,0,0,0,601.45,720.4Z" transform="translate(-575.91 -684.77)"/><path d="M586.22,737.57a5.06,5.06,0,0,0,.93.85,2,2,0,0,0,1.2.37,1.74,1.74,0,0,0,1.22-.42,1.45,1.45,0,0,0,.46-1.12,1.71,1.71,0,0,0-.3-1,3.5,3.5,0,0,0-1-.89l-1.84-1.22c-.23-.16-.44-.31-.63-.46a3,3,0,0,1-.49-.5,2.14,2.14,0,0,1-.32-.6,2.24,2.24,0,0,1-.12-.76,2.42,2.42,0,0,1,.17-.91,2.09,2.09,0,0,1,.57-.78,3.77,3.77,0,0,1,1-.62,5,5,0,0,1,3-.32,5.54,5.54,0,0,1,.63.15l.69.23v2.51l-1.12-2a2.43,2.43,0,0,0-.7-.52,2,2,0,0,0-.87-.19,1.69,1.69,0,0,0-1.13.37,1.3,1.3,0,0,0-.44,1.05,1.36,1.36,0,0,0,.34.95,4.12,4.12,0,0,0,.92.74l1.8,1.19a4.07,4.07,0,0,1,1.21,1.08,2.42,2.42,0,0,1,.38,1.39,2.54,2.54,0,0,1-.19,1,2.43,2.43,0,0,1-.61.85,4.18,4.18,0,0,1-1.11.7,8.58,8.58,0,0,1-1.68.53,5.37,5.37,0,0,1-1.53-.2,5.71,5.71,0,0,1-1.37-.64v-2.57Z" transform="translate(-575.91 -684.77)"/><path d="M591.63,739l.72-.57V730l-.75-.44,2.46-.4h.22v4.6l2.45-1.52a2.3,2.3,0,0,1,.81.11,1.32,1.32,0,0,1,.46.29,1.16,1.16,0,0,1,.19.24,1.14,1.14,0,0,1,.12.31,3.24,3.24,0,0,1,.06.44c0,.17,0,.38,0,.63v4.17l.8.57h-3.33l.51-.57v-4.24a1,1,0,0,0-.16-.64.58.58,0,0,0-.48-.19,1.2,1.2,0,0,0-.53.11l-.53.29-.39.24v4.43l.53.57Z" transform="translate(-575.91 -684.77)"/><path d="M598.69,739l.73-.57v-5l-.77-.56,2.47-.52h.23v6.11l.73.57Z" transform="translate(-575.91 -684.77)"/><path d="M601.84,732.8v-.22h.86v-.94l1.94-1.76v2.7h1.75v.22h-1.75v4.45a.82.82,0,0,0,.21.63.77.77,0,0,0,.55.2A2,2,0,0,0,606,738a3.52,3.52,0,0,0,.54-.22l.1.19-2.31,1.19a1.42,1.42,0,0,1-1.21-.48,2.12,2.12,0,0,1-.37-1.31V732.8Z" transform="translate(-575.91 -684.77)"/><circle cx="24.46" cy="45.67" r="0.97"/></svg>
         </h2>
 
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -1741,11 +782,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Fb</span>
+              <span class="u-from-desktop">Tg</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -1754,11 +795,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Ins</span>
+              <span class="u-from-desktop">Yt</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -1767,11 +808,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Dri</span>
+              <span class="u-from-desktop">Gh</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -1780,7 +821,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Tw</span>
+              <span class="u-from-desktop">@</span>
             </a>
           </li>
         </ul>
@@ -1789,25 +830,25 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="site-footer-bottom">
       <p class="site-footer-contact appear-fade-up">
-        We'd love to hear from you
-        <a href="mailto:biz@dogstudio.be">biz@dogstudio.be</a>
+        Хочешь помочь проекту — напиши:
+        <a href="mailto:hello@de-press.co">hello@de-press.co</a>
       </p>
 
       <div class="site-footer-right">
         <p class="site-footer-newsletter appear-fade-up appear-delay--4">
-          <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">
-            Privacy Policy
+          <a href="/values/" target="_blank">
+            Приватность
                       </a>
         </p>
 
         <div class="site-footer-languages appear-fade-up appear-delay--5">
-          Language:
+          Язык:
 
                                 <ul>
                               <li class="is-active">
-                  <a href="/studio/" title="English" data-router-disabled>
+                  <a href="/studio/" title="Русский" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-en.jpg" />
-                    English
+                    Русский
 
                                             <span class="svg svg-caret-right">
   	<svg width="5" height="9">
@@ -1818,9 +859,9 @@ export const MARKUP = `<!-- Wrapper -->
                                       </a>
                 </li>
                               <li>
-                  <a href="/mx/el-estudio/" title="Español" data-router-disabled>
+                  <a href="/mx/el-estudio/" title="English" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-mx.jpg" />
-                    Español
+                    English
 
                                       </a>
                 </li>

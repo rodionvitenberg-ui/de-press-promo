@@ -5,13 +5,13 @@
 export const BODY_CLASS = "page-template page-template-page-values page-template-page-values-php page page-id-16  lock-scroll";
 export const DATA_THEME = "values";
 export const DATA_PAGE = "values";
-export const PAGE_TITLE = "Values. What we believe in at Dogstudio.";
+export const PAGE_TITLE = "Принципы — de-press";
 export const MARKUP = `<!-- Wrapper -->
     <div class="site-wrapper">
               <div class="site-header">
   <div class="site-header-title">
-    <a href="/" class="site-header-logo" title="Return to Dogstudio's homepage">
-      <span class="u-visually-hidden">Dogstudio</span>
+    <a href="/" class="site-header-logo" title="На главную — de-press">
+      <span class="u-visually-hidden">de-press</span>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.23099 116.838">
         <path d="M97.9212,84.4793c0-13.21301-7.2132-23.3924-25.54961-23.3924h-19.6172v46.7851h19.6172c18.3364,0,25.54961-10.1797,25.54961-23.3927Zm-13.3478,0c0,9.2356-5.1908,12.6737-12.404,12.6737h-6.6739v-25.3474h6.6739c7.2132,0,12.404,3.4381,12.404,12.6737Z"/>
@@ -33,29 +33,29 @@ export const MARKUP = `<!-- Wrapper -->
     </a>
   </div>
 
-  <a href="/news/" class="site-header-posts">  <span class="svg svg-caret-left">
+  <a href="/safety/" class="site-header-posts">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our news</a>
-  <a href="/cases/" class="site-header-cases">  <span class="svg svg-caret-left">
+ Безопасность</a>
+  <a href="/" class="site-header-cases">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
- All our cases</a>
+ Как устроено</a>
 
-  <button type="button" class="site-header-button" title="Toggle menu">
-    <span class="u-visually-hidden">Toggle menu</span>
+  <button type="button" class="site-header-button" title="Открыть меню">
+    <span class="u-visually-hidden">Открыть меню</span>
     <span class="button-bar button-bar--1"></span>
     <span class="button-bar button-bar--2"></span>
     <span class="button-bar button-bar--3"></span>
   </button>
 </div>
 
-<button type="button" class="site-volume" title="Toggle sound">
-  <span class="u-visually-hidden">Toggle sound</span>
+<button type="button" class="site-volume" title="Звук">
+  <span class="u-visually-hidden">Звук</span>
   <span class="pulsing-ui"></span>
 </button>
       
@@ -96,30 +96,30 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <ul class="site-menu-list">
                       
-        <li class="site-menu-item"><a href="/studio/" class="">The Studio</a></li>
+        <li class="site-menu-item"><a href="/studio/" class="">О проекте</a></li>
                       
-        <li class="site-menu-item"><a href="/cases/" class="">Our Cases</a></li>
+        <li class="site-menu-item"><a href="/" class="">Истории</a></li>
                       
-        <li class="site-menu-item"><a href="/careers/" class="">Careers</a></li>
+        <li class="site-menu-item"><a href="/careers/" class="">Помогать</a></li>
                                         
-        <li class="site-menu-item"><a href="/values/" class="is-active">Our Values</a></li>
+        <li class="site-menu-item"><a href="/values/" class="is-active">Принципы</a></li>
                       
-        <li class="site-menu-item"><a href="/contact/" class="">Contact</a></li>
+        <li class="site-menu-item"><a href="/contact/" class="">Связаться</a></li>
           </ul>
 
     <div class="site-menu-footer">
       <a href="https://vimeo.com/836218697" target="_blank" class="site-menu-showreel js-show-showreel">  <span class="svg svg-caret-right">
-  	<svg width="6" height="10" aria-label="dogstudio">
+  	<svg width="6" height="10" aria-label="de-press">
     	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
- Watch our Showreel</a>
+ Манифест</a>
 
       <div class="site-menu-content">
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="We Make Good Shit">
+        <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="Тишина — это ответ">
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -128,11 +128,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Facebook</span>
+              <span class="u-from-desktop">Telegram</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -141,11 +141,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Instagram</span>
+              <span class="u-from-desktop">YouTube</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -154,11 +154,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Dribbble</span>
+              <span class="u-from-desktop">GitHub</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -167,7 +167,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Twitter</span>
+              <span class="u-from-desktop">E-mail</span>
             </a>
           </li>
           <li>
@@ -180,7 +180,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Newsletter</span>
+              <span class="u-from-desktop">Рассылка</span>
             </a>
           </li>
         </ul>
@@ -191,17 +191,17 @@ export const MARKUP = `<!-- Wrapper -->
       
       <div class="site-container" data-router-wrapper>
           <main data-router-view="values" role="main">
-    <h1 class="u-visually-hidden">Our Values</h1>
+    <h1 class="u-visually-hidden">Принципы</h1>
 
         <section class="values-hero">
-  <h2 class="u-visually-hidden">Because company culture is more than a ping pong table</h2>
+  <h2 class="u-visually-hidden">Потому что культура — это не фича в роадмапе</h2>
 
   <div class="line line--1 line--revert js-in-view"><span class="line-anim"></span></div>
   <div class="line line--2 js-in-view"><span class="line-anim"></span></div>
   
   <div class="center">
     <header class="values-hero-header js-in-view">
-      <p class="values-headline appear-fade-up">What we believe in</p>
+      <p class="values-headline appear-fade-up">Во что мы верим</p>
       <p class="values-title fx-parent">
                 
                             <span class="fx-word">
@@ -273,8 +273,8 @@ export const MARKUP = `<!-- Wrapper -->
     </header>
 
         <div class="values-hero-content js-in-view">
-      <p class="values-headline appear-fade-up">Before anything</p>
-      <p class="values-text appear-fade-up appear-delay--2">Collaborating with dogstudio, both on a career and on a client level means being aligned with our ten core values. Through thick and thin, over and over again.</p>
+      <p class="values-headline appear-fade-up">Для начала</p>
+      <p class="values-text appear-fade-up appear-delay--2">Всё, что мы строим, проходит через десять принципов. Через «не надо» и «зачем». Через тишину и уважение.</p>
     </div>
   </div>
 </section>
@@ -286,7 +286,7 @@ export const MARKUP = `<!-- Wrapper -->
 
   <div class="center">
     <header class="values-list-header js-in-view">
-      <h2 class="u-visually-hidden">No. It is not your tgif happy hour either...</h2>
+      <h2 class="u-visually-hidden">Нет, это не правила ради правил...</h2>
 
       <img data-src="/app/themes/portfolio-2018/static/assets/images/values/background-leaves-1.png" class="leaves leaves--1 js-lazy" />
 
@@ -357,7 +357,7 @@ export const MARKUP = `<!-- Wrapper -->
 
                         </p>
 
-      <p class="values-subtitle appear-fade appear-delay--7">Stop trying. It's embarassing...</p>
+      <p class="values-subtitle appear-fade appear-delay--7">Дальше — сами принципы...</p>
     </header>
 
     <div class="values-list-items">
@@ -367,19 +367,19 @@ export const MARKUP = `<!-- Wrapper -->
         <article class="values-item values-item--1 appear-fade-up appear-delay--1">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 01 /</p>
-    <h3 class="values-item-title">Growing<br /> together through<br /> collaboration</h3>
+    <h3 class="values-item-title">Расти<br /> вместе с людьми,<br /> а не с лентой</h3>
   </header>
 
-  <p class="values-item-text">We strongly believe in the power of collaboration and we’re convinced our full potential can only be released when we all work together, inside and outside the company (or during buzzed late-night discussions)</p>
+  <p class="values-item-text">Боль не собирает очки. Мы убираем механики, которые превращают чужую историю в соревнование.</p>
 </article>
 
         <article class="values-item values-item--2 appear-fade-up appear-delay--2">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 02 /</p>
-    <h3 class="values-item-title">We are all<br /> accountable for<br /> our own work</h3>
+    <h3 class="values-item-title">Каждый отвечает<br /> за свою<br /> тишину</h3>
   </header>
 
-  <p class="values-item-text">Doing things right is awesome, but being on first-line to explain why and how we did it is even better. How often did you face the actual people involved in your project for an effective and straight explanation of the accomplished work? Not often hu?</p>
+  <p class="values-item-text">Под чужой историей не место спорам. Только тихие фразы и резонанс — всё остальное приватно.</p>
 </article>
       </div>
 
@@ -387,19 +387,19 @@ export const MARKUP = `<!-- Wrapper -->
         <article class="values-item values-item--3 appear-fade-up appear-delay--1">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 03 /</p>
-    <h3 class="values-item-title">We are both<br /> agile and<br /> human-centered</h3>
+    <h3 class="values-item-title">Гибко —<br /> и по-человечески<br /> бережно</h3>
   </header>
 
-  <p class="values-item-text">We are human, you are human and our clients are human as well so isn’t it logical to base our approach on making them the center of our strategy?</p>
+  <p class="values-item-text">Диалог — это приглашение, а не вторжение. Автор решает, кому ответить: accept или Author Outreach.</p>
 </article>
 
         <article class="values-item values-item--4 appear-fade-up appear-delay--2">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 04 /</p>
-    <h3 class="values-item-title">Constantly<br /> working globally</h3>
+    <h3 class="values-item-title">Всегда<br /> рядом — онлайн</h3>
   </header>
 
-  <p class="values-item-text">Although the company currently has offices in Belgium and Chicago, we truly believe in the power of technology as the biggest communication facilitator we have ever known. As for today and tomorrow, there’s no excuse not to work with us even</p>
+  <p class="values-item-text">Без скрытых роботов-собеседников, без диагнозов, без toxic positivity. Помощь машины — только с честной меткой.</p>
 </article>
       </div>
 
@@ -407,28 +407,28 @@ export const MARKUP = `<!-- Wrapper -->
         <article class="values-item values-item--5 appear-fade-up appear-delay--1">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 05 /</p>
-    <h3 class="values-item-title">In thy Dog you<br /> shall trust</h3>
+    <h3 class="values-item-title">В помощь верь,<br /> но проверяй</h3>
   </header>
 
-  <p class="values-item-text">We know you’re willing to spend money on a project and you want to do it with us. Great, then it means we’re all getting on a trust-based relationship, but it also means we’re not afraid to be who we are and certainly not to tell you when we think we’re getting off track. Relationships, remember?</p>
+  <p class="values-item-text">Эмоциональные карты живут на устройстве пользователя (ZK). Сервер не видит и не хранит карту твоих состояний.</p>
 </article>
 
         <article class="values-item values-item--6 appear-fade-up appear-delay--2">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 06 /</p>
-    <h3 class="values-item-title">Being platform<br /> agnostic is the<br /> only way</h3>
+    <h3 class="values-item-title">Без привязки<br /> к платформе —<br /> открытый код</h3>
   </header>
 
-  <p class="values-item-text">We’re truly driven by the idea that our future will be composed of an endless multiplicity of digital touchpoints, and we’re definitely the guys to help you build this future.</p>
+  <p class="values-item-text">Когда плохо — не время охватов. Режим тишины и путь к /safety всегда важнее любого realtime.</p>
 </article>
 
         <article class="values-item values-item--7 appear-fade-up appear-delay--3">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 07 /</p>
-    <h3 class="values-item-title">Keep evolving<br /> baby!</h3>
+    <h3 class="values-item-title">Развиваемся<br /> тихо и постоянно</h3>
   </header>
 
-  <p class="values-item-text">Think, build, look back and improve. We’ve been in the business for a while and if there’s something we have learned so far, it’s that nothing lasts forever and our capacity to evolve and adapt is the best asset we have.</p>
+  <p class="values-item-text">Мы не экстренная служба. При кризисе — 112, 103 и страница /safety. Это не отговорка, это честность.</p>
 </article>
       </div>
 
@@ -436,19 +436,19 @@ export const MARKUP = `<!-- Wrapper -->
         <article class="values-item values-item--8 appear-fade-up appear-delay--1">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 08 /</p>
-    <h3 class="values-item-title">We love long-term<br /> relationships</h3>
+    <h3 class="values-item-title">Ценим долгие<br /> и тихие истории</h3>
   </header>
 
-  <p class="values-item-text">We never really liked OPS or one-project stands. We truly believe that the real potential of a collaboration can only be unleashed when we envision partnerships on the long-term, not only to get to know and understand the products and the relationship we build, but also because we can get to improve everything we build.</p>
+  <p class="values-item-text">Helper — слушающий человек, а не врач. Мы не заменяем терапию и не притворяемся, что заменяем.</p>
 </article>
 
         <article class="values-item values-item--9 appear-fade-up appear-delay--2">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 09 /</p>
-    <h3 class="values-item-title">It’s all about honest<br /> communication</h3>
+    <h3 class="values-item-title">Всё решает честный<br /> разговор</h3>
   </header>
 
-  <p class="values-item-text">We like transparency.<br /> We mean...why not? So many brands and clients have been abused for too long with dark and hidden overhead costs and invisible puppet masters. Working with us means opening up transparent discussions. This is how good shit gets done</p>
+  <p class="values-item-text">Прозрачность — основа.<br /> Никаких скрытых механик, тёмных паттернов и невидимых манипуляторов: как работает платформа, видно всем. Открытость — это и есть помощь.</p>
 </article>
       </div>
 
@@ -456,16 +456,16 @@ export const MARKUP = `<!-- Wrapper -->
         <article class="values-item values-item--10 appear-fade-up appear-delay--1">
   <header class="values-item-header">
     <p class="values-item-index"><span class="values-item-cross"></span> 10 /</p>
-    <h3 class="values-item-title">We Make<br /> Good Shit</h3>
+    <h3 class="values-item-title">Мы слышим<br /> тебя</h3>
   </header>
 
-  <p class="values-item-text">Well...everything is in the title isn’t it? We always devoted ourselves to get the highest expectations and the lowest satisfaction so that we can only try to reach for the stars.</p>
+  <p class="values-item-text">Не на каждое сообщение нужен ответ. Присутствие без слов — тоже поддержка. Всё в заголовке.</p>
 </article>
       </div>
     </div>
 
     <footer class="values-list-footer js-in-view">
-      <h2 class="u-visually-hidden">We’re constantly hiring new talent</h2>
+      <h2 class="u-visually-hidden">Мы всегда рады тем, кто умеет слышать</h2>
 
       <img data-src="/app/themes/portfolio-2018/static/assets/images/values/background-leaves-3.png" class="leaves leaves--3 js-lazy" />
 
@@ -513,8 +513,8 @@ export const MARKUP = `<!-- Wrapper -->
                       </span>
               </p>
 
-      <a href="mailto:hello@dogstudio.co" class="values-link link link--under" title="Apply now">
-        <span class="link-label">Apply now</span>
+      <a href="mailto:hello@de-press.co" class="values-link link link--under" title="Как помогать">
+        <span class="link-label">Как помогать</span>
         <span class="link-line"></span>
         <span class="link-line--anim"></span>
       </a>
@@ -528,8 +528,8 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="showreel-backdrop js-close-showreel"></div>
 
   <div class="showreel-wrapper">
-    <button type="button" class="showreel-close js-close-showreel" title="Close showreel">
-      <span class="u-visually-hidden">Close showreel</span>
+    <button type="button" class="showreel-close js-close-showreel" title="Закрыть манифест">
+      <span class="u-visually-hidden">Закрыть манифест</span>
     </button>
 
     <div class="showreel-video">
@@ -539,12 +539,12 @@ export const MARKUP = `<!-- Wrapper -->
 </div>
       <div class="site-cookie js-cookie">
   <p class="site-cookie__text">
-    We use functional cookies to make the website work properly and analytical cookies to measure your behavior. We collect data on how you use our website to make our website easier to use. By clicking accept you agree to this. More information? <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">Read our cookie policy</a>.
+    Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. <a href="/values/" target="_blank">Подробнее о приватности</a>.
   </p>
 
   <div class="site-cookie__buttons">
-    <button type="button" class="site-cookie__button js-cookie-accept">Accept</button>
-    <button type="button" class="site-cookie__button js-cookie-deny">Deny</button>
+    <button type="button" class="site-cookie__button js-cookie-accept">Хорошо</button>
+    <button type="button" class="site-cookie__button js-cookie-deny">Отклонить</button>
   </div>
 </div>
 
@@ -554,28 +554,28 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <div class="site-footer-top">
       <div class="site-footer-block site-footer-block--address appear-fade-up">
-        <h3>Chicago <b>.</b></h3>
+        <h3>Тишина <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--1">
-        <h3>Amsterdam <b>.</b></h3>
+        <h3>Эмпатия <b>.</b></h3>
               </div>
 
       <div class="site-footer-block site-footer-block--address appear-fade-up appear-delay--2">
-        <h3>Paris <b>.</b></h3>
+        <h3>Забота <b>.</b></h3>
               </div>
 
       
       
       <div class="site-footer-block site-footer-block--social appear-fade-up appear-delay--3">
         <h2 class="site-footer-title">
-          <span class="u-visually-hidden">Contact us</span>
+          <span class="u-visually-hidden">Написать нам</span>
           <svg class="baseline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.67 54.43"><path d="M592.66,694.59l-3-9.13-.81-.69h4.06l-.89.69,2.17,7.06,1.4-5-.7-2.15-.78-.59h4.06l-.92.59,2.21,7.17,2.17-7.09-1-.66h2.28l-.91.66-2.74,8.86-1.35.3L595.77,688,594,694.29Z" transform="translate(-575.91 -684.77)"/><path d="M604,694.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,690a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,694.53,604,694.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M585.52,700.74l-3.23,8.77h-1l-3.43-9.09v8.46l.93.57h-2.09l.87-.57v-8.4l-.87-.71h3.22l2.93,7.43,2.75-7.43h3l-.9.71v8.4l.9.57h-3.84l.79-.57Z" transform="translate(-575.91 -684.77)"/><path d="M592.23,702.71a3.85,3.85,0,0,1,.6.09,1.86,1.86,0,0,1,.44.16,1.67,1.67,0,0,1,.33.23,2,2,0,0,1,.47,1.53v3a3.81,3.81,0,0,0,0,.61,7.26,7.26,0,0,0,.14.72l.65.39h-2.47l-.33-1-1.89,1.22a2.77,2.77,0,0,1-.77-.1,1.77,1.77,0,0,1-.63-.32,1.48,1.48,0,0,1-.42-.54,1.76,1.76,0,0,1-.15-.75,2.15,2.15,0,0,1,.16-.8,1.65,1.65,0,0,1,.6-.72l3.05-.91v-1.24c0-.18,0-.33,0-.48a.89.89,0,0,0-.1-.36.52.52,0,0,0-.26-.22,1.21,1.21,0,0,0-.48-.08l-.28,0-.32.09-1.17,2-.92-1.37s.8-.46,1.44-.77A3.87,3.87,0,0,1,592.23,702.71Zm-.18,3s-1.3.25-1.6,1a2,2,0,0,0-.14.75,1.51,1.51,0,0,0,.21.86.65.65,0,0,0,.56.32,1,1,0,0,0,.41-.1,1.76,1.76,0,0,0,.33-.19l.22-.15Z" transform="translate(-575.91 -684.77)"/><path d="M596.69,705.72l2.67-2-.59-.85h2.18l-2.72,2,2.75,3.95.69.63H599l-2.28-3.58v2.83l.73.75H594l.73-.62v-8.19L594,700l2.46-.4h.22Z" transform="translate(-575.91 -684.77)"/><path d="M604,709.65a3.74,3.74,0,0,1-1.26-.21,3,3,0,0,1-1-.62,3,3,0,0,1-.71-1,3.28,3.28,0,0,1-.26-1.34A3.7,3.7,0,0,1,601,705a3.62,3.62,0,0,1,.73-1.12,3.83,3.83,0,0,1,1.06-.78,5.16,5.16,0,0,1,1.3-.44,3,3,0,0,1,1,.16,2.26,2.26,0,0,1,.79.47,2.18,2.18,0,0,1,.53.77,2.8,2.8,0,0,1,.19,1.08v.53h-4.12a3.2,3.2,0,0,0,.27,1.08,2.54,2.54,0,0,0,.53.76,2.11,2.11,0,0,0,.73.46,2.44,2.44,0,0,0,.86.15,2.63,2.63,0,0,0,.84-.12,4,4,0,0,0,.77-.36l.12.17q-.33.33-.63.59a7.21,7.21,0,0,1-.61.47c-.21.14-.42.28-.64.4S604.25,709.53,604,709.65Zm-1.55-4.17h2.1v-.59a3.44,3.44,0,0,0-.2-1.31.76.76,0,0,0-.77-.47.9.9,0,0,0-.86.56,3.82,3.82,0,0,0-.27,1.61Z" transform="translate(-575.91 -684.77)"/><path d="M583.69,723.76c-.27.09-.55.17-.86.25a9,9,0,0,1-1,.19,8.66,8.66,0,0,1-1.15.07,5.17,5.17,0,0,1-1.82-.32,4.46,4.46,0,0,1-1.53-.95,4.53,4.53,0,0,1-1-1.52,5.11,5.11,0,0,1-.39-2,4.89,4.89,0,0,1,1.41-3.72,6.4,6.4,0,0,1,4-1.58,6.83,6.83,0,0,1,1.78.2,7.27,7.27,0,0,1,1.34.5v2.58l-1.34-2.25a2.43,2.43,0,0,0-.72-.56,2.27,2.27,0,0,0-1.05-.21,2.21,2.21,0,0,0-1.2.34,2.94,2.94,0,0,0-.93,1,5.1,5.1,0,0,0-.6,1.5,8.24,8.24,0,0,0-.21,2,10.63,10.63,0,0,0,.16,1.88,5.76,5.76,0,0,0,.48,1.54,2.88,2.88,0,0,0,.82,1A1.88,1.88,0,0,0,581,724a1.73,1.73,0,0,0,1.34-.57v-3.11l-1-.73h3.87l-.75.73v3.14C584.22,723.56,584,723.67,583.69,723.76Z" transform="translate(-575.91 -684.77)"/><path d="M588.45,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.73,3.73,0,0,1-.23-1.35,3.45,3.45,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.28,4.28,0,0,1,1.15-.7,9.18,9.18,0,0,1,1.4-.46,3.13,3.13,0,0,1,1.23.24,2.93,2.93,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.52,3.52,0,0,1-.28,1.47,3.07,3.07,0,0,1-.77,1,4.1,4.1,0,0,1-1.15.7A9.36,9.36,0,0,1,588.45,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.19,5.19,0,0,0-.3,2.05,6.36,6.36,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.27,6.27,0,0,0-.43-2.65Q589.16,717.67,588.57,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M595.39,724.25a3,3,0,0,1-1.22-.24,2.94,2.94,0,0,1-1-.68,3.13,3.13,0,0,1-.65-1,3.72,3.72,0,0,1-.24-1.35,3.46,3.46,0,0,1,.28-1.46,3,3,0,0,1,.77-1,4.29,4.29,0,0,1,1.15-.7,9.19,9.19,0,0,1,1.4-.46,3.12,3.12,0,0,1,1.23.24,2.94,2.94,0,0,1,1,.68,3.13,3.13,0,0,1,.65,1,3.69,3.69,0,0,1,.24,1.34,3.5,3.5,0,0,1-.28,1.47,3,3,0,0,1-.77,1,4.08,4.08,0,0,1-1.15.7A9.39,9.39,0,0,1,595.39,724.25Zm.11-6.58a.92.92,0,0,0-.84.64,5.21,5.21,0,0,0-.3,2.05,6.34,6.34,0,0,0,.42,2.62q.42.89,1,.89a.92.92,0,0,0,.84-.65,5.17,5.17,0,0,0,.3-2,6.29,6.29,0,0,0-.43-2.65Q596.09,717.67,595.5,717.67Z" transform="translate(-575.91 -684.77)"/><path d="M602,724.25a2.37,2.37,0,0,1-1.05-.23,2.58,2.58,0,0,1-.84-.66,3.21,3.21,0,0,1-.57-1,3.73,3.73,0,0,1-.21-1.26,5.08,5.08,0,0,1,.17-1.31,3.39,3.39,0,0,1,.53-1.12,3.29,3.29,0,0,1,.93-.86,4.17,4.17,0,0,1,1.39-.53,2.54,2.54,0,0,1,1.4.38v-2.52l-.75-.54,2.46-.4h.21v8.08a3.87,3.87,0,0,0,0,.64,5.56,5.56,0,0,0,.16.55l.74.21-2.43.48-.39-1.34Zm-.54-3.85a6.51,6.51,0,0,0,.08,1.07,3.29,3.29,0,0,0,.25.84,1.54,1.54,0,0,0,.4.54.82.82,0,0,0,.54.19,1,1,0,0,0,.39-.06,2.54,2.54,0,0,0,.43-.25l.19-.14v-4.47a1,1,0,0,0-.3-.29.83.83,0,0,0-.46-.12,1.21,1.21,0,0,0-1.15.73A4.38,4.38,0,0,0,601.45,720.4Z" transform="translate(-575.91 -684.77)"/><path d="M586.22,737.57a5.06,5.06,0,0,0,.93.85,2,2,0,0,0,1.2.37,1.74,1.74,0,0,0,1.22-.42,1.45,1.45,0,0,0,.46-1.12,1.71,1.71,0,0,0-.3-1,3.5,3.5,0,0,0-1-.89l-1.84-1.22c-.23-.16-.44-.31-.63-.46a3,3,0,0,1-.49-.5,2.14,2.14,0,0,1-.32-.6,2.24,2.24,0,0,1-.12-.76,2.42,2.42,0,0,1,.17-.91,2.09,2.09,0,0,1,.57-.78,3.77,3.77,0,0,1,1-.62,5,5,0,0,1,3-.32,5.54,5.54,0,0,1,.63.15l.69.23v2.51l-1.12-2a2.43,2.43,0,0,0-.7-.52,2,2,0,0,0-.87-.19,1.69,1.69,0,0,0-1.13.37,1.3,1.3,0,0,0-.44,1.05,1.36,1.36,0,0,0,.34.95,4.12,4.12,0,0,0,.92.74l1.8,1.19a4.07,4.07,0,0,1,1.21,1.08,2.42,2.42,0,0,1,.38,1.39,2.54,2.54,0,0,1-.19,1,2.43,2.43,0,0,1-.61.85,4.18,4.18,0,0,1-1.11.7,8.58,8.58,0,0,1-1.68.53,5.37,5.37,0,0,1-1.53-.2,5.71,5.71,0,0,1-1.37-.64v-2.57Z" transform="translate(-575.91 -684.77)"/><path d="M591.63,739l.72-.57V730l-.75-.44,2.46-.4h.22v4.6l2.45-1.52a2.3,2.3,0,0,1,.81.11,1.32,1.32,0,0,1,.46.29,1.16,1.16,0,0,1,.19.24,1.14,1.14,0,0,1,.12.31,3.24,3.24,0,0,1,.06.44c0,.17,0,.38,0,.63v4.17l.8.57h-3.33l.51-.57v-4.24a1,1,0,0,0-.16-.64.58.58,0,0,0-.48-.19,1.2,1.2,0,0,0-.53.11l-.53.29-.39.24v4.43l.53.57Z" transform="translate(-575.91 -684.77)"/><path d="M598.69,739l.73-.57v-5l-.77-.56,2.47-.52h.23v6.11l.73.57Z" transform="translate(-575.91 -684.77)"/><path d="M601.84,732.8v-.22h.86v-.94l1.94-1.76v2.7h1.75v.22h-1.75v4.45a.82.82,0,0,0,.21.63.77.77,0,0,0,.55.2A2,2,0,0,0,606,738a3.52,3.52,0,0,0,.54-.22l.1.19-2.31,1.19a1.42,1.42,0,0,1-1.21-.48,2.12,2.12,0,0,1-.37-1.31V732.8Z" transform="translate(-575.91 -684.77)"/><circle cx="24.46" cy="45.67" r="0.97"/></svg>
         </h2>
 
         <ul>
           <li>
-            <a href="https://www.facebook.com/dogstudio/" target="_blank">
+            <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -584,11 +584,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Fb</span>
+              <span class="u-from-desktop">Tg</span>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/dogstudio.co/" target="_blank">
+            <a href="https://youtube.com/@depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
@@ -597,11 +597,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Ins</span>
+              <span class="u-from-desktop">Yt</span>
             </a>
           </li>
           <li>
-            <a href="https://dribbble.com/dogstudio" target="_blank">
+            <a href="https://github.com/de-press" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -610,11 +610,11 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Dri</span>
+              <span class="u-from-desktop">Gh</span>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/Dogstudio" target="_blank">
+            <a href="mailto:hello@de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
@@ -623,7 +623,7 @@ export const MARKUP = `<!-- Wrapper -->
   </span>
 
               </span>
-              <span class="u-from-desktop">Tw</span>
+              <span class="u-from-desktop">@</span>
             </a>
           </li>
         </ul>
@@ -632,25 +632,25 @@ export const MARKUP = `<!-- Wrapper -->
 
     <div class="site-footer-bottom">
       <p class="site-footer-contact appear-fade-up">
-        We'd love to hear from you
-        <a href="mailto:biz@dogstudio.be">biz@dogstudio.be</a>
+        Хочешь помочь проекту — напиши:
+        <a href="mailto:hello@de-press.co">hello@de-press.co</a>
       </p>
 
       <div class="site-footer-right">
         <p class="site-footer-newsletter appear-fade-up appear-delay--4">
-          <a href="https://www.deptagency.com/en-nl/privacy-policy/" target="_blank">
-            Privacy Policy
+          <a href="/values/" target="_blank">
+            Приватность
                       </a>
         </p>
 
         <div class="site-footer-languages appear-fade-up appear-delay--5">
-          Language:
+          Язык:
 
                                 <ul>
                               <li class="is-active">
-                  <a href="/values/" title="English" data-router-disabled>
+                  <a href="/values/" title="Русский" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-en.jpg" />
-                    English
+                    Русский
 
                                             <span class="svg svg-caret-right">
   	<svg width="5" height="9">
@@ -661,9 +661,9 @@ export const MARKUP = `<!-- Wrapper -->
                                       </a>
                 </li>
                               <li>
-                  <a href="/mx/nuestros-valores/" title="Español" data-router-disabled>
+                  <a href="/mx/nuestros-valores/" title="English" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-mx.jpg" />
-                    Español
+                    English
 
                                       </a>
                 </li>

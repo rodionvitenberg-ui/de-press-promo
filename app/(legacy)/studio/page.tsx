@@ -4,7 +4,8 @@ import * as page from "@/components/legacy/markups/studio";
 
 export const metadata: Metadata = {
   title: page.PAGE_TITLE,
-  description: "The Studio. We are Dogstudio.",
+  description:
+    "О проекте de-press: зачем тихая гавань, как устроены облачка и какие принципы мы не сломаем.",
 };
 
 export default createLegacyPage(page);

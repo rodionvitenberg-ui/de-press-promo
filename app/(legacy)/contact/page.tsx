@@ -4,7 +4,8 @@ import * as page from "@/components/legacy/markups/contact";
 
 export const metadata: Metadata = {
   title: page.PAGE_TITLE,
-  description: "Contact. Drop a line to Dogstudio.",
+  description:
+    "Написать de-press: помочь, участвовать в пилоте или поддержать проект. Кризис → 112/103 и /safety.",
 };
 
 export default createLegacyPage(page);
