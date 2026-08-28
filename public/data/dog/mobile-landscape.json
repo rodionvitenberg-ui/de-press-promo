@@ -1,0 +1,306 @@
+{
+  "MATCAP_PER_ROW": 10,
+  "STATES": {
+    "HOME_STATE": {
+      "POSES_COUNT": 2,
+      "CAM_Y": [
+        0,
+        0
+      ],
+      "DEPTH": [
+        34,
+        34
+      ],
+      "H_ROTATION": [
+        0,
+        0
+      ],
+      "V_ROTATION": [
+        40,
+        40
+      ],
+      "X_OFFSET": [
+        3,
+        3
+      ],
+      "Y_OFFSET": [
+        -5,
+        32
+      ],
+      "MOUSE_INFLUENCE": [
+        0,
+        0
+      ],
+      "KEYPOINTS": [
+        {
+          "value": 0,
+          "element": ".ruler--top"
+        },
+        {
+          "value": 1,
+          "element": ".ruler--1024",
+          "visible": false
+        }
+      ]
+    },
+    "VALUES_STATE": {
+      "POSES_COUNT": 2,
+      "CAM_Y": [
+        0,
+        0
+      ],
+      "DEPTH": [
+        30,
+        30
+      ],
+      "H_ROTATION": [
+        0,
+        0
+      ],
+      "V_ROTATION": [
+        60,
+        60
+      ],
+      "X_OFFSET": [
+        -8,
+        -8
+      ],
+      "Y_OFFSET": [
+        -3,
+        36
+      ],
+      "MOUSE_INFLUENCE": [
+        0,
+        0
+      ],
+      "KEYPOINTS": [
+        {
+          "value": 0,
+          "element": ".ruler--top"
+        },
+        {
+          "value": 1,
+          "element": ".ruler--1190",
+          "visible": false
+        }
+      ]
+    },
+    "CAREERS_STATE": {
+      "POSES_COUNT": 2,
+      "CAM_Y": [
+        0,
+        0
+      ],
+      "DEPTH": [
+        18,
+        18
+      ],
+      "H_ROTATION": [
+        0,
+        0
+      ],
+      "V_ROTATION": [
+        240,
+        240
+      ],
+      "X_OFFSET": [
+        0,
+        0
+      ],
+      "Y_OFFSET": [
+        7,
+        25
+      ],
+      "MOUSE_INFLUENCE": [
+        0,
+        0
+      ],
+      "KEYPOINTS": [
+        {
+          "value": 0,
+          "element": ".ruler--top"
+        },
+        {
+          "value": 1,
+          "element": ".ruler--1024",
+          "visible": false
+        }
+      ]
+    },
+    "ABOUT_STATE": {
+      "POSES_COUNT": 2,
+      "CAM_Y": [
+        0,
+        0
+      ],
+      "DEPTH": [
+        -20,
+        -20
+      ],
+      "H_ROTATION": [
+        0,
+        0
+      ],
+      "V_ROTATION": [
+        -125,
+        -125
+      ],
+      "X_OFFSET": [
+        7,
+        7
+      ],
+      "Y_OFFSET": [
+        -3,
+        24
+      ],
+      "MOUSE_INFLUENCE": [
+        0,
+        0
+      ],
+      "KEYPOINTS": [
+        {
+          "value": 0,
+          "element": ".ruler--top"
+        },
+        {
+          "value": 1,
+          "element": ".about-products-list",
+          "visible": false
+        }
+      ]
+    },
+    "MENU_STATE": {
+      "POSES_COUNT": 2,
+      "CAM_Y": [
+        0,
+        0
+      ],
+      "DEPTH": [
+        23,
+        23
+      ],
+      "H_ROTATION": [
+        0,
+        0
+      ],
+      "V_ROTATION": [
+        0,
+        0
+      ],
+      "X_OFFSET": [
+        0,
+        0
+      ],
+      "Y_OFFSET": [
+        -2,
+        -2
+      ],
+      "MOUSE_INFLUENCE": [
+        0,
+        0
+      ]
+    }
+  },
+  "MATCAPS": [
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.79,
+      "specularWeight": 0.52
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.79,
+      "specularWeight": 0.52
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0,
+      "specularWeight": 0
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.46,
+      "specularWeight": 0.89
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.59,
+      "specularWeight": 0
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0.7,
+      "specularWeight": 0.7
+    },
+    {
+      "normalScale": 1,
+      "diffuseWeight": 0,
+      "specularWeight": 0
+    }
+  ]
+}

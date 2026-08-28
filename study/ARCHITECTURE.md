@@ -76,17 +76,27 @@ Scroll / reveal: `.js-in-view` + `.appear-fade` / `.appear-fade-up` (+ delay mod
 - Draco runtime: `static/assets/dog/draco/*`
 - Ambience: `static/assets/audios/ambience.mp3`
 
-API surface used from `main.js` (approx.):
+API surface actually called from `main.js` (full):
 
-| Method | Role |
-|--------|------|
-| `setMatcap(a, b)` | Pick matcap indices (atlas cells) |
-| `setMatcapProgress(t)` | Crossfade 0→1 between matcaps |
-| `setAnimationProgress(t, hard?)` | Scrub dog animation |
+| Method | Where called |
+|--------|--------------|
+| `new DogGL(options)` | `dog/index.js` constructor — options carry `data`, `reduced`, `container`, `imagePath`, `dracoPath`, `modelPath` |
+| `load()` | Loader `.load()` — promise or `true` when dog disabled |
+| `init` (via tween) | Dog controller `.init()` flow |
+| `update()` | Dog controller `.update()` (RAF loop) |
+| `resize()` | Manager `.onResize()` |
+| `setMatcap(a, b)` | Cases hover, menu, reset |
+| `setMatcapProgress(t)` | GSAP tween on matcap crossfade |
+| `setAnimationProgress(t, hard?)` | Scroll scrub + intro + menu |
 | `setState(state)` | Pose / page state machine |
 | `setMouse({x,y})` | Parallax / look-at |
-| `menu()` etc. | Menu presentation helpers |
-| `onResize` / `onScroll` | Layout coupling |
+| `setSSAA(bool)` / `setSSAAQuality(n)` | Dog `.loaded()` on hi-DPI |
+| `setPixelRatio(n)` | Dog `.loaded()` on hi-DPI |
+
+⚠️ Phase 1: since the 2026-08 port, `options.data` is **overridden** by
+`public/data/dog/*.json` via a `Proxy` around `window.DogGL` in
+`DogstudioPage.tsx`. Nothing in `main.js` changes; the bundle falls back to
+its own `data-*.js` modules if the JSON fetch fails.
 
 Homepage cases set matcaps via HTML:
 

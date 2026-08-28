@@ -151,9 +151,9 @@ public/app/themes/portfolio-2018/static/
   css/main.css
   js/{detectizr,modernizr,dog,main}.js
   assets/                         # 3D, textures, fonts, images, audio
-  # (план) data/dog/*.json        # STATES / MATCAPS — данные наружу
 
-public/data/dog/                  # (план) вынесенные данные состояний
+public/data/dog/                  # ✅ Фаза 1: STATES / MATCAPS / MATCAP_PER_ROW
+                                  # (извлекаются из main.js скриптом, прокидываются в DogGL)
 
 study/                            # не runtime
   ARCHITECTURE.md
@@ -161,9 +161,10 @@ study/                            # не runtime
   js/*.beautified.js
 
 scripts/
-  mirror-pages.mjs                # ⚠️ защитить от перезаписи модели (Фаза 0)
-  extract-scss-from-map.mjs
-  beautify-js.mjs
+  mirror-pages.mjs                # ⚠️ защита от перезаписи модели внесена (Фаза 0)
+  extract-scss-from-map.mjs       # CSS map → study/scss
+  beautify-js.mjs                 # → study/js/*.beautified.js
+  extract-dog-data.mjs            # ✅ Фаза 1: main.js → public/data/dog/*.json
 
 docs/
   WORKFLOW.md
@@ -208,6 +209,7 @@ docs/
 | Файл | Workflow |
 |------|----------|
 | `public/.../main.js`, `dog.js` | Сейчас: minified, правки нежелательны. План: вытеснить GL-часть собственным модулем (Фаза 2) |
+| `public/data/dog/*.json` | ✅ Фаза 1: данные «камеры»/«света» (STATES, MATCAPS). `DogstudioPage` подменяет ими `options.data` в `new DogGL(...)` без правки бандлов |
 | `study/js/*.beautified.js` | Читать / искать |
 
 ### Mirror
@@ -220,7 +222,7 @@ npm run mirror -- --pages=home,studio       # выборочно
 
 - Качает HTML + ассеты.
 - Полный `mirror` **перезаписывает** `components/legacy/markups/*.ts`.
-- ⚠️ **Фаза 0:** модели и matcap-атласы убраны из `KNOWN_ASSETS`, чтобы mirror не затёр кастомизацию.
+- ✅ **Фаза 0:** модели и matcap-атласы убраны из `KNOWN_ASSETS`, чтобы mirror не затёр кастомизацию.
 - Ручные правки markups → commit/stash **до** полного mirror, либо используй `--assets-only`.
 
 ---
@@ -290,20 +292,22 @@ components/lab/MyFeature.tsx
 
 Статусы: ✅ сделано · 🔄 в работе · ⬜ план
 
-### Фаза 0 — Фриз и защита 🔄
+### Фаза 0 — Фриз и защита ✅
 
 - [x] Next shell + offline assets
 - [x] study: SCSS, beautified JS, ARCHITECTURE
-- [ ] Git-точка (`legacy-dogstudio-<дата>`) + скриншоты/видео всех состояний (эталон регрессий)
-- [ ] **Защита от mirror**: `dog.glb`, `dog.drc.glb`, `matcap-*.jpg` убраны из `KNOWN_ASSETS`
-- [ ] Пересобрать README под новое направление (этот документ)
+- [x] Git-точка (`legacy-dogstudio-2026-08-01`)
+- [x] Внешний бэкап репозитория (создан пользователем)
+- [x] **Защита от mirror**: `dog.glb`, `dog.drc.glb`, `matcap-*.jpg` убраны из `KNOWN_ASSETS`
+- [x] Пересобрать README под новое направление (этот документ)
+- [ ] Скриншоты/видео всех состояний (эталон регрессий) — рекомендуется до изменения рантайма
 
-### Фаза 1 — Данные наружу ⬜
+### Фаза 1 — Данные наружу ✅
 
-- [ ] Извлечь `STATES`, `MATCAPS`, `MATCAP_PER_ROW` из `main.js` (modules `data-*.js`)
-- [ ] Выложить в `public/data/dog/*.json`
-- [ ] `DogstudioPage` прокидывает JSON в `DogGL` через `data`
-- Результат: управление «камерой» и «светом» данными без правки бандлов. Оценка: 1–2 дня.
+- [x] Извлечь `STATES`, `MATCAPS`, `MATCAP_PER_ROW` из `main.js` (modules `data-*.js`) — `scripts/extract-dog-data.mjs`
+- [x] Выложить в `public/data/dog/*.json` (desktop / tablet-* / mobile-*)
+- [x] `DogstudioPage` прокидывает JSON в `DogGL` через `data` (Proxy-обёртка над `window.DogGL`; fallback на бандл при ошибке)
+- Результат: управление «камерой» и «светом» = правка `public/data/dog/*.json` без пересборки бандлов.
 
 ### Фаза 2 — GL-модуль вместо dog.js ⬜
 
@@ -345,7 +349,8 @@ components/lab/MyFeature.tsx
 | `npm run mirror:help` | CLI help |
 | `npm run study:scss` | CSS map → `study/scss/` |
 | `npm run study:js` | Beautify → `study/js/` |
-| `npm run study:extract` | scss + js |
+| `npm run study:dog-data` | Из `main.js` → `public/data/dog/*.json` |
+| `npm run study:extract` | scss + js + dog-data |
 
 ---
 
@@ -356,7 +361,7 @@ components/lab/MyFeature.tsx
 | Запустить промо | `npm run dev` → `/` |
 | Понять архитектуру оригинала | `study/ARCHITECTURE.md`, `study/scss`, `study/js` |
 | Поменять текст home | `components/legacy/markups/home.ts` |
-| Поменять «свет»/камеру | Фаза 1 (данные наружу) → `public/data/dog/*.json` |
+| Поменять «свет»/камеру | ✅ Фаза 1: `public/data/dog/*.json` (после правки — hard refresh) |
 | Заменить 3D-модель | Фаза 2 + 3 (GL-модуль, затем файл + конфиг) |
 | Своя страница | `app/(lab)/...` + `components/lab/...` |
 | Appear-анимация | `/lab/playground/appear` |
@@ -385,4 +390,3 @@ components/lab/MyFeature.tsx
 
 - [`docs/WORKFLOW.md`](./docs/WORKFLOW.md)
 - [`study/ARCHITECTURE.md`](./study/ARCHITECTURE.md)
-- [`scripts/mirror-pages.mjs`](./scripts/mirror-pages.mjs)# de-press-promo

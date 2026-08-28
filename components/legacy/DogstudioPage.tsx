@@ -12,15 +12,52 @@ export type DogstudioPageProps = {
   markup: string;
 };
 
+export type DogKeypoint = {
+  value: number;
+  element: string;
+  offset?: number;
+  visible?: boolean;
+};
+
+export type DogState = {
+  POSES_COUNT: number;
+  CAM_Y: number[];
+  DEPTH: number[];
+  H_ROTATION: number[];
+  V_ROTATION: number[];
+  X_OFFSET: number[];
+  Y_OFFSET: number[];
+  MOUSE_INFLUENCE: number[];
+  KEYPOINTS?: DogKeypoint[];
+};
+
+export type DogMatcap = {
+  normalScale: number;
+  diffuseWeight: number;
+  specularWeight: number;
+};
+
+export type DogDataJson = {
+  MATCAP_PER_ROW: number;
+  STATES: Record<string, DogState>;
+  MATCAPS: DogMatcap[];
+};
+
+export type DogGLOptions = {
+  data: unknown;
+};
+
+export type DogGLConstructor = new (options: DogGLOptions) => unknown;
+
 declare global {
   interface Window {
     Dogstudio?: { theme_link: string };
     disable_dog?: boolean;
     disable_motion?: boolean;
     Detectizr?: {
-      device: { type: string };
+      device: { type: string; orientation?: string };
     };
-    DogGL?: unknown;
+    DogGL?: DogGLConstructor;
   }
 }
 
@@ -53,11 +90,13 @@ function supportsWasm(): boolean {
       typeof WebAssembly === "object" &&
       typeof WebAssembly.instantiate === "function"
     ) {
-      const module = new WebAssembly.Module(
+      const wasmModule = new WebAssembly.Module(
         Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00),
       );
-      if (module instanceof WebAssembly.Module) {
-        return new WebAssembly.Instance(module) instanceof WebAssembly.Instance;
+      if (wasmModule instanceof WebAssembly.Module) {
+        return (
+          new WebAssembly.Instance(wasmModule) instanceof WebAssembly.Instance
+        );
       }
     }
   } catch {
@@ -87,6 +126,70 @@ function fallbackWithoutDog() {
   document.querySelectorAll(".js-in-view").forEach((el) => {
     el.classList.add("in-view");
   });
+}
+
+const DEVICE_DATA_FILES = {
+  desktop: "desktop.json",
+  "tablet-portrait": "tablet-portrait.json",
+  "tablet-landscape": "tablet-landscape.json",
+} as const;
+
+type DeviceDataKey = keyof typeof DEVICE_DATA_FILES;
+
+async function loadDogDataForDevice(): Promise<DogDataJson | null> {
+  const type = window.Detectizr?.device?.type;
+  const orientation = window.Detectizr?.device?.orientation;
+
+  let key: DeviceDataKey | null = null;
+  if (type === "desktop") key = "desktop";
+  else if (type === "tablet") {
+    key = orientation === "portrait" ? "tablet-portrait" : "tablet-landscape";
+  }
+
+  // mobile → disable_dog; camera/spline data not needed
+  if (!key) return null;
+
+  const file = DEVICE_DATA_FILES[key];
+  const res = await fetch(`/data/dog/${file}`);
+  if (!res.ok) throw new Error(`GET /data/dog/${file} → ${res.status}`);
+  const json = (await res.json()) as DogDataJson;
+  if (
+    !json ||
+    typeof json !== "object" ||
+    typeof json.MATCAP_PER_ROW !== "number" ||
+    !json.STATES ||
+    !Array.isArray(json.MATCAPS)
+  ) {
+    throw new Error(`Invalid dog data: ${file}`);
+  }
+  return json;
+}
+
+/**
+ * Phase 1: inject extracted data-*.json into DogGL without editing bundles.
+ * main.js calls `new window.DogGL({ data })`; we swap the constructor so the
+ * same data ships from public/data/dog/*.json instead of webpack modules.
+ */
+function patchDogGLWithData(data: DogDataJson) {
+  const Original = window.DogGL;
+  if (typeof Original !== "function") return;
+
+  window.DogGL = new Proxy(Original, {
+    construct(
+      Target: DogGLConstructor,
+      args: unknown[],
+      newTarget: DogGLConstructor,
+    ): object {
+      const [options] = args as [DogGLOptions?];
+      return Reflect.construct(
+        Target,
+        [{ ...(options ?? {}), data }],
+        newTarget,
+      ) as object;
+    },
+  }) as DogGLConstructor;
+
+  console.debug("[phase1] DogGL data overridden from public/data/dog/*.json");
 }
 
 /**
@@ -134,8 +237,19 @@ export default function DogstudioPage({
         }
 
         if (!window.disable_dog) {
+          // Phase 1: fetch data-*.json in parallel with the bundle, then
+          // intercept `new window.DogGL({ data })` in main.js.
+          const dataPromise = loadDogDataForDevice().catch((err) => {
+            console.warn(
+              "[phase1] dog data unavailable — using bundle data:",
+              err,
+            );
+            return null;
+          });
           await loadScript(`${JS}/dog.js`);
           if (cancelled) return;
+          const dogData = await dataPromise;
+          if (dogData) patchDogGLWithData(dogData);
         }
 
         await loadScript(`${JS}/main.js`);

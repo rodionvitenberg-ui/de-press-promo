@@ -64,6 +64,9 @@ npm run mirror:help
 
 ```bash
 npm run study:extract
+npm run study:dog-data   # только JSON для DogGL
 ```
 
-Нужно после обновления CSS map / JS на диске.
+Нужно после обновления CSS map / JS на диске. Данные
+`public/data/dog/*.json` используются рантаймом (Фаза 1): после правки JSON —
+hard refresh страницы.
