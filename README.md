@@ -37,10 +37,10 @@
 
 | | **Legacy** (основа промо) | **Lab** (песочница) |
 |--|---------------------------|---------------------|
-| URL | `/`, `/studio/`, `/careers/`, `/values/`, `/contact/` | `/lab/`, `/lab/playground/...` |
+| URL | `/`, `/about/`, `/careers/`, `/values/`, `/contact/` | `/lab/`, `/lab/playground/...` |
 | Вёрстка | HTML-снимки в `components/legacy/markups/*` (постепенно → JSX) | React-компоненты |
 | Стили | `public/.../main.css` (orig) + кастомные overrides | `components/lab/lab.css` (+ свои) |
-| JS / motion / WebGL | `dog.js` + `main.js` → **план: собственный GL-модуль** | hooks, GSAP, R3F… по желанию |
+| JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/doggl`) | hooks, GSAP, R3F… по желанию |
 | Правки | Аккуратно; `mirror` затирает markups | Свободно, как в любом Next-проекте |
 | Назначение | **Прод-основа**: сценарий, эффекты, скролл | Эксперименты и переиспользуемые паттерны |
 
@@ -48,7 +48,7 @@
 ┌──────────────────────────────────────────────────────────┐
 │  Next.js (route groups, dev server)                      │
 │                                                          │
-│  (legacy) ─► DogstudioPage ─► HTML + dog.js + main.js    │
+│  (legacy) ─► DogstudioPage ─► HTML + DogGL-модуль + main.js │
 │      │              ▲              │                     │
 │      │              │              └──→ Фаза 2: GL-модуль │
 │      │              └── public/app/themes/portfolio-2018 │
@@ -103,7 +103,7 @@ npm run dev
 | Что | URL |
 |-----|-----|
 | Home (legacy) | http://localhost:3000/ |
-| Studio | http://localhost:3000/studio/ |
+| О проекте | http://localhost:3000/about/ |
 | Careers | http://localhost:3000/careers/ |
 | Values | http://localhost:3000/values/ |
 | Contact | http://localhost:3000/contact/ |
@@ -131,7 +131,7 @@ app/
   (legacy)/
     layout.tsx                    # link → original main.css
     page.tsx                      # /
-    studio|careers|values|contact/page.tsx
+    about|careers|values|contact/page.tsx
   (lab)/
     layout.tsx                    # lab.css
     page.tsx                      # /lab/
@@ -185,7 +185,7 @@ docs/
 | URL | `data-router-view` / slug |
 |-----|---------------------------|
 | `/` | `home` |
-| `/studio/` | `about` |
+| `/about/` | `about` |
 | `/careers/` | `careers` |
 | `/values/` | `values` |
 | `/contact/` | `contact` |
@@ -217,7 +217,7 @@ docs/
 ```bash
 npm run mirror                              # assets + markups
 npm run mirror:assets                       # только assets
-npm run mirror -- --pages=home,studio       # выборочно
+npm run mirror -- --pages=home,about       # выборочно
 ```
 
 - Качает HTML + ассеты.
@@ -309,13 +309,23 @@ components/lab/MyFeature.tsx
 - [x] `DogstudioPage` прокидывает JSON в `DogGL` через `data` (Proxy-обёртка над `window.DogGL`; fallback на бандл при ошибке)
 - Результат: управление «камерой» и «светом» = правка `public/data/dog/*.json` без пересборки бандлов.
 
-### Фаза 2 — GL-модуль вместо dog.js ⬜
+### Фаза 2 — GL-модуль вместо dog.js ✅
 
-- [ ] TypeScript-модуль на актуальном three.js, API 1:1 c `window.DogGL`:
-  `init, setAnimationProgress, setMatcap, setMatcapProgress, setState, setMouse, update, setSSAA, setPixelRatio`
-- [ ] Воспроизвести: Catmull-Rom сплайны (7 массивов), разметку мешей, кастомный шейдер, Draco
-- [ ] `DogstudioPage.tsx` загружает GL-модуль вместо `dog.js`
+- [x] TypeScript-модуль на актуальном three.js, API 1:1 c `window.DogGL`:
+  `load, update, resize, setState, setMatcap, setMatcapProgress, setAnimationProgress, setMouse, setSSAA, setSSAAQuality, setPixelRatio`
+- [x] Воспроизвести: сплайны камеры по 7 массивам поз, разметку мешей, кастомный шейдер, Draco
+- [x] `DogstudioPage.tsx` загружает GL-модуль вместо `dog.js`
 - Результат: `main.js` не замечает подмены; WebGL — поддерживаемый код. Оценка: 1–2 недели.
+
+Реализация — `components/legacy/doggl/` (порт модулей 25–57 из `study/js/dog.beautified.js`):
+
+- Фасад `index.ts` повторяет публичный класс `window.DogGL`; `installDogGL()` ставит его в `window` до загрузки `main.js` (Phase-1 Proxy с JSON-данными продолжает работать поверх).
+- Сплайны камеры: `custom-cubic` (DEPTH) + `monotone-cubic` (остальные 6 массивов) — те же алгоритмы, что в бандле (в README они условно названы «Catmull-Rom»).
+- Кастомный matcap-шейдер перенесён дословно; для three r185 патч сам объявляет `varying vec2 vUv` (meshbasic больше не даёт `vUv`), а в skinned-ветке нормаль уже скиннит `skinnormal_vertex`.
+- Draco: декодер three r185 требует API `DecodeArrayTo*`, поэтому в `public/draco/` лежит декодер из поставки three (`examples/jsm/libs/draco/gltf/`); legacy-обёртка в ассетах — Draco 1.3 (только `DecodeBufferToMesh`). Если `.drc.glb` не декодировался — фолбэк на `dog.glb`.
+- Текстуры всегда JPEG-набор (ASTC/PVRTC-варианты не портированы — та же картинка, упрощение Фазы 2).
+- Не портировано (не нужно рантайму): dat.gui-редакторы, orbit-контролы, fbohelper/stats, ASTC/PVR-парсеры.
+
 
 ### Фаза 3 — Кастомизация ⬜
 
@@ -329,7 +339,7 @@ components/lab/MyFeature.tsx
 
 ### Фаза 4 — Чистка и прод ⬜
 
-- [ ] Выпилить ненужное из `main.js` (Highway-роутер, showreel, cases-hovers) после проверки
+- [ ] Выпилить ненужное из `main.js` (Highway-роутер) после проверки; шоурил убрать целиком (кнопка на главной удалена в `35ec9db`; остались модалка «Манифест», Plyr/Vimeo, ссылки в меню); ховеры кейсов остаются — переработать их тему/контент
 - [ ] Заменить `main.js` на лёгкий собственный рантайм (GSAP-паттерны остаются)
 - [ ] `npm run build`, проверка mobile + `/safety`
 - [ ] Карантин legacy-бандлов → archive
@@ -345,7 +355,7 @@ components/lab/MyFeature.tsx
 | `npm run lint` | ESLint |
 | `npm run mirror` | Pages + assets → markups |
 | `npm run mirror:assets` | Только assets (markups не трогать) |
-| `npm run mirror -- --pages=home,studio` | Выборочные страницы |
+| `npm run mirror -- --pages=home,about` | Выборочные страницы |
 | `npm run mirror:help` | CLI help |
 | `npm run study:scss` | CSS map → `study/scss/` |
 | `npm run study:js` | Beautify → `study/js/` |

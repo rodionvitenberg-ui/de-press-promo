@@ -59,11 +59,10 @@ export const MARKUP = `<!-- Wrapper -->
   <span class="pulsing-ui"></span>
 </button>
       
-              <div class="site-loader">
+                            <!-- site-loader: preloader UI removed; empty stub kept because legacy main.js binds to these nodes -->
+<div class="site-loader">
   <div class="site-loader-content">
-    <div class="site-loader-dog">
-      <span class="site-loader-sprite"></span>
-    </div>
+    <span class="site-loader-sprite"></span>
     <div class="site-loader-progress">
       <svg>
         <circle r="67" cx="68" cy="68" class="site-loader-stroke"></circle>

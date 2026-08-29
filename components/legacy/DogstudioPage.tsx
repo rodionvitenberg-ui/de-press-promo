@@ -122,7 +122,6 @@ function applyDeviceFlags() {
 
 function fallbackWithoutDog() {
   document.body.classList.remove("lock-scroll");
-  document.querySelector(".site-loader")?.classList.add("is-hidden");
   document.querySelectorAll(".js-in-view").forEach((el) => {
     el.classList.add("in-view");
   });
