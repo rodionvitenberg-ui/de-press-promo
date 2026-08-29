@@ -194,7 +194,7 @@ function patchDogGLWithData(data: DogDataJson) {
 
 /**
  * Host for an original Dogstudio page runtime.
- * Injects markup once and boots detectizr → dog.js → main.js.
+ * Injects markup once and boots detectizr → own DogGL module → main.js.
  * React does not re-render this tree after mount.
  */
 export default function DogstudioPage({
@@ -237,7 +237,7 @@ export default function DogstudioPage({
         }
 
         if (!window.disable_dog) {
-          // Phase 1: fetch data-*.json in parallel with the bundle, then
+          // Phase 1: fetch data-*.json in parallel with the GL boot, then
           // intercept `new window.DogGL({ data })` in main.js.
           const dataPromise = loadDogDataForDevice().catch((err) => {
             console.warn(
@@ -246,7 +246,9 @@ export default function DogstudioPage({
             );
             return null;
           });
-          await loadScript(`${JS}/dog.js`);
+          // Phase 2: own GL module replaces the legacy dog.js bundle.
+          const doggl = await import("./doggl");
+          doggl.installDogGL();
           if (cancelled) return;
           const dogData = await dataPromise;
           if (dogData) patchDogGLWithData(dogData);
