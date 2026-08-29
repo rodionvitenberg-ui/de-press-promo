@@ -19,6 +19,14 @@ type ModelResource = {
   animationMixer: THREE.AnimationMixer | null;
 };
 
+/**
+ * Blend of the painted basecolor against the matcap shading (FS_MAIN:
+ * `matcap * (1 - w*0.075) + diffuse * w`). 0.79 = the legacy dog's textured
+ * material weight (public/data/dog/*.json MATCAPS[].diffuseWeight) — keeps
+ * the sculpted matcap read while the painted rock/foliage colors dominate.
+ */
+const ISLAND_DIFFUSE_WEIGHT = 0.79;
+
 export class Dog extends THREE.Object3D {
   dogMaterial!: DogMaterial;
 
@@ -47,13 +55,33 @@ export class Dog extends THREE.Object3D {
     const model = loader.getResourceData("dog-model") as ModelResource;
 
     // The island is static geometry (no skin weights), so the matcap shader
-    // uses the static vertex suffix. Detail maps are not bound: the normal
-    // map is a neutral 1x1 texture (matching the legacy dog normal map
-    // average, so the transition curve behaves identically); with no
-    // diffuse/specular maps their weighted terms contribute nothing.
+    // uses the static vertex suffix. The normal map stays a neutral 1x1
+    // texture (matching the legacy dog normal map average, so the transition
+    // curve behaves identically); there is no specular map, so that weighted
+    // term contributes nothing.
     this.dogMaterial = new DogMaterial(C.JSON_DATA?.MATCAP_PER_ROW ?? 10, false, false);
-    this.dogMaterial.uniforms.tMatCap.value = loader.getResourceData("matcaps") as THREE.Texture;
+    const matcaps = loader.getResourceData("matcaps") as THREE.Texture;
+    // Both color sources decode to linear before the blend (the legacy mixed
+    // gamma-space values; decode+output-encode round-trips the matcap itself
+    // ~1:1, so the approved matcap look is unchanged, while the diffuse now
+    // competes on equal footing instead of being crushed by the raw atlas).
+    matcaps.colorSpace = THREE.SRGBColorSpace;
+    this.dogMaterial.uniforms.tMatCap.value = matcaps;
     this.dogMaterial.uniforms.normalMap.value = createNeutralNormalMap();
+
+    // Phase 3: restore the island's painted basecolor (rock + foliage baked
+    // into one atlas; the runtime GLB keeps TEXCOORD_0 — extracted to
+    // island_diffuse.jpg by study/extract-island-diffuse.mjs). Marked sRGB so
+    // the GPU decodes it to linear before the matcap/diffuse blend. First ==
+    // second weight: the diffuse does not change on case-hover matcap swaps.
+    // 0.79 = the legacy textured-material weight (public/data/dog/*.json).
+    const islandDiffuse = loader.getResourceData("island-diffuse") as THREE.Texture | null;
+    if (islandDiffuse) {
+      islandDiffuse.colorSpace = THREE.SRGBColorSpace;
+      this.dogMaterial.map = islandDiffuse;
+      this.dogMaterial.uniforms.firstDiffuseWeight.value = ISLAND_DIFFUSE_WEIGHT;
+      this.dogMaterial.uniforms.secondDiffuseWeight.value = ISLAND_DIFFUSE_WEIGHT;
+    }
 
     model.object.traverse((child) => {
       const mesh = child as THREE.Mesh;
@@ -78,7 +106,7 @@ export class Dog extends THREE.Object3D {
     this.setMatcaps(this.currentMatCapBody, body);
   }
 
-  /** With detail maps unbound, only the matcap indices drive the output. */
+  /** The matcap cells drive the matcap term; the diffuse blend stays fixed. */
   setMatcaps(bodyFirst: number, bodySecond: number): void {
     const dog = this.dogMaterial.uniforms;
     dog.firstMatcapIdx.value = bodyFirst;

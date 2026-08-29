@@ -215,8 +215,8 @@ export class DogMaterial extends THREE.MeshBasicMaterial {
     // `USE_MAP` must stay defined: the legacy `sampleDiffuse()` references the
     // `map` uniform, which three.js only declares when a map is bound. Without
     // it the fragment shader fails to compile and nothing renders. A flat
-    // black 1x1 texture keeps the program compiling while making the diffuse
-    // term contribute nothing (untextured island).
+    // black 1x1 texture keeps the program compiling until the real diffuse
+    // is bound (see Dog.init).
     this.map = createNeutralDiffuseMap();
 
     this.uniforms = {

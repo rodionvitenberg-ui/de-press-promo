@@ -59,14 +59,31 @@ export class World3D {
 
     const imagePath = C.IMAGE_PATH;
     // The legacy manifest also carried per-part detail maps (normals,
-    // diffuse, specular) and swapped in ASTC/PVRTC variants when available;
-    // the island renders pure matcap, so only the atlas is loaded.
+    // diffuse, specular) and swapped in ASTC/PVRTC variants when available.
+    // The island needs only the matcap atlas plus its own painted basecolor
+    // (extracted by study/extract-island-diffuse.mjs, see dog.ts).
+    const islandDiffuse: TextureOptions = {
+      anisotropy: Math.min(4, maxAnisotropy),
+      magFilter: THREE.LinearFilter,
+      minFilter: THREE.LinearMipmapLinearFilter,
+      wrapS: THREE.ClampToEdgeWrapping,
+      wrapT: THREE.ClampToEdgeWrapping,
+      generateMipmaps: true,
+      // glTF UV convention (v=0 at the top) — do not flip the image.
+      flipY: false,
+    };
     const manifest: LoadEntry[] = [
       {
         id: "matcaps",
         type: "texture",
         url: `${imagePath}matcap-combined-resized.jpg`,
         options: matcapAtlas,
+      },
+      {
+        id: "island-diffuse",
+        type: "texture",
+        url: `${imagePath}island_diffuse.jpg`,
+        options: islandDiffuse,
       },
     ];
 
