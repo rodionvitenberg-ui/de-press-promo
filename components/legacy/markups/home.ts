@@ -232,12 +232,6 @@ export const MARKUP = `<!-- Wrapper -->
                   </span><br>
           </p>
 
-    <a href="https://vimeo.com/836218697" target="_blank" class="home-hero-showreel js-show-showreel">  <span class="svg svg-caret-right">
-  	<svg width="6" height="10" aria-label="de-press">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
-  	</svg>
-  </span>
- Манифест</a>
 
     <div class="home-hero-content">
       <p class="lead">
