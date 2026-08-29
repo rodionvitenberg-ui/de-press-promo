@@ -71,10 +71,11 @@ export class World3D {
     ];
 
     // The runtime model is the floating island (Phase 3), replacing the
-    // legacy dog pair. Draco/fallback follows the dog naming scheme. `fit`
-    // frames the island into the volume the legacy dog occupied (dog.glb at
-    // scale 20 with offset (0.2, -0.5, 0.15)), so every camera spline state
-    // keeps its original framing — see study/convert-island.mjs.
+    // legacy dog pair. Draco/fallback follows the dog naming scheme. The
+    // island is fitted around the dog group origin (X/Y_OFFSET splines then
+    // place it per state) and sized to ~1/3 of the hero frame — the legacy
+    // dog volume (max dim 0.28 at scale 20) reads as a ~15px speck from the
+    // hero camera distance (~14 units), see study/convert-island.mjs.
     const useDraco = C.USE_DRACO && Boolean(C.DRACO_PATH);
     manifest.push({
       id: "dog-model",
@@ -82,8 +83,8 @@ export class World3D {
       url: useDraco ? `${C.MODEL_PATH}island.drc.glb` : `${C.MODEL_PATH}island.glb`,
       options: {
         fit: {
-          size: [0.2, 0.28, 0.22],
-          center: [3.97, -9.89, 2.97],
+          size: [3.5, 5, 4],
+          center: [0, 0, 0],
         },
       },
     });
