@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description:
     "Некоммерческая эмпатичная платформа для эмоциональной поддержки. Тишина вместо лайков, истории вместо лент, контроль у автора.",
   icons: {
-    icon: "/app/themes/portfolio-2018/static/assets/images/favicon.png",
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 

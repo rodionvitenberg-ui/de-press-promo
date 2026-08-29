@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { createLegacyPage } from "@/components/legacy/createLegacyPage";
-import * as page from "@/components/legacy/markups/studio";
+import * as page from "@/components/legacy/markups/about";
 
 export const metadata: Metadata = {
   title: page.PAGE_TITLE,

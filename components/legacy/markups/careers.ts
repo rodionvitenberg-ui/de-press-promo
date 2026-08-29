@@ -96,7 +96,7 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <ul class="site-menu-list">
                       
-        <li class="site-menu-item"><a href="/studio/" class="">О проекте</a></li>
+        <li class="site-menu-item"><a href="/about/" class="">О проекте</a></li>
                       
         <li class="site-menu-item"><a href="/" class="">Истории</a></li>
                                         

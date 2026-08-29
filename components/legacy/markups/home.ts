@@ -96,7 +96,7 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <ul class="site-menu-list">
                       
-        <li class="site-menu-item"><a href="/studio/" class="">О проекте</a></li>
+        <li class="site-menu-item"><a href="/about/" class="">О проекте</a></li>
                       
         <li class="site-menu-item"><a href="/" class="">Истории</a></li>
                       
@@ -269,13 +269,13 @@ export const MARKUP = `<!-- Wrapper -->
 
 
     <ul class="home-cases-list js-cases-list">
-              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="tomorrowland" data-matcap="18, 18"><span>Публичное</span> Монолог</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="navy-pier" data-matcap="7, 7"><span>Публичное</span> Я слышу тебя</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="msi-chicago" data-matcap="8, 8"><span>Публичное</span> Тихие фразы</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="this-was-louises-phone" data-matcap="11, 11"><span>Публичное</span> Похожая история</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="kikk-18" data-matcap="9, 9"><span>Автору</span> Pulse</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="the-kennedy-center" data-matcap="10, 10"><span>Автору</span> Hearers</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="orw" data-matcap="12, 12"><span>Безопасность</span> Anti-Panic</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="tomorrowland" data-matcap="18, 18"><span>Публичное</span> Монолог</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="navy-pier" data-matcap="7, 7"><span>Публичное</span> Я слышу тебя</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="msi-chicago" data-matcap="8, 8"><span>Публичное</span> Тихие фразы</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="this-was-louises-phone" data-matcap="11, 11"><span>Публичное</span> Похожая история</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="kikk-18" data-matcap="9, 9"><span>Автору</span> Pulse</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="the-kennedy-center" data-matcap="10, 10"><span>Автору</span> Hearers</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="orw" data-matcap="12, 12"><span>Безопасность</span> Anti-Panic</a></li>
           </ul>
   </div>
 
@@ -284,7 +284,7 @@ export const MARKUP = `<!-- Wrapper -->
         <h3 class="u-visually-hidden">Монолог</h3>
 
         <div class="inner">
-          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Монолог</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Монолог</span></a>
 
           <div class="home-cases-content">
                           <p class="home-cases-headline">Облачко</p>
@@ -321,7 +321,7 @@ export const MARKUP = `<!-- Wrapper -->
         <h3 class="u-visually-hidden">Я слышу тебя</h3>
 
         <div class="inner">
-          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Я слышу тебя</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Я слышу тебя</span></a>
 
           <div class="home-cases-content">
                           <p class="home-cases-headline">Реакция</p>
@@ -358,7 +358,7 @@ export const MARKUP = `<!-- Wrapper -->
         <h3 class="u-visually-hidden">Тихие фразы</h3>
 
         <div class="inner">
-          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Тихие фразы</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Тихие фразы</span></a>
 
           <div class="home-cases-content">
                           <p class="home-cases-headline">Поддержка</p>
@@ -395,7 +395,7 @@ export const MARKUP = `<!-- Wrapper -->
         <h3 class="u-visually-hidden">Похожая история</h3>
 
         <div class="inner">
-          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Похожая история</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Похожая история</span></a>
 
           <div class="home-cases-content">
                           <p class="home-cases-headline">Резонанс</p>
@@ -432,7 +432,7 @@ export const MARKUP = `<!-- Wrapper -->
         <h3 class="u-visually-hidden">Pulse</h3>
 
         <div class="inner">
-          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Pulse</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Pulse</span></a>
 
           <div class="home-cases-content">
                           <p class="home-cases-headline">Автору</p>
@@ -465,7 +465,7 @@ export const MARKUP = `<!-- Wrapper -->
         <h3 class="u-visually-hidden">Hearers</h3>
 
         <div class="inner">
-          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Hearers</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Hearers</span></a>
 
           <div class="home-cases-content">
                           <p class="home-cases-headline">Автору</p>
@@ -502,7 +502,7 @@ export const MARKUP = `<!-- Wrapper -->
         <h3 class="u-visually-hidden">Anti-Panic</h3>
 
         <div class="inner">
-          <a href="/studio/" class="home-cases-link"><span class="u-visually-hidden">Anti-Panic</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Anti-Panic</span></a>
 
           <div class="home-cases-content">
                           <p class="home-cases-headline">Безопасность</p>

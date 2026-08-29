@@ -18,7 +18,7 @@ const AWARDS = [
 ];
 
 /**
- * React shell of /studio/ (router-view "about").
+ * React shell of /about/ (router-view "about").
  * Study: templates/_about.scss, partials about-*, legacy markups/studio.ts
  */
 export default function StudioShell() {
@@ -34,7 +34,7 @@ export default function StudioShell() {
         <p className="lab-shell-lead">
           Structure port of the about page: hero claim → services grid → awards
           table. Content is simplified for study; compare with legacy{" "}
-          <Link href="/studio/">/studio/</Link>.
+          <Link href="/about/">/studio/</Link>.
         </p>
       </section>
 
@@ -83,7 +83,7 @@ export default function StudioShell() {
         <Link href="/lab/playground/pages/values/" className="lab-shell-link">
           Values shell →
         </Link>
-        <Link href="/studio/" className="lab-shell-link lab-shell-link--muted">
+        <Link href="/about/" className="lab-shell-link lab-shell-link--muted">
           Legacy studio →
         </Link>
       </section>

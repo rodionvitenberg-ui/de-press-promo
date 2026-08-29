@@ -62,7 +62,7 @@ const PLAYGROUNDS = [
 
 const LEGACY = [
   { href: "/", label: "Home" },
-  { href: "/studio/", label: "Studio" },
+  { href: "/about/", label: "О проекте" },
   { href: "/careers/", label: "Careers" },
   { href: "/values/", label: "Values" },
   { href: "/contact/", label: "Contact" },

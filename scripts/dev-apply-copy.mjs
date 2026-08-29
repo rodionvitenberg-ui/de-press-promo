@@ -37,13 +37,13 @@ once("home", '<span>2016</span>', "<span>Публичное</span>");
 once("home", '<span>2012 - Today</span>', "<span>Автору</span>");
 once("home", '<span>2017</span>', "<span>Автору</span>");
 once("home", '<span>2016 - Ongoing</span>', "<span>Безопасность</span>");
-r("home", 'href="/cases/tomorrowland/"', 'href="/studio/"');
-r("home", 'href="/cases/navy-pier/"', 'href="/studio/"');
-r("home", 'href="/cases/msi-chicago/"', 'href="/studio/"');
-r("home", 'href="/cases/voo/"', 'href="/studio/"');
-r("home", 'href="/cases/kikk-festival-2018/"', 'href="/studio/"');
-r("home", 'href="/cases/the-kennedy-center/"', 'href="/studio/"');
-r("home", 'href="/cases/royal-opera-of-wallonia/"', 'href="/studio/"');
+r("home", 'href="/cases/tomorrowland/"', 'href="/about/"');
+r("home", 'href="/cases/navy-pier/"', 'href="/about/"');
+r("home", 'href="/cases/msi-chicago/"', 'href="/about/"');
+r("home", 'href="/cases/voo/"', 'href="/about/"');
+r("home", 'href="/cases/kikk-festival-2018/"', 'href="/about/"');
+r("home", 'href="/cases/the-kennedy-center/"', 'href="/about/"');
+r("home", 'href="/cases/royal-opera-of-wallonia/"', 'href="/about/"');
 
 r("home", "Dogstudio is a design & technology firm working globally from our offices based in Belgium and Chicago.<br> Our strong focus on producing high quality & emotional brandings, digital products and experiences became a signature.",
   "de-press — некоммерческая эмпатичная платформа.<br> Мы против токсичных механик соцсетей: вместо лайков, рейтингов и публичных комментариев здесь тишина, истории и бережная поддержка.");
@@ -87,32 +87,32 @@ r("home", "season of a renown Belgian opera house", "молчат, помощь 
 r("home", ">Discover<", ">Подробнее<");
 
 /* ---------------- STUDIO ---------------- */
-r("studio", 'export const PAGE_TITLE = "The Studio. We are Dogstudio.";',
+r("about", 'export const PAGE_TITLE = "The Studio. We are Dogstudio.";',
   'export const PAGE_TITLE = "О проекте — de-press";');
-r("studio", "We're just making Good Shit like it's 1996",
+r("about", "We're just making Good Shit like it's 1996",
   "Мы строим тихую гавань — без лайков и рейтингов");
-once("studio", "Our commitment", "Наше обязательство");
-once("studio", "To start with", "Для начала");
-once("studio", "Dogstudio is a multidisciplinary creative studio at the intersection of art, design and technology. We are on a mission to explore, create meaning and provoke emotions through design and storytelling.",
+once("about", "Our commitment", "Наше обязательство");
+once("about", "To start with", "Для начала");
+once("about", "Dogstudio is a multidisciplinary creative studio at the intersection of art, design and technology. We are on a mission to explore, create meaning and provoke emotions through design and storytelling.",
   "de-press — эмпатичная платформа для эмоциональной поддержки. Наша миссия — исследовать, как тишина, истории и контроль автора заменяют механику лайков и рейтингов.");
-once("studio", "Soo... What?", "И что это значит?");
-once("studio", "We believe in the power of leveraging design, stories and emotions  to help small & major brands, organisations and businesses engage human beings on any kind of medium.",
+once("about", "Soo... What?", "И что это значит?");
+once("about", "We believe in the power of leveraging design, stories and emotions  to help small & major brands, organisations and businesses engage human beings on any kind of medium.",
   "Мы верим в силу истории и присутствия: «Я слышу тебя» заменяет лайк, тихая фраза — комментарий, а решение всегда за автором истории.");
-once("studio", "Are you tired of reading the same descriptions about those company claiming they’re different from another but really they’re not? Fine!  Because we’re tired too, so why don’t we directly skip to the part where you understand how we can help you?",
+once("about", "Are you tired of reading the same descriptions about those company claiming they’re different from another but really they’re not? Fine!  Because we’re tired too, so why don’t we directly skip to the part where you understand how we can help you?",
   "Устали от лент, где каждое чувство оценивают? Здесь не оценивают. Листайте дальше — покажем, как это устроено.");
-once("studio", "Brand Strategy", "Нет публичных лайков и рейтингов");
-once("studio", "Branding & Art Direction", "Нет публичных комментариев");
-once("studio", "Digital Products", "Чат инициирует только автор");
-once("studio", "Emerging Technologies(You know... AR, VR, AI etc...)",
+once("about", "Brand Strategy", "Нет публичных лайков и рейтингов");
+once("about", "Branding & Art Direction", "Нет публичных комментариев");
+once("about", "Digital Products", "Чат инициирует только автор");
+once("about", "Emerging Technologies(You know... AR, VR, AI etc...)",
   "ИИ всегда помечен — без диагнозов");
-once("studio", "Interactive Installations", "Эмоциональные карты — только на устройстве");
-once("studio", "Visual Design", "Anti-Panic важнее ленты");
-once("studio", "Animation & Illustration", "Helper ≠ терапевт по умолчанию");
-once("studio", "Check our projects", "Смотреть, как устроено");
-once("studio", "Our Swagger, Ho we're sorry. Awards, right ?",
+once("about", "Interactive Installations", "Эмоциональные карты — только на устройстве");
+once("about", "Visual Design", "Anti-Panic важнее ленты");
+once("about", "Animation & Illustration", "Helper ≠ терапевт по умолчанию");
+once("about", "Check our projects", "Смотреть, как устроено");
+once("about", "Our Swagger, Ho we're sorry. Awards, right ?",
   "Инварианты и решения. Да, снова принципы.");
-once("studio", "It's time to shine", "Что уже решено");
-once("studio", "Well, this is more or less a list of the stuff we won (and hopefully earned a bit), the places we talked at, and the publications we weirdly got into. Let’s not get awkward about it... Here’s the thing",
+once("about", "It's time to shine", "Что уже решено");
+once("about", "Well, this is more or less a list of the stuff we won (and hopefully earned a bit), the places we talked at, and the publications we weirdly got into. Let’s not get awkward about it... Here’s the thing",
   "Таблица — это наши принципы и статус проекта: что принято навсегда, что в работе, чего не будет. Не награды — обещания.");
 tb("studio", [
   ["2024", "Проект", "старт", "Родился", "de-press переосмыслен как «тихая гавань»", "Некоммерческий, открытый код"],
@@ -144,11 +144,11 @@ tb("studio", [
   ["2026", "Hearers", "дизайн", "Рисуем", "Виден только автору облачка", ""],
   ["2026", "Pulse", "дизайн", "Рисуем", "Пульс истории — только автору", ""],
 ]);
-once("studio", ">Year<", ">Год<");
-once("studio", ">Organization<", ">Решение<");
-once("studio", ">Type<", ">Статус<");
-once("studio", ">Project<", ">Суть<");
-once("studio", ">Location<", ">Комментарий<");
+once("about", ">Year<", ">Год<");
+once("about", ">Organization<", ">Решение<");
+once("about", ">Type<", ">Статус<");
+once("about", ">Project<", ">Суть<");
+once("about", ">Location<", ">Комментарий<");
 
 /* ---------------- CAREERS ---------------- */
 r("careers", 'export const PAGE_TITLE = "Careers - Dogstudio";',
@@ -341,8 +341,8 @@ r("contact", "5 rue Moret, 75011 Paris, France",
   "Забота: при кризисе — 112, 103 и страница /safety. Это не медицина, и мы честно об этом говорим.");
 
 /* ---------------- COMMON (all 5 markups) ---------------- */
-for (const f of ["home", "studio", "careers", "values", "contact"]) {
-  once(f, '<a href="/studio/" class="">The Studio</a>', '<a href="/studio/" class="">О проекте</a>');
+for (const f of ["home", "about", "careers", "values", "contact"]) {
+  once(f, '<a href="/studio/" class="">The Studio</a>', '<a href="/about/" class="">О проекте</a>');
   once(f, '<a href="/cases/" class="">Our Cases</a>', '<a href="/" class="">Истории</a>');
   once(f, '<a href="/careers/" class="">Careers</a>', '<a href="/careers/" class="">Помогать</a>');
   once(f, '<a href="/values/" class="">Our Values</a>', '<a href="/values/" class="">Принципы</a>');

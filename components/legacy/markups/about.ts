@@ -96,7 +96,7 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <ul class="site-menu-list">
                                         
-        <li class="site-menu-item"><a href="/studio/" class="is-active">О проекте</a></li>
+        <li class="site-menu-item"><a href="/about/" class="is-active">О проекте</a></li>
                       
         <li class="site-menu-item"><a href="/" class="">Истории</a></li>
                       
@@ -837,7 +837,7 @@ export const MARKUP = `<!-- Wrapper -->
 
                                 <ul>
                               <li class="is-active">
-                  <a href="/studio/" title="Русский" data-router-disabled>
+                  <a href="/about/" title="Русский" data-router-disabled>
                     <img src="/app/themes/portfolio-2018/static/assets/images/flag-en.jpg" />
                     Русский
 

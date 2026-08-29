@@ -37,7 +37,7 @@ const MOBILE_UA =
 
 const ROUTES = [
   { name: "home", path: "/" },
-  { name: "studio", path: "/studio/" },
+  { name: "about", path: "/about/" },
   { name: "careers", path: "/careers/" },
   { name: "values", path: "/values/" },
   { name: "contact", path: "/contact/" },

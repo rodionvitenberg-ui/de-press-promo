@@ -33,7 +33,7 @@
   {
     "device": "desktop",
     "state": "top",
-    "route": "/studio/",
+    "route": "/about/",
     "booted": true,
     "locked": false,
     "canvas": true,
@@ -78,7 +78,7 @@
   {
     "device": "mobile",
     "state": "top",
-    "route": "/studio/",
+    "route": "/about/",
     "booted": true,
     "locked": false,
     "canvas": false,

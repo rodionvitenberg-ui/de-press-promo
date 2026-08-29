@@ -2,7 +2,7 @@
  * Mirror dogstudio.co pages into public/ + generated markup modules.
  * Study-only local clone — not for redistribution.
  *
- * Pages: home (/), studio, careers, values, contact
+ * Pages: home (/), about, careers, values, contact
  */
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -20,7 +20,7 @@ const UA =
 /** @type {{ slug: string, path: string, moduleName: string }[]} */
 const PAGES = [
   { slug: "home", path: "/", moduleName: "home" },
-  { slug: "studio", path: "/studio/", moduleName: "studio" },
+  { slug: "studio", path: "/studio/", moduleName: "about" },
   { slug: "careers", path: "/careers/", moduleName: "careers" },
   { slug: "values", path: "/values/", moduleName: "values" },
   { slug: "contact", path: "/contact/", moduleName: "contact" },

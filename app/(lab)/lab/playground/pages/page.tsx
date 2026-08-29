@@ -11,7 +11,7 @@ const PAGES = [
     href: "/lab/playground/pages/studio/",
     title: "Studio shell",
     body: "About-page rhythm: claim → services → awards table.",
-    legacy: "/studio/",
+    legacy: "/about/",
   },
   {
     href: "/lab/playground/pages/values/",

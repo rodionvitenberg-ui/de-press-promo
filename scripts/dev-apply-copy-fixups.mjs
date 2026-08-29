@@ -21,19 +21,19 @@ once("home", ">Featured projects<", ">Истории<");
 once("home", ">Discover our values<", ">Принципы<");
 
 /* ---------- STUDIO ---------- */
-once("studio", '<a href="/studio/" class="is-active">The Studio</a>', '<a href="/studio/" class="is-active">О проекте</a>');
+once("about", '<a href="/studio/" class="is-active">The Studio</a>', '<a href="/about/" class="is-active">О проекте</a>');
 r("studio", "Are you tired of reading the same descriptions about those company claiming they’re different from another but really they’re not?<br> Fine!  Because we’re tired too, so why don’t we directly skip to the part where you understand how we can help you?",
   "Устал читать одинаковые описания проектов, которые притворяются другими?<br> Хорошая новость: мы тоже. Поэтому сразу к делу — как устроена помощь здесь.");
-once("studio", "Emerging Technologies<br><small>(You know... AR, VR, AI etc...)</small>",
+once("about", "Emerging Technologies<br><small>(You know... AR, VR, AI etc...)</small>",
   "Открытые технологии<br><small>(открытый код, ИИ с честной меткой, WebRTC)</small>");
-once("studio", "Browse more", "Смотреть ещё");
-once("studio", ">To start with<", ">Для начала<");
+once("about", "Browse more", "Смотреть ещё");
+once("about", ">To start with<", ">Для начала<");
 r("studio", "Our goal is to deliver amazing experiences that make people talk, and build strategic value for brands, tech, entertainment, arts & culture.",
   "Наша цель — бережные опыты, о которых хочется рассказать тихо: без лайков и рейтингов, но с реальной пользой для тех, кому сейчас трудно.");
-once("studio", ">Dog is in the details<", ">Тишина — в деталях<");
+once("about", ">Dog is in the details<", ">Тишина — в деталях<");
 r("studio", "Eleanor said, “Be flexible, but stick to your principles”, and she was damn right.<br> Over the years, we built our own mindset, born from our past experiences, both in success and failures, but all inspired by the same backbone : the more you get in the details of every layer of a brand, product or experience, and the more you’re likely to leave a strong mark on your audience. Peace.",
   "«Будь гибкой, но держись своих принципов» — тут Элеонора права.<br> Наш уклад вырос из опыта: успехов и провалов, тихих смен и чужих историй. Чем глубже понимаешь чужую боль, тем бережнее должна быть помощь. Вот и весь принцип.");
-once("studio", "This is how we roll ", "Как здесь устроено ");
+once("about", "This is how we roll ", "Как здесь устроено ");
 r("studio", "We know our business, but we surely don’t know yours, but it’s great, because we also strongly believe amazing work comes from great relationships and we’re convinced our full potential can only be released when we all work together, inside and outside the company (or during buzzed late-night discussions)",
   "Мы знаем своё дело, но не твою историю — и это правильно: настоящая помощь начинается со знакомства. Работать можно только вместе: с автором, с Helper’ами и теми, кто просто рядом (даже если это ночная переписка)");
 r("studio", "Before collaborating on anything, we always start with getting to know each other.",
@@ -42,9 +42,9 @@ r("studio", "Your needs, your goals, your expectations, your story, your team, a
   "Твоя история, твои ожидания, твой темп и твои границы — всё это важно, вплоть до любимого чая.");
 r("studio", "Now, you’re looking for a team to produce whatever you want without taking the time to get to know us, and thoroughly tell us more about your situation? Well...here’s the way out.",
   "Если тебе нужен просто исполнитель задач — без доверия и разговора, честно покажем, куда идти дальше.");
-once("studio", ">More of our values<", ">Ещё о принципах<");
-once("studio", ">Selected clients<", ">Кто с нами<");
-once("studio", ">They trust us<", ">Нам доверяют истории<");
+once("about", ">More of our values<", ">Ещё о принципах<");
+once("about", ">Selected clients<", ">Кто с нами<");
+once("about", ">They trust us<", ">Нам доверяют истории<");
 
 /* ---------- CAREERS ---------- */
 r("careers", "hello@dogstudio.co", "hello@de-press.co");
