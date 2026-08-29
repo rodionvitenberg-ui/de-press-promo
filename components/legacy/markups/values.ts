@@ -196,8 +196,6 @@ export const MARKUP = `<!-- Wrapper -->
         <section class="values-hero">
   <h2 class="u-visually-hidden">Потому что культура — это не фича в роадмапе</h2>
 
-  <div class="line line--1 line--revert js-in-view"><span class="line-anim"></span></div>
-  <div class="line line--2 js-in-view"><span class="line-anim"></span></div>
   
   <div class="center">
     <header class="values-hero-header js-in-view">
@@ -280,9 +278,6 @@ export const MARKUP = `<!-- Wrapper -->
 </section>
 
         <section class="values-list">
-  <div class="line line--revert line--1 js-in-view"><span class="line-anim"></span></div>
-  <div class="line line--2 js-in-view"><span class="line-anim"></span></div>
-  <div class="line line--revert line--3 js-in-view"><span class="line-anim"></span></div>
 
   <div class="center">
     <header class="values-list-header js-in-view">

@@ -25,6 +25,10 @@ const OUT_DIR = process.env.OUT_DIR ?? "study/screenshots";
 const CHROME = process.env.CHROME ?? "google-chrome";
 const LOADER_TIMEOUT_MS = 45_000;
 const TWEEN_WAIT_MS = 1_500;
+// The island intro (progress 0 → scroll pose) keeps flying for ~1.5s after the
+// loader unlocks; without this settle the top-state baseline catches it
+// mid-intro (nondeterministic framing, see Phase 3).
+const INTRO_SETTLE_MS = 1_800;
 
 const DESKTOP_UA =
   "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -224,6 +228,7 @@ async function captureDesktop(cdp, baseDir, route) {
   const manifest = [];
   await navigate(cdp, `${BASE_URL}${route.path}`);
   const ready = await waitForPageReady(cdp);
+  await sleep(INTRO_SETTLE_MS);
   await shoot(cdp, path.join(baseDir, `${route.name}.png`));
   manifest.push({
     device: "desktop",
@@ -299,6 +304,7 @@ async function captureDesktop(cdp, baseDir, route) {
 async function captureMobile(cdp, baseDir, route) {
   await navigate(cdp, `${BASE_URL}${route.path}`);
   const ready = await waitForPageReady(cdp);
+  await sleep(INTRO_SETTLE_MS);
   await shoot(cdp, path.join(baseDir, `${route.name}.png`));
   return [{ device: "mobile", state: "top", route: route.path, ...ready }];
 }

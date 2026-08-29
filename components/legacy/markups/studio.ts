@@ -202,7 +202,6 @@ export const MARKUP = `<!-- Wrapper -->
       <header class="about-header about-header--1 js-in-view">
         <h1 class="u-visually-hidden">Мы строим тихую гавань — без лайков и рейтингов</h1>
 
-        <div class="line"><span class="line-anim"></span></div>
 
         <p class="about-headline about-headline--blue appear-fade-up">Наше обязательство</p>
         <p class="about-title about-title--large fx-parent">
@@ -267,8 +266,6 @@ export const MARKUP = `<!-- Wrapper -->
       </div>
 
       <div class="about-item about-item--2 js-in-view">
-        <div class="line line--revert"><span class="line-anim"></span></div>
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-1.png" class="branch branch--1 js-lazy" />
         
         <p class="about-title about-title--small appear-fade-up">И что это значит?</p>
         <div class="about-text typeset appear-fade-up appear-delay--2">
@@ -377,7 +374,6 @@ export const MARKUP = `<!-- Wrapper -->
       </div>
 
       <div class="about-table js-in-view appear-fade-up">
-        <div class="line"><span class="line-anim"></span></div>
 
         <div class="about-table-inner">
           <table cellpadding="0" cellspacing="0">
@@ -613,8 +609,6 @@ export const MARKUP = `<!-- Wrapper -->
       </div>
 
       <div class="about-item about-item--6 js-in-view appear-fade-up">
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-2.png" class="branch branch--2 js-lazy" />
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-3.png" class="branch branch--3 js-lazy" />
         
         <h2 class="about-title about-title--small appear-fade-up">Как здесь устроено </h2>
         <div class="about-text typeset appear-fade-up appear-delay--2">
@@ -643,9 +637,6 @@ export const MARKUP = `<!-- Wrapper -->
       <header class="about-header about-header--3 js-in-view">
         <h2 class="u-visually-hidden">Кто с нами</h2>
 
-        <div class="line line--revert"><span class="line-anim"></span></div>
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-4.png" class="branch branch--4 js-lazy" />
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/about/branch-5.png" class="branch branch--5 js-lazy" />
         <p class="about-headline appear-fade-up">Нам доверяют истории</p>
         <p class="about-title">
                     

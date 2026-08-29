@@ -205,8 +205,6 @@ export const MARKUP = `<!-- Wrapper -->
   <h2 class="u-visually-hidden">Тебя услышат</h2>
 
   <div class="center">
-    <div class="line line--revert line--1"><span class="line-anim"></span></div>
-    <div class="line line--2"><span class="line-anim"></span></div>
 
     <p class="home-hero-title fx-parent">
             
@@ -269,7 +267,6 @@ export const MARKUP = `<!-- Wrapper -->
   <div class="center">
     <h2 class="home-cases-title js-in-view appear-fade-up">Истории</h2>
 
-    <div class="line line--revert js-in-view"><span class="line-anim"></span></div>
 
     <ul class="home-cases-list js-cases-list">
               <li class="js-in-view appear-fade-up"><a href="/studio/" data-theme="tomorrowland" data-matcap="18, 18"><span>Публичное</span> Монолог</a></li>
@@ -641,7 +638,6 @@ export const MARKUP = `<!-- Wrapper -->
     </header>
 
     <div class="home-about-content js-in-view">
-      <div class="line"><span class="line-anim"></span></div>
 
       <div class="home-about-text typeset">
         <p class="appear-fade-up appear-delay--3">de-press — некоммерческая эмпатичная платформа.<br> Мы против токсичных механик соцсетей: вместо лайков, рейтингов и публичных комментариев здесь тишина, истории и бережная поддержка.</p>

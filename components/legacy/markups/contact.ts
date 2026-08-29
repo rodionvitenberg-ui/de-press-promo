@@ -238,8 +238,6 @@ export const MARKUP = `<!-- Wrapper -->
     </picture>
 
     <div class="center js-in-view">
-      <div class="line line--1"><span class="line-anim"></span></div>
-      <div class="line line--2 line--revert"><span class="line-anim"></span></div>
 
       <p class="contact-title"><span class="js-typed"></span></p>
 

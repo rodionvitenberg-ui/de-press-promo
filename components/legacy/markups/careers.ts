@@ -199,7 +199,6 @@ export const MARKUP = `<!-- Wrapper -->
       <span class="headline appear-fade-up">Помогать</span>
 
       <div class="fx-parent">
-        <div class="line"><span class="line-anim"></span></div>
 
                 
                             <span class="fx-word">
@@ -308,7 +307,6 @@ export const MARKUP = `<!-- Wrapper -->
     </figure>
 
     <figure>
-      <div class="line line--revert"><span class="line-anim"></span></div>
       <div class="image-wrapper">
         <img class="js-lazy" data-sgsrc="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry.jpg" data-srcset="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry@2x.jpg 2x" alt="Кружка чая">
         <img src="/app/themes/portfolio-2018/static/assets/images/careers/slider/larry-xs.jpg">
@@ -820,7 +818,6 @@ export const MARKUP = `<!-- Wrapper -->
 
     <section class="careers-quote">
   <div class="center">
-    <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-1.png" class="js-in-view appear-fade branch branch--1" />
 
     <blockquote class="js-in-view">
       <span class="quote fx-parent">
@@ -904,7 +901,6 @@ export const MARKUP = `<!-- Wrapper -->
   <h2 class="u-visually-hidden">Онлайн</h2>
 
   <div class="center">
-    <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-2.png" class="js-in-view appear-fade branch branch--2" />
 
           <figure class="careers-location-image js-in-view appear-fade-up">
         <img src="/app/uploads/2020/08/Screenshot-2020-08-04-at-15.03.55-600x0-c-default.png" alt="">
@@ -937,7 +933,6 @@ export const MARKUP = `<!-- Wrapper -->
   <h2 class="u-visually-hidden">Пилот</h2>
 
   <div class="center">
-    <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-3.png" class="js-in-view appear-fade branch branch--3" />
 
           <figure class="careers-location-image js-in-view appear-fade-up">
         <img src="/app/uploads/2020/08/Screenshot-2020-08-04-at-15.03.14-600x0-c-default.png" alt="">
@@ -975,7 +970,6 @@ export const MARKUP = `<!-- Wrapper -->
   <h2 class="u-visually-hidden">Продукт</h2>
 
   <div class="center">
-    <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-3.png" class="js-in-view appear-fade branch branch--3" />
 
           <figure class="careers-location-image js-in-view appear-fade-up">
         <img src="/app/uploads/2020/08/Screenshot-2020-08-04-at-15.03.38-600x0-c-default.png" alt="">
@@ -1007,7 +1001,6 @@ export const MARKUP = `<!-- Wrapper -->
   <h2 class="u-visually-hidden">История</h2>
 
   <div class="center">
-    <img src="/app/themes/portfolio-2018/static/assets/images/careers/branch-3.png" class="js-in-view appear-fade branch branch--3" />
 
           <figure class="careers-location-image js-in-view appear-fade-up">
         <img src="/app/uploads/2020/08/Screenshot-2020-08-04-at-15.03.30-600x0-c-default.png" alt="">
