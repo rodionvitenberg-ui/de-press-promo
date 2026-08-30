@@ -378,7 +378,7 @@ export const MARKUP = `<!-- Wrapper -->
                   <td data-after="">2026</td>
                   <td data-after="в работе">Модель</td>
                   <td data-after="">Ищем</td>
-                  <td data-after="">3D-модель вместо собаки</td>
+                  <td data-after="">Собственная 3D-модель</td>
                   <td data-after=""></td>
                 </tr>
                 <tr>

@@ -1,117 +1,103 @@
-# Dogstudio homepage — architecture notes (legacy)
+# Legacy-рантайм — архитектура
 
-Notes written during the original study phase. Paths like `study/`, `app/(lab)/`
-and `npm run study:*` below refer to tooling that has since been removed —
-see git history.
-
-**Names below reflect the state at study time.** They were renamed during the
-originalization pass (see README, Роадмап → Оригинализация): `DogstudioPage`
-→ `BootPage.tsx`; `dog.js` / `window.DogGL` → the `glscene/` module
-(`window.SceneGL`); `window.Dogstudio.theme_link` → `window.Site.assetsRoot`;
-`.dog-scene(-inner)` → `.scene-root(-inner)`; `disable_dog` → `disable_scene`;
-`data/dog/` → `data/scene/`; `assets/dog/` → `assets/island/`. Historical
-mentions of Dogstudio are kept deliberately — this file documents the
-reverse-engineering of the original, not the current product.
-
-Local clone of [dogstudio.co](https://dogstudio.co/) homepage for reverse-engineering.  
-Copyright: Dogstudio / DEPT. Not for redistribution as a product.
+Сценарный слой промо-страницы: WebGL-сцена, matcap-подсветка, скролл-хореография,
+loader, menu. Документ описывает текущее устройство после оригинализации;
+история реверс-инжиниринга исходного бандла — в git-истории.
 
 ## Big picture
 
 ```
 Browser
-  └── Next.js shell (app/*/page.tsx + DogstudioPage)
+  └── Next.js shell (app/(legacy)/*/page.tsx + BootPage)
         ├── CSS:  /static/css/main.css
         ├── DOM:  page snapshot from components/legacy/markups/*
-        └── Scripts (order matters):
-              1. detectizr.js   → device type
-              2. modernizr.js
-              3. dog.js         → window.DogGL (Three.js + Draco/WASM)  [desktop]
-              4. main.js        → webpack app (GSAP, Highway router, pages, UI)
+        └── JS (порядок важен):
+              1. detectizr.js / modernizr.js  → устройство
+              2. island module → window.SceneGL (three.js + Draco/WASM)  [desktop]
+              3. main.js       → webpack app (GSAP, Highway router, pages, UI)
 ```
 
-### Mirrored pages
+### Pages
 
-| URL | WP slug / `data-router-view` | Markup module |
-|-----|------------------------------|---------------|
+| URL | `data-router-view` | Markup module |
+|-----|--------------------|---------------|
 | `/` | `home` | `components/legacy/markups/home.ts` |
-| `/studio/` | `about` | `components/legacy/markups/studio.ts` |
-| `/careers/` | `careers` | `components/legacy/markups/careers.ts` |
+| `/about/` | `about` | `components/legacy/markups/about.ts` |
 | `/values/` | `values` | `components/legacy/markups/values.ts` |
 | `/contact/` | `contact` | `components/legacy/markups/contact.ts` |
-| `/lab/` | — (React lab) | `app/(lab)/*` |
 
-In-page navigation uses **Highway** (`@dogstudio/highway`): it `fetch`es the next URL and swaps `[data-router-view]`. Full page loads of each Next route also work (each boots `DogstudioPage` fresh).
+`/safety/` (и `[lang]/safety`) — нативная Next-страница (`SafetyContent`), в legacy-рантайм не входит.
 
-`window.Dogstudio.theme_link = ''` is required so models, matcaps, audio, and sprites resolve under `public/static/`.
+Локали живут под префиксами `/[lang]/…` (см. README → Локализация).
 
-## Boot sequence (mirrored from original HTML)
+In-page navigation uses the Highway router: it `fetch`es the next URL and swaps
+`[data-router-view]`. Full page loads of each Next route also work (each boots
+`BootPage` fresh).
 
-1. Detectizr classifies device.
-2. **Mobile:** `disable_dog = true` → skip WebGL dog, use 2D fallbacks in CSS/JS.
+`window.Site.assetsRoot = ''` — модели, matcaps, аудио и спрайты резолвятся
+под `public/static/`.
+
+## Boot sequence
+
+1. Detectizr классифицирует устройство.
+2. **Mobile:** `window.disable_scene = true` → без WebGL-сцены, 2D-фолбэки в CSS/JS.
 3. **Tablet/mobile:** `disable_motion = true` → reduced motion path.
-4. WebAssembly probe (Draco decoder). If missing → hide loader, force `.in-view`.
-5. Load `dog.js` then `main.js` (or only `main.js` when dog disabled).
+4. WebAssembly-проба (Draco-декодер). Если нет → скрыть loader, форсировать `.in-view`.
+5. Грузим island-модуль, затем `main.js` (только `main.js`, когда сцена выключена).
 
-Implemented in `components/legacy/DogstudioPage.tsx`.
+`BootPage.tsx` ставит `data-boot-src` (какой бандл грузить) и маркер
+`.boot-page-root` (готовность разметки) до подключения скриптов.
 
-## DOM map (homepage)
+## DOM map (home)
 
 | Region | Classes / hooks | Notes |
-|--------|-----------------|--------|
-| Loader | `.site-loader`, `.site-loader-percent` | Progress while assets + dog load; body has `lock-scroll` until ready |
-| Header | `.site-header` | Logo, news/cases shortcuts, menu button, sound toggle |
-| Menu | `.site-menu` | Fullscreen nav + menu background picture |
-| Dog stage | `.dog-scene` > `.dog-scene-inner` | WebGL canvas mount point |
-| Hero | `.home-hero` | “We Make Good Shit” + showreel CTA |
-| Cases | `.home-cases-list a[data-matcap][data-theme]` | Hover swaps dog matcap + body theme |
-| Case scenes | `.home-cases-scene--*` | Large project cards / pictures |
-| About | `.home-about` | Studio blurb + values link |
-| Showreel | `.js-showreel`, `.js-plyr` | Plyr + Vimeo embed id `836218697` |
-| Footer | `.site-footer` | Addresses, contact, social |
+|--------|-----------------|-------|
+| Loader | `.site-loader`, `.site-loader-percent` | Прогресс, пока грузятся ассеты и сцена; body держит `lock-scroll` до готовности |
+| Header | `.site-header` | Логотип (`.dp-logo`), кнопка меню, звук |
+| Menu | `.site-menu` | Fullscreen-навигация + фоновая картинка |
+| Scene stage | `.scene-root` > `.scene-root-inner` | Точка монтирования WebGL-канваса |
+| Hero | `.home-hero` | Заголовок + intro-FX |
+| Cases | `.home-cases-list a[data-matcap][data-theme]` | Hover меняет matcap сцены + тему body |
+| Case scenes | `.home-cases-scene--*` | Большие карточки проектов |
+| About | `.home-about` | Бла студии + ссылка на values |
+| Modal | `.js-showreel`, `.js-plyr` | Plyr + Vimeo-эмбед (модалка «Манифест») |
+| Footer | `.site-footer` | Адреса, контакты, соцсети |
 
-Scroll / reveal: `.js-in-view` + `.appear-fade` / `.appear-fade-up` (+ delay modifiers).
+Scroll / reveal: `.js-in-view` + `.appear-fade` / `.appear-fade-up` (+ delay-модификаторы).
 
-## WebGL dog (`dog.js` → `DogGL`)
+## WebGL island (`components/legacy/glscene/` → `window.SceneGL`)
 
-- Bundled Three.js + GLTFLoader + DRACOLoader.
-- Models:  
-  - `static/assets/dog/models/dog.glb`  
-  - `static/assets/dog/models/dog.drc.glb` (Draco-compressed)
-- Materials:  
-  - `…/images/dog/final/matcap-combined-resized.jpg` (atlas)  
-  - `…/images/dog/final/dog_normals.jpg` (always JPEG)  
-  - GPU-compressed (chosen by `COMPRESSED_FMT` at runtime):  
-    - **ASTC** (most desktop Chrome/Firefox): `final/ASTC/{dog,branches}_{diffuse,specular|normals}.dds`  
-    - **PVRTC** (iOS): `final/PVRTC/*.pvr`  
-  - Also: `dog_diffuse.jpg`, `dog_specular.jpg`, `branches_*.jpg` as non-compressed siblings  
-  - Resource keys: `dog-diffuse`, `dog-specular`, `dog-normals`, `branches-diffuse`, `branches-normals`, `matcaps`
-- Draco runtime: `static/assets/dog/draco/*`
-- Ambience: `static/assets/audios/ambience.mp3`
+- three.js + GLTFLoader + DRACOLoader (актуальные версии, TypeScript).
+- Модель: `static/assets/island/models/island.drc.glb` (Draco) с фолбэком
+  на несжатый `island.glb`.
+- Материалы: matcap-атлас `…/images/island/final/matcap-combined-resized.jpg`;
+  диффуз `island_diffuse.jpg` (ресурс `island-diffuse`); ветки `branches_*.jpg`.
+- Draco runtime: `public/draco/` (декодер из поставки three r185); legacy-обёртка
+  Draco 1.3 — `static/assets/island/draco/`.
+- Ambience: `static/assets/audios/ambience.mp3`.
 
-API surface actually called from `main.js` (full):
+API surface, который вызывает `main.js` (полный):
 
 | Method | Where called |
 |--------|--------------|
-| `new DogGL(options)` | `dog/index.js` constructor — options carry `data`, `reduced`, `container`, `imagePath`, `dracoPath`, `modelPath` |
-| `load()` | Loader `.load()` — promise or `true` when dog disabled |
-| `init` (via tween) | Dog controller `.init()` flow |
-| `update()` | Dog controller `.update()` (RAF loop) |
+| `new SceneGL(options)` | options: `data`, `reduced`, `container`, `imagePath`, `dracoPath`, `modelPath` |
+| `load()` | Loader `.load()` — promise или `true`, когда сцена выключена |
+| `init` (via tween) | контроллер `.init()` |
+| `update()` | контроллер `.update()` (RAF loop) |
 | `resize()` | Manager `.onResize()` |
 | `setMatcap(a, b)` | Cases hover, menu, reset |
-| `setMatcapProgress(t)` | GSAP tween on matcap crossfade |
+| `setMatcapProgress(t)` | GSAP-tween crossfade matcap'ов |
 | `setAnimationProgress(t, hard?)` | Scroll scrub + intro + menu |
-| `setState(state)` | Pose / page state machine |
-| `setMouse({x,y})` | Parallax / look-at |
-| `setSSAA(bool)` / `setSSAAQuality(n)` | Dog `.loaded()` on hi-DPI |
-| `setPixelRatio(n)` | Dog `.loaded()` on hi-DPI |
+| `setState(state)` | Состояния поз/страниц |
+| `setMouse({x,y})` | Параллакс / look-at |
+| `setSSAA(bool)` / `setSSAAQuality(n)` | hi-DPI |
+| `setPixelRatio(n)` | hi-DPI |
 
-⚠️ Phase 1: since the 2026-08 port, `options.data` is **overridden** by
-`public/data/scene/*.json` via a `Proxy` around `window.DogGL` in
-`DogstudioPage.tsx`. Nothing in `main.js` changes; the bundle falls back to
-its own `data-*.js` modules if the JSON fetch fails.
+`options.data` **переопределяется** `public/data/scene/*.json` через `Proxy`
+вокруг `window.SceneGL` в `BootPage.tsx`. `main.js` ничего не знает о подмене;
+при ошибке fetch бандл падает на собственные data-модули.
 
-Homepage cases set matcaps via HTML:
+Matcaps кейсов задаются прямо в HTML:
 
 ```html
 <a data-theme="tomorrowland" data-matcap="18, 18">…</a>
@@ -119,59 +105,34 @@ Homepage cases set matcaps via HTML:
 <!-- … -->
 ```
 
-On list leave, matcap resets toward `[1, 0]`. Body `data-theme` drives CSS color/theme variants.
+При уходе со списка matcap возвращается к `[1, 0]`. Body `data-theme` управляет
+CSS-вариантами темы.
 
 ## App JS (`main.js`)
 
-Webpack bundle (~1.7 MB). Useful `//# sourceURL=webpack:///./src/js/...` breadcrumbs after beautify:
+Webpack-бандл (~1.7 MB) — legacy-слой, правится точечно. Внутри: page-модули
+(home, about, menu, модалка «Манифест», hover кейсов), GSAP/TweenMax (tween'ы
+matcap и progress, UI motion), Plyr (Vimeo), роутер на
+`data-router-view` / `data-router-wrapper`.
 
-- `src/js/dog/index.js` — React-less Dog controller wrapping `DogGL`
-- `src/js/dog/data-desktop.js` (+ mobile/tablet variants) — scroll/animation curves per breakpoint
-- Page modules: home, about, menu, showreel, cases list hover
-- GSAP / TweenMax — matcap + animation progress tweens, UI motion
-- Plyr — Vimeo showreel
-- Custom router via `data-router-view` / `data-router-wrapper` (SPA between WP pages; only home present locally)
+## CSS
 
-Beautified copy: `study/js/main.beautified.js`, `study/js/dog.beautified.js`.
+- Единый `main.css` подключается из layout (не через bundler — сохраняет
+  `url(../assets/...)`).
+- В sourcemap лежит полный `sourcesContent` — удобно искать селекторы.
+- Шрифты (self-hosted `@font-face`): **Heebo**, **Gilroy**, **GT Sectra Display**.
 
-## CSS / SCSS
+## Граница Next.js
 
-- Runtime: single `main.css` linked from layout (not imported through the bundler — preserves `url(../assets/...)`).
-- Source map has **full `sourcesContent`** for ~153 files → extracted under `study/scss/`.
-- Start reading:
-  - `partials/` home, loader, menu, footer, cases
-  - motion / in-view utilities
-  - vendor: Plyr, tiny-slider (used elsewhere)
+| Owned by Next | Owned by runtime |
+|---------------|------------------|
+| `npm run dev` / build / routes | WebGL, GSAP, menu, loader, hover кейсов |
+| `app/(legacy)/layout.tsx` + CSS link | DOM-мутации после boot |
+| `BootPage` one-shot mount | page-модули `main.js` |
 
-Fonts (self-hosted in CSS `@font-face`): **Heebo**, **Gilroy**, **GT Sectra Display**.
+Не ре-рендерить дерево домашней страницы React'ом после boot — этими нодами
+владеет `main.js`.
 
-## Next.js boundary
+## Внешние зависимости
 
-| Owned by Next | Owned by original runtime |
-|---------------|---------------------------|
-| `npm run dev` / build / routes | WebGL, GSAP, menu, loader, cases hover |
-| `app/(legacy)/layout.tsx` + CSS link | DOM mutations after boot |
-| `DogstudioPage` one-shot mount | `main.js` page modules |
-| `app/(lab)/*` React playgrounds | — |
-
-Do not re-render the homepage tree with React after boot — `main.js` owns those nodes.
-
-## How to re-sync from live site
-
-```bash
-npm run mirror        # re-download assets + regenerate home-markup.ts
-npm run study:extract # SCSS from map + beautify JS
-```
-
-## External deps that stay online
-
-- Vimeo player for showreel (poster is local).
-- Optional: nothing else required for homepage chrome + dog.
-
-## Learning path (suggested)
-
-1. Run the app; interact with loader → dog → case hovers → menu.
-2. Read this file + skim `study/scss/partials` for home/loader.
-3. Search beautified `main.js` for `setMatcap`, `onListLeave`, `Dog.GL`.
-4. Search beautified `dog.js` for `setMatcap`, matcap atlas, DRACOLoader.
-5. Port one small behavior (e.g. in-view fade) to React/GSAP in a new route without touching the clone.
+- Vimeo-плеер для эмбеда (постер локальный).
