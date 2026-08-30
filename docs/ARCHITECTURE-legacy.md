@@ -4,6 +4,15 @@ Notes written during the original study phase. Paths like `study/`, `app/(lab)/`
 and `npm run study:*` below refer to tooling that has since been removed —
 see git history.
 
+**Names below reflect the state at study time.** They were renamed during the
+originalization pass (see README, Роадмап → Оригинализация): `DogstudioPage`
+→ `BootPage.tsx`; `dog.js` / `window.DogGL` → the `glscene/` module
+(`window.SceneGL`); `window.Dogstudio.theme_link` → `window.Site.assetsRoot`;
+`.dog-scene(-inner)` → `.scene-root(-inner)`; `disable_dog` → `disable_scene`;
+`data/dog/` → `data/scene/`; `assets/dog/` → `assets/island/`. Historical
+mentions of Dogstudio are kept deliberately — this file documents the
+reverse-engineering of the original, not the current product.
+
 Local clone of [dogstudio.co](https://dogstudio.co/) homepage for reverse-engineering.  
 Copyright: Dogstudio / DEPT. Not for redistribution as a product.
 

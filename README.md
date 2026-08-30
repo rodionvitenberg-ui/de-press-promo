@@ -299,6 +299,18 @@ components/legacy/markups/my-feature.ts
 - Текстуры всегда JPEG-набор (ASTC/PVRTC-варианты не портированы — та же картинка, упрощение Фазы 2).
 - Не портировано (не нужно рантайму): dat.gui-редакторы, orbit-контролы, fbohelper/stats, ASTC/PVR-парсеры.
 
+### Оригинализация — вычистка следов Dogstudio ✅
+
+Полное удаление следов исходного клона из кода, ассетов и DOM по принятому 6-этапному плану. Исторические упоминания в README и `docs/ARCHITECTURE-legacy.md` оставлены намеренно — это записи о происхождении и реверс-инжиниринге (см. преамбулу legacy-дока: старые имена → новые).
+
+- [x] Пути: `public/app/themes/portfolio-2018/static` → `public/static`, `public/data/dog` → `public/data/scene`; `THEME=""` и webpack publicPath в `main.js` (`794a1d6`)
+- [x] Публичный контракт: ассеты `assets/dog → island`, DOM `.dog-scene(-inner) → .scene-root(-inner)`, глобалы `window.Site.assetsRoot` / `window.SceneGL` / `window.disable_scene`, `data-boot-src`, `.boot-page-root`; CSS `.disable-dog → .disable-scene`; удалён мёртвый `dog.js` (`36a55d0`)
+- [x] Консоль и копирайт: `sayHello`, баннеры, лог `Highway v2.1.2`, `@author … Du Pont <bulldog@…>`, путь `/Users/bulldog/…`, мёртвые `dog.glb`/`dog.drc.glb` (`98b5415`)
+- [x] WordPress-классы body (`page-template*`, `page-id-*`, `home`) сняты — CSS/JS их не использовали (`9c49bf7`)
+- [x] Внутренние имена: `doggl/ → glscene/`, `DogstudioPage → BootPage`, классы `Dog → Island`, `DogMaterial → IslandMaterial`, `DogState → StateDispatcher`, типы `Scene*`; попутно найдены следы вне инвентаря — 14 селекторов `.dog-scene` в `main.css` (не переименуй — сломалось бы позиционирование канваса), 5 спрайтов `images/*/dog.png`, webpack-комментарии, баннер «Kennel» в css.map, видимый EN-текст «…instead of the dog» (`ee340de`)
+- [x] Инлайн-SVG-логотип DOGSTUDIO/DEPT. в шапках about/values/contact (текстовый grep его не видел — буквы набраны path-ами) → текстовый `.dp-logo` (`a5a3e84`)
+- [x] Эталон скриншотов пересобран под новую реальность: маркер готовности `page-template → .boot-page-root`, loader timeout 45→90 с, intro settle 1.8→25 с; 12 состояний пересняты против prod-сборки и проверены визуально (`a5a3e84`)
+- Результат: grep по `dogstudio|theme_link|disable_dog|dog-scene|doggl|assets/dog|data/dog|Kennel|Du Pont` даёт 0 вхождений в коде и ассетах; остаются только исторические записи (README, `docs/ARCHITECTURE-legacy.md`). Верификация каждого этапа: `tsc --noEmit` 0, build 52/52, smoke 200/404.
 
 ### Фаза 3 — Кастомизация ⬜
 
@@ -307,7 +319,7 @@ components/legacy/markups/my-feature.ts
 - [ ] Упростить/адаптировать разметку мешей под структуру новой модели
 - [ ] «Свет»: новый matcap-атлас или PBR-материал с реальными источниками света
 - [ ] Контент: тексты, «тихие фразы», ссылки на `/safety` (кризис → 112/103)
-- [ ] Брендинг: `theme_link`, favicon, мета, шрифты
+- [ ] Брендинг: favicon, мета, шрифты (оригинальный `theme_link` удалён — пути ассетов задаёт `window.Site.assetsRoot`)
 - Оценка: 1–3 дня после Фазы 2 (обычная 3D-задача).
 
 ### Фаза 4 — Чистка и прод ⬜
@@ -342,7 +354,7 @@ components/legacy/markups/my-feature.ts
 | Заменить 3D-модель | Фаза 2 ✅ + 3 (файл + конфиг) |
 | Своя страница | `app/(legacy)/...` + `markups/...` по образцу существующих |
 | Matcap hover | legacy home; механика — `docs/ARCHITECTURE-legacy.md` |
-| Не сломать dog | пути `public/app/themes/...` + `theme_link`; конфиг GL-модуля (`components/legacy/glscene/`) |
+| Не сломать сцену | пути `public/static` (`window.Site.assetsRoot`); конфиг GL-модуля (`components/legacy/glscene/`) |
 | Выкинуть остатки клона | Фаза 4: удалить ненужные части `main.js`, markups, theme public |
 
 ---
