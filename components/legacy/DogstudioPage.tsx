@@ -46,28 +46,28 @@ export type DogDataJson = {
   MATCAPS: DogMatcap[];
 };
 
-export type DogGLOptions = {
+export type SceneGLOptions = {
   data: unknown;
 };
 
-export type DogGLConstructor = new (options: DogGLOptions) => unknown;
+export type SceneGLConstructor = new (options: SceneGLOptions) => unknown;
 
 declare global {
   interface Window {
-    Dogstudio?: { theme_link: string };
-    disable_dog?: boolean;
+    Site?: { assetsRoot: string };
+    disable_scene?: boolean;
     disable_motion?: boolean;
     Detectizr?: {
       device: { type: string; orientation?: string };
     };
-    DogGL?: DogGLConstructor;
+    SceneGL?: SceneGLConstructor;
   }
 }
 
 function loadScript(src: string): Promise<void> {
   return new Promise((resolve, reject) => {
     const existing = document.querySelector<HTMLScriptElement>(
-      `script[data-dogstudio-src="${src}"]`,
+      `script[data-boot-src="${src}"]`,
     );
     if (existing) {
       if (existing.dataset.loaded === "1") resolve();
@@ -77,7 +77,7 @@ function loadScript(src: string): Promise<void> {
     const el = document.createElement("script");
     el.src = src;
     el.async = false;
-    el.dataset.dogstudioSrc = src;
+    el.dataset.bootSrc = src;
     el.onload = () => {
       el.dataset.loaded = "1";
       resolve();
@@ -109,13 +109,13 @@ function supportsWasm(): boolean {
 }
 
 function applyDeviceFlags() {
-  window.disable_dog = false;
+  window.disable_scene = false;
   window.disable_motion = false;
 
   const type = window.Detectizr?.device?.type;
   if (type === "mobile") {
-    document.documentElement.classList.add("disable-dog");
-    window.disable_dog = true;
+    document.documentElement.classList.add("disable-scene");
+    window.disable_scene = true;
   }
   if (type === "tablet" || type === "mobile") {
     document.documentElement.classList.add("disable-motion");
@@ -123,7 +123,7 @@ function applyDeviceFlags() {
   }
 }
 
-function fallbackWithoutDog() {
+function fallbackWithoutScene() {
   document.body.classList.remove("lock-scroll");
   document.querySelectorAll(".js-in-view").forEach((el) => {
     el.classList.add("in-view");
@@ -148,7 +148,7 @@ async function loadDogDataForDevice(): Promise<DogDataJson | null> {
     key = orientation === "portrait" ? "tablet-portrait" : "tablet-landscape";
   }
 
-  // mobile → disable_dog; camera/spline data not needed
+  // mobile → disable_scene; camera/spline data not needed
   if (!key) return null;
 
   const file = DEVICE_DATA_FILES[key];
@@ -168,35 +168,35 @@ async function loadDogDataForDevice(): Promise<DogDataJson | null> {
 }
 
 /**
- * Phase 1: inject extracted data-*.json into DogGL without editing bundles.
- * main.js calls `new window.DogGL({ data })`; we swap the constructor so the
+ * Phase 1: inject extracted data-*.json into SceneGL without editing bundles.
+ * main.js calls `new window.SceneGL({ data })`; we swap the constructor so the
  * same data ships from public/data/scene/*.json instead of webpack modules.
  */
-function patchDogGLWithData(data: DogDataJson) {
-  const Original = window.DogGL;
+function patchSceneGLWithData(data: DogDataJson) {
+  const Original = window.SceneGL;
   if (typeof Original !== "function") return;
 
-  window.DogGL = new Proxy(Original, {
+  window.SceneGL = new Proxy(Original, {
     construct(
-      Target: DogGLConstructor,
+      Target: SceneGLConstructor,
       args: unknown[],
-      newTarget: DogGLConstructor,
+      newTarget: SceneGLConstructor,
     ): object {
-      const [options] = args as [DogGLOptions?];
+      const [options] = args as [SceneGLOptions?];
       return Reflect.construct(
         Target,
         [{ ...(options ?? {}), data }],
         newTarget,
       ) as object;
     },
-  }) as DogGLConstructor;
+  }) as SceneGLConstructor;
 
-  console.debug("[phase1] DogGL data overridden from public/data/scene/*.json");
+  console.debug("[phase1] SceneGL data overridden from public/data/scene/*.json");
 }
 
 /**
  * Host for an original Dogstudio page runtime.
- * Injects markup once and boots detectizr → own DogGL module → main.js.
+ * Injects markup once and boots detectizr → own SceneGL module → main.js.
  * React does not re-render this tree after mount.
  */
 export default function DogstudioPage({
@@ -224,7 +224,7 @@ export default function DogstudioPage({
     document.body.setAttribute("data-theme", dataTheme);
     document.body.setAttribute("data-page", dataPage);
 
-    window.Dogstudio = { theme_link: THEME };
+    window.Site = { assetsRoot: THEME };
 
     let cancelled = false;
 
@@ -239,13 +239,13 @@ export default function DogstudioPage({
         const wasm = supportsWasm();
         if (!wasm) {
           console.warn("WebAssembly not supported — dog disabled");
-          fallbackWithoutDog();
+          fallbackWithoutScene();
           return;
         }
 
-        if (!window.disable_dog) {
+        if (!window.disable_scene) {
           // Phase 1: fetch data-*.json in parallel with the GL boot, then
-          // intercept `new window.DogGL({ data })` in main.js.
+          // intercept `new window.SceneGL({ data })` in main.js.
           const dataPromise = loadDogDataForDevice().catch((err) => {
             console.warn(
               "[phase1] dog data unavailable — using bundle data:",
@@ -255,16 +255,16 @@ export default function DogstudioPage({
           });
           // Phase 2: own GL module replaces the legacy dog.js bundle.
           const doggl = await import("./doggl");
-          doggl.installDogGL();
+          doggl.installSceneGL();
           if (cancelled) return;
           const dogData = await dataPromise;
-          if (dogData) patchDogGLWithData(dogData);
+          if (dogData) patchSceneGLWithData(dogData);
         }
 
         await loadScript(`${JS}/main.js`);
       } catch (err) {
         console.error("Dogstudio boot failed:", err);
-        fallbackWithoutDog();
+        fallbackWithoutScene();
       }
     })();
 
@@ -280,7 +280,7 @@ export default function DogstudioPage({
 
   return (
     <div
-      className="dogstudio-page-root"
+      className="boot-page-root"
       suppressHydrationWarning
       dangerouslySetInnerHTML={{ __html: markup }}
     />

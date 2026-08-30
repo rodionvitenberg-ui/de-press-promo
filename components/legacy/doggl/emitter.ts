@@ -1,8 +1,8 @@
 /**
- * Event bus of the DogGL runtime — port of the legacy `globals/emitter` +
+ * Event bus of the SceneGL runtime — port of the legacy `globals/emitter` +
  * `globals/mediator` pair (dog.js modules 27/30).
  *
- * The frame loop is driven by `main.js`: it calls `DogGL.update()` once per
+ * The frame loop is driven by `main.js`: it calls `SceneGL.update()` once per
  * animation frame and the mediator translates that into the `update` /
  * `postupdate` events every subsystem subscribes to. Subscription order is
  * preserved (Set) and mirrors the legacy boot order:

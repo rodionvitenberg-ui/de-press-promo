@@ -54,14 +54,14 @@ export const MARKUP = `<!-- Wrapper -->
   </div>
 </div>
       
-      <div class="dog-scene">
+      <div class="scene-root">
     <div class="ruler ruler--top"></div>
   <div class="ruler ruler--bottom"></div>
 
     <div class="ruler ruler--1190"></div>
   <div class="ruler ruler--1024"></div>
 
-    <div class="dog-scene-inner"></div>
+    <div class="scene-root-inner"></div>
 </div>
       
 <picture class="site-menu-back">

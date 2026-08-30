@@ -72,14 +72,14 @@ export const MARKUP = `<!-- Wrapper -->
   </div>
 </div>
       
-      <div class="dog-scene">
+      <div class="scene-root">
     <div class="ruler ruler--top"></div>
   <div class="ruler ruler--bottom"></div>
 
     <div class="ruler ruler--1190"></div>
   <div class="ruler ruler--1024"></div>
 
-    <div class="dog-scene-inner"></div>
+    <div class="scene-root-inner"></div>
 </div>
       
 <picture class="site-menu-back">
@@ -376,7 +376,7 @@ export const MARKUP = `<!-- Wrapper -->
                   <td data-after="в работе">GL-модуль</td>
                   <td data-after="">Пишется</td>
                   <td data-after="">Собственная сцена вместо бандлов</td>
-                  <td data-after="">API 1:1 window.DogGL</td>
+                  <td data-after="">API 1:1 SceneGL</td>
                 </tr>
                 <tr>
                   <td data-after="">2026</td>

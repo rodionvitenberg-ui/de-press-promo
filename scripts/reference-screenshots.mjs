@@ -157,7 +157,7 @@ async function waitForPageReady(cdp) {
         return {
           booted: c.includes("page-template"),
           locked: c.includes("lock-scroll"),
-          canvas: !!document.querySelector(".dog-scene canvas"),
+          canvas: !!document.querySelector(".scene-root canvas"),
         };
       })()`,
     );

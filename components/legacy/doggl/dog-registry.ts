@@ -12,6 +12,6 @@ export function registerDog(instance: Dog): void {
 }
 
 export function getDog(): Dog {
-  if (!dog) throw new Error("DogGL: dog is not initialized yet");
+  if (!dog) throw new Error("SceneGL: dog is not initialized yet");
   return dog;
 }

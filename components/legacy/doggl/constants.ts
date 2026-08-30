@@ -1,10 +1,10 @@
 import type { DogDataJson } from "../DogstudioPage";
 
 /**
- * Options payload `main.js` passes to `new window.DogGL({ ... })`
+ * Options payload `main.js` passes to `new window.SceneGL({ ... })`
  * (see the decoded `src/js/dog/index.js` controller).
  */
-export type DogGLOptions = {
+export type SceneGLOptions = {
   data: DogDataJson;
   reduced: boolean;
   container: HTMLElement;
@@ -48,7 +48,7 @@ export const C = {
   SSAA: true,
   SSAA_QUALITY: 2,
   USE_DRACO: supportsWasm(),
-  DATA: null as DogGLOptions | null,
+  DATA: null as SceneGLOptions | null,
   JSON_DATA: null as DogDataJson | null,
   /** Identity map of the state names declared in `data.STATES`. */
   APP_STATES: {} as Record<string, string>,
@@ -61,7 +61,7 @@ export const C = {
   PREVIOUS_STATE: null as string | null,
 };
 
-export function setData(options: DogGLOptions): void {
+export function setData(options: SceneGLOptions): void {
   C.DATA = options;
   C.CONTAINER = options.container;
   C.ASSET_PATH = options.assetPath ?? "";

@@ -68,6 +68,6 @@ export function createStage(container: HTMLElement): Stage {
 }
 
 export function getStage(): Stage {
-  if (!stage) throw new Error("DogGL: stage is not created yet");
+  if (!stage) throw new Error("SceneGL: stage is not created yet");
   return stage;
 }

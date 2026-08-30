@@ -125,7 +125,7 @@ export class AssetLoader {
     } catch (error) {
       if (!entry.url.endsWith(".drc.glb")) throw error;
       // Draco decode failed — fall back to the uncompressed bundle mesh.
-      console.warn("DogGL: Draco model failed, falling back to dog.glb", error);
+      console.warn("SceneGL: Draco model failed, falling back to dog.glb", error);
       gltf = await loader.loadAsync(entry.url.replace(/\.drc\.glb$/, ".glb"));
     }
 

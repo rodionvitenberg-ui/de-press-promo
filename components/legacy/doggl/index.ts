@@ -1,4 +1,4 @@
-import { setData, type DogGLOptions } from "./constants";
+import { setData, type SceneGLOptions } from "./constants";
 import { mediator } from "./mediator";
 import { createStage } from "./stage";
 import { StateManager } from "./state-manager";
@@ -7,10 +7,10 @@ import type { MouseInput } from "./types";
 export { setSSAA, setSSAAQuality } from "./constants";
 export { mediator } from "./mediator";
 export { DogMaterial, type DogUniforms } from "./dog-material";
-export type { DogGLOptions } from "./constants";
+export type { SceneGLOptions } from "./constants";
 
 /**
- * Public DogGL facade — 1:1 port of the legacy `window.DogGL` class (dog.js
+ * Public SceneGL facade — 1:1 port of the legacy `window.SceneGL` class (dog.js
  * module 57). `main.js` instantiates it with
  * `{ data, reduced, container, imagePath, dracoPath, modelPath }` and drives
  * every subsequent call from its own RAF loop:
@@ -18,10 +18,10 @@ export type { DogGLOptions } from "./constants";
  *   update, resize, load, setState, setMatcap, setMatcapProgress,
  *   setAnimationProgress, setMouse, setSSAA, setSSAAQuality, setPixelRatio
  */
-export class DogGL {
+export class SceneGL {
   private stateManager: StateManager;
 
-  constructor(options: DogGLOptions) {
+  constructor(options: SceneGLOptions) {
     setData(options);
     // The legacy bundle created the renderer at import time against the
     // container resolved here (module 31 + SET_DATA ordering).
@@ -76,10 +76,10 @@ export class DogGL {
 }
 
 /**
- * Registers the module as `window.DogGL`, replacing the legacy dog.js
+ * Registers the module as `window.SceneGL`, replacing the legacy dog.js
  * bundle. Called by `DogstudioPage.tsx` before `main.js` boots.
  */
-export function installDogGL(): void {
+export function installSceneGL(): void {
   if (typeof window === "undefined") return;
-  (window as unknown as { DogGL?: unknown }).DogGL = DogGL;
+  (window as unknown as { SceneGL?: unknown }).SceneGL = SceneGL;
 }
