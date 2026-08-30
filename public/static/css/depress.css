@@ -360,6 +360,28 @@ body::before {
   display: block;
 }
 
+/* --- home hero: app link (link--under inside .home-hero-content) -----------
+   Hero animates every span (opacity/translateY, staggered delays) and its
+   .in-view end-state out-specifies .link--under's own line transform, which
+   would flatten the overdraw and kill the hover shrink. Re-assert both.
+   Lines stay white (roadmap p.3; the global red->white flip is p.7). --- */
+.home-app-link .link-line,
+.home-app-link .link-line--anim {
+  background-color: #fff;
+}
+
+html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .link-line,
+html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .link-line--anim {
+  -webkit-transform: translateX(-20%) scaleX(1.2);
+  transform: translateX(-20%) scaleX(1.2);
+}
+
+html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link--under:hover .link-line,
+html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link--under:focus .link-line {
+  -webkit-transform: translateX(0) scaleX(1);
+  transform: translateX(0) scaleX(1);
+}
+
 /* --- legacy loader stub ---------------------------------------------------
    The ported main.css ships no .site-loader rules ("preloader UI removed"),
    but the DOM stub stays because legacy main.js binds to it. With no CSS,

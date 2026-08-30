@@ -203,12 +203,16 @@ export const MARKUP = `<!-- Wrapper -->
         <span>тишина, истории и человек рядом, который скажет:</span>
         <span>«Я слышу тебя».</span>
       </p>
+      <a href="https://app.de-press.co" target="_blank" class="home-app-link link link--under">
+        <span class="link-label">Открыть приложение</span>
+        <span class="link-line"></span>
+        <span class="link-line--anim"></span>
+      </a>
       <ul>
-        <li><a href="https://t.me/depressco" target="_blank">Telegram</a></li>
-        <li><a href="https://youtube.com/@depressco" target="_blank">YouTube</a></li>
-        <li><a href="https://github.com/de-press" target="_blank">GitHub</a></li>
+        <li><a href="https://t.me/depresscoofficial" target="_blank">Telegram</a></li>
+        <li><a href="https://x.com/soshallitbe5" target="_blank">X</a></li>
+        <li><a href="https://github.com/rodionvitenberg-ui/de-press.co" target="_blank">GitHub</a></li>
         <li><a href="mailto:hello@de-press.co" target="_blank">E-mail</a></li>
-        <li><a href="/newsletter/">Рассылка</a></li>
       </ul>
     </div>
   </div>
