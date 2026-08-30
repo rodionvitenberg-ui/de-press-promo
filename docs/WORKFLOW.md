@@ -5,55 +5,53 @@
 ## Перед работой
 
 ```bash
-npm run dev
+npm run dev   # :3001 (порт :3000 занят другим сервисом)
 ```
 
-| Нужен reference | Открой |
-|-----------------|--------|
-| Как выглядит оригинал-клон | http://localhost:3000/ |
-| Свой React-код | http://localhost:3000/lab/ |
+| Что открыть | URL |
+|-------------|-----|
+| Промо (ru) | http://localhost:3001/ |
+| Локали | http://localhost:3001/{en,de,es,pl,pt,uk,zh,ja,ko}/… |
+| Кризисная страница | http://localhost:3001/safety/ |
 
-## Цикл «увидел → понял → сделал»
+## Цикл правки текста / вёрстки
 
 ```
-1. Legacy page (reference)
-2. DevTools: class / data-* / network
-3. study/scss or study/js (search)
-4. Lab playground (React)
-5. Iterate only in lab
+1. components/legacy/markups/<page>.ts — правишь MARKUP
+2. Словарь: i18n/dictionaries/<locale>.json (ключ = исходная RU-строка)
+3. node --experimental-strip-types scripts/i18n-check.mjs
+4. Hard refresh (Ctrl+Shift+R)
 ```
 
-### Пример: fade-up при скролле
-
-1. Home → секция cases, class `appear-fade-up`.
-2. `rg "appear-fade" study/scss`
-3. `rg "in-view" study/js/main.beautified.js`
-4. Смотри `/lab/playground/appear/` и `components/lab/AppearDemo.tsx`
-5. Форкни под свой кейс.
+Шаблоны-снимки не переписываются: тексты маппятся на рендере (`i18n/core.ts`);
+анимационные заголовки перегенерируются из переводов через `<!--DP:FX:…-->`
+плейсхолдеры, футерный переключатель языков — `<!--DP:LANGS-->`.
 
 ## Куда класть код
 
 | Тип | Путь |
 |-----|------|
-| Новая demo | `app/(lab)/playground/<name>/page.tsx` |
-| React UI | `components/lab/` |
-| Стили lab | `components/lab/lab.css` или co-located CSS module |
-| Текст клона | `components/legacy/markups/*.ts` (осторожно) |
-| Ассеты клона | `public/app/themes/portfolio-2018/...` |
+| Страница | `app/(legacy)/<name>/page.tsx` (+ `app/(legacy)/[lang]/<name>/` для локалей) |
+| Текст/вёрстка | `components/legacy/markups/<page>.ts` (HTML-снимок, осторожно) |
+| Стили | override-файл после main.css в `app/(legacy)/layout.tsx` |
+| WebGL/движение | `components/legacy/doggl/` |
+| Данные «камеры»/«света» | `public/data/dog/*.json` (правка → hard refresh) |
+| Ассеты | `public/app/themes/portfolio-2018/...` |
+| Переводы | `i18n/dictionaries/*.json` |
 
 ## Чего не делать
 
 - Не править `public/.../main.js` / `dog.js` как основной способ.
 - Не вешать Tailwind preflight / `next/font` на `(legacy)/layout`.
 - Не `import` `main.css` через bundler.
+- Не удалять `.site-loader`-заглушку в разметке (её ждёт рантайм).
+- Не ломать пути `public/app/themes/portfolio-2018` (`theme_link`).
 
-## Study extract
+## Инструменты
 
 ```bash
-npm run study:extract
-npm run study:dog-data   # только JSON для DogGL
+npm run dog-data     # main.js → public/data/dog/*.json (после правки STATES/MATCAPS)
+npm run screenshots  # эталонные скриншоты → reference/screenshots/ (нужен запущенный dev/start)
+npm run lint         # ESLint
+npx tsc --noEmit     # типы
 ```
-
-Нужно после обновления CSS map / JS на диске. Данные
-`public/data/dog/*.json` используются рантаймом (Фаза 1): после правки JSON —
-hard refresh страницы.

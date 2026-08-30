@@ -10,8 +10,8 @@ import type { AssetLoader } from "./loader";
  *
  * The island is a single static mesh (no skin weights, no eyes), so one
  * matcap material is used for every mesh. Mesh naming convention
- * (study/convert-island.mjs): `rock_*` — island body; `tree*`/`leaf*` names
- * are reserved for foliage on future models.
+ * (from the original island glTF, see git history): `rock_*` — island body;
+ * `tree*`/`leaf*` names are reserved for foliage on future models.
  */
 
 type ModelResource = {
@@ -71,7 +71,7 @@ export class Dog extends THREE.Object3D {
 
     // Phase 3: restore the island's painted basecolor (rock + foliage baked
     // into one atlas; the runtime GLB keeps TEXCOORD_0 — extracted to
-    // island_diffuse.jpg by study/extract-island-diffuse.mjs). Marked sRGB so
+    // island_diffuse.jpg). Marked sRGB so
     // the GPU decodes it to linear before the matcap/diffuse blend. First ==
     // second weight: the diffuse does not change on case-hover matcap swaps.
     // 0.79 = the legacy textured-material weight (public/data/dog/*.json).

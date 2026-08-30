@@ -6,7 +6,7 @@
  * Zero-dependency CDP driver (Node >= 22 built-in WebSocket):
  *   spawn headless chrome (--remote-debugging-port=0) → WS to page target →
  *   navigate → wait for real state → interact (menu / wheel / hover) →
- *   Page.captureScreenshot → study/screenshots/{desktop,mobile}/*.png.
+ *   Page.captureScreenshot → reference/screenshots/{desktop,mobile}/*.png.
  *
  * Usage:
  *   npm run dev            # or PORT=3001 npm run start
@@ -21,7 +21,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
-const OUT_DIR = process.env.OUT_DIR ?? "study/screenshots";
+const OUT_DIR = process.env.OUT_DIR ?? "reference/screenshots";
 const CHROME = process.env.CHROME ?? "google-chrome";
 const LOADER_TIMEOUT_MS = 45_000;
 const TWEEN_WAIT_MS = 1_500;

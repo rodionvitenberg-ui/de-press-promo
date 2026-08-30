@@ -61,7 +61,7 @@ export class World3D {
     // The legacy manifest also carried per-part detail maps (normals,
     // diffuse, specular) and swapped in ASTC/PVRTC variants when available.
     // The island needs only the matcap atlas plus its own painted basecolor
-    // (extracted by study/extract-island-diffuse.mjs, see dog.ts).
+    // (island_diffuse.jpg, see dog.ts).
     const islandDiffuse: TextureOptions = {
       anisotropy: Math.min(4, maxAnisotropy),
       magFilter: THREE.LinearFilter,
@@ -91,8 +91,7 @@ export class World3D {
     // legacy dog pair. Draco/fallback follows the dog naming scheme. The
     // island is fitted around the dog group origin (X/Y_OFFSET splines then
     // place it per state). Fit box scaled ×1.5 per Phase 3 art direction —
-    // the island reads as a ~1/2-of-hero-frame silhouette right of the title;
-    // see study/convert-island.mjs.
+    // the island reads as a ~1/2-of-hero-frame silhouette right of the title.
     const useDraco = C.USE_DRACO && Boolean(C.DRACO_PATH);
     manifest.push({
       id: "dog-model",

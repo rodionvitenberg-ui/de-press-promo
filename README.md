@@ -13,7 +13,7 @@
 
 ## Оглавление
 
-1. [Два мира: Legacy vs Lab](#два-мира-legacy-vs-lab)
+1. [Как устроен проект](#как-устроен-проект)
 2. [Проект de-press.co](#проект-de-pressco)
 3. [Быстрый старт](#быстрый-старт)
 4. [Структура репозитория](#структура-репозитория)
@@ -27,36 +27,33 @@
 12. [Связанные файлы](#связанные-файлы)
 
 - Day-to-day: [`docs/WORKFLOW.md`](./docs/WORKFLOW.md)
-- Архитектура оригинала: [`study/ARCHITECTURE.md`](./study/ARCHITECTURE.md)
+- Архитектура рантайма: [`docs/ARCHITECTURE-legacy.md`](./docs/ARCHITECTURE-legacy.md)
 
 ---
 
-## Два мира: Legacy vs Lab
+## Как устроен проект
 
-Проект разделён на два мира. Это главное, если ты привык к «нормальному» Next.js.
+Один продукт, одна основа: legacy-рантайм dogstudio как технический фундамент, поверх него — собственный контент и i18n. Это главное, если ты привык к «нормальному» Next.js.
 
-| | **Legacy** (основа промо) | **Lab** (песочница) |
-|--|---------------------------|---------------------|
-| URL | `/`, `/about/`, `/values/`, `/contact/` (+ `/en/`, `/de/`, … локали) | `/lab/`, `/lab/playground/...` |
-| Вёрстка | HTML-снимки в `components/legacy/markups/*` (постепенно → JSX) | React-компоненты |
-| Стили | `public/.../main.css` (orig) + кастомные overrides | `components/lab/lab.css` (+ свои) |
-| JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/doggl`) | hooks, GSAP, R3F… по желанию |
-| Правки | Аккуратно (это HTML-снимки) | Свободно, как в любом Next-проекте |
-| Назначение | **Прод-основа**: сценарий, эффекты, скролл | Эксперименты и переиспользуемые паттерны |
+| Слой | Где живёт | Что это |
+|--|--|--|
+| Страницы | `app/(legacy)/` (+ `[lang]/` для локалей) | Route + metadata; контент — HTML-снимки в `components/legacy/markups/*` (постепенно → JSX) |
+| Стили | `public/.../main.css` (orig) + override-файлы | Runtime CSS через `<link>`, не через bundler |
+| JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/doggl`) | «Камера»/«свет» — данные в `public/data/dog/*.json` |
+| i18n | `i18n/` | 10 локалей; ключ = исходная RU-строка, маппинг на рендере |
+| Инструменты | `scripts/` | dog-data (данные рантайма), эталонные скриншоты, i18n-проверки |
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│  Next.js (route groups, dev server)                      │
-│                                                          │
-│  (legacy) ─► DogstudioPage ─► HTML + DogGL-модуль + main.js │
-│      │              ▲              │                     │
-│      │              │              └──→ Фаза 2: GL-модуль │
+┌───────────────────────────────────────────────────────────┐
+│  Next.js (route groups, dev server)                       │
+│                                                           │
+│  (legacy) ─► DogstudioPage ─► HTML + DogGL-модуль         │
+│      │              ▲              │                      │
+│      │              │              └─ public/data/dog    │
 │      │              └── public/app/themes/portfolio-2018 │
-│      │                                                   │
-│  (lab) ────► page.tsx + components/lab/*                 │
-│      │                                                   │
-│  study/ ───► SCSS + beautified JS (только чтение)        │
-└──────────────────────────────────────────────────────────┘
+│      │                  (main.css + main.js — runtime)   │
+│  i18n ─────► словари + маппинг текстов на рендере         │
+└───────────────────────────────────────────────────────────┘
 ```
 
 **Частая ошибка:** править `app/(legacy)/page.tsx` и ждать, что изменится hero.
@@ -95,30 +92,19 @@
 
 ```bash
 npm install
-npm run study:extract   # опционально: SCSS + beautified JS
-npm run dev
+npm run dev   # :3001 (порт :3000 занят другим сервисом)
 ```
 
 | Что | URL |
 |-----|-----|
-| Home (legacy) | http://localhost:3000/ |
-| О проекте | http://localhost:3000/about/ |
-| Values | http://localhost:3000/values/ |
-| Contact | http://localhost:3000/contact/ |
-| Локали | http://localhost:3000/{en,de,es,pl,pt,uk,zh,ja,ko}/… |
-| **Lab index** | http://localhost:3000/lab/ |
-| Tokens | http://localhost:3000/lab/playground/tokens/ |
-| Type | http://localhost:3000/lab/playground/type/ |
-| Appear | http://localhost:3000/lab/playground/appear/ |
-| Chrome (header/menu/footer) | http://localhost:3000/lab/playground/chrome/ |
-| Page shells | http://localhost:3000/lab/playground/pages/ |
-| Careers slider | http://localhost:3000/lab/playground/slider/ |
-| Showreel modal | http://localhost:3000/lab/playground/showreel/ |
-| Theme / matcap mood | http://localhost:3000/lab/playground/themes/ |
-| Dog R3F | http://localhost:3000/lab/playground/dog/ |
-| Product starter | http://localhost:3000/lab/product/ |
+| Home | http://localhost:3001/ |
+| О проекте | http://localhost:3001/about/ |
+| Values | http://localhost:3001/values/ |
+| Contact | http://localhost:3001/contact/ |
+| Safety | http://localhost:3001/safety/ |
+| Локали | http://localhost:3001/{en,de,es,pl,pt,uk,zh,ja,ko}/… |
 
-Desktop: полный WebGL dog. Mobile: `disable_dog` (как в оригинале).
+Desktop: WebGL-остров (DogGL). Mobile: `disable_dog` (как в оригинале).
 
 ---
 
@@ -128,25 +114,18 @@ Desktop: полный WebGL dog. Mobile: `disable_dog` (как в оригина
 app/
   layout.tsx                      # минимальный html/body
   (legacy)/
-    layout.tsx                    # link → original main.css
+    layout.tsx                    # link → original main.css (+ override-файлы)
     page.tsx                      # /
     about|values|contact/page.tsx # ru (дефолтная локаль)
     [lang]/…                      # /en/, /de/, … — те же страницы в локали
     safety/page.tsx               # кризисная страница
-  (lab)/
-    layout.tsx                    # lab.css
-    page.tsx                      # /lab/
-    playground/tokens|appear/page.tsx
 
 components/
   legacy/
     DogstudioPage.tsx             # inject HTML + boot scripts
     createLegacyPage.tsx          # фабрика page
     markups/                      # HTML-снимки страниц → кастомизируем
-  lab/
-    LabShell.tsx
-    AppearDemo.tsx
-    lab.css
+    doggl/                        # ✅ Фаза 2: GL-модуль (порт dog.js на three.js)
 
 public/app/themes/portfolio-2018/static/
   css/main.css
@@ -156,18 +135,17 @@ public/app/themes/portfolio-2018/static/
 public/data/dog/                  # ✅ Фаза 1: STATES / MATCAPS / MATCAP_PER_ROW
                                   # (извлекаются из main.js скриптом, прокидываются в DogGL)
 
-study/                            # не runtime
-  ARCHITECTURE.md
-  scss/
-  js/*.beautified.js
+i18n/                             # словари 10 локалей (ключ = исходная RU-строка)
 
 scripts/
-  extract-scss-from-map.mjs       # CSS map → study/scss
-  beautify-js.mjs                 # → study/js/*.beautified.js
   extract-dog-data.mjs            # ✅ Фаза 1: main.js → public/data/dog/*.json
+  i18n-extract.mjs                # сбор текстов markups → словари
+  i18n-check.mjs                  # проверка покрытия переводов
+  reference-screenshots.mjs       # эталонные скриншоты (CDP)
 
 docs/
-  WORKFLOW.md
+  WORKFLOW.md                     # day-to-day цикл правок
+  ARCHITECTURE-legacy.md          # устройство оригинального рантайма
 ```
 
 ---
@@ -215,16 +193,14 @@ docs/
 | Слой | Как |
 |------|-----|
 | Runtime legacy | `<link href=".../main.css">` в `(legacy)/layout` — **не** bundler import |
-| Понимание | `study/scss/**` |
-| Свои | `(lab)` + `components/lab`; кастомные overrides legacy — отдельный файл |
+| Свои | override-файл после main.css в `(legacy)/layout` (кастомные правила legacy) |
 
 ### Runtime JS
 
 | Файл | Workflow |
 |------|----------|
-| `public/.../main.js`, `dog.js` | Сейчас: minified, правки нежелательны. План: вытеснить GL-часть собственным модулем (Фаза 2) |
+| `public/.../main.js`, `dog.js` | Сейчас: minified, правки нежелательны. GL-часть вытеснена собственным модулем (Фаза 2) |
 | `public/data/dog/*.json` | ✅ Фаза 1: данные «камеры»/«света» (STATES, MATCAPS). `DogstudioPage` подменяет ими `options.data` в `new DogGL(...)` без правки бандлов |
-| `study/js/*.beautified.js` | Читать / искать |
 
 ---
 
@@ -246,21 +222,20 @@ docs/
 Override CSS **после** main.css только в legacy (отдельный файл, если добавишь).
 Лучше переносить вид в собственные страницы.
 
-### D. Своя фича
+### D. Своя страница / фича
 
-**Пока — только lab:**
+По образцу существующих:
 ```
-app/(lab)/playground/my-feature/page.tsx
-components/lab/MyFeature.tsx
+app/(legacy)/my-feature/page.tsx
+components/legacy/markups/my-feature.ts
 ```
-После Фазы 2–3 — напрямую в прод-страницы промо.
+Локаль-варианты — в `app/(legacy)/[lang]/my-feature/page.tsx`; переводы — в `i18n/dictionaries/`.
 
 ### E. Понять эффект
 
 1. DevTools → класс (`.appear-fade-up`, `.site-loader`…)
-2. `rg "appear-fade" study/scss`
-3. `rg "appear-fade" study/js/main.beautified.js`
-4. Lab playground
+2. `rg "appear-fade" public/app/themes/portfolio-2018/static/css/main.css`
+3. Механика/анимации — `docs/ARCHITECTURE-legacy.md`; JS — DevTools → Sources → `main.js` (minified)
 
 ---
 
@@ -295,10 +270,10 @@ components/lab/MyFeature.tsx
 ### Фаза 0 — Фриз и защита ✅
 
 - [x] Next shell + offline assets
-- [x] study: SCSS, beautified JS, ARCHITECTURE
+- [x] study-выжимки (SCSS, beautified JS, ARCHITECTURE) — впоследствии вычищены; ARCHITECTURE.md переехал в `docs/ARCHITECTURE-legacy.md`
 - [x] Git-точка (`legacy-dogstudio-2026-08-01`)
 - [x] Пересобрать README под новое направление (этот документ)
-- [x] Скриншоты всех состояний (эталон регрессий) — `npm run screenshots` → `study/screenshots/` (desktop + mobile; интерактив: меню, скролл, matcap-hover; манифест состояний — `manifest.json`)
+- [x] Скриншоты всех состояний (эталон регрессий) — `npm run screenshots` → `reference/screenshots/` (desktop + mobile; интерактив: меню, скролл, matcap-hover; манифест состояний — `manifest.json`)
 
 ### Фаза 1 — Данные наружу ✅
 
@@ -315,7 +290,7 @@ components/lab/MyFeature.tsx
 - [x] `DogstudioPage.tsx` загружает GL-модуль вместо `dog.js`
 - Результат: `main.js` не замечает подмены; WebGL — поддерживаемый код. Оценка: 1–2 недели.
 
-Реализация — `components/legacy/doggl/` (порт модулей 25–57 из `study/js/dog.beautified.js`):
+Реализация — `components/legacy/doggl/` (порт модулей 25–57 оригинального `dog.js`, см. git-историю):
 
 - Фасад `index.ts` повторяет публичный класс `window.DogGL`; `installDogGL()` ставит его в `window` до загрузки `main.js` (Phase-1 Proxy с JSON-данными продолжает работать поверх).
 - Сплайны камеры: `custom-cubic` (DEPTH) + `monotone-cubic` (остальные 6 массивов) — те же алгоритмы, что в бандле (в README они условно названы «Catmull-Rom»).
@@ -348,14 +323,11 @@ components/lab/MyFeature.tsx
 
 | Команда | Назначение |
 |---------|------------|
-| `npm run dev` | Dev-сервер |
+| `npm run dev` | Dev-сервер (:3001) |
 | `npm run build` / `start` | Production |
 | `npm run lint` | ESLint |
-| `npm run study:scss` | CSS map → `study/scss/` |
-| `npm run study:js` | Beautify → `study/js/` |
-| `npm run study:dog-data` | Из `main.js` → `public/data/dog/*.json` |
-| `npm run study:extract` | scss + js + dog-data |
-| `npm run screenshots` | Эталонные скриншоты (CDP, нужен запущенный dev/start) → `study/screenshots/` |
+| `npm run dog-data` | Из `main.js` → `public/data/dog/*.json` (при правке STATES/MATCAPS) |
+| `npm run screenshots` | Эталонные скриншоты (CDP, нужен запущенный dev/start) → `reference/screenshots/` |
 
 ---
 
@@ -363,19 +335,15 @@ components/lab/MyFeature.tsx
 
 | Хочу | Делаю |
 |------|--------|
-| Запустить промо | `npm run dev` → `/` |
-| Понять архитектуру оригинала | `study/ARCHITECTURE.md`, `study/scss`, `study/js` |
-| Поменять текст home | `components/legacy/markups/home.ts` |
+| Запустить промо | `npm run dev` → `/` (:3001) |
+| Понять архитектуру рантайма | `docs/ARCHITECTURE-legacy.md` |
+| Поменять текст home | `components/legacy/markups/home.ts` (+ словари i18n) |
 | Поменять «свет»/камеру | ✅ Фаза 1: `public/data/dog/*.json` (после правки — hard refresh) |
-| Заменить 3D-модель | Фаза 2 + 3 (GL-модуль, затем файл + конфиг) |
-| Своя страница | `app/(lab)/...` + `components/lab/...` |
-| Appear-анимация | `/lab/playground/appear` |
-| Header/menu/footer | `/lab/playground/chrome` |
-| Typography | `/lab/playground/type` |
-| Matcap hover | legacy home + `rg setMatcap study/js` |
-| Не сломать dog | пути `public/app/themes/...` + `theme_link`; после Фазы 2 — конфиг GL-модуля |
-| Стили lab | `(lab)/layout` + `lab.css` |
-| Выкинуть остатки клона | после Фаз 2–4: удалить ненужные части `main.js`, markups, theme public |
+| Заменить 3D-модель | Фаза 2 ✅ + 3 (файл + конфиг) |
+| Своя страница | `app/(legacy)/...` + `markups/...` по образцу существующих |
+| Matcap hover | legacy home; механика — `docs/ARCHITECTURE-legacy.md` |
+| Не сломать dog | пути `public/app/themes/...` + `theme_link`; конфиг GL-модуля (`components/legacy/doggl/`) |
+| Выкинуть остатки клона | Фаза 4: удалить ненужные части `main.js`, markups, theme public |
 
 ---
 
@@ -393,4 +361,4 @@ components/lab/MyFeature.tsx
 ## Связанные файлы
 
 - [`docs/WORKFLOW.md`](./docs/WORKFLOW.md)
-- [`study/ARCHITECTURE.md`](./study/ARCHITECTURE.md)
+- [`docs/ARCHITECTURE-legacy.md`](./docs/ARCHITECTURE-legacy.md)

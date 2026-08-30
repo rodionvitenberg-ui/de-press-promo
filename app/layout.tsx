@@ -16,8 +16,7 @@ export const metadata: Metadata = {
 
 /**
  * Root layout: minimal shell.
- * Legacy CSS is loaded only in app/(legacy)/layout.tsx
- * so /lab stays a clean Next environment.
+ * Legacy CSS is loaded only in app/(legacy)/layout.tsx.
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

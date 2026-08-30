@@ -7,15 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "study:scss": "node scripts/extract-scss-from-map.mjs",
-    "study:js": "node scripts/beautify-js.mjs",
-    "study:dog-data": "node scripts/extract-dog-data.mjs",
-    "study:extract": "npm run study:scss && npm run study:js && npm run study:dog-data",
+    "dog-data": "node scripts/extract-dog-data.mjs",
     "screenshots": "node scripts/reference-screenshots.mjs"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.7.0",
     "@types/three": "^0.185.3",
     "next": "16.2.12",
     "react": "19.2.4",

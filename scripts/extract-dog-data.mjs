@@ -10,7 +10,6 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const SOURCES = [
-  path.join(ROOT, "study/js/main.beautified.js"),
   path.join(ROOT, "public/app/themes/portfolio-2018/static/js/main.js"),
 ];
 const OUT_DIR = path.join(ROOT, "public/data/dog");

@@ -1,8 +1,0 @@
-[data-router-view="case"] {
-  @include padding(null null 435px);
-
-  // MQ
-  @include mq($until: 'l') {
-    padding-bottom : 0;
-  }
-}

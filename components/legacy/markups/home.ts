@@ -1,6 +1,6 @@
 /**
- * Based on a dogstudio.co page snapshot (study clone).
- * Study-only. Do not redistribute as your own product.
+ * Based on a dogstudio.co page snapshot (technical foundation).
+ * Content is being replaced with de-press.co's own; do not ship the original as-is.
  */
 export const BODY_CLASS = "home page-template page-template-page-home page-template-page-home-php page page-id-5  lock-scroll";
 export const DATA_THEME = "home";
