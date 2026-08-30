@@ -35,13 +35,13 @@ export const MARKUP = `<!-- Wrapper -->
 
   <a href="/safety/" class="site-header-posts">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
  Безопасность</a>
   <a href="/" class="site-header-cases">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
  Как устроено</a>
@@ -83,10 +83,10 @@ export const MARKUP = `<!-- Wrapper -->
 </div>
       
 <picture class="site-menu-back">
-  <source data-srcset="/app/themes/portfolio-2018/static/assets/images/menu/background-xxs.png" media="(max-width: 450px)">
-  <source data-srcset="/app/themes/portfolio-2018/static/assets/images/menu/background-m.png" media="(max-width: 815px)">
-  <source data-srcset="/app/themes/portfolio-2018/static/assets/images/menu/background-l.png" media="(max-width: 1030px)">
-  <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/background-xl.png" class="js-lazy" alt="">
+  <source data-srcset="/static/assets/images/menu/background-xxs.png" media="(max-width: 450px)">
+  <source data-srcset="/static/assets/images/menu/background-m.png" media="(max-width: 815px)">
+  <source data-srcset="/static/assets/images/menu/background-l.png" media="(max-width: 1030px)">
+  <img data-src="/static/assets/images/menu/background-xl.png" class="js-lazy" alt="">
 </picture>
 
 <div class="site-menu-panel"></div>
@@ -108,20 +108,20 @@ export const MARKUP = `<!-- Wrapper -->
     <div class="site-menu-footer">
       <a href="https://vimeo.com/836218697" target="_blank" class="site-menu-showreel js-show-showreel">  <span class="svg svg-caret-right">
   	<svg width="6" height="10" aria-label="de-press">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
  Манифест</a>
 
       <div class="site-menu-content">
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="Тишина — это ответ">
+        <img data-src="/static/assets/images/menu/baseline.png" class="js-lazy" alt="Тишина — это ответ">
         <ul>
           <li>
             <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#facebook"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#facebook"></use> 
   	</svg>
   </span>
 
@@ -134,7 +134,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#instagram"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#instagram"></use> 
   	</svg>
   </span>
 
@@ -147,7 +147,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#dribbble"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#dribbble"></use> 
   	</svg>
   </span>
 
@@ -160,7 +160,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#twitter"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#twitter"></use> 
   	</svg>
   </span>
 
@@ -173,7 +173,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-mail-thick">
   	<svg width="13" height="9">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#mail-thick"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#mail-thick"></use> 
   	</svg>
   </span>
 
@@ -216,7 +216,7 @@ export const MARKUP = `<!-- Wrapper -->
     <header class="values-list-header js-in-view">
       <h2 class="u-visually-hidden">Нет, это не правила ради правил...</h2>
 
-      <img data-src="/app/themes/portfolio-2018/static/assets/images/values/background-leaves-1.png" class="leaves leaves--1 js-lazy" />
+      <img data-src="/static/assets/images/values/background-leaves-1.png" class="leaves leaves--1 js-lazy" />
 
       <p class="values-title fx-parent">
 <!--DP:FX:values-tgif-->
@@ -226,7 +226,7 @@ export const MARKUP = `<!-- Wrapper -->
     </header>
 
     <div class="values-list-items">
-      <img data-src="/app/themes/portfolio-2018/static/assets/images/values/background-leaves-2.png" class="leaves leaves--2 js-lazy" />
+      <img data-src="/static/assets/images/values/background-leaves-2.png" class="leaves leaves--2 js-lazy" />
 
       <div class="values-list-row js-in-view">
         <article class="values-item values-item--1 appear-fade-up appear-delay--1">
@@ -332,7 +332,7 @@ export const MARKUP = `<!-- Wrapper -->
     <footer class="values-list-footer js-in-view">
       <h2 class="u-visually-hidden">Мы всегда рады тем, кто умеет слышать</h2>
 
-      <img data-src="/app/themes/portfolio-2018/static/assets/images/values/background-leaves-3.png" class="leaves leaves--3 js-lazy" />
+      <img data-src="/static/assets/images/values/background-leaves-3.png" class="leaves leaves--3 js-lazy" />
 
       <p class="values-title fx-parent">
 <!--DP:FX:values-hiring-->
@@ -358,7 +358,7 @@ export const MARKUP = `<!-- Wrapper -->
     </button>
 
     <div class="showreel-video">
-      <div class="js-plyr" data-poster="/app/themes/portfolio-2018/static/assets/images/shared/cover.jpg" data-plyr-provider="vimeo" data-plyr-embed-id="836218697"></div>
+      <div class="js-plyr" data-poster="/static/assets/images/shared/cover.jpg" data-plyr-provider="vimeo" data-plyr-embed-id="836218697"></div>
     </div>
   </div>
 </div>
@@ -404,7 +404,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#facebook"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#facebook"></use> 
   	</svg>
   </span>
 
@@ -417,7 +417,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#instagram"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#instagram"></use> 
   	</svg>
   </span>
 
@@ -430,7 +430,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#dribbble"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#dribbble"></use> 
   	</svg>
   </span>
 
@@ -443,7 +443,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#twitter"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#twitter"></use> 
   	</svg>
   </span>
 

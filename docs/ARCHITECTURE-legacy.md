@@ -12,7 +12,7 @@ Copyright: Dogstudio / DEPT. Not for redistribution as a product.
 ```
 Browser
   └── Next.js shell (app/*/page.tsx + DogstudioPage)
-        ├── CSS:  /app/themes/portfolio-2018/static/css/main.css
+        ├── CSS:  /static/css/main.css
         ├── DOM:  page snapshot from components/legacy/markups/*
         └── Scripts (order matters):
               1. detectizr.js   → device type
@@ -34,7 +34,7 @@ Browser
 
 In-page navigation uses **Highway** (`@dogstudio/highway`): it `fetch`es the next URL and swaps `[data-router-view]`. Full page loads of each Next route also work (each boots `DogstudioPage` fresh).
 
-`window.Dogstudio.theme_link = '/app/themes/portfolio-2018'` is required so models, matcaps, audio, and sprites resolve under `public/`.
+`window.Dogstudio.theme_link = ''` is required so models, matcaps, audio, and sprites resolve under `public/static/`.
 
 ## Boot sequence (mirrored from original HTML)
 
@@ -98,7 +98,7 @@ API surface actually called from `main.js` (full):
 | `setPixelRatio(n)` | Dog `.loaded()` on hi-DPI |
 
 ⚠️ Phase 1: since the 2026-08 port, `options.data` is **overridden** by
-`public/data/dog/*.json` via a `Proxy` around `window.DogGL` in
+`public/data/scene/*.json` via a `Proxy` around `window.DogGL` in
 `DogstudioPage.tsx`. Nothing in `main.js` changes; the bundle falls back to
 its own `data-*.js` modules if the JSON fetch fails.
 

@@ -1,6 +1,6 @@
 /**
  * Phase 1 — extract DogGL data (STATES/MATCAPS/MATCAP_PER_ROW) from the webpack
- * bundle into public/data/dog/*.json so camera curves + matcap params become JSON.
+ * bundle into public/data/scene/*.json so camera curves + matcap params become JSON.
  */
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -10,9 +10,9 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const SOURCES = [
-  path.join(ROOT, "public/app/themes/portfolio-2018/static/js/main.js"),
+  path.join(ROOT, "public/static/js/main.js"),
 ];
-const OUT_DIR = path.join(ROOT, "public/data/dog");
+const OUT_DIR = path.join(ROOT, "public/data/scene");
 const MODULES = [
   "desktop",
   "tablet-portrait",

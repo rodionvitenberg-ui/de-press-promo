@@ -39,7 +39,7 @@
 |--|--|--|
 | Страницы | `app/(legacy)/` (+ `[lang]/` для локалей) | Route + metadata; контент — HTML-снимки в `components/legacy/markups/*` (постепенно → JSX) |
 | Стили | `public/.../main.css` (orig) + override-файлы | Runtime CSS через `<link>`, не через bundler |
-| JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/doggl`) | «Камера»/«свет» — данные в `public/data/dog/*.json` |
+| JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/doggl`) | «Камера»/«свет» — данные в `public/data/scene/*.json` |
 | i18n | `i18n/` | 10 локалей; ключ = исходная RU-строка, маппинг на рендере |
 | Инструменты | `scripts/` | dog-data (данные рантайма), эталонные скриншоты, i18n-проверки |
 
@@ -49,8 +49,8 @@
 │                                                           │
 │  (legacy) ─► DogstudioPage ─► HTML + DogGL-модуль         │
 │      │              ▲              │                      │
-│      │              │              └─ public/data/dog    │
-│      │              └── public/app/themes/portfolio-2018 │
+│      │              │              └─ public/data/scene    │
+│      │              └── public/static                     │
 │      │                  (main.css + main.js — runtime)   │
 │  i18n ─────► словари + маппинг текстов на рендере         │
 └───────────────────────────────────────────────────────────┘
@@ -127,18 +127,18 @@ components/
     markups/                      # HTML-снимки страниц → кастомизируем
     doggl/                        # ✅ Фаза 2: GL-модуль (порт dog.js на three.js)
 
-public/app/themes/portfolio-2018/static/
+public/static/
   css/main.css
   js/{detectizr,modernizr,dog,main}.js
   assets/                         # 3D, textures, fonts, images, audio
 
-public/data/dog/                  # ✅ Фаза 1: STATES / MATCAPS / MATCAP_PER_ROW
+public/data/scene/                  # ✅ Фаза 1: STATES / MATCAPS / MATCAP_PER_ROW
                                   # (извлекаются из main.js скриптом, прокидываются в DogGL)
 
 i18n/                             # словари 10 локалей (ключ = исходная RU-строка)
 
 scripts/
-  extract-dog-data.mjs            # ✅ Фаза 1: main.js → public/data/dog/*.json
+  extract-dog-data.mjs            # ✅ Фаза 1: main.js → public/data/scene/*.json
   i18n-extract.mjs                # сбор текстов markups → словари
   i18n-check.mjs                  # проверка покрытия переводов
   reference-screenshots.mjs       # эталонные скриншоты (CDP)
@@ -184,8 +184,8 @@ docs/
 
 ### Ассеты
 
-- Не ломай пути: runtime ждёт `window.Dogstudio.theme_link = '/app/themes/portfolio-2018'`.
-- Картинки: `public/.../static/assets/images/...`
+- Не ломай пути: runtime ждёт `window.Dogstudio.theme_link = ''` (ассеты в `public/static/`).
+- Картинки: `public/static/assets/images/...`
 - Dog: `.../dog/models/`, `.../dog/images/dog/final/` (+ `ASTC/`, `PVRTC/`).
 
 ### Стили
@@ -200,7 +200,7 @@ docs/
 | Файл | Workflow |
 |------|----------|
 | `public/.../main.js`, `dog.js` | Сейчас: minified, правки нежелательны. GL-часть вытеснена собственным модулем (Фаза 2) |
-| `public/data/dog/*.json` | ✅ Фаза 1: данные «камеры»/«света» (STATES, MATCAPS). `DogstudioPage` подменяет ими `options.data` в `new DogGL(...)` без правки бандлов |
+| `public/data/scene/*.json` | ✅ Фаза 1: данные «камеры»/«света» (STATES, MATCAPS). `DogstudioPage` подменяет ими `options.data` в `new DogGL(...)` без правки бандлов |
 
 ---
 
@@ -234,7 +234,7 @@ components/legacy/markups/my-feature.ts
 ### E. Понять эффект
 
 1. DevTools → класс (`.appear-fade-up`, `.site-loader`…)
-2. `rg "appear-fade" public/app/themes/portfolio-2018/static/css/main.css`
+2. `rg "appear-fade" public/static/css/main.css`
 3. Механика/анимации — `docs/ARCHITECTURE-legacy.md`; JS — DevTools → Sources → `main.js` (minified)
 
 ---
@@ -255,7 +255,7 @@ components/legacy/markups/my-feature.ts
 
 ### Порядок безопасной замены (по фазам роадмапа)
 
-1. **Фаза 1 — данные наружу.** Состояния и matcap-параметры выносятся из `main.js` в `public/data/dog/*.json`. Полёт камеры и «свет» становятся данными.
+1. **Фаза 1 — данные наружу.** Состояния и matcap-параметры выносятся из `main.js` в `public/data/scene/*.json`. Полёт камеры и «свет» становятся данными.
 2. **Фаза 2 — GL-модуль.** `dog.js` переписывается на TypeScript/three с API 1:1 (`window.DogGL`). Разметка мешей, шейдер, масштаб становятся читаемым кодом.
 3. **Фаза 3 — модель.** Положить новый `.glb` (+ опционально `.drc.glb`), поменять конфиг, настроить разметку (например, единый материал для статичного меша) и кривые состояний под новый размер/центр.
 
@@ -278,9 +278,9 @@ components/legacy/markups/my-feature.ts
 ### Фаза 1 — Данные наружу ✅
 
 - [x] Извлечь `STATES`, `MATCAPS`, `MATCAP_PER_ROW` из `main.js` (modules `data-*.js`) — `scripts/extract-dog-data.mjs`
-- [x] Выложить в `public/data/dog/*.json` (desktop / tablet-* / mobile-*)
+- [x] Выложить в `public/data/scene/*.json` (desktop / tablet-* / mobile-*)
 - [x] `DogstudioPage` прокидывает JSON в `DogGL` через `data` (Proxy-обёртка над `window.DogGL`; fallback на бандл при ошибке)
-- Результат: управление «камерой» и «светом» = правка `public/data/dog/*.json` без пересборки бандлов.
+- Результат: управление «камерой» и «светом» = правка `public/data/scene/*.json` без пересборки бандлов.
 
 ### Фаза 2 — GL-модуль вместо dog.js ✅
 
@@ -326,7 +326,7 @@ components/legacy/markups/my-feature.ts
 | `npm run dev` | Dev-сервер (:3001) |
 | `npm run build` / `start` | Production |
 | `npm run lint` | ESLint |
-| `npm run dog-data` | Из `main.js` → `public/data/dog/*.json` (при правке STATES/MATCAPS) |
+| `npm run dog-data` | Из `main.js` → `public/data/scene/*.json` (при правке STATES/MATCAPS) |
 | `npm run screenshots` | Эталонные скриншоты (CDP, нужен запущенный dev/start) → `reference/screenshots/` |
 
 ---
@@ -338,7 +338,7 @@ components/legacy/markups/my-feature.ts
 | Запустить промо | `npm run dev` → `/` (:3001) |
 | Понять архитектуру рантайма | `docs/ARCHITECTURE-legacy.md` |
 | Поменять текст home | `components/legacy/markups/home.ts` (+ словари i18n) |
-| Поменять «свет»/камеру | ✅ Фаза 1: `public/data/dog/*.json` (после правки — hard refresh) |
+| Поменять «свет»/камеру | ✅ Фаза 1: `public/data/scene/*.json` (после правки — hard refresh) |
 | Заменить 3D-модель | Фаза 2 ✅ + 3 (файл + конфиг) |
 | Своя страница | `app/(legacy)/...` + `markups/...` по образцу существующих |
 | Matcap hover | legacy home; механика — `docs/ARCHITECTURE-legacy.md` |

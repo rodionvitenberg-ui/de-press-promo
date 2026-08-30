@@ -17,13 +17,13 @@ export const MARKUP = `<!-- Wrapper -->
 
   <a href="/safety/" class="site-header-posts">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
  Безопасность</a>
   <a href="/" class="site-header-cases">  <span class="svg svg-caret-left">
   	<svg width="6" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-left"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-left"></use> 
   	</svg>
   </span>
  Как устроено</a>
@@ -65,10 +65,10 @@ export const MARKUP = `<!-- Wrapper -->
 </div>
       
 <picture class="site-menu-back">
-  <source data-srcset="/app/themes/portfolio-2018/static/assets/images/menu/background-xxs.png" media="(max-width: 450px)">
-  <source data-srcset="/app/themes/portfolio-2018/static/assets/images/menu/background-m.png" media="(max-width: 815px)">
-  <source data-srcset="/app/themes/portfolio-2018/static/assets/images/menu/background-l.png" media="(max-width: 1030px)">
-  <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/background-xl.png" class="js-lazy" alt="">
+  <source data-srcset="/static/assets/images/menu/background-xxs.png" media="(max-width: 450px)">
+  <source data-srcset="/static/assets/images/menu/background-m.png" media="(max-width: 815px)">
+  <source data-srcset="/static/assets/images/menu/background-l.png" media="(max-width: 1030px)">
+  <img data-src="/static/assets/images/menu/background-xl.png" class="js-lazy" alt="">
 </picture>
 
 <div class="site-menu-panel"></div>
@@ -90,20 +90,20 @@ export const MARKUP = `<!-- Wrapper -->
     <div class="site-menu-footer">
       <a href="https://vimeo.com/836218697" target="_blank" class="site-menu-showreel js-show-showreel">  <span class="svg svg-caret-right">
   	<svg width="6" height="10" aria-label="de-press">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
  Манифест</a>
 
       <div class="site-menu-content">
-        <img data-src="/app/themes/portfolio-2018/static/assets/images/menu/baseline.png" class="js-lazy" alt="Тебя услышат">
+        <img data-src="/static/assets/images/menu/baseline.png" class="js-lazy" alt="Тебя услышат">
         <ul>
           <li>
             <a href="https://t.me/depressco" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#facebook"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#facebook"></use> 
   	</svg>
   </span>
 
@@ -116,7 +116,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#instagram"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#instagram"></use> 
   	</svg>
   </span>
 
@@ -129,7 +129,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#dribbble"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#dribbble"></use> 
   	</svg>
   </span>
 
@@ -142,7 +142,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#twitter"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#twitter"></use> 
   	</svg>
   </span>
 
@@ -155,7 +155,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-mail-thick">
   	<svg width="13" height="9">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#mail-thick"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#mail-thick"></use> 
   	</svg>
   </span>
 
@@ -174,10 +174,10 @@ export const MARKUP = `<!-- Wrapper -->
     <h1 class="u-visually-hidden">de-press</h1>
 
     <picture class="home-background js-in-view appear-fade">
-      <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/background-xxs.png" media="(max-width: 450px)">
-      <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/background-m.png" media="(max-width: 815px)">
-      <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/background-l.png" media="(max-width: 1030px)">
-      <img data-src="/app/themes/portfolio-2018/static/assets/images/home/background-xl.png" class="js-lazy" alt="">
+      <source data-srcset="/static/assets/images/home/background-xxs.png" media="(max-width: 450px)">
+      <source data-srcset="/static/assets/images/home/background-m.png" media="(max-width: 815px)">
+      <source data-srcset="/static/assets/images/home/background-l.png" media="(max-width: 1030px)">
+      <img data-src="/static/assets/images/home/background-xl.png" class="js-lazy" alt="">
     </picture>
 
         
@@ -254,7 +254,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
 
@@ -262,10 +262,10 @@ export const MARKUP = `<!-- Wrapper -->
           </div>
 
           <picture class="home-cases-picture">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/tomorrowland/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/tomorrowland/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/tomorrowland/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/app/themes/portfolio-2018/static/assets/images/cases/tomorrowland/background-1440.png" alt="" class="js-lazy">
+            <source data-srcset="/static/assets/images/cases/tomorrowland/background-450.png" media="(max-width: 450px)">
+            <source data-srcset="/static/assets/images/cases/tomorrowland/background-815.png" media="(max-width: 815px)">
+            <source data-srcset="/static/assets/images/cases/tomorrowland/background-1015.png" media="(max-width: 1030px)">
+            <img data-src="/static/assets/images/cases/tomorrowland/background-1440.png" alt="" class="js-lazy">
           </picture>
         </div>
       </div>
@@ -291,7 +291,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
 
@@ -299,10 +299,10 @@ export const MARKUP = `<!-- Wrapper -->
           </div>
 
           <picture class="home-cases-picture">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/navy-pier/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/navy-pier/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/navy-pier/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/app/themes/portfolio-2018/static/assets/images/cases/navy-pier/background-1440.png" alt="" class="js-lazy">
+            <source data-srcset="/static/assets/images/cases/navy-pier/background-450.png" media="(max-width: 450px)">
+            <source data-srcset="/static/assets/images/cases/navy-pier/background-815.png" media="(max-width: 815px)">
+            <source data-srcset="/static/assets/images/cases/navy-pier/background-1015.png" media="(max-width: 1030px)">
+            <img data-src="/static/assets/images/cases/navy-pier/background-1440.png" alt="" class="js-lazy">
           </picture>
         </div>
       </div>
@@ -328,7 +328,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
 
@@ -336,10 +336,10 @@ export const MARKUP = `<!-- Wrapper -->
           </div>
 
           <picture class="home-cases-picture">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/msi-chicago/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/msi-chicago/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/msi-chicago/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/app/themes/portfolio-2018/static/assets/images/cases/msi-chicago/background-1440.png" alt="" class="js-lazy">
+            <source data-srcset="/static/assets/images/cases/msi-chicago/background-450.png" media="(max-width: 450px)">
+            <source data-srcset="/static/assets/images/cases/msi-chicago/background-815.png" media="(max-width: 815px)">
+            <source data-srcset="/static/assets/images/cases/msi-chicago/background-1015.png" media="(max-width: 1030px)">
+            <img data-src="/static/assets/images/cases/msi-chicago/background-1440.png" alt="" class="js-lazy">
           </picture>
         </div>
       </div>
@@ -365,7 +365,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
 
@@ -373,10 +373,10 @@ export const MARKUP = `<!-- Wrapper -->
           </div>
 
           <picture class="home-cases-picture">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/this-was-louises-phone/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/this-was-louises-phone/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/this-was-louises-phone/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/app/themes/portfolio-2018/static/assets/images/cases/this-was-louises-phone/background-1440.png" alt="" class="js-lazy">
+            <source data-srcset="/static/assets/images/cases/this-was-louises-phone/background-450.png" media="(max-width: 450px)">
+            <source data-srcset="/static/assets/images/cases/this-was-louises-phone/background-815.png" media="(max-width: 815px)">
+            <source data-srcset="/static/assets/images/cases/this-was-louises-phone/background-1015.png" media="(max-width: 1030px)">
+            <img data-src="/static/assets/images/cases/this-was-louises-phone/background-1440.png" alt="" class="js-lazy">
           </picture>
         </div>
       </div>
@@ -398,7 +398,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
 
@@ -406,10 +406,10 @@ export const MARKUP = `<!-- Wrapper -->
           </div>
 
           <picture class="home-cases-picture">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/kikk-18/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/kikk-18/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/kikk-18/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/app/themes/portfolio-2018/static/assets/images/cases/kikk-18/background-1440.png" alt="" class="js-lazy">
+            <source data-srcset="/static/assets/images/cases/kikk-18/background-450.png" media="(max-width: 450px)">
+            <source data-srcset="/static/assets/images/cases/kikk-18/background-815.png" media="(max-width: 815px)">
+            <source data-srcset="/static/assets/images/cases/kikk-18/background-1015.png" media="(max-width: 1030px)">
+            <img data-src="/static/assets/images/cases/kikk-18/background-1440.png" alt="" class="js-lazy">
           </picture>
         </div>
       </div>
@@ -435,7 +435,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
 
@@ -443,10 +443,10 @@ export const MARKUP = `<!-- Wrapper -->
           </div>
 
           <picture class="home-cases-picture">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/the-kennedy-center/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/the-kennedy-center/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/the-kennedy-center/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/app/themes/portfolio-2018/static/assets/images/cases/the-kennedy-center/background-1440.png" alt="" class="js-lazy">
+            <source data-srcset="/static/assets/images/cases/the-kennedy-center/background-450.png" media="(max-width: 450px)">
+            <source data-srcset="/static/assets/images/cases/the-kennedy-center/background-815.png" media="(max-width: 815px)">
+            <source data-srcset="/static/assets/images/cases/the-kennedy-center/background-1015.png" media="(max-width: 1030px)">
+            <img data-src="/static/assets/images/cases/the-kennedy-center/background-1440.png" alt="" class="js-lazy">
           </picture>
         </div>
       </div>
@@ -472,7 +472,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="link--caret-text">Подробнее</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   	</svg>
   </span>
 
@@ -480,10 +480,10 @@ export const MARKUP = `<!-- Wrapper -->
           </div>
 
           <picture class="home-cases-picture">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/orw/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/orw/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/app/themes/portfolio-2018/static/assets/images/cases/orw/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/app/themes/portfolio-2018/static/assets/images/cases/orw/background-1440.png" alt="" class="js-lazy">
+            <source data-srcset="/static/assets/images/cases/orw/background-450.png" media="(max-width: 450px)">
+            <source data-srcset="/static/assets/images/cases/orw/background-815.png" media="(max-width: 815px)">
+            <source data-srcset="/static/assets/images/cases/orw/background-1015.png" media="(max-width: 1030px)">
+            <img data-src="/static/assets/images/cases/orw/background-1440.png" alt="" class="js-lazy">
           </picture>
         </div>
       </div>
@@ -494,10 +494,10 @@ export const MARKUP = `<!-- Wrapper -->
   <h2 class="u-visually-hidden">Мы делаем место, где не бывает оценок</h2>
 
   <picture class="home-about-background js-in-view appear-fade">
-    <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/about-xxs.png" media="(max-width: 450px)">
-    <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/about-m.png" media="(max-width: 815px)">
-    <source data-srcset="/app/themes/portfolio-2018/static/assets/images/home/about-l.png" media="(max-width: 1030px)">
-    <img data-src="/app/themes/portfolio-2018/static/assets/images/home/about-xl.png" class="js-lazy" alt="">
+    <source data-srcset="/static/assets/images/home/about-xxs.png" media="(max-width: 450px)">
+    <source data-srcset="/static/assets/images/home/about-m.png" media="(max-width: 815px)">
+    <source data-srcset="/static/assets/images/home/about-l.png" media="(max-width: 1030px)">
+    <img data-src="/static/assets/images/home/about-xl.png" class="js-lazy" alt="">
   </picture>
 
   <div class="center">
@@ -535,7 +535,7 @@ export const MARKUP = `<!-- Wrapper -->
     </button>
 
     <div class="showreel-video">
-      <div class="js-plyr" data-poster="/app/themes/portfolio-2018/static/assets/images/shared/cover.jpg" data-plyr-provider="vimeo" data-plyr-embed-id="836218697"></div>
+      <div class="js-plyr" data-poster="/static/assets/images/shared/cover.jpg" data-plyr-provider="vimeo" data-plyr-embed-id="836218697"></div>
     </div>
   </div>
 </div>
@@ -581,7 +581,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#facebook"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#facebook"></use> 
   	</svg>
   </span>
 
@@ -594,7 +594,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-instagram">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#instagram"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#instagram"></use> 
   	</svg>
   </span>
 
@@ -607,7 +607,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#dribbble"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#dribbble"></use> 
   	</svg>
   </span>
 
@@ -620,7 +620,7 @@ export const MARKUP = `<!-- Wrapper -->
               <span class="u-from-mobile">
                   <span class="svg svg-twitter">
   	<svg width="12" height="12">
-    	<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#twitter"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#twitter"></use> 
   	</svg>
   </span>
 

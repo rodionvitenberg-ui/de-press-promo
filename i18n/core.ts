@@ -115,7 +115,7 @@ export const FX_PHRASES: Record<string, string> = {
 
 const CARET_SVG = `<span class="svg svg-caret-right">
   \t<svg width="5" height="9">
-    \t<use xlink:href="/app/themes/portfolio-2018/static/assets/spritesheet.svg#caret-right"></use> 
+    \t<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
   \t</svg>
   </span>`;
 

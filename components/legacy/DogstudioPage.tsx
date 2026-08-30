@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-const THEME = "/app/themes/portfolio-2018";
+// Runtime asset root; main.js concatenates it with "/static/..." paths.
+const THEME = "";
 const JS = `${THEME}/static/js`;
 
 export type DogstudioPageProps = {
@@ -151,8 +152,8 @@ async function loadDogDataForDevice(): Promise<DogDataJson | null> {
   if (!key) return null;
 
   const file = DEVICE_DATA_FILES[key];
-  const res = await fetch(`/data/dog/${file}`);
-  if (!res.ok) throw new Error(`GET /data/dog/${file} → ${res.status}`);
+  const res = await fetch(`/data/scene/${file}`);
+  if (!res.ok) throw new Error(`GET /data/scene/${file} → ${res.status}`);
   const json = (await res.json()) as DogDataJson;
   if (
     !json ||
@@ -169,7 +170,7 @@ async function loadDogDataForDevice(): Promise<DogDataJson | null> {
 /**
  * Phase 1: inject extracted data-*.json into DogGL without editing bundles.
  * main.js calls `new window.DogGL({ data })`; we swap the constructor so the
- * same data ships from public/data/dog/*.json instead of webpack modules.
+ * same data ships from public/data/scene/*.json instead of webpack modules.
  */
 function patchDogGLWithData(data: DogDataJson) {
   const Original = window.DogGL;
@@ -190,7 +191,7 @@ function patchDogGLWithData(data: DogDataJson) {
     },
   }) as DogGLConstructor;
 
-  console.debug("[phase1] DogGL data overridden from public/data/dog/*.json");
+  console.debug("[phase1] DogGL data overridden from public/data/scene/*.json");
 }
 
 /**

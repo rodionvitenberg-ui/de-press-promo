@@ -22,7 +22,7 @@ type ModelResource = {
 /**
  * Blend of the painted basecolor against the matcap shading (FS_MAIN:
  * `matcap * (1 - w*0.075) + diffuse * w`). 0.79 = the legacy dog's textured
- * material weight (public/data/dog/*.json MATCAPS[].diffuseWeight) — keeps
+ * material weight (public/data/scene/*.json MATCAPS[].diffuseWeight) — keeps
  * the sculpted matcap read while the painted rock/foliage colors dominate.
  */
 const ISLAND_DIFFUSE_WEIGHT = 0.79;
@@ -74,7 +74,7 @@ export class Dog extends THREE.Object3D {
     // island_diffuse.jpg). Marked sRGB so
     // the GPU decodes it to linear before the matcap/diffuse blend. First ==
     // second weight: the diffuse does not change on case-hover matcap swaps.
-    // 0.79 = the legacy textured-material weight (public/data/dog/*.json).
+    // 0.79 = the legacy textured-material weight (public/data/scene/*.json).
     const islandDiffuse = loader.getResourceData("island-diffuse") as THREE.Texture | null;
     if (islandDiffuse) {
       islandDiffuse.colorSpace = THREE.SRGBColorSpace;

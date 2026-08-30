@@ -35,8 +35,8 @@ npm run dev   # :3001 (порт :3000 занят другим сервисом)
 | Текст/вёрстка | `components/legacy/markups/<page>.ts` (HTML-снимок, осторожно) |
 | Стили | override-файл после main.css в `app/(legacy)/layout.tsx` |
 | WebGL/движение | `components/legacy/doggl/` |
-| Данные «камеры»/«света» | `public/data/dog/*.json` (правка → hard refresh) |
-| Ассеты | `public/app/themes/portfolio-2018/...` |
+| Данные «камеры»/«света» | `public/data/scene/*.json` (правка → hard refresh) |
+| Ассеты | `public/static/...` |
 | Переводы | `i18n/dictionaries/*.json` |
 
 ## Чего не делать
@@ -45,12 +45,12 @@ npm run dev   # :3001 (порт :3000 занят другим сервисом)
 - Не вешать Tailwind preflight / `next/font` на `(legacy)/layout`.
 - Не `import` `main.css` через bundler.
 - Не удалять `.site-loader`-заглушку в разметке (её ждёт рантайм).
-- Не ломать пути `public/app/themes/portfolio-2018` (`theme_link`).
+- Не ломать пути `public/static` (`theme_link`).
 
 ## Инструменты
 
 ```bash
-npm run dog-data     # main.js → public/data/dog/*.json (после правки STATES/MATCAPS)
+npm run dog-data     # main.js → public/data/scene/*.json (после правки STATES/MATCAPS)
 npm run screenshots  # эталонные скриншоты → reference/screenshots/ (нужен запущенный dev/start)
 npm run lint         # ESLint
 npx tsc --noEmit     # типы
