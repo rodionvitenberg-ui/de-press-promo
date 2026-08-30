@@ -11,7 +11,7 @@ export const MARKUP = `<!-- Wrapper -->
               <div class="site-header">
   <div class="site-header-title">
     <a href="/" class="site-header-logo" title="На главную — de-press">
-      <span class="dp-logo">@de-press<span class="dp-logo-tld">.co</span></span>
+      <span class="dp-logo">de-press<span class="dp-logo-tld">.co</span></span>
     </a>
   </div>
 
