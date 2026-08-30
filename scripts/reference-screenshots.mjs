@@ -23,12 +23,14 @@ import path from "node:path";
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
 const OUT_DIR = process.env.OUT_DIR ?? "reference/screenshots";
 const CHROME = process.env.CHROME ?? "google-chrome";
-const LOADER_TIMEOUT_MS = 45_000;
+const LOADER_TIMEOUT_MS = 90_000;
 const TWEEN_WAIT_MS = 1_500;
-// The island intro (progress 0 → scroll pose) keeps flying for ~1.5s after the
-// loader unlocks; without this settle the top-state baseline catches it
-// mid-intro (nondeterministic framing, see Phase 3).
-const INTRO_SETTLE_MS = 1_800;
+// The island intro (progress 0 → scroll pose) keeps flying for a while after
+// the loader unlocks: on headless Chrome the loader can unlock before the
+// model finishes streaming and the intro timeline reveals the hero letters,
+// so top-state captures need a long settle to land on the stable post-intro
+// framing (nondeterministic framing, see Phase 3).
+const INTRO_SETTLE_MS = 25_000;
 
 const DESKTOP_UA =
   "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -146,17 +148,16 @@ async function evalJs(cdp, expression) {
   return result.value;
 }
 
-/** Wait until the mirrored page is booted: WP body classes present, loader gone. */
+/** Wait until the mirrored page is booted: markup mounted, loader unlocked. */
 async function waitForPageReady(cdp) {
   const deadline = Date.now() + LOADER_TIMEOUT_MS;
   while (Date.now() < deadline) {
     const state = await evalJs(
       cdp,
       `(() => {
-        const c = document.body.className;
         return {
-          booted: c.includes("page-template"),
-          locked: c.includes("lock-scroll"),
+          booted: !!document.querySelector(".boot-page-root"),
+          locked: document.body.classList.contains("lock-scroll"),
           canvas: !!document.querySelector(".scene-root canvas"),
         };
       })()`,
