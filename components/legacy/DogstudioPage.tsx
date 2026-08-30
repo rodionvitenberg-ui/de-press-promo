@@ -191,7 +191,6 @@ function patchSceneGLWithData(data: DogDataJson) {
     },
   }) as SceneGLConstructor;
 
-  console.debug("[phase1] SceneGL data overridden from public/data/scene/*.json");
 }
 
 /**
@@ -238,7 +237,7 @@ export default function DogstudioPage({
 
         const wasm = supportsWasm();
         if (!wasm) {
-          console.warn("WebAssembly not supported — dog disabled");
+          console.warn("WebAssembly not supported — 3D disabled");
           fallbackWithoutScene();
           return;
         }
@@ -248,7 +247,7 @@ export default function DogstudioPage({
           // intercept `new window.SceneGL({ data })` in main.js.
           const dataPromise = loadDogDataForDevice().catch((err) => {
             console.warn(
-              "[phase1] dog data unavailable — using bundle data:",
+              "scene data unavailable — using bundle data:",
               err,
             );
             return null;
@@ -263,7 +262,7 @@ export default function DogstudioPage({
 
         await loadScript(`${JS}/main.js`);
       } catch (err) {
-        console.error("Dogstudio boot failed:", err);
+        console.error("runtime boot failed:", err);
         fallbackWithoutScene();
       }
     })();
