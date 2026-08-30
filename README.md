@@ -104,7 +104,7 @@ npm run dev   # :3001 (порт :3000 занят другим сервисом)
 | Safety | http://localhost:3001/safety/ |
 | Локали | http://localhost:3001/{en,de,es,pl,pt,uk,zh,ja,ko}/… |
 
-Desktop: WebGL-остров (DogGL). Mobile: `disable_scene` (как в оригинале).
+Desktop: WebGL-остров (SceneGL). Mobile: `disable_scene` (как в оригинале).
 
 ---
 
@@ -133,7 +133,7 @@ public/static/
   assets/                         # 3D, textures, fonts, images, audio
 
 public/data/scene/                  # ✅ Фаза 1: STATES / MATCAPS / MATCAP_PER_ROW
-                                  # (извлекаются из main.js скриптом, прокидываются в DogGL)
+                                  # (извлекаются из main.js скриптом, прокидываются в SceneGL)
 
 i18n/                             # словари 10 локалей (ключ = исходная RU-строка)
 
@@ -292,7 +292,7 @@ components/legacy/markups/my-feature.ts
 
 Реализация — `components/legacy/glscene/` (порт модулей 25–57 оригинального `dog.js`, см. git-историю):
 
-- Фасад `index.ts` повторяет публичный класс `window.DogGL`; `installDogGL()` ставит его в `window` до загрузки `main.js` (Phase-1 Proxy с JSON-данными продолжает работать поверх).
+- Фасад `index.ts` повторяет публичный класс `window.SceneGL`; `installSceneGL()` ставит его в `window` до загрузки `main.js` (Phase-1 Proxy с JSON-данными продолжает работать поверх).
 - Сплайны камеры: `custom-cubic` (DEPTH) + `monotone-cubic` (остальные 6 массивов) — те же алгоритмы, что в бандле (в README они условно названы «Catmull-Rom»).
 - Кастомный matcap-шейдер перенесён дословно; для three r185 патч сам объявляет `varying vec2 vUv` (meshbasic больше не даёт `vUv`), а в skinned-ветке нормаль уже скиннит `skinnormal_vertex`.
 - Draco: декодер three r185 требует API `DecodeArrayTo*`, поэтому в `public/draco/` лежит декодер из поставки three (`examples/jsm/libs/draco/gltf/`); legacy-обёртка в ассетах — Draco 1.3 (только `DecodeBufferToMesh`). Если `.drc.glb` не декодировался — фолбэк на `dog.glb`.

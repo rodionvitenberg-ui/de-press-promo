@@ -45,7 +45,7 @@ npm run dev   # :3001 (порт :3000 занят другим сервисом)
 - Не вешать Tailwind preflight / `next/font` на `(legacy)/layout`.
 - Не `import` `main.css` через bundler.
 - Не удалять `.site-loader`-заглушку в разметке (её ждёт рантайм).
-- Не ломать пути `public/static` (`theme_link`).
+- Не ломать пути `public/static` (`window.Site.assetsRoot`).
 
 ## Инструменты
 
