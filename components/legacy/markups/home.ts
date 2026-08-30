@@ -2,7 +2,7 @@
  * Based on a dogstudio.co page snapshot (technical foundation).
  * Content is being replaced with de-press.co's own; do not ship the original as-is.
  */
-export const BODY_CLASS = "home page-template page-template-page-home page-template-page-home-php page page-id-5  lock-scroll";
+export const BODY_CLASS = "lock-scroll";
 export const DATA_THEME = "home";
 export const DATA_PAGE = "home";
 export const PAGE_TITLE = "de-press — тебя услышат";
