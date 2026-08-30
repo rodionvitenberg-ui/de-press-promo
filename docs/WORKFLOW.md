@@ -38,7 +38,7 @@ npm run dev
 | Новая demo | `app/(lab)/playground/<name>/page.tsx` |
 | React UI | `components/lab/` |
 | Стили lab | `components/lab/lab.css` или co-located CSS module |
-| Текст клона | `components/legacy/markups/*.ts` (осторожно + mirror) |
+| Текст клона | `components/legacy/markups/*.ts` (осторожно) |
 | Ассеты клона | `public/app/themes/portfolio-2018/...` |
 
 ## Чего не делать
@@ -46,19 +46,6 @@ npm run dev
 - Не править `public/.../main.js` / `dog.js` как основной способ.
 - Не вешать Tailwind preflight / `next/font` на `(legacy)/layout`.
 - Не `import` `main.css` через bundler.
-- Не `npm run mirror` сразу после ручных правок markups (перезапишет).
-
-## Mirror
-
-```bash
-npm run mirror                              # live → assets + markups
-npm run mirror:assets                       # только ассеты, markups не трогать
-npm run mirror -- --pages=home,studio       # выборочные страницы
-npm run mirror -- --pages=careers --assets-only
-npm run mirror:help
-```
-
-Перед полным `mirror`: commit/stash markups, если правил руками.
 
 ## Study extract
 

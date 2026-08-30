@@ -108,7 +108,7 @@ export default function DogPlayground() {
         </label>
 
         <p className="lab-dog-note">
-          Model: <code>dog.glb</code> · textures from study mirror. Not full
+          Model: <code>dog.glb</code> · textures from the study assets. Not full
           DogGL (custom shaders / Draco path / states). Orbit: drag · scroll
           zoom.
         </p>

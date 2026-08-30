@@ -37,11 +37,11 @@
 
 | | **Legacy** (основа промо) | **Lab** (песочница) |
 |--|---------------------------|---------------------|
-| URL | `/`, `/about/`, `/careers/`, `/values/`, `/contact/` | `/lab/`, `/lab/playground/...` |
+| URL | `/`, `/about/`, `/values/`, `/contact/` (+ `/en/`, `/de/`, … локали) | `/lab/`, `/lab/playground/...` |
 | Вёрстка | HTML-снимки в `components/legacy/markups/*` (постепенно → JSX) | React-компоненты |
 | Стили | `public/.../main.css` (orig) + кастомные overrides | `components/lab/lab.css` (+ свои) |
 | JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/doggl`) | hooks, GSAP, R3F… по желанию |
-| Правки | Аккуратно; `mirror` затирает markups | Свободно, как в любом Next-проекте |
+| Правки | Аккуратно (это HTML-снимки) | Свободно, как в любом Next-проекте |
 | Назначение | **Прод-основа**: сценарий, эффекты, скролл | Эксперименты и переиспользуемые паттерны |
 
 ```
@@ -95,7 +95,6 @@
 
 ```bash
 npm install
-npm run mirror          # при необходимости: live → assets + markups
 npm run study:extract   # опционально: SCSS + beautified JS
 npm run dev
 ```
@@ -104,9 +103,9 @@ npm run dev
 |-----|-----|
 | Home (legacy) | http://localhost:3000/ |
 | О проекте | http://localhost:3000/about/ |
-| Careers | http://localhost:3000/careers/ |
 | Values | http://localhost:3000/values/ |
 | Contact | http://localhost:3000/contact/ |
+| Локали | http://localhost:3000/{en,de,es,pl,pt,uk,zh,ja,ko}/… |
 | **Lab index** | http://localhost:3000/lab/ |
 | Tokens | http://localhost:3000/lab/playground/tokens/ |
 | Type | http://localhost:3000/lab/playground/type/ |
@@ -131,7 +130,9 @@ app/
   (legacy)/
     layout.tsx                    # link → original main.css
     page.tsx                      # /
-    about|careers|values|contact/page.tsx
+    about|values|contact/page.tsx # ru (дефолтная локаль)
+    [lang]/…                      # /en/, /de/, … — те же страницы в локали
+    safety/page.tsx               # кризисная страница
   (lab)/
     layout.tsx                    # lab.css
     page.tsx                      # /lab/
@@ -141,7 +142,7 @@ components/
   legacy/
     DogstudioPage.tsx             # inject HTML + boot scripts
     createLegacyPage.tsx          # фабрика page
-    markups/                      # GENERATED (mirror) → кастомизируем
+    markups/                      # HTML-снимки страниц → кастомизируем
   lab/
     LabShell.tsx
     AppearDemo.tsx
@@ -161,7 +162,6 @@ study/                            # не runtime
   js/*.beautified.js
 
 scripts/
-  mirror-pages.mjs                # ⚠️ защита от перезаписи модели внесена (Фаза 0)
   extract-scss-from-map.mjs       # CSS map → study/scss
   beautify-js.mjs                 # → study/js/*.beautified.js
   extract-dog-data.mjs            # ✅ Фаза 1: main.js → public/data/dog/*.json
@@ -186,9 +186,23 @@ docs/
 |-----|---------------------------|
 | `/` | `home` |
 | `/about/` | `about` |
-| `/careers/` | `careers` |
 | `/values/` | `values` |
 | `/contact/` | `contact` |
+
+### Локализация (i18n)
+
+- 10 локалей: `en de es pl pt ru uk zh ja ko`. Дефолт — `ru`, живёт в корне;
+  остальные — по префиксу `/{locale}/…` (`app/(legacy)/[lang]/…`, SSG через
+  `generateStaticParams`).
+- Словари — gettext-стиль: ключ = точная исходная RU-строка
+  (`i18n/dictionaries/*.json`), `ru.json` — только намеренные переопределения.
+  Нет перевода → показывается исходная строка, вёрстка не ломается.
+- Шаблоны-снимки не переписываются: текстовые узлы и атрибуты
+  (`title/alt/placeholder/data-after`) маппятся в `i18n/core.ts` на рендере;
+  анимационные заголовки (`fx-letter`) перегенерируются из переводов через
+  `<!--DP:FX:…-->` плейсхолдеры, футерный переключатель — `<!--DP:LANGS-->`.
+- Проверка покрытия: `node --experimental-strip-types scripts/i18n-check.mjs`.
+
 
 ### Ассеты
 
@@ -212,19 +226,6 @@ docs/
 | `public/data/dog/*.json` | ✅ Фаза 1: данные «камеры»/«света» (STATES, MATCAPS). `DogstudioPage` подменяет ими `options.data` в `new DogGL(...)` без правки бандлов |
 | `study/js/*.beautified.js` | Читать / искать |
 
-### Mirror
-
-```bash
-npm run mirror                              # assets + markups
-npm run mirror:assets                       # только assets
-npm run mirror -- --pages=home,about       # выборочно
-```
-
-- Качает HTML + ассеты.
-- Полный `mirror` **перезаписывает** `components/legacy/markups/*.ts`.
-- ✅ **Фаза 0:** модели и matcap-атласы убраны из `KNOWN_ASSETS`, чтобы mirror не затёр кастомизацию.
-- Ручные правки markups → commit/stash **до** полного mirror, либо используй `--assets-only`.
-
 ---
 
 ## Как редактировать
@@ -234,7 +235,6 @@ npm run mirror -- --pages=home,about       # выборочно
 1. `components/legacy/markups/<page>.ts`
 2. Найти фрагмент в `MARKUP`
 3. Hard refresh
-Не гоняй `mirror` сразу после.
 
 ### B. Картинка
 
@@ -297,8 +297,6 @@ components/lab/MyFeature.tsx
 - [x] Next shell + offline assets
 - [x] study: SCSS, beautified JS, ARCHITECTURE
 - [x] Git-точка (`legacy-dogstudio-2026-08-01`)
-- [x] Внешний бэкап репозитория (создан пользователем)
-- [x] **Защита от mirror**: `dog.glb`, `dog.drc.glb`, `matcap-*.jpg` убраны из `KNOWN_ASSETS`
 - [x] Пересобрать README под новое направление (этот документ)
 - [x] Скриншоты всех состояний (эталон регрессий) — `npm run screenshots` → `study/screenshots/` (desktop + mobile; интерактив: меню, скролл, matcap-hover; манифест состояний — `manifest.json`)
 
@@ -353,10 +351,6 @@ components/lab/MyFeature.tsx
 | `npm run dev` | Dev-сервер |
 | `npm run build` / `start` | Production |
 | `npm run lint` | ESLint |
-| `npm run mirror` | Pages + assets → markups |
-| `npm run mirror:assets` | Только assets (markups не трогать) |
-| `npm run mirror -- --pages=home,about` | Выборочные страницы |
-| `npm run mirror:help` | CLI help |
 | `npm run study:scss` | CSS map → `study/scss/` |
 | `npm run study:js` | Beautify → `study/js/` |
 | `npm run study:dog-data` | Из `main.js` → `public/data/dog/*.json` |
@@ -379,7 +373,6 @@ components/lab/MyFeature.tsx
 | Header/menu/footer | `/lab/playground/chrome` |
 | Typography | `/lab/playground/type` |
 | Matcap hover | legacy home + `rg setMatcap study/js` |
-| Обновить с live | `npm run mirror` или `mirror:assets` (модель защищена, Фаза 0) |
 | Не сломать dog | пути `public/app/themes/...` + `theme_link`; после Фазы 2 — конфиг GL-модуля |
 | Стили lab | `(lab)/layout` + `lab.css` |
 | Выкинуть остатки клона | после Фаз 2–4: удалить ненужные части `main.js`, markups, theme public |

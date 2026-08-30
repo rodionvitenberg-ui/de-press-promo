@@ -107,3 +107,305 @@
   border-bottom: 1px solid #ff4940;
   padding-bottom: 2px;
 }
+
+/* ==========================================================================
+   EXPERIMENT — scene lighting without baked art.
+   The dog's look is baked (Tripo "night" matcap), so the page plays the same
+   environment: cold violet-blue night ambient + the faintest amber breath
+   low behind the model. Art overlays are hidden, ambiance is pure CSS.
+   Rollback: delete this block (the PNG-art variant lives on variant/dawn-art).
+   ========================================================================== */
+
+/* 1) baked art overlays off (markup intact — no legacy JS references break) */
+.home-background,
+.home-about-background,
+.site-menu-back img {
+  display: none !important;
+}
+
+/* 2) fixed ambient layer: light that belongs to the camera, under all content
+      (body:after is the site grain at z 1100; the dog canvas sits at z 991) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(46% 30% at 50% 78%, rgba(240, 196, 140, 0.12), rgba(240, 196, 140, 0) 100%),
+    radial-gradient(80% 26% at 50% 102%, rgba(214, 166, 120, 0.10), rgba(214, 166, 120, 0) 70%),
+    radial-gradient(90% 70% at 50% 30%, rgba(104, 120, 185, 0.10), rgba(104, 120, 185, 0) 100%),
+    radial-gradient(130% 100% at 50% 50%, rgba(6, 8, 14, 0) 55%, rgba(6, 8, 14, 0.45) 100%);
+}
+
+/* 3) the last section owns the horizon: dawn rises behind the ground fade */
+.home-about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 34% at 46% 100%, rgba(240, 196, 140, 0.13), rgba(240, 196, 140, 0) 100%),
+    radial-gradient(95% 55% at 50% 115%, rgba(214, 166, 120, 0.10), rgba(214, 166, 120, 0) 75%);
+}
+
+/* 4) the menu shares the same environment (its art is hidden above) */
+.site-menu-back,
+.site-menu-panel {
+  background-image:
+    radial-gradient(46% 30% at 50% 78%, rgba(240, 196, 140, 0.12), rgba(240, 196, 140, 0) 100%),
+    radial-gradient(90% 70% at 50% 30%, rgba(104, 120, 185, 0.10), rgba(104, 120, 185, 0) 100%);
+}
+
+/* ==========================================================================
+   REBRAND TYPOGRAPHY — family remap.
+   This file loads after main.css, so re-declaring the same families wins:
+     "GT Sectra Display" -> Playfair Display (display serif: home hero, …)
+     "Gilroy"            -> Fira Sans (headings / UI)
+     "Heebo"             -> Fira Sans (body)
+   Every existing rule keeps working — zero selector overrides.
+   Rollback: delete this block (original @font-face stay untouched in main.css).
+   ========================================================================== */
+
+/* --- GT Sectra Display -> Playfair Display (variable 400–900) --- */
+@font-face {
+  font-family: "GT Sectra Display";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("../assets/fonts/PlayfairDisplay-var-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "GT Sectra Display";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("../assets/fonts/PlayfairDisplay-var-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* --- Gilroy -> Fira Sans --- */
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-400-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-500-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-700-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* --- Heebo -> Fira Sans (100 and 300 map onto the Light 300 file) --- */
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-300-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-300-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-300-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-300-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-400-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-500-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/FiraSans-700-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* --- header logo as a text wordmark ("@de-press" + ".co" on line 2) --- */
+/* The anchor is a flex container; kill its UA underline at the source,
+   otherwise it paints through the text items. SVG-only logo never needed it. */
+.site-header-logo {
+  text-decoration: none;
+}
+
+.dp-logo {
+  display: block;
+  font-family: Gilroy, Helvetica, Arial, sans-serif; /* -> Fira Sans via remap */
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: #fff; /* home theme — mirrors the old .site-header-logo svg{fill:#fff} */
+}
+
+.dp-logo-tld {
+  display: block;
+}
+
+/* --- legacy loader stub ---------------------------------------------------
+   The ported main.css ships no .site-loader rules ("preloader UI removed"),
+   but the DOM stub stays because legacy main.js binds to it. With no CSS,
+   its bare SVG <circle r="67"> renders with the default black fill — the
+   black disc painted behind the header logo after boot. Keep the DOM,
+   neutralize the visuals. --- */
+.site-loader {
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* i18n: 10-locale switcher + CJK fallbacks + cyrillic hero kerning   */
+/* ------------------------------------------------------------------ */
+
+/* The switcher now holds 10 languages; let long endonyms fit. */
+.site-footer-languages ul {
+  width: auto;
+  min-width: 94px;
+}
+
+/* Fira Sans / Playfair Display carry no CJK glyphs — provide system
+   fallbacks so zh/ja/ko render with proper native faces. */
+html[lang="zh"] body,
+html[lang="ja"] body,
+html[lang="ko"] body {
+  font-family: "Fira Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans CJK SC", "Noto Sans CJK JP", "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+}
+html[lang="zh"] .fx-parent,
+html[lang="ja"] .fx-parent,
+html[lang="ko"] .fx-parent {
+  font-family: "Playfair Display", "Hiragino Mincho ProN", "Yu Mincho",
+    "Songti SC", "STSong", "Noto Serif CJK SC", "Noto Serif CJK JP",
+    "Nanum Myeongjo", serif !important;
+}
+
+/* The -14/-23px squeeze on the hero's first word was kerned for "We";
+   cyrillic and CJK glyphs would overlap. */
+html[lang="ru"] .home-hero-title .fx-word:first-of-type,
+html[lang="zh"] .home-hero-title .fx-word:first-of-type,
+html[lang="ja"] .home-hero-title .fx-word:first-of-type,
+html[lang="ko"] .home-hero-title .fx-word:first-of-type {
+  letter-spacing: -2px;
+}

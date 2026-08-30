@@ -1,4 +1,7 @@
+import type { ReactNode } from "react";
 import DogstudioPage from "./DogstudioPage";
+import { finalizeLegacyMarkup } from "@/i18n";
+import { DEFAULT_LOCALE, type Locale } from "@/i18n/core";
 
 export type LegacyMarkupModule = {
   BODY_CLASS: string;
@@ -8,18 +11,46 @@ export type LegacyMarkupModule = {
   PAGE_TITLE: string;
 };
 
+export type LegacyPageOptions = {
+  /** Bare route of the page, e.g. "/" — for the footer language switcher. */
+  path: string;
+  /** Defaults to the site default locale (ru, served at bare paths). */
+  locale?: Locale;
+};
+
 /**
- * Thin server component factory: one markup module → Next page.
+ * Legacy page renderer: one markup module + locale → page JSX.
+ * The markup snapshot is localized through the gettext-style dictionaries
+ * (text nodes, attributes, fx display titles, language switcher).
  */
-export function createLegacyPage(mod: LegacyMarkupModule) {
+export function renderLegacyPage(
+  mod: LegacyMarkupModule,
+  options: LegacyPageOptions,
+): ReactNode {
+  const locale = options.locale ?? DEFAULT_LOCALE;
+  const markup = finalizeLegacyMarkup({
+    markup: mod.MARKUP,
+    locale,
+    path: options.path,
+  });
+  return (
+    <DogstudioPage
+      bodyClass={mod.BODY_CLASS}
+      dataTheme={mod.DATA_THEME}
+      dataPage={mod.DATA_PAGE}
+      markup={markup}
+      htmlLang={locale}
+    />
+  );
+}
+
+/** Factory for static default-locale routes (`export default …`). */
+export function createLegacyPage(
+  mod: LegacyMarkupModule,
+  options: LegacyPageOptions,
+) {
+  const node = renderLegacyPage(mod, options);
   return function LegacyRoutePage() {
-    return (
-      <DogstudioPage
-        bodyClass={mod.BODY_CLASS}
-        dataTheme={mod.DATA_THEME}
-        dataPage={mod.DATA_PAGE}
-        markup={mod.MARKUP}
-      />
-    );
+    return node;
   };
 }

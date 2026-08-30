@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: false,
   // Match origin URLs: /studio/, /careers/, …
   trailingSlash: true,
+  // Hide the dev-mode indicator ("N" circle, bottom-left): it collided with
+  // the cookie banner buttons and looked like page chrome. Dev-only option.
+  devIndicators: false,
 };
 
 export default nextConfig;

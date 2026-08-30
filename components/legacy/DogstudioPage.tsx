@@ -10,6 +10,8 @@ export type DogstudioPageProps = {
   dataTheme: string;
   dataPage: string;
   markup: string;
+  /** Sync <html lang> with the active locale (root layout ships "ru"). */
+  htmlLang?: string;
 };
 
 export type DogKeypoint = {
@@ -201,12 +203,17 @@ export default function DogstudioPage({
   dataTheme,
   dataPage,
   markup,
+  htmlLang,
 }: DogstudioPageProps) {
   const booted = useRef(false);
 
   useEffect(() => {
     if (booted.current) return;
     booted.current = true;
+
+    if (htmlLang) {
+      document.documentElement.lang = htmlLang;
+    }
 
     const prevClass = document.body.className;
     const prevTheme = document.body.getAttribute("data-theme");
@@ -268,7 +275,7 @@ export default function DogstudioPage({
       if (prevPage) document.body.setAttribute("data-page", prevPage);
       else document.body.removeAttribute("data-page");
     };
-  }, [bodyClass, dataTheme, dataPage]);
+  }, [bodyClass, dataTheme, dataPage, htmlLang]);
 
   return (
     <div

@@ -35,13 +35,14 @@ const DESKTOP_UA =
 const MOBILE_UA =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1";
 
-const ROUTES = [
-  { name: "home", path: "/" },
-  { name: "about", path: "/about/" },
-  { name: "careers", path: "/careers/" },
-  { name: "values", path: "/values/" },
-  { name: "contact", path: "/contact/" },
-];
+const ROUTES = process.env.SHOT_ROUTES
+  ? JSON.parse(process.env.SHOT_ROUTES)
+  : [
+      { name: "home", path: "/" },
+      { name: "about", path: "/about/" },
+      { name: "values", path: "/values/" },
+      { name: "contact", path: "/contact/" },
+    ];
 
 // ---------------------------------------------------------------------------
 // CDP plumbing

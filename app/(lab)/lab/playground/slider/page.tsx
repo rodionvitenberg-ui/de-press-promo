@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import LabShell from "@/components/lab/LabShell";
 import ImageSlider from "@/components/lab/ImageSlider";
 import type { SliderSlide } from "@/components/lab/ImageSlider";
@@ -58,7 +57,7 @@ export default function SliderPlaygroundPage() {
   return (
     <LabShell
       title="Careers image slider"
-      lead="Drag/scroll strip instead of tiny-slider. Assets from the careers mirror. Compare legacy /careers/."
+      lead="Drag/scroll strip instead of tiny-slider. Assets from the careers page snapshot (the legacy /careers/ page was removed)."
     >
       <ImageSlider slides={SLIDES} />
       <section className="lab-section">
@@ -69,9 +68,6 @@ export default function SliderPlaygroundPage() {
           </li>
           <li>
             <code>components/lab/ImageSlider.tsx</code>
-          </li>
-          <li>
-            Legacy: <Link href="/careers/">/careers/</Link>
           </li>
         </ul>
       </section>
