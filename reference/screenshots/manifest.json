@@ -45,7 +45,7 @@
     "route": "/values/",
     "booted": true,
     "locked": false,
-    "canvas": false,
+    "canvas": true,
     "loaderWait": "done"
   },
   {

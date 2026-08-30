@@ -23,6 +23,8 @@ import path from "node:path";
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
 const OUT_DIR = process.env.OUT_DIR ?? "reference/screenshots";
 const CHROME = process.env.CHROME ?? "google-chrome";
+const CHROME_PROFILE_DIR =
+  process.env.CHROME_PROFILE_DIR ?? "/tmp/promo-depress-screens-chrome";
 const LOADER_TIMEOUT_MS = 90_000;
 const TWEEN_WAIT_MS = 1_500;
 // The island intro (progress 0 → scroll pose) keeps flying for a while after
@@ -61,6 +63,8 @@ function launchChrome() {
       "--autoplay-policy=no-user-gesture-required",
       "--hide-scrollbars",
       "--force-device-scale-factor=1",
+      `--user-data-dir=${CHROME_PROFILE_DIR}`,
+      "--no-first-run",
       "--remote-debugging-port=0",
       "about:blank",
     ],
