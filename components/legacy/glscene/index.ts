@@ -6,11 +6,11 @@ import type { MouseInput } from "./types";
 
 export { setSSAA, setSSAAQuality } from "./constants";
 export { mediator } from "./mediator";
-export { DogMaterial, type DogUniforms } from "./dog-material";
+export { IslandMaterial, type IslandUniforms } from "./material";
 export type { SceneGLOptions } from "./constants";
 
 /**
- * Public SceneGL facade — 1:1 port of the legacy `window.SceneGL` class (dog.js
+ * Public SceneGL facade — 1:1 port of the legacy `window.SceneGL` class (legacy bundle
  * module 57). `main.js` instantiates it with
  * `{ data, reduced, container, imagePath, dracoPath, modelPath }` and drives
  * every subsequent call from its own RAF loop:
@@ -76,8 +76,8 @@ export class SceneGL {
 }
 
 /**
- * Registers the module as `window.SceneGL`, replacing the legacy dog.js
- * bundle. Called by `DogstudioPage.tsx` before `main.js` boots.
+ * Registers the module as `window.SceneGL`, replacing the legacy legacy bundle
+ * bundle. Called by `BootPage.tsx` before `main.js` boots.
  */
 export function installSceneGL(): void {
   if (typeof window === "undefined") return;

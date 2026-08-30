@@ -3,44 +3,44 @@ import { C, setSSAA as applySSAA, setSSAAQuality as applySSAAQuality } from "./c
 import { emitter } from "./emitter";
 import { getStage } from "./stage";
 import { AssetLoader, type LoadEntry, type TextureOptions } from "./loader";
-import { Dog } from "./dog";
-import { registerDog } from "./dog-registry";
-import { DogState } from "./dog-state";
+import { Island } from "./island";
+import { registerIsland } from "./island-registry";
+import { StateDispatcher } from "./state-dispatcher";
 import { Postprocessing } from "./postprocessing";
 import type { MouseInput } from "./types";
 
 /**
  * Scene assembly and render loop — port of the legacy `world3D.js`
- * (dog.js module 56). Loads the texture manifest + model, wires the dog into
+ * (legacy bundle module 56). Loads the texture manifest + model, wires the island into
  * the scene and dispatches every frame to the postprocessing pipeline.
  */
 export class World3D {
-  private dog = new Dog();
+  private island = new Island();
   private loader = new AssetLoader();
-  private dogState: DogState | null = null;
+  private stateDispatcher: StateDispatcher | null = null;
   private postprocessing: Postprocessing | null = null;
 
   constructor() {
-    registerDog(this.dog);
+    registerIsland(this.island);
     emitter.onUpdate((delta) => this.update(delta));
     emitter.onResize((width, height) => this.resize(width, height));
   }
 
   setState(): Promise<void> {
-    this.dog.desactivate();
+    this.island.desactivate();
     return new Promise((resolve) => {
-      this.dogState?.setState();
-      this.dog.activate();
+      this.stateDispatcher?.setState();
+      this.island.activate();
       resolve();
     });
   }
 
   init(): void {
     const { scene } = getStage();
-    scene.add(this.dog);
-    this.dog.init(this.loader);
+    scene.add(this.island);
+    this.island.init(this.loader);
     this.postprocessing = new Postprocessing();
-    this.dogState = new DogState();
+    this.stateDispatcher = new StateDispatcher();
   }
 
   load(): Promise<void> {
@@ -61,7 +61,7 @@ export class World3D {
     // The legacy manifest also carried per-part detail maps (normals,
     // diffuse, specular) and swapped in ASTC/PVRTC variants when available.
     // The island needs only the matcap atlas plus its own painted basecolor
-    // (island_diffuse.jpg, see dog.ts).
+    // (island_diffuse.jpg, see island.ts).
     const islandDiffuse: TextureOptions = {
       anisotropy: Math.min(4, maxAnisotropy),
       magFilter: THREE.LinearFilter,
@@ -88,13 +88,13 @@ export class World3D {
     ];
 
     // The runtime model is the floating island (Phase 3), replacing the
-    // legacy dog pair. Draco/fallback follows the dog naming scheme. The
-    // island is fitted around the dog group origin (X/Y_OFFSET splines then
+    // legacy island pair. Draco/fallback follows the island naming scheme. The
+    // island is fitted around the island group origin (X/Y_OFFSET splines then
     // place it per state). Fit box scaled ×1.5 per Phase 3 art direction —
     // the island reads as a ~1/2-of-hero-frame silhouette right of the title.
     const useDraco = C.USE_DRACO && Boolean(C.DRACO_PATH);
     manifest.push({
-      id: "dog-model",
+      id: "island-model",
       type: "gltf",
       url: useDraco ? `${C.MODEL_PATH}island.drc.glb` : `${C.MODEL_PATH}island.glb`,
       options: {
@@ -134,19 +134,19 @@ export class World3D {
   }
 
   setMatcap(body: number, eyes: number): void {
-    this.dog.setMatcap(body, eyes);
+    this.island.setMatcap(body, eyes);
   }
 
   setMatcapProgress(progress: number): void {
-    this.dog.setMatcapProgress(progress);
+    this.island.setMatcapProgress(progress);
   }
 
   setAnimationProgress(progress: number, hard?: boolean): void {
-    this.dogState?.setAnimationProgress(progress, hard);
+    this.stateDispatcher?.setAnimationProgress(progress, hard);
   }
 
   setMouse(mouse: MouseInput): void {
-    this.dogState?.setMouse(mouse);
+    this.stateDispatcher?.setMouse(mouse);
   }
 
   resize(width: number, height: number): void {

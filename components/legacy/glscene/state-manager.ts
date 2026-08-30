@@ -4,7 +4,7 @@ import { World3D } from "./world3d";
 import type { MouseInput } from "./types";
 
 /**
- * State manager — port of the legacy `states.js` (dog.js module 47). Owns
+ * State manager — port of the legacy `states.js` (legacy bundle module 47). Owns
  * the world, resolves `load()` and forwards every facade call into it.
  */
 export class StateManager {

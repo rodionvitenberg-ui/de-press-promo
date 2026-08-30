@@ -3,8 +3,8 @@ import { GLTFLoader, type GLTF } from "three/examples/jsm/loaders/GLTFLoader.js"
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 
 /**
- * Asset loader — port of the legacy `globals/ressources` loader (dog.js
- * module 35) reduced to what the dog manifest actually uses: textures and
+ * Asset loader — port of the legacy `globals/ressources` loader (legacy bundle
+ * module 35) reduced to what the island manifest actually uses: textures and
  * glTF models (with Draco decoding and a fallback to the uncompressed
  * bundle mesh). Legacy progress plumbing was only used by the removed
  * site loader and is not ported.
@@ -20,7 +20,7 @@ export type TextureOptions = {
 };
 
 export type ModelOptions = {
-  /** Legacy placement (dog): fixed scale + offsets in model units. */
+  /** Legacy placement (island): fixed scale + offsets in model units. */
   scale?: number;
   offsetX?: number;
   offsetY?: number;

@@ -1,12 +1,12 @@
 /**
  * Event bus of the SceneGL runtime — port of the legacy `globals/emitter` +
- * `globals/mediator` pair (dog.js modules 27/30).
+ * `globals/mediator` pair (legacy bundle modules 27/30).
  *
  * The frame loop is driven by `main.js`: it calls `SceneGL.update()` once per
  * animation frame and the mediator translates that into the `update` /
  * `postupdate` events every subsystem subscribes to. Subscription order is
  * preserved (Set) and mirrors the legacy boot order:
- * camera → world render → dog mixer → camera behaviour.
+ * camera → world render → island mixer → camera behaviour.
  */
 export class Emitter {
   private updateListeners = new Set<(delta: number) => void>();

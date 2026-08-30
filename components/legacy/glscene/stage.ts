@@ -4,7 +4,7 @@ import { emitter } from "./emitter";
 
 /**
  * Renderer / scene / camera rig — ports of the legacy `globals/renderer`,
- * `globals/scene` and `modules/camera` singletons (dog.js modules 31/33/36).
+ * `globals/scene` and `modules/camera` singletons (legacy bundle modules 31/33/36).
  * The legacy bundle built them at import time against a container resolved
  * later; here they are created once, when the facade is constructed and the
  * container is known.

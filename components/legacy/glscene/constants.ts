@@ -1,11 +1,11 @@
-import type { DogDataJson } from "../DogstudioPage";
+import type { SceneDataJson } from "../BootPage";
 
 /**
  * Options payload `main.js` passes to `new window.SceneGL({ ... })`
- * (see the decoded `src/js/dog/index.js` controller).
+ * (see the decoded `src/js/island/index.js` controller).
  */
 export type SceneGLOptions = {
-  data: DogDataJson;
+  data: SceneDataJson;
   reduced: boolean;
   container: HTMLElement;
   imagePath: string;
@@ -16,7 +16,7 @@ export type SceneGLOptions = {
 
 /**
  * WebAssembly probe shipped with the legacy bundle (`utils/testwasm.js`,
- * dog.js module 54): a tiny module with a `test` export must instantiate
+ * legacy bundle module 54): a tiny module with a `test` export must instantiate
  * and execute. Decides whether the Draco-compressed model is used.
  */
 const WASM_PROBE_BYTES = new Uint8Array([
@@ -39,7 +39,7 @@ function supportsWasm(): boolean {
 }
 
 /**
- * Module-level runtime state — port of the legacy `constants.js` (dog.js
+ * Module-level runtime state — port of the legacy `constants.js` (legacy bundle
  * module 26), which used mutable ES-module exports. The same values live on
  * this object; `setData` plays the role of the legacy `SET_DATA`.
  */
@@ -49,7 +49,7 @@ export const C = {
   SSAA_QUALITY: 2,
   USE_DRACO: supportsWasm(),
   DATA: null as SceneGLOptions | null,
-  JSON_DATA: null as DogDataJson | null,
+  JSON_DATA: null as SceneDataJson | null,
   /** Identity map of the state names declared in `data.STATES`. */
   APP_STATES: {} as Record<string, string>,
   ASSET_PATH: "",

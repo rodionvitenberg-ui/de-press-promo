@@ -110,7 +110,7 @@
 
 /* ==========================================================================
    EXPERIMENT — scene lighting without baked art.
-   The dog's look is baked (Tripo "night" matcap), so the page plays the same
+   The island's look is baked (Tripo "night" matcap), so the page plays the same
    environment: cold violet-blue night ambient + the faintest amber breath
    low behind the model. Art overlays are hidden, ambiance is pure CSS.
    Rollback: delete this block (the PNG-art variant lives on variant/dawn-art).
@@ -124,7 +124,7 @@
 }
 
 /* 2) fixed ambient layer: light that belongs to the camera, under all content
-      (body:after is the site grain at z 1100; the dog canvas sits at z 991) */
+      (body:after is the site grain at z 1100; the island canvas sits at z 991) */
 body::before {
   content: "";
   position: fixed;

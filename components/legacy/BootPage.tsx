@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 const THEME = "";
 const JS = `${THEME}/static/js`;
 
-export type DogstudioPageProps = {
+export type BootPageProps = {
   bodyClass: string;
   dataTheme: string;
   dataPage: string;
@@ -15,14 +15,14 @@ export type DogstudioPageProps = {
   htmlLang?: string;
 };
 
-export type DogKeypoint = {
+export type SceneKeypoint = {
   value: number;
   element: string;
   offset?: number;
   visible?: boolean;
 };
 
-export type DogState = {
+export type SceneState = {
   POSES_COUNT: number;
   CAM_Y: number[];
   DEPTH: number[];
@@ -31,19 +31,19 @@ export type DogState = {
   X_OFFSET: number[];
   Y_OFFSET: number[];
   MOUSE_INFLUENCE: number[];
-  KEYPOINTS?: DogKeypoint[];
+  KEYPOINTS?: SceneKeypoint[];
 };
 
-export type DogMatcap = {
+export type SceneMatcap = {
   normalScale: number;
   diffuseWeight: number;
   specularWeight: number;
 };
 
-export type DogDataJson = {
+export type SceneDataJson = {
   MATCAP_PER_ROW: number;
-  STATES: Record<string, DogState>;
-  MATCAPS: DogMatcap[];
+  STATES: Record<string, SceneState>;
+  MATCAPS: SceneMatcap[];
 };
 
 export type SceneGLOptions = {
@@ -138,7 +138,7 @@ const DEVICE_DATA_FILES = {
 
 type DeviceDataKey = keyof typeof DEVICE_DATA_FILES;
 
-async function loadDogDataForDevice(): Promise<DogDataJson | null> {
+async function loadSceneDataForDevice(): Promise<SceneDataJson | null> {
   const type = window.Detectizr?.device?.type;
   const orientation = window.Detectizr?.device?.orientation;
 
@@ -154,7 +154,7 @@ async function loadDogDataForDevice(): Promise<DogDataJson | null> {
   const file = DEVICE_DATA_FILES[key];
   const res = await fetch(`/data/scene/${file}`);
   if (!res.ok) throw new Error(`GET /data/scene/${file} → ${res.status}`);
-  const json = (await res.json()) as DogDataJson;
+  const json = (await res.json()) as SceneDataJson;
   if (
     !json ||
     typeof json !== "object" ||
@@ -162,7 +162,7 @@ async function loadDogDataForDevice(): Promise<DogDataJson | null> {
     !json.STATES ||
     !Array.isArray(json.MATCAPS)
   ) {
-    throw new Error(`Invalid dog data: ${file}`);
+    throw new Error(`Invalid scene data: ${file}`);
   }
   return json;
 }
@@ -172,7 +172,7 @@ async function loadDogDataForDevice(): Promise<DogDataJson | null> {
  * main.js calls `new window.SceneGL({ data })`; we swap the constructor so the
  * same data ships from public/data/scene/*.json instead of webpack modules.
  */
-function patchSceneGLWithData(data: DogDataJson) {
+function patchSceneGLWithData(data: SceneDataJson) {
   const Original = window.SceneGL;
   if (typeof Original !== "function") return;
 
@@ -194,17 +194,17 @@ function patchSceneGLWithData(data: DogDataJson) {
 }
 
 /**
- * Host for an original Dogstudio page runtime.
+ * Host for the original page runtime.
  * Injects markup once and boots detectizr → own SceneGL module → main.js.
  * React does not re-render this tree after mount.
  */
-export default function DogstudioPage({
+export default function BootPage({
   bodyClass,
   dataTheme,
   dataPage,
   markup,
   htmlLang,
-}: DogstudioPageProps) {
+}: BootPageProps) {
   const booted = useRef(false);
 
   useEffect(() => {
@@ -245,19 +245,19 @@ export default function DogstudioPage({
         if (!window.disable_scene) {
           // Phase 1: fetch data-*.json in parallel with the GL boot, then
           // intercept `new window.SceneGL({ data })` in main.js.
-          const dataPromise = loadDogDataForDevice().catch((err) => {
+          const dataPromise = loadSceneDataForDevice().catch((err) => {
             console.warn(
               "scene data unavailable — using bundle data:",
               err,
             );
             return null;
           });
-          // Phase 2: own GL module replaces the legacy dog.js bundle.
-          const doggl = await import("./doggl");
-          doggl.installSceneGL();
+          // Phase 2: own GL module replaces the legacy bundle.
+          const glscene = await import("./glscene");
+          glscene.installSceneGL();
           if (cancelled) return;
-          const dogData = await dataPromise;
-          if (dogData) patchSceneGLWithData(dogData);
+          const sceneData = await dataPromise;
+          if (sceneData) patchSceneGLWithData(sceneData);
         }
 
         await loadScript(`${JS}/main.js`);

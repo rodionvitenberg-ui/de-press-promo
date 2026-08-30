@@ -39,15 +39,15 @@
 |--|--|--|
 | Страницы | `app/(legacy)/` (+ `[lang]/` для локалей) | Route + metadata; контент — HTML-снимки в `components/legacy/markups/*` (постепенно → JSX) |
 | Стили | `public/.../main.css` (orig) + override-файлы | Runtime CSS через `<link>`, не через bundler |
-| JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/doggl`) | «Камера»/«свет» — данные в `public/data/scene/*.json` |
+| JS / motion / WebGL | `main.js` + собственный GL-модуль (`components/legacy/glscene`) | «Камера»/«свет» — данные в `public/data/scene/*.json` |
 | i18n | `i18n/` | 10 локалей; ключ = исходная RU-строка, маппинг на рендере |
-| Инструменты | `scripts/` | dog-data (данные рантайма), эталонные скриншоты, i18n-проверки |
+| Инструменты | `scripts/` | scene-data (данные рантайма), эталонные скриншоты, i18n-проверки |
 
 ```
 ┌───────────────────────────────────────────────────────────┐
 │  Next.js (route groups, dev server)                       │
 │                                                           │
-│  (legacy) ─► DogstudioPage ─► HTML + DogGL-модуль         │
+│  (legacy) ─► BootPage ─► HTML + SceneGL-модуль         │
 │      │              ▲              │                      │
 │      │              │              └─ public/data/scene    │
 │      │              └── public/static                     │
@@ -104,7 +104,7 @@ npm run dev   # :3001 (порт :3000 занят другим сервисом)
 | Safety | http://localhost:3001/safety/ |
 | Локали | http://localhost:3001/{en,de,es,pl,pt,uk,zh,ja,ko}/… |
 
-Desktop: WebGL-остров (DogGL). Mobile: `disable_dog` (как в оригинале).
+Desktop: WebGL-остров (DogGL). Mobile: `disable_scene` (как в оригинале).
 
 ---
 
@@ -122,14 +122,14 @@ app/
 
 components/
   legacy/
-    DogstudioPage.tsx             # inject HTML + boot scripts
+    BootPage.tsx                  # inject HTML + boot scripts
     createLegacyPage.tsx          # фабрика page
     markups/                      # HTML-снимки страниц → кастомизируем
-    doggl/                        # ✅ Фаза 2: GL-модуль (порт dog.js на three.js)
+    glscene/                      # ✅ Фаза 2: GL-модуль (порт dog.js на three.js)
 
 public/static/
   css/main.css
-  js/{detectizr,modernizr,dog,main}.js
+  js/{detectizr,modernizr,main}.js
   assets/                         # 3D, textures, fonts, images, audio
 
 public/data/scene/                  # ✅ Фаза 1: STATES / MATCAPS / MATCAP_PER_ROW
@@ -138,7 +138,7 @@ public/data/scene/                  # ✅ Фаза 1: STATES / MATCAPS / MATCAP_
 i18n/                             # словари 10 локалей (ключ = исходная RU-строка)
 
 scripts/
-  extract-dog-data.mjs            # ✅ Фаза 1: main.js → public/data/scene/*.json
+  extract-scene-data.mjs            # ✅ Фаза 1: main.js → public/data/scene/*.json
   i18n-extract.mjs                # сбор текстов markups → словари
   i18n-check.mjs                  # проверка покрытия переводов
   reference-screenshots.mjs       # эталонные скриншоты (CDP)
@@ -158,7 +158,7 @@ docs/
 |------|------|
 | `app/(legacy)/*/page.tsx` | Route + metadata + `createLegacyPage(mod)` |
 | `components/legacy/markups/*.ts` | `BODY_CLASS`, `DATA_THEME`, `DATA_PAGE`, `MARKUP`, `PAGE_TITLE` |
-| `components/legacy/DogstudioPage.tsx` | Boot: Detectizr → dog.js → main.js (→ план: GL-модуль) |
+| `components/legacy/BootPage.tsx` | Boot: Detectizr → SceneGL → main.js |
 
 | URL | `data-router-view` / slug |
 |-----|---------------------------|
@@ -184,9 +184,9 @@ docs/
 
 ### Ассеты
 
-- Не ломай пути: runtime ждёт `window.Dogstudio.theme_link = ''` (ассеты в `public/static/`).
+- Не ломай пути: runtime ждёт `window.Site.assetsRoot = ''` (ассеты в `public/static/`).
 - Картинки: `public/static/assets/images/...`
-- Dog: `.../dog/models/`, `.../dog/images/dog/final/` (+ `ASTC/`, `PVRTC/`).
+- Остров: `public/static/assets/island/models/`, `.../island/images/island/final/` (+ `ASTC/`, `PVRTC/`).
 
 ### Стили
 
@@ -199,8 +199,8 @@ docs/
 
 | Файл | Workflow |
 |------|----------|
-| `public/.../main.js`, `dog.js` | Сейчас: minified, правки нежелательны. GL-часть вытеснена собственным модулем (Фаза 2) |
-| `public/data/scene/*.json` | ✅ Фаза 1: данные «камеры»/«света» (STATES, MATCAPS). `DogstudioPage` подменяет ими `options.data` в `new DogGL(...)` без правки бандлов |
+| `public/static/js/main.js` | Сейчас: minified, правки нежелательны. GL-часть вытеснена собственным модулем (Фаза 2) |
+| `public/data/scene/*.json` | ✅ Фаза 1: данные «камеры»/«света» (STATES, MATCAPS). `BootPage` подменяет ими `options.data` в `new SceneGL(...)` без правки бандлов |
 
 ---
 
@@ -277,7 +277,7 @@ components/legacy/markups/my-feature.ts
 
 ### Фаза 1 — Данные наружу ✅
 
-- [x] Извлечь `STATES`, `MATCAPS`, `MATCAP_PER_ROW` из `main.js` (modules `data-*.js`) — `scripts/extract-dog-data.mjs`
+- [x] Извлечь `STATES`, `MATCAPS`, `MATCAP_PER_ROW` из `main.js` (modules `data-*.js`) — `scripts/extract-scene-data.mjs`
 - [x] Выложить в `public/data/scene/*.json` (desktop / tablet-* / mobile-*)
 - [x] `DogstudioPage` прокидывает JSON в `DogGL` через `data` (Proxy-обёртка над `window.DogGL`; fallback на бандл при ошибке)
 - Результат: управление «камерой» и «светом» = правка `public/data/scene/*.json` без пересборки бандлов.
@@ -290,7 +290,7 @@ components/legacy/markups/my-feature.ts
 - [x] `DogstudioPage.tsx` загружает GL-модуль вместо `dog.js`
 - Результат: `main.js` не замечает подмены; WebGL — поддерживаемый код. Оценка: 1–2 недели.
 
-Реализация — `components/legacy/doggl/` (порт модулей 25–57 оригинального `dog.js`, см. git-историю):
+Реализация — `components/legacy/glscene/` (порт модулей 25–57 оригинального `dog.js`, см. git-историю):
 
 - Фасад `index.ts` повторяет публичный класс `window.DogGL`; `installDogGL()` ставит его в `window` до загрузки `main.js` (Phase-1 Proxy с JSON-данными продолжает работать поверх).
 - Сплайны камеры: `custom-cubic` (DEPTH) + `monotone-cubic` (остальные 6 массивов) — те же алгоритмы, что в бандле (в README они условно названы «Catmull-Rom»).
@@ -342,7 +342,7 @@ components/legacy/markups/my-feature.ts
 | Заменить 3D-модель | Фаза 2 ✅ + 3 (файл + конфиг) |
 | Своя страница | `app/(legacy)/...` + `markups/...` по образцу существующих |
 | Matcap hover | legacy home; механика — `docs/ARCHITECTURE-legacy.md` |
-| Не сломать dog | пути `public/app/themes/...` + `theme_link`; конфиг GL-модуля (`components/legacy/doggl/`) |
+| Не сломать dog | пути `public/app/themes/...` + `theme_link`; конфиг GL-модуля (`components/legacy/glscene/`) |
 | Выкинуть остатки клона | Фаза 4: удалить ненужные части `main.js`, markups, theme public |
 
 ---

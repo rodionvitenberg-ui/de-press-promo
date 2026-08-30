@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 /**
- * Matcap material — port of the legacy `modules/dogmaterial` (dog.js
+ * Matcap material — port of the legacy `modules/material` (legacy bundle
  * module 39). A MeshBasicMaterial whose program is patched with the original
  * matcap shader: an atlas of matcap cells (`matcapPerRow` columns), tangent-
  * space normal mapping, diffuse/specular weighting and a distance-driven
@@ -16,7 +16,7 @@ import * as THREE from "three";
  *    redeclaring it would break compilation.
  */
 
-export type DogUniforms = {
+export type IslandUniforms = {
   tMatCap: { value: THREE.Texture | null };
   specularMap: { value: THREE.Texture | null };
   normalMap: { value: THREE.Texture | null };
@@ -203,8 +203,8 @@ vUv = uv;
  * @param skinned       Body material (skinned mesh).
  * @param doubleSided   Branch/leaf material.
  */
-export class DogMaterial extends THREE.MeshBasicMaterial {
-  readonly uniforms: DogUniforms;
+export class IslandMaterial extends THREE.MeshBasicMaterial {
+  readonly uniforms: IslandUniforms;
 
   constructor(matcapPerRow: number, skinned: boolean, doubleSided: boolean) {
     super({
@@ -216,7 +216,7 @@ export class DogMaterial extends THREE.MeshBasicMaterial {
     // `map` uniform, which three.js only declares when a map is bound. Without
     // it the fragment shader fails to compile and nothing renders. A flat
     // black 1x1 texture keeps the program compiling until the real diffuse
-    // is bound (see Dog.init).
+    // is bound (see Island.init).
     this.map = createNeutralDiffuseMap();
 
     this.uniforms = {

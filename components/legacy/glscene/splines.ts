@@ -1,7 +1,7 @@
 /**
  * Spline interpolators used by the camera behaviour — verbatim ports of the
- * legacy `utils/custom-cubic-spline` (dog.js module 49) and
- * `utils/monotone-cubic-spline` (dog.js module 52). The camera curves are
+ * legacy `utils/custom-cubic-spline` (legacy bundle module 49) and
+ * `utils/monotone-cubic-spline` (legacy bundle module 52). The camera curves are
  * built from the 7 pose arrays of each state (CAM_Y, DEPTH, V_ROTATION,
  * H_ROTATION, X_OFFSET, Y_OFFSET, MOUSE_INFLUENCE).
  */

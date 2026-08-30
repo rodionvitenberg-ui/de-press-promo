@@ -4,7 +4,7 @@ import { emitter } from "./emitter";
 import { Quad } from "./quad";
 
 /**
- * Postprocessing — port of the legacy `postprocessing/index.js` (dog.js
+ * Postprocessing — port of the legacy `postprocessing/index.js` (legacy bundle
  * module 42). Owns the scene render target consumed by the fullscreen-kernel
  * pipeline.
  */

@@ -7,7 +7,7 @@ import { SSAAPass } from "./ssaa";
 
 /**
  * Fullscreen-kernel pipeline — port of the legacy `postprocessing/quad`
- * (dog.js module 44). With SSAA enabled it delegates to the supersampling
+ * (legacy bundle module 44). With SSAA enabled it delegates to the supersampling
  * pass; otherwise it renders the scene into a target and applies FXAA
  * through a fullscreen triangle kernel.
  */

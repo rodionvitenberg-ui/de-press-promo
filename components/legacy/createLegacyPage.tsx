@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import DogstudioPage from "./DogstudioPage";
+import BootPage from "./BootPage";
 import { finalizeLegacyMarkup } from "@/i18n";
 import { DEFAULT_LOCALE, type Locale } from "@/i18n/core";
 
@@ -34,7 +34,7 @@ export function renderLegacyPage(
     path: options.path,
   });
   return (
-    <DogstudioPage
+    <BootPage
       bodyClass={mod.BODY_CLASS}
       dataTheme={mod.DATA_THEME}
       dataPage={mod.DATA_PAGE}

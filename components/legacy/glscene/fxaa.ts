@@ -1,6 +1,6 @@
 /**
  * FXAA shaders — verbatim port of the legacy `postprocessing/fxaa/main.js`
- * (dog.js module 43). Used by the fullscreen-kernel pipeline when SSAA is
+ * (legacy bundle module 43). Used by the fullscreen-kernel pipeline when SSAA is
  * disabled.
  */
 

@@ -34,14 +34,14 @@ npm run dev   # :3001 (порт :3000 занят другим сервисом)
 | Страница | `app/(legacy)/<name>/page.tsx` (+ `app/(legacy)/[lang]/<name>/` для локалей) |
 | Текст/вёрстка | `components/legacy/markups/<page>.ts` (HTML-снимок, осторожно) |
 | Стили | override-файл после main.css в `app/(legacy)/layout.tsx` |
-| WebGL/движение | `components/legacy/doggl/` |
+| WebGL/движение | `components/legacy/glscene/` |
 | Данные «камеры»/«света» | `public/data/scene/*.json` (правка → hard refresh) |
 | Ассеты | `public/static/...` |
 | Переводы | `i18n/dictionaries/*.json` |
 
 ## Чего не делать
 
-- Не править `public/.../main.js` / `dog.js` как основной способ.
+- Не править `public/static/js/main.js` как основной способ.
 - Не вешать Tailwind preflight / `next/font` на `(legacy)/layout`.
 - Не `import` `main.css` через bundler.
 - Не удалять `.site-loader`-заглушку в разметке (её ждёт рантайм).
@@ -50,7 +50,7 @@ npm run dev   # :3001 (порт :3000 занят другим сервисом)
 ## Инструменты
 
 ```bash
-npm run dog-data     # main.js → public/data/scene/*.json (после правки STATES/MATCAPS)
+npm run scene-data    # main.js → public/data/scene/*.json (после правки STATES/MATCAPS)
 npm run screenshots  # эталонные скриншоты → reference/screenshots/ (нужен запущенный dev/start)
 npm run lint         # ESLint
 npx tsc --noEmit     # типы

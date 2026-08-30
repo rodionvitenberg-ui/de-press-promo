@@ -1,13 +1,13 @@
 import { C } from "./constants";
 import { getStage } from "./stage";
 import { customCubicSpline, monotoneCubicSpline, type Spline } from "./splines";
-import type { Dog } from "./dog";
+import type { Island } from "./island";
 
 /**
  * Camera behaviour for one state — port of the legacy
- * `modules/behaviours/states` (dog.js module 41). Each state provides 7 pose
+ * `modules/behaviours/states` (legacy bundle module 41). Each state provides 7 pose
  * arrays; the behaviour builds splines over them and, for every frame,
- * interpolates camera depth/height and dog rotation/offsets from the
+ * interpolates camera depth/height and island rotation/offsets from the
  * animation progress (smoothed with a 0.9/0.1 lerp).
  */
 
@@ -28,7 +28,7 @@ export class StatesBehaviour {
 
   mouse = { x: 0, y: 0 };
 
-  private dog: Dog;
+  private island: Island;
   private keyLength = 0;
   private distanceSpline!: Spline;
   private thetaSpline!: Spline;
@@ -42,10 +42,10 @@ export class StatesBehaviour {
   private readonly ratioCurrent = 0.9;
   private readonly ratioTarget = 0.1;
 
-  constructor(state: string, dog: Dog) {
+  constructor(state: string, island: Island) {
     this.STATE_NAME = C.APP_STATES[state] ?? state;
     this.data = C.JSON_DATA?.STATES[this.STATE_NAME] as StateData;
-    this.dog = dog;
+    this.island = island;
     this.setKeyPoints();
   }
 
@@ -91,12 +91,12 @@ export class StatesBehaviour {
     mouseInfluence: number,
   ): void {
     const { cameraPivot } = getStage();
-    this.dog.rotation.y = (theta * Math.PI) / 180 + this.mouse.x * mouseInfluence;
-    this.dog.rotation.x = (phi * Math.PI) / 180 + this.mouse.y * mouseInfluence;
+    this.island.rotation.y = (theta * Math.PI) / 180 + this.mouse.x * mouseInfluence;
+    this.island.rotation.x = (phi * Math.PI) / 180 + this.mouse.y * mouseInfluence;
     cameraPivot.position.z = depth;
     cameraPivot.position.y = camY;
-    this.dog.position.x = xOffset;
-    this.dog.position.y = yOffset;
+    this.island.position.x = xOffset;
+    this.island.position.y = yOffset;
   }
 
   setAnimationProgress(progress: number, hard?: boolean): void {

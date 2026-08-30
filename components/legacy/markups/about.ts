@@ -1,5 +1,5 @@
 /**
- * Based on a dogstudio.co page snapshot (technical foundation).
+ * Based on the original page snapshot (technical foundation).
  * Content is being replaced with de-press.co's own; do not ship the original as-is.
  */
 export const BODY_CLASS = "lock-scroll";

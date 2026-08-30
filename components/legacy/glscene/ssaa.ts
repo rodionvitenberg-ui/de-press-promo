@@ -3,7 +3,7 @@ import { C } from "./constants";
 import { getStage } from "./stage";
 
 /**
- * Supersampling pass — port of the legacy `postprocessing/ssaa` (dog.js
+ * Supersampling pass — port of the legacy `postprocessing/ssaa` (legacy bundle
  * module 45). Renders the scene once per jitter offset into a sample target
  * and accumulates the results onto the screen with additive blending.
  */

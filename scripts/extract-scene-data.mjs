@@ -1,5 +1,5 @@
 /**
- * Phase 1 — extract DogGL data (STATES/MATCAPS/MATCAP_PER_ROW) from the webpack
+ * Phase 1 — extract SceneGL data (STATES/MATCAPS/MATCAP_PER_ROW) from the webpack
  * bundle into public/data/scene/*.json so camera curves + matcap params become JSON.
  */
 import fs from "node:fs/promises";
@@ -38,7 +38,7 @@ function unescapeJsString(s) {
 }
 
 function extractModuleCode(bundle, name) {
-  const anchor = `//# sourceURL=webpack:///./src/js/dog/data-${name}.js?`;
+  const anchor = `//# sourceURL=webpack:///./src/js/scene/data-${name}.js?`;
   const anchorIdx = bundle.indexOf(anchor);
   if (anchorIdx === -1) return null;
   const evalStart = bundle.lastIndexOf('eval(', anchorIdx);
@@ -92,10 +92,10 @@ const STATE_ARRAYS = [
 ];
 
 /**
- * Structural validation of a dog data module. Guards against silent
+ * Structural validation of a scene data module. Guards against silent
  * regressions when the bundle changes (values drift, arrays truncate, …).
  */
-function validateDogData(data) {
+function validateSceneData(data) {
   if (typeof data !== "object" || data === null) {
     throw new Error("not an object");
   }
@@ -165,14 +165,14 @@ async function main() {
   for (const src of SOURCES) {
     try {
       bundle = await fs.readFile(src, "utf8");
-      if (bundle.includes("src/js/dog/data-desktop.js")) break;
+      if (bundle.includes("src/js/scene/data-desktop.js")) break;
       bundle = null;
     } catch {
       /* next source */
     }
   }
   if (!bundle) {
-    console.error("Bundle with dog data modules not found.");
+    console.error("Bundle with scene data modules not found.");
     process.exit(1);
   }
 
@@ -202,7 +202,7 @@ async function main() {
     }
 
     try {
-      validateDogData(parsed);
+      validateSceneData(parsed);
     } catch (err) {
       console.error(`✗ ${name}: validation failed — ${err.message}`);
       continue;
