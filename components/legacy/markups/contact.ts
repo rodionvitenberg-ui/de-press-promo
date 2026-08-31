@@ -88,12 +88,6 @@ export const MARKUP = `<!-- Wrapper -->
           </ul>
 
     <div class="site-menu-footer">
-      <a href="https://vimeo.com/836218697" target="_blank" class="site-menu-showreel js-show-showreel">  <span class="svg svg-caret-right">
-  	<svg width="6" height="10" aria-label="de-press">
-    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
-  	</svg>
-  </span>
- Манифест</a>
 
       <div class="site-menu-content">
         <img data-src="/static/assets/images/menu/baseline.png" class="js-lazy" alt="We Make Good Shit">
@@ -276,19 +270,6 @@ export const MARKUP = `<!-- Wrapper -->
   </main>
       </div>
 
-      <div class="showreel js-showreel" aria-hidden="true" tabindex="-1">
-  <div class="showreel-backdrop js-close-showreel"></div>
-
-  <div class="showreel-wrapper">
-    <button type="button" class="showreel-close js-close-showreel" title="Закрыть манифест">
-      <span class="u-visually-hidden">Закрыть манифест</span>
-    </button>
-
-    <div class="showreel-video">
-      <div class="js-plyr" data-poster="/static/assets/images/shared/cover.jpg" data-plyr-provider="vimeo" data-plyr-embed-id="836218697"></div>
-    </div>
-  </div>
-</div>
       <div class="site-cookie js-cookie">
   <p class="site-cookie__text">
     Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. <a href="/values/" target="_blank">Подробнее о приватности</a>.
