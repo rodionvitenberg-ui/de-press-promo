@@ -28,7 +28,7 @@
     "state": "case-hover",
     "route": "/",
     "expectedTheme": "tomorrowland",
-    "bodyTheme": "tomorrowland"
+    "bodyTheme": "home"
   },
   {
     "device": "desktop",
@@ -36,7 +36,7 @@
     "route": "/about/",
     "booted": true,
     "locked": false,
-    "canvas": false,
+    "canvas": true,
     "loaderWait": "done"
   },
   {
@@ -45,7 +45,7 @@
     "route": "/values/",
     "booted": true,
     "locked": false,
-    "canvas": true,
+    "canvas": false,
     "loaderWait": "done"
   },
   {

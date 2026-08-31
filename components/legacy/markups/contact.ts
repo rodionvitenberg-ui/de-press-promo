@@ -35,12 +35,7 @@ export const MARKUP = `<!-- Wrapper -->
     <span class="button-bar button-bar--3"></span>
   </button>
 </div>
-
-<button type="button" class="site-volume" title="Звук">
-  <span class="u-visually-hidden">Звук</span>
-  <span class="pulsing-ui"></span>
-</button>
-      
+     
                             <!-- site-loader: preloader UI removed; empty stub kept because legacy main.js binds to these nodes -->
 <div class="site-loader">
   <div class="site-loader-content">
