@@ -88,7 +88,7 @@ export const MARKUP = `<!-- Wrapper -->
         <img data-src="/static/assets/images/menu/baseline.png" class="js-lazy" alt="We Make Good Shit">
         <ul>
           <li>
-            <a href="https://t.me/depressco" target="_blank">
+            <a href="https://t.me/depresscoofficial" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -101,20 +101,20 @@ export const MARKUP = `<!-- Wrapper -->
             </a>
           </li>
           <li>
-            <a href="https://youtube.com/@depressco" target="_blank">
+            <a href="https://x.com/soshallitbe5" target="_blank">
               <span class="u-from-mobile">
-                  <span class="svg svg-instagram">
+                  <span class="svg svg-x">
   	<svg width="12" height="12">
-    	<use xlink:href="/static/assets/spritesheet.svg#instagram"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#x"></use> 
   	</svg>
   </span>
 
               </span>
-              <span class="u-from-desktop">YouTube</span>
+              <span class="u-from-desktop">X</span>
             </a>
           </li>
           <li>
-            <a href="https://github.com/de-press" target="_blank">
+            <a href="https://github.com/rodionvitenberg-ui/de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
@@ -137,19 +137,6 @@ export const MARKUP = `<!-- Wrapper -->
 
               </span>
               <span class="u-from-desktop">E-mail</span>
-            </a>
-          </li>
-          <li>
-            <a href="/newsletter/">
-              <span class="u-from-mobile">
-                  <span class="svg svg-mail-thick">
-  	<svg width="13" height="9">
-    	<use xlink:href="/static/assets/spritesheet.svg#mail-thick"></use> 
-  	</svg>
-  </span>
-
-              </span>
-              <span class="u-from-desktop">Рассылка</span>
             </a>
           </li>
         </ul>
@@ -215,11 +202,11 @@ export const MARKUP = `<!-- Wrapper -->
           <a href="mailto:hello@de-press.co" class="contact-email appear-fade-up">hello@de-press.co</a>
 
           <ul>
-            <li><a href="https://t.me/depressco" target="_blank">Telegram</a></li>
+            <li><a href="https://t.me/depresscoofficial" target="_blank">Telegram</a></li>
+            <li><a href="https://x.com/soshallitbe5" target="_blank">X</a></li>
             <li><a href="mailto:hello@de-press.co" target="_blank">E-mail</a></li>
-            <li><a href="https://youtube.com/@depressco" target="_blank">YouTube</a></li>
             <li><a href="/values/" target="_blank">Дайджест</a></li>
-            <li><a href="https://github.com/de-press" target="_blank">GitHub</a></li>
+            <li><a href="https://github.com/rodionvitenberg-ui/de-press.co" target="_blank">GitHub</a></li>
           </ul>
         </div>
 
@@ -303,7 +290,7 @@ export const MARKUP = `<!-- Wrapper -->
 
         <ul>
           <li>
-            <a href="https://t.me/depressco" target="_blank">
+            <a href="https://t.me/depresscoofficial" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-facebook">
   	<svg width="12" height="12">
@@ -316,20 +303,20 @@ export const MARKUP = `<!-- Wrapper -->
             </a>
           </li>
           <li>
-            <a href="https://youtube.com/@depressco" target="_blank">
+            <a href="https://x.com/soshallitbe5" target="_blank">
               <span class="u-from-mobile">
-                  <span class="svg svg-instagram">
+                  <span class="svg svg-x">
   	<svg width="12" height="12">
-    	<use xlink:href="/static/assets/spritesheet.svg#instagram"></use> 
+    	<use xlink:href="/static/assets/spritesheet.svg#x"></use> 
   	</svg>
   </span>
 
               </span>
-              <span class="u-from-desktop">Yt</span>
+              <span class="u-from-desktop">X</span>
             </a>
           </li>
           <li>
-            <a href="https://github.com/de-press" target="_blank">
+            <a href="https://github.com/rodionvitenberg-ui/de-press.co" target="_blank">
               <span class="u-from-mobile">
                   <span class="svg svg-dribbble">
   	<svg width="12" height="12">
