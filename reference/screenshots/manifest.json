@@ -5,7 +5,7 @@
     "route": "/",
     "booted": true,
     "locked": false,
-    "canvas": false,
+    "canvas": true,
     "loaderWait": "done"
   },
   {
@@ -36,7 +36,7 @@
     "route": "/about/",
     "booted": true,
     "locked": false,
-    "canvas": true,
+    "canvas": false,
     "loaderWait": "done"
   },
   {
@@ -45,7 +45,7 @@
     "route": "/values/",
     "booted": true,
     "locked": false,
-    "canvas": false,
+    "canvas": true,
     "loaderWait": "done"
   },
   {

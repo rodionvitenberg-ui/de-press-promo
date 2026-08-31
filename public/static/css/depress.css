@@ -399,6 +399,45 @@ html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link
   transform: translateX(0) scaleX(1);
 }
 
+/* --- home hero: fx slogan box (roadmap p.2) --------------------------------
+   The legacy fx title box (width 269px, fixed height 404px) was tuned for
+   the old four-word slogan — one short word per line. The new slogan has
+   longer lines (two-word groups, words up to ~557px at the 120px display
+   size) and stacks 4-6 lines, so the fixed height overflowed onto the lead
+   paragraph. Desktop: widen the box and let the height follow the stack.
+   Mobile: shrink the type so the longest localized word fits a 390px
+   viewport. --- */
+@media (min-width: 64.375em) {
+  .home-hero-title {
+    height: auto;
+    width: 560px;
+  }
+}
+
+@media (max-width: 50.9275em) {
+  .home-hero-title {
+    /* min(): the longest localized word (~5.5x the font size, e.g.
+       "одиночестве") must stay inside the content box on 320-430px phones. */
+    font-size: min(4.5714285714rem, 13.8vw);
+  }
+}
+
+/* --- home hero: legacy per-word kerning vs the new slogan (roadmap p.2) -----
+   main.css kerned the fx words for the old four-word slogan "We/Make/Good/
+   Shit": -14px on word 1 and -4px on word 2 (desktop: -23px/-8px plus
+   top:6px and margin-right:15px). Back then every word sat on its own line,
+   so a negative trailing letter-spacing never pulled a neighbour. The new
+   slogan wraps words WITHIN a line and the trailing space drags the next
+   word into the previous one — "You|don't", "Aquí|no", "Hier|musst",
+   "Tutaj|nie", "Тут|ти" collide on mobile; desktop shows a subtler -8px
+   pull. Return words 1-2 to the title's own tracking (-.04em); the
+   html[lang] -2px first-word overrides for ru/zh/ja/ko (specificity 0,3,1)
+   stay in charge, and the last-word kerning is kept (line-final, harmless). */
+.home-hero-title .fx-word:first-of-type,
+.home-hero-title .fx-word:nth-of-type(2) {
+  letter-spacing: inherit;
+}
+
 /* --- legacy loader stub ---------------------------------------------------
    The ported main.css ships no .site-loader rules ("preloader UI removed"),
    but the DOM stub stays because legacy main.js binds to it. With no CSS,
