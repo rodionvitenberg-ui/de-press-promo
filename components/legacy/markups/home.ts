@@ -85,7 +85,7 @@ export const MARKUP = `<!-- Wrapper -->
     <div class="site-menu-footer">
 
       <div class="site-menu-content">
-        <img data-src="/static/assets/images/menu/baseline.png" class="js-lazy" alt="Тебя услышат">
+        <p class="site-menu-slogan">Don't cry alone</p>
         <ul>
           <li>
             <a href="https://t.me/depresscoofficial" target="_blank">

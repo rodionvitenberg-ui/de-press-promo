@@ -438,6 +438,54 @@ html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link
   letter-spacing: inherit;
 }
 
+/* --- menu curtain slogan: DON'T CRY ALONE (roadmap p.6) --------------------
+   The legacy slot held a pre-typeset PNG wordmark (baseline.png, 104x184,
+   shown 52px wide, white, right-ragged). It is now real text — selectable and
+   translatable. Legacy main.css scoped the reveal animation and phone hiding
+   to .site-menu-content img, so those slots are mirrored here: same keyframes/
+   timing/.6s delay as the old img and the same max-width breakpoint for
+   display:none. The serif family goes through the rebrand remap below. */
+.site-menu-slogan {
+  display: block;
+  margin: 0 0 55px auto;
+  max-width: 150px;
+  color: #fff;
+  font-family: "GT Sectra Display", Times, Georgia, serif;
+  font-weight: 500;
+  font-size: 1.1428571429rem;
+  line-height: 1.1;
+  text-align: right;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+}
+
+.menu-open .site-menu-slogan {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(.165, .84, .44, 1);
+  animation-timing-function: cubic-bezier(.165, .84, .44, 1);
+  -webkit-animation-name: uba4b19ff;
+  animation-name: uba4b19ff;
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
+
+.menu-close .site-menu-slogan {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+}
+
+@media (max-width: 50.9275em) {
+  .site-menu-slogan {
+    display: none;
+  }
+}
+
 /* --- legacy loader stub ---------------------------------------------------
    The ported main.css ships no .site-loader rules ("preloader UI removed"),
    but the DOM stub stays because legacy main.js binds to it. With no CSS,
