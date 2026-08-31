@@ -394,6 +394,16 @@ html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .
   transform: translateX(-20%) scaleX(1.2);
 }
 
+/* !important: the hero span-intro cascade (translateY(80px) <-> in-view
+   variants) kept winning over plain specificity here and the line either
+   responded late or not at all. This link's hover must always answer
+   instantly, like the footer "Принципы". */
+.no-touchevents .home-app-link.link--under:hover .link-line,
+.no-touchevents .home-app-link.link--under:focus .link-line {
+  -webkit-transform: translateX(0) scaleX(1) !important;
+  transform: translateX(0) scaleX(1) !important;
+}
+
 html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link--under:hover .link-line,
 html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link--under:focus .link-line {
   -webkit-transform: translateX(0) scaleX(1);
