@@ -425,6 +425,12 @@ html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link
        hold on one line at the 120px display size; shorter locales are
        unaffected (width only decides where lines wrap). */
     width: 800px;
+    /* p.18: legacy main.css pushed the box right (margin-left:22.4%) and
+       ragged the lines right (text-align:right) for the old short slogan.
+       The new slogan sits flush at the .center left edge, lines left-aligned;
+       wrapping is untouched (width still decides it). */
+    margin-left: 0;
+    text-align: left;
   }
 }
 
