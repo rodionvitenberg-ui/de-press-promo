@@ -370,6 +370,23 @@ body::before {
   background-color: #fff;
 }
 
+/* CTA sits below the sub-hero paragraph with the same breathing room
+   as the "Принципы" link (home-about-link). The anchor is inline by
+   default, so vertical margins would not apply. */
+.home-app-link {
+  display: inline-block;
+  margin-top: 35px;
+}
+
+/* Hero's span rules (.in-view.home-hero .home-hero-content span, plus the
+   nth-child stagger) out-specify .link-line's own transition and delay the
+   line's hover response by .5s+. Re-assert the plain .link-line transition
+   so the hover shrink answers immediately, like "Принципы". */
+html:not(.disable-motion) .home-hero-content .home-app-link .link-line {
+  transition: transform .5s cubic-bezier(.19, 1, .22, 1);
+  transition-delay: 0s;
+}
+
 html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .link-line,
 html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .link-line--anim {
   -webkit-transform: translateX(-20%) scaleX(1.2);
