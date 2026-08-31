@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendor/runtime bundles under public/ — not project code.
+    "public/**",
   ]),
 ]);
 

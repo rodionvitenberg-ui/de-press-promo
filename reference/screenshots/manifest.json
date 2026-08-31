@@ -5,7 +5,7 @@
     "route": "/",
     "booted": true,
     "locked": false,
-    "canvas": false,
+    "canvas": true,
     "loaderWait": "done"
   },
   {
@@ -28,7 +28,7 @@
     "state": "case-hover",
     "route": "/",
     "expectedTheme": "tomorrowland",
-    "bodyTheme": "tomorrowland"
+    "bodyTheme": "home"
   },
   {
     "device": "desktop",
@@ -54,7 +54,7 @@
     "route": "/contact/",
     "booted": true,
     "locked": false,
-    "canvas": false,
+    "canvas": true,
     "loaderWait": "done"
   },
   {
