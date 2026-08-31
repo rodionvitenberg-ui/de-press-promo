@@ -212,37 +212,31 @@ export const MARKUP = `<!-- Wrapper -->
 
         <div class="contact-countries">
           <div class="contact-country appear-fade-up appear-delay--1">
-            <a href="https://maps.app.goo.gl/QLrbQe5WPhrRh58b9" target="_blank" class="contact-country__link">
-              <span class="u-visually-hidden">Тишина: здесь нет лент и рейтингов. Облачко — монолог, «Я слышу тебя», тихие фразы и похожая история.</span>
-            </a>
+            <a href="https://maps.app.goo.gl/QLrbQe5WPhrRh58b9" target="_blank" class="contact-country__link" aria-label="Тишина"></a>
 
             <div class="contact-country__text">
               <h2>Тишина <b>.</b></h2>
-              <p>Тишина: здесь нет лент и рейтингов. Облачко — монолог, «Я слышу тебя», тихие фразы и похожая история.</a></p>
+              <p>Тишина: здесь нет лент и рейтингов. Облачко — монолог, «Я слышу тебя», тихие фразы и похожая история.</p>
             </div>
 
                       </div>
 
           <div class="contact-country appear-fade-up appear-delay--2">
-            <a href="https://maps.app.goo.gl/pFgX1QnHKBYaRA3m9" target="_blank" class="contact-country__link">
-              <span class="u-visually-hidden">Эмпатия: Helper’ы читают и слышат. Чат начинает только автор. ИИ помечен всегда.</span>
-            </a>
+            <a href="https://maps.app.goo.gl/pFgX1QnHKBYaRA3m9" target="_blank" class="contact-country__link" aria-label="Эмпатия"></a>
 
             <div class="contact-country__text">
               <h2>Эмпатия <b>.</b></h2>
-              <p>Эмпатия: Helper’ы читают и слышат. Чат начинает только автор. ИИ помечен всегда.</a></p>
+              <p>Эмпатия: Helper’ы читают и слышат. Чат начинает только автор. ИИ помечен всегда.</p>
             </div>
 
                       </div>
 
           <div class="contact-country appear-fade-up appear-delay--3">
-            <a href="https://maps.app.goo.gl/pM9YBEdDGppzd3Po6" target="_blank" class="contact-country__link">
-              <span class="u-visually-hidden">Забота: при кризисе — 112, 103 и страница /safety. Это не медицина, и мы честно об этом говорим.</span>
-            </a>
+            <a href="https://maps.app.goo.gl/pM9YBEdDGppzd3Po6" target="_blank" class="contact-country__link" aria-label="Забота"></a>
 
             <div class="contact-country__text">
               <h2>Забота <b>.</b></h2>
-              <p>Забота: при кризисе — 112, 103 и страница /safety. Это не медицина, и мы честно об этом говорим.</a></p>
+              <p>Забота: при кризисе — 112, 103 и страница /safety. Это не медицина, и мы честно об этом говорим.</p>
             </div>
 
                       </div>
