@@ -102,7 +102,7 @@ export function fxBlock(phrase: string): string {
 }
 /** Named fx display titles: placeholder name → source phrase. */
 export const FX_PHRASES: Record<string, string> = {
-  "home-hero": "You don't have to\ncry alone\nhere",
+  "home-hero": "Don't cry\nalone",
   "home-about":
     "We're crafting\nemotional\nexperiences aimed\nat improving\nresults",
   "about-intro": "We're just making Good Shit like it's 1996",

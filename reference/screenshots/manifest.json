@@ -3,10 +3,10 @@
     "device": "desktop",
     "state": "top",
     "route": "/",
-    "booted": false,
-    "locked": true,
-    "canvas": false,
-    "loaderWait": "timeout"
+    "booted": true,
+    "locked": false,
+    "canvas": true,
+    "loaderWait": "done"
   },
   {
     "device": "desktop",
@@ -29,12 +29,6 @@
     "route": "/",
     "expectedTheme": "tomorrowland",
     "bodyTheme": "home"
-  },
-  {
-    "device": "desktop",
-    "state": "forced-top",
-    "route": "/",
-    "loaderWait": "forced"
   },
   {
     "device": "desktop",

@@ -411,7 +411,10 @@ html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link
 @media (min-width: 64.375em) {
   .home-hero-title {
     height: auto;
-    width: 560px;
+    /* 800px: «в одиночестве» / "in solitude" lines of the p.16 slogan must
+       hold on one line at the 120px display size; shorter locales are
+       unaffected (width only decides where lines wrap). */
+    width: 800px;
   }
 }
 
