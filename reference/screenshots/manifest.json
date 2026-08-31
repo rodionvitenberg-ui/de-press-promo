@@ -3,10 +3,10 @@
     "device": "desktop",
     "state": "top",
     "route": "/",
-    "booted": true,
-    "locked": false,
-    "canvas": true,
-    "loaderWait": "done"
+    "booted": false,
+    "locked": true,
+    "canvas": false,
+    "loaderWait": "timeout"
   },
   {
     "device": "desktop",
@@ -28,7 +28,13 @@
     "state": "case-hover",
     "route": "/",
     "expectedTheme": "tomorrowland",
-    "bodyTheme": "tomorrowland"
+    "bodyTheme": "home"
+  },
+  {
+    "device": "desktop",
+    "state": "forced-top",
+    "route": "/",
+    "loaderWait": "forced"
   },
   {
     "device": "desktop",
@@ -43,10 +49,16 @@
     "device": "desktop",
     "state": "top",
     "route": "/values/",
-    "booted": true,
-    "locked": false,
-    "canvas": true,
-    "loaderWait": "done"
+    "booted": false,
+    "locked": true,
+    "canvas": false,
+    "loaderWait": "timeout"
+  },
+  {
+    "device": "desktop",
+    "state": "forced-top",
+    "route": "/values/",
+    "loaderWait": "forced"
   },
   {
     "device": "desktop",
@@ -54,7 +66,7 @@
     "route": "/contact/",
     "booted": true,
     "locked": false,
-    "canvas": false,
+    "canvas": true,
     "loaderWait": "done"
   },
   {
