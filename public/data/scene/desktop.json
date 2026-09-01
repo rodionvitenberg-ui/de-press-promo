@@ -210,6 +210,49 @@
         }
       ]
     },
+    "PRIVACY_STATE": {
+      "POSES_COUNT": 2,
+      "CAM_Y": [
+        0,
+        0
+      ],
+      "DEPTH": [
+        -13.3,
+        -21.6
+      ],
+      "H_ROTATION": [
+        -0.6,
+        10
+      ],
+      "V_ROTATION": [
+        -117.6,
+        -125
+      ],
+      "X_OFFSET": [
+        -5,
+        -6
+      ],
+      "Y_OFFSET": [
+        2,
+        45
+      ],
+      "MOUSE_INFLUENCE": [
+        0.03,
+        0.03
+      ],
+      "KEYPOINTS": [
+        {
+          "value": 0,
+          "element": ".ruler--top"
+        },
+        {
+          "value": 1,
+          "offset": 2500,
+          "element": ".ruler--1190",
+          "visible": false
+        }
+      ]
+    },
     "MENU_STATE": {
       "POSES_COUNT": 2,
       "CAM_Y": [

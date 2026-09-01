@@ -109,78 +109,150 @@
   padding-bottom: 2px;
 }
 
-/* Privacy — factual data inventory (adapted from GDPR-docs/PRIVACY.md).
-   Same quiet shell as .dp-safety: no runtime, no WebGL. */
-.dp-privacy {
-  min-height: 100vh;
-  background-color: #131417;
-  color: #fff;
-  font-family: Heebo, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+/* ==========================================================================
+   Privacy — factual data inventory (adapted from GDPR-docs/PRIVACY.md).
+   Full site page (renderPage): header/menu/footer/cookie + the island with
+   the about pose (types.ts PAGE_STATES). Content styles mirror the about-page
+   tokens from main.css — those are scoped [data-router-view="about"], so
+   privacy keeps its own block here.
+   ========================================================================== */
+
+[data-router-view="privacy"] {
+  padding-top: 260px;
+  padding-bottom: 240px;
 }
 
-.dp-privacy__inner {
+@media (max-width: 47.99em) {
+  [data-router-view="privacy"] {
+    padding-top: 115px;
+    padding-bottom: 160px;
+  }
+}
+
+.privacy-header,
+.privacy-section {
   max-width: 720px;
-  margin: 0 auto;
-  padding: 8vh 24px 12vh;
 }
 
-.dp-privacy__tag {
+.privacy-headline {
+  margin-bottom: 30px;
   font-family: Gilroy, Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  font-style: normal;
+  color: #fff;
+  font-size: 0.6428571429rem;
+  letter-spacing: 0.4em;
+  line-height: 1;
   text-transform: uppercase;
-  color: #fff;
-  opacity: 0.5;
-  margin: 0 0 24px;
 }
 
-.dp-privacy h1 {
+.privacy-headline--blue {
+  color: rgba(187, 194, 229, 0.5);
+}
+
+.privacy-title {
+  margin: 0;
+  font-family: GT Sectra Display, Times, Georgia, serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #fff;
+  font-size: 5.7142857143rem;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+@media (max-width: 47.99em) {
+  .privacy-title {
+    font-size: 3.5714285714rem;
+  }
+}
+
+@media (max-width: 21.865em) {
+  .privacy-title {
+    font-size: 2.8571428571rem;
+  }
+}
+
+.privacy-lead {
+  margin: 30px 0 0;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.6428571429rem;
+  line-height: 1.5217391304;
+  color: rgba(160, 168, 220, 0.7);
+}
+
+.privacy-subtitle {
+  margin: 0 0 30px;
   font-family: Gilroy, Helvetica, Arial, sans-serif;
-  font-size: clamp(32px, 6vw, 56px);
-  line-height: 1.1;
-  margin: 0 0 24px;
-  font-weight: 700;
-}
-
-.dp-privacy__lead {
-  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2857142857rem;
+  letter-spacing: 0;
   color: #fff;
-  opacity: 0.8;
-  margin: 0 0 40px;
 }
 
-.dp-privacy h2 {
-  font-family: Gilroy, Helvetica, Arial, sans-serif;
-  font-size: 22px;
-  margin: 48px 0 16px;
-  font-weight: 700;
+.privacy-section {
+  margin-top: 120px;
 }
 
-.dp-privacy p {
-  margin: 0 0 16px;
-  color: #fff;
-  opacity: 0.8;
+@media (max-width: 47.99em) {
+  .privacy-section {
+    margin-top: 80px;
+  }
 }
 
-.dp-privacy ul {
-  margin: 0 0 16px;
-  padding-left: 22px;
-  color: #fff;
-  opacity: 0.8;
+.privacy-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7857142857;
+  color: rgba(160, 168, 220, 0.7);
 }
 
-.dp-privacy ul li {
-  margin-bottom: 12px;
+.privacy-list li {
+  position: relative;
+  padding-left: 26px;
 }
 
-.dp-privacy__back {
+.privacy-list li + li {
+  margin-top: 18px;
+}
+
+.privacy-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(187, 194, 229, 0.5);
+}
+
+.privacy-text {
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7857142857;
+  color: rgba(160, 168, 220, 0.7);
+}
+
+.privacy-more {
   display: inline-block;
-  margin-top: 56px;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 2px;
+  /* Same breathing room as the "Принципы" button (home-about-link). */
+  margin-top: 35px;
+}
+
+/* Scene layering mirrors about: the island stays behind the content column
+   in the hero and slides away behind it on scroll. */
+:not(.menu-open) [data-page="privacy"] .scene-root-inner {
+  z-index: -1;
+}
+
+@media (max-width: 64.365em) {
+  :not(.menu-open) [data-page="privacy"] .scene-root-inner {
+    z-index: 0;
+  }
 }
 
 /* ==========================================================================
@@ -253,19 +325,16 @@ body::before {
     );
 }
 
-/* 4) the menu shares the same environment (its art is hidden above) */
-.site-menu-back,
-.site-menu-panel {
-  background-image: radial-gradient(
-      46% 30% at 50% 78%,
-      rgba(240, 196, 140, 0.12),
-      rgba(240, 196, 140, 0) 100%
-    ),
-    radial-gradient(
-      90% 70% at 50% 30%,
-      rgba(104, 120, 185, 0.1),
-      rgba(104, 120, 185, 0) 100%
-    );
+/* --- home: «Так это устроено» — чуть ближе к кейсам ------------------------
+   Desktop (no-touchevents ≥64.375em) разделяет секции хвостовой полупросвет
+   кейсов: .home-cases padding-bottom: calc(50vh − 85px). Укорачиваем его на
+   12vh — секция about подтягивается к кейсам; остальное (padding-top секции,
+   мобильные отступы 120/80px) не трогаем. Якоря острова считаются из живых
+   DOM-rect на рантайме (island.onResize), позы следуют за сдвигом сами. --- */
+@media (min-width: 64.375em) {
+  .no-touchevents .home-cases {
+    padding-bottom: calc(38vh - 85px);
+  }
 }
 
 /* ==========================================================================
@@ -500,6 +569,21 @@ body::before {
   margin-top: 35px;
 }
 
+/* The hero paints every anchor with the container's lavender (inherited via
+   .home-hero-content a { color: inherit }) and dims it to white/70% on
+   hover — the social-list treatment. This button must look exactly like
+   "Принципы" (home-about-link): solid white at rest AND on hover; only the
+   underline answers the pointer. .home-hero-content a wins the class/element
+   tie over .home-app-link, so re-assert with the doubled class. */
+.home-app-link.link--under {
+  color: #fff;
+}
+
+.no-touchevents .home-app-link.link--under:focus,
+.no-touchevents .home-app-link.link--under:hover {
+  color: #fff;
+}
+
 /* Hero's span rules (.in-view.home-hero .home-hero-content span, plus the
    nth-child stagger) out-specify .link-line's own transition and delay the
    line's hover response by .5s+. Re-assert the plain .link-line transition
@@ -663,17 +747,118 @@ html:not(.disable-motion)
   text-transform: uppercase;
 }
 
-/* --- legacy loader stub ---------------------------------------------------
-   The ported main.css ships no .site-loader rules ("preloader UI removed"),
-   but the DOM stub stays because legacy main.js binds to it. With no CSS,
-   its bare SVG <circle r="67"> renders with the default black fill — the
-   black disc painted behind the header logo after boot. Keep the DOM,
-   neutralize the visuals. --- */
+/* --- preloader (visible again) + page-transition curtain -------------------
+   The ported main.css ships no .site-loader rules ("preloader UI removed");
+   the DOM stub and the loader runtime (runtime/loader.ts) are intact, so the
+   preloader is restored here: a flat navy cover with the SVG progress ring.
+   Colors: the same curtain navy as the menu (#0c101b, main.css base color) —
+   the menu curtain is flat by design (no gradient).
+   Ring geometry: r=65 → circumference 2π·65 = 130π ≈ 408.407 — the exact
+   scale the loader runtime tweens in (dashoffset = (130 − 130·p)·π). --- */
 .site-loader {
   position: fixed;
   inset: 0;
-  visibility: hidden;
+  z-index: 1150;
+  display: grid;
+  place-items: center;
+  background-color: #0c101b;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.site-loader.is-visible {
+  opacity: 1;
+}
+
+.site-loader.is-hidden {
+  opacity: 0;
+}
+
+/* Direct page opens: the cover is up from the very first paint (the inline
+   boot-state script in app/(legacy)/layout.tsx sets this before the markup
+   parses); the loader runtime takes over with `is-visible`, `is-hidden`
+   ends the cover. */
+html.dp-boot-load .site-loader:not(.is-hidden) {
+  opacity: 1;
+}
+
+.site-loader-content {
+  display: grid;
+  place-items: center;
+}
+
+.site-loader-progress svg {
+  display: block;
+  width: 136px;
+  height: 136px;
+}
+
+.site-loader-stroke {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 2;
+}
+
+.site-loader-percent {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 408.407px;
+  stroke-dashoffset: 408.407px;
+  transform: rotate(-90deg);
+  transform-origin: 68px 68px;
+}
+
+/* --- page-transition curtain -----------------------------------------------
+   The same flat curtain as the menu, driven across the full page load:
+   leave — an internal link covers the screen (dp-nav-cover) and navigates;
+   enter — the inline boot-state script sets dp-nav-in before first paint,
+   boot swaps it to dp-nav-out after the loader completes (+0.3s hold). --- */
+.page-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1200;
+  background-color: #0c101b;
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+html.dp-nav-in .page-curtain {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+html.dp-nav-cover .page-curtain {
+  animation: dp-curtain-in 0.8s cubic-bezier(0.86, 0, 0.07, 1) both;
+  pointer-events: auto;
+}
+
+html.dp-nav-out .page-curtain {
+  animation: dp-curtain-out 0.8s cubic-bezier(0.86, 0, 0.07, 1) both;
+  pointer-events: auto;
+}
+
+@keyframes dp-curtain-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dp-curtain-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 /* ------------------------------------------------------------------ */
