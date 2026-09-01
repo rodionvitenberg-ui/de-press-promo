@@ -28,7 +28,7 @@
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { LOCALES, localePath } from "../i18n/core.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -98,17 +98,20 @@ function tokenize(html) {
       // Canonicalize `attr=""` to a bare attribute — HTML treats them as the
       // same attribute value (""), React always serializes the ="…" form.
       let s = seg.replace(/=""/g, "");
+      // React 19 passes legacy camelCase table attrs through unchanged;
+      // HTML attribute names are case-insensitive → lowercase.
+      s = s.replace(/cellPadding=/g, "cellpadding=").replace(/cellSpacing=/g, "cellspacing=");
       // Canonicalize self-closing forms: React emits `<img …/>` where the
       // template has `<img …>`, and both spell `<path …/>`. The DOM is the same.
       if (s.endsWith("/>")) {
-        const open = s.slice(0, -2) + ">";
-        const name = tagName(open);
-        tokens.push({ type: "tag", value: open });
+        s = s.slice(0, -2) + ">";
+        const name = tagName(s);
+        tokens.push({ type: "tag", value: s.replace(/[ \t]+>$/, ">") });
         if (!VOID_TAGS.has(name)) {
           tokens.push({ type: "tag", value: `</${name}>` });
         }
       } else {
-        tokens.push({ type: "tag", value: s });
+        tokens.push({ type: "tag", value: s.replace(/[ \t]+>$/, ">") });
       }
     } else {
       const collapsed = decodeEntities(seg.replace(/[ \t\n\r\f]+/g, " "));
@@ -212,12 +215,16 @@ function diffLines(a, b) {
 
 // ---------------------------------------------------------------------------
 
+/** Exported for baseline regeneration tooling (scripts/out is gitignored). */
+export { normalize };
+
 async function fetchBody(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} — ${url}`);
   return res.text();
 }
 
+async function main() {
 const failures = [];
 let checked = 0;
 
@@ -269,4 +276,9 @@ if (CAPTURE) {
       : `\nhtml-diff: ${failures.length}/${checked} route(s) differ`,
   );
   process.exit(failures.length === 0 ? 0 : 1);
+}
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
+  main();
 }
