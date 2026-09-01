@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 // Runtime asset root; main.js concatenates it with "/static/..." paths.
 const THEME = "";
@@ -10,7 +10,12 @@ export type BootPageProps = {
   bodyClass: string;
   dataTheme: string;
   dataPage: string;
-  markup: string;
+  /**
+   * Raw markup snapshot (legacy template renderer). When omitted, the page
+   * renders real JSX `children` inside the same root (components/pages).
+   */
+  markup?: string;
+  children?: ReactNode;
   /** Sync <html lang> with the active locale (root layout ships "ru"). */
   htmlLang?: string;
 };
@@ -203,13 +208,20 @@ export default function BootPage({
   dataTheme,
   dataPage,
   markup,
+  children,
   htmlLang,
 }: BootPageProps) {
   const booted = useRef(false);
+  const runtimeRef = useRef<{ destroy: () => void } | null>(null);
 
   useEffect(() => {
     if (booted.current) return;
     booted.current = true;
+
+    // Own runtime opt-in (lab flag): ?boot=own boots components/runtime
+    // instead of the legacy main.js bundle. Default boot stays legacy.
+    const useOwnRuntime =
+      new URLSearchParams(window.location.search).get("boot") === "own";
 
     if (htmlLang) {
       document.documentElement.lang = htmlLang;
@@ -229,6 +241,12 @@ export default function BootPage({
 
     (async () => {
       try {
+        if (useOwnRuntime) {
+          const { bootRuntime } = await import("../runtime/boot");
+          runtimeRef.current = await bootRuntime({ dataPage });
+          return;
+        }
+
         await loadScript(`${JS}/detectizr.js`);
         await loadScript(`${JS}/modernizr.js`);
         if (cancelled) return;
@@ -269,6 +287,8 @@ export default function BootPage({
 
     return () => {
       cancelled = true;
+      runtimeRef.current?.destroy();
+      runtimeRef.current = null;
       document.body.className = prevClass;
       if (prevTheme) document.body.setAttribute("data-theme", prevTheme);
       else document.body.removeAttribute("data-theme");
@@ -277,11 +297,18 @@ export default function BootPage({
     };
   }, [bodyClass, dataTheme, dataPage, htmlLang]);
 
+  if (markup !== undefined) {
+    return (
+      <div
+        className="boot-page-root"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: markup }}
+      />
+    );
+  }
   return (
-    <div
-      className="boot-page-root"
-      suppressHydrationWarning
-      dangerouslySetInnerHTML={{ __html: markup }}
-    />
+    <div className="boot-page-root" suppressHydrationWarning>
+      {children}
+    </div>
   );
 }

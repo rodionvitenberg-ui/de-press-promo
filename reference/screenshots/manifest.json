@@ -28,21 +28,12 @@
     "state": "case-hover",
     "route": "/",
     "expectedTheme": "tomorrowland",
-    "bodyTheme": "home"
+    "bodyTheme": "tomorrowland"
   },
   {
     "device": "desktop",
     "state": "top",
     "route": "/about/",
-    "booted": true,
-    "locked": false,
-    "canvas": true,
-    "loaderWait": "done"
-  },
-  {
-    "device": "desktop",
-    "state": "top",
-    "route": "/values/",
     "booted": true,
     "locked": false,
     "canvas": false,
@@ -51,10 +42,19 @@
   {
     "device": "desktop",
     "state": "top",
-    "route": "/contact/",
+    "route": "/values/",
     "booted": true,
     "locked": false,
     "canvas": true,
+    "loaderWait": "done"
+  },
+  {
+    "device": "desktop",
+    "state": "top",
+    "route": "/contact/",
+    "booted": true,
+    "locked": false,
+    "canvas": false,
     "loaderWait": "done"
   },
   {

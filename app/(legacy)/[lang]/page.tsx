@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { renderLegacyPage } from "@/components/legacy/createLegacyPage";
+import { renderPage } from "@/components/pages/renderer";
 import { DEFAULT_LOCALE, getTranslator, isLocale, LOCALES } from "@/i18n";
-import * as page from "@/components/legacy/markups/home";
+import home from "@/components/pages/home";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!isLocale(lang) || lang === DEFAULT_LOCALE) return {};
   const t = getTranslator(lang);
   return {
-    title: t(page.PAGE_TITLE),
+    title: t(home.PAGE_TITLE),
     description: t(
       "Эмпатичная платформа-тихая гавань: истории вместо лент, тишина вместо лайков, «Я слышу тебя» вместо оценок.",
     ),
@@ -28,5 +28,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LocalizedHomePage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang) || lang === DEFAULT_LOCALE) notFound();
-  return renderLegacyPage(page, { locale: lang, path: "/" });
+  return renderPage(home, { locale: lang, path: "/" });
 }
