@@ -28,7 +28,7 @@
 
 ## Трек A — агент-2 (выполнять по порядку)
 
-### A1. Футер: «We Make Good Shit» → «Don't cry alone» ⬜
+### A1. Футер: «We Make Good Shit» → «Don't cry alone» ✅
 
 Упущение исходного ТЗ: в футере всех 4 страниц осталась ненулевая SVG-надпись `svg.baseline`.
 

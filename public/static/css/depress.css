@@ -569,6 +569,26 @@ html:not(.disable-motion)
   }
 }
 
+/* --- footer wordmark: WE MAKE GOOD SHIT → DON'T CRY ALONE (plan A1) ---------
+   The legacy slot held svg.baseline — a pre-typeset wordmark (letter paths,
+   45px wide, white, pushed right on desktop through .site-footer-title).
+   It is now real text — selectable and translatable. Same treatment as
+   .site-menu-slogan above: the serif family goes through the rebrand remap;
+   desktop right alignment comes from .site-footer-title (text-align:right at
+   >=50.9375em), mobile keeps the legacy left position. The dormant
+   .site-footer-title .baseline rules in main.css (base + per-theme fills)
+   target nothing anymore — legacy case-theme coloring returns under B3 if
+   the redesigned palettes want it. */
+.site-footer-slogan {
+  display: block;
+  color: #fff;
+  font-family: "GT Sectra Display", Times, Georgia, serif;
+  font-weight: 500;
+  font-size: 1.1428571429rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
 /* --- legacy loader stub ---------------------------------------------------
    The ported main.css ships no .site-loader rules ("preloader UI removed"),
    but the DOM stub stays because legacy main.js binds to it. With no CSS,
