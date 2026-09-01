@@ -44,10 +44,13 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
   `N = min((S-TA)/|TA-TB|, 1)`; `value = lerp(VA, VB, N)`. Флаг `visible === false`
   у ключевой точки управляет `html классом` `.scene-root.is-visible`.
 - Состояния страниц: `home→HOME_STATE`, `about→ABOUT_STATE`, `values→VALUES_STATE`,
-  `contact→CAREERS_STATE` (в JSON нет CONTACT_STATE — контакт переиспользует
-  легаси-careers позы). Меню: `setState('MENU_STATE') + setMatcap(1,0) +
+  `contact→CAREERS_STATE`, `privacy→PRIVACY_STATE` (в JSON нет CONTACT_STATE —
+  контакт переиспользует легаси-careers позы; PRIVACY_STATE — оригинальная
+  поза about, поднятая и отзеркаленная вправо от заголовка; камера смотрит
+  с −Z (`stage.ts`), поэтому мир X+ = лево экрана — «вправо» это минус X). Меню: `setState('MENU_STATE') + setMatcap(1,0) +
   setMatcapProgress(1) + setAnimationProgress(1, hard)`.
-- Initial matcap по страницам: home `[1,0]`, about `[3,3]` (остальные — дефолт `[1,0]`).
+- Initial matcap по страницам: home `[1,0]`, about `[3,3]`, values `[2,2]`,
+  contact `[4,4]`, privacy `[3,3]`.
 
 ## DOM-хуки (гарантирует B, потребляет A)
 

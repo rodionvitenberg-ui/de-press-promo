@@ -8,7 +8,7 @@
 
 - Ветка `main`, точка отсчёта — тег `pre-originalize`. **Один шаг = одна задача = один атомарный коммит.**
 - Контентная оригинализация исходного ТЗ закрыта: хедер, hero «Don't cry alone» (10 локалей), соц-блок, app-линк, музыка удалена, шторка меню, фирменный красный → белый, футер-линки, контакты, cookie-функционал, values (белая тема + контраст).
-- Все страницы — собственный JSX: `components/pages/{home,about,values,contact}.tsx` + safety + privacy, рендер через `renderPage` (`components/pages/renderer.tsx`); safety/privacy — статические контентные страницы без рантайма (`components/legacy/{SafetyContent,PrivacyContent}.tsx`). Легаси-шаблоны (`components/legacy/markups/`) и `html-diff` снесены (A3).
+- Все страницы — собственный JSX: `components/pages/{home,about,values,contact,privacy}.tsx` + safety, рендер через `renderPage` (`components/pages/renderer.tsx`); safety — статическая контентная страница без рантайма (`components/legacy/SafetyContent.tsx`). Легаси-шаблоны (`components/legacy/markups/`) и `html-diff` снесены (A3).
 - Собственный рантайм — безусловный дефолт (A2): `components/runtime/RuntimeBoot.tsx` → `runtime/boot.ts` (capabilities → DOM-модули → loader → island → cases/cookie/header/menu/reveals/table-expand/typed). Легаси-вендор (`public/static/js/main.js` + detectizr + modernizr) удалён (A3).
 - GL-сцена уже собственная: `components/legacy/glscene/` (TypeScript/three), данные `public/data/scene/*.json` — первоисточник.
 - Словари: 10 локалей (ключ = RU-строка); ключ «Don't cry alone» есть во всех 10 — футер-фиксу словарные правки не нужны.
@@ -60,6 +60,14 @@
 - Куки-бар: «Подробнее о приватности» → `href("/privacy/")`.
 - i18n: 28 новых ключей ×9 локалей; 4 переиспользованы из прежних страниц («Приватность», «Принципы», «Чего здесь нет», «← Вернуться на главную» — словарные значения сохранены). `i18n-check.mjs`: PAGES + privacy (6×10=60 снапшотов), T_SOURCE_FILES + PrivacyContent + оба privacy-роута; `regen-html-baseline.mjs`: PAGES + privacy, «REGEN DONE 50» → динамический счёт.
 - После приёмки — удалить `GDPR-docs/` (остаётся в git-истории).
+
+### A4.1. Privacy в стиле сайта ✅ (01.09.2026)
+
+- Privacy переезжает на полный паритет со страницами сайта (по образцу about): `components/pages/privacy.tsx` — PageModule (lock-scroll / data-theme=privacy / data-page=privacy / title «Приватность — de-press») через renderPage: loader, header, меню (`active=null` — пункта в меню нет), футер, куки-бар, reveals. Тексты A4 сохранены 1:1 (28 + 4 переиспользованных ключа), подача — about-токены (headline/title/tagline/текст, списки с тире-маркерами); «← Вернуться на главную» убрана (навигация — хедер/меню/футер), вместо неё `link--caret` «Смотреть, как устроено» → `/`.
+- Остров: `PAGE_STATES.privacy = "PRIVACY_STATE"`, `PAGE_MATCAPS.privacy = [3, 3]` (якорится на общие линейки SceneRoot). Сцена за контентом: `:not(.menu-open) [data-page="privacy"] .scene-root-inner { z-index: -1 }` + мобильный вариант, как у about.
+- CSS: блок `.dp-privacy` заменён на `.privacy-*` в depress.css (токены about: Gilroy/GT Sectra/Heebo, фирменные цвета, `.center`-ритм); main.css не тронут. `components/legacy/PrivacyContent.tsx` удалён. safety не тронут — тихая страница осознанно (кризисная).
+- i18n: +1 ключ «Приватность — de-press» ×9 локалей; `i18n-check.mjs`: T_SOURCE_FILES — PrivacyContent → components/pages/privacy.tsx. Верификация: tsc, lint, build, реген baseline (DONE 60), i18n-check (3 pre-existing), smoke 200/404 ×10, SSR-хром, бут острова на десктопе.
+- Правка по фидбеку (01.09.2026): своя поза `PRIVACY_STATE` в `desktop.json` — about-поза поднята (Y −14.8 → 2) и отзеркалена вправо от заголовка (X 11.9 → −12.5): камера смотрит с −Z (`stage.ts`), мир X+ = лево экрана, так что «правее» — минус X), поза скролла-исчезновения сохранена; копирайт переработан по `copywriting/SKILL.md` — живой тон, без канцелярита и каталог-паттернов «Название: описание», факты A4 сохранены; порядок секций: «Что здесь хранится» → «Чего здесь нет» → «Сколько это живёт» → «Не веришь — проверь» (принципы + самохостинг + CTA одним блоком); 25 ключей заменено ×10 локалей (интонация дублирована: lead ↔ заголовок «Сколько это живёт»); у обеих ссылок на `/privacy/` (футер + куки-бар) убран `target="_blank"`. Верификация: tsc 0, lint 0, build OK, реген DONE 60 → i18n-check OK (3 pre-existing), prerender: новые строки на месте, старых нет, `_blank` только у соцсетей; boot-check OK (4 секции / 21 пункт, сцена, 0 ошибок консоли).
 
 ### A5. Финальная вычитка текстов ⬜ (после B)
 

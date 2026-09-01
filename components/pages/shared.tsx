@@ -189,7 +189,7 @@ export function CookieBar({ t, href }: SharedProps) {
     <div className="site-cookie js-cookie">
       <p className="site-cookie__text">
         {tx(t, "Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. ")}
-        <a href={href("/privacy/")} target="_blank">{t("Подробнее о приватности")}</a>.
+        <a href={href("/privacy/")}>{t("Подробнее о приватности")}</a>.
       </p>
 
       <div className="site-cookie__buttons">
@@ -246,7 +246,7 @@ export function SiteFooter({
 
           <div className="site-footer-right">
             <p className="site-footer-newsletter appear-fade-up appear-delay--4">
-              <a href={href("/values/")} target="_blank">
+              <a href={href("/privacy/")}>
                 {tx(t, " Приватность ")}
               </a>
             </p>

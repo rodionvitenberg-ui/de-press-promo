@@ -19,6 +19,7 @@ const PAGE_MATCAPS: Record<PageSlug, [number, number]> = {
   about: [3, 3],
   values: [2, 2],
   contact: [4, 4],
+  privacy: [3, 3],
 };
 
 /** Legacy `utils/mq` xl breakpoint (ruler--1190). */
