@@ -3,8 +3,9 @@ import { LangSwitcher, tx } from "./renderer";
 
 /**
  * Page scaffold shared by all four JSX pages — the blocks that are byte-wise
- * identical across components/legacy/markups/*.ts (verified per page by
- * scripts/html-diff.mjs). Menu active item is the only per-page variation.
+ * identical across the four legacy markup snapshots (deleted in A3; the DOM
+ * parity was verified page by page). Menu active item is the only per-page
+ * variation.
  */
 
 export type SharedProps = {

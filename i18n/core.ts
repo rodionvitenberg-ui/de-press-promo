@@ -4,9 +4,8 @@
  * (scripts/i18n-check.mjs).
  *
  * Approach: gettext-style dictionaries keyed by the exact source (Russian)
- * string. Legacy markup snapshots stay untouched; text nodes and localizable
- * attributes are mapped through the dictionary at render time. Missing keys
- * fall back to the source string, so a translation gap can never break layout.
+ * string. Missing keys fall back to the source string, so a translation gap
+ * can never break layout.
  */
 
 export const LOCALES = [
@@ -134,103 +133,4 @@ export function languageSwitcherHTML(current: Locale, path: string): string {
   return `\n                                <ul>\n${items.join("\n")}\n                          </ul>\n                  `;
 }
 
-/** Rewrite bare internal routes so menu/footer links stay inside the locale. */
-const INTERNAL_HREFS = ["/", "/about/", "/values/", "/contact/", "/safety/"];
-
-function localizeHrefs(html: string, locale: Locale): string {
-  if (locale === DEFAULT_LOCALE) return html;
-  return html.replace(/\bhref="(\/[^"]*)"/g, (match, href: string) =>
-    INTERNAL_HREFS.includes(href)
-      ? `href="${localePath(locale, href)}"`
-      : match,
-  );
-}
-
-const LOCALIZABLE_ATTRS = "title|alt|placeholder|data-after";
-
-/**
- * Map text nodes and localizable attribute values through the dictionary.
- * Only exact (trimmed) matches are replaced; everything else passes through,
- * so the default locale and untranslated strings render byte-identically.
- */
-export function localizeMarkup(html: string, t: Translator): string {
-  // Text nodes: ">core<" with the original surrounding whitespace preserved.
-  html = html.replace(/>([^<>]+)</g, (match, inner: string) => {
-    const core = inner.replace(/\s+/g, " ").trim();
-    if (!core) return match;
-    const translated = t(core);
-    if (translated === core) return match;
-    const lead = inner.slice(0, inner.length - inner.trimStart().length);
-    const tail = inner.slice(inner.trimEnd().length);
-    return `>${lead}${translated}${tail}<`;
-  });
-
-  // Attribute values (never URLs: title / alt / placeholder / data-after).
-  html = html.replace(
-    new RegExp(`\\b(${LOCALIZABLE_ATTRS})="([^"]*)"`, "g"),
-    (match, attr: string, value: string) => {
-      const core = value.replace(/\s+/g, " ").trim();
-      if (!core) return match;
-      const translated = t(core);
-      if (translated === core) return match;
-      return `${attr}="${translated}"`;
-    },
-  );
-
-  return html;
-}
-
-/**
- * The contact page hides a JSON array of rotating sentences in
- * div.js-sentences (legacy main.js reads it). Translate each item and
- * re-serialize; compact output is fine for the JS consumer.
- */
-export function localizeSentences(html: string, t: Translator): string {
-  return html.replace(
-    /(<div class="js-sentences[^"]*">)([\s\S]*?)(<\/div>)/g,
-    (match, open: string, inner: string, close: string) => {
-      try {
-        const items = JSON.parse(inner) as unknown;
-        if (!Array.isArray(items)) return match;
-        const translated = items.map((item) =>
-          typeof item === "string" ? t(item) : item,
-        );
-        return `${open}${JSON.stringify(translated)}${close}`;
-      } catch {
-        return match;
-      }
-    },
-  );
-}
-
-export type FinalizeOptions = {
-  markup: string;
-  t: Translator;
-  locale: Locale;
-  /** Bare route of the page, e.g. "/" or "/about/" — for the switcher links. */
-  path: string;
-};
-
-/**
- * Full pipeline for a legacy markup snapshot:
- * dictionary mapping → rotating sentences → fx blocks → language switcher
- * → internal hrefs.
- */
-export function finalizeMarkup({
-  markup,
-  t,
-  locale,
-  path,
-}: FinalizeOptions): string {
-  let html = localizeMarkup(markup, t);
-  html = localizeSentences(html, t);
-  html = html.replace(/<!--DP:FX:([a-z0-9-]+)-->/g, (match, name: string) => {
-    const phrase = FX_PHRASES[name];
-    return phrase ? fxBlock(t(phrase)) : match;
-  });
-  // Hrefs first: the switcher ships final hrefs and must not be rewritten.
-  html = localizeHrefs(html, locale);
-  html = html.replace("<!--DP:LANGS-->", languageSwitcherHTML(locale, path));
-  return html;
-}
 

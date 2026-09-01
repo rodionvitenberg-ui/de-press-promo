@@ -49,7 +49,7 @@ function detectTouch(): boolean {
   return coarse || "ontouchstart" in window;
 }
 
-/** Legacy boot WASM probe (kept byte-compatible with BootPage). */
+/** Legacy boot WASM probe (kept byte-compatible with the legacy bundle). */
 function supportsWasm(): boolean {
   try {
     if (

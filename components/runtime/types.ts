@@ -1,8 +1,8 @@
 /**
  * Shared types of the own runtime (replacement of the legacy `main.js` bundle).
  *
- * Scene data types mirror `public/data/scene/*.json` (produced by
- * `scripts/extract-scene-data.mjs` from the legacy bundle modules).
+ * Scene data types mirror `public/data/scene/*.json` (extracted once from the
+ * legacy bundle modules; the extraction script retired in A3).
  */
 
 export type SceneKeypoint = {

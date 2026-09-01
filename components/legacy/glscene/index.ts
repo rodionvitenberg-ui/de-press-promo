@@ -76,8 +76,9 @@ export class SceneGL {
 }
 
 /**
- * Registers the module as `window.SceneGL`, replacing the legacy legacy bundle
- * bundle. Called by `BootPage.tsx` before `main.js` boots.
+ * Registers the module as `window.SceneGL`, replacing the legacy bundle's
+ * global. Called by the runtime boot (components/runtime/boot.ts) before the
+ * scene initializes.
  */
 export function installSceneGL(): void {
   if (typeof window === "undefined") return;

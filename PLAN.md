@@ -45,12 +45,12 @@
 - Эталоны пересняты: 12 состояний, `loaderWait` done ×12, `canvas` фиксируется в момент съёмки (desktop True на всех островных маршрутах — остров монтируется и на about; mobile False).
 - Верификация: tsc 0, lint 0 ошибок в коде проекта (3 в marketingskills/), build OK, html-diff OK 50/50 (SSR-HTML не изменился), реген baseline DONE 50, i18n-check OK (3 pre-existing), smoke 200/404.
 
-### A3. Зачистка легаси ⬜
+### A3. Зачистка легаси ✅
 
-- Удалить: `public/static/js/{main,detectizr,modernizr}.js`, `components/legacy/markups/`, `components/legacy/createLegacyPage.tsx` (+ `finalizeLegacyMarkup` в `i18n/`), `scripts/extract-scene-data.mjs`, `components/legacy/BootPage.tsx` (после переноса boot).
-- `scripts/html-diff.mjs` и `scripts/regen-html-baseline.mjs`: guard «SSR = легаси-снимок» завершён — снять с дежурства; `regen-html-baseline` при необходимости перевести на live-снятие всех страниц (как safety) для i18n-check.
-- `next.config.ts`: `reactStrictMode: true` + проверить двойной эффект рантайма.
-- Регрессия дальше — по эталонным скриншотам (`reference/screenshots/`).
+- Удалено: `public/static/js/{main,detectizr,modernizr}.js`, `components/legacy/markups/` (4 двойника), `components/legacy/createLegacyPage.tsx`, `components/legacy/BootPage.tsx`, `scripts/extract-scene-data.mjs` (+ npm-скрипт `scene-data`), `scripts/html-diff.mjs`, мёртвый i18n-пайплайн markups-эры (`finalizeMarkup`/`localizeMarkup`/`localizeSentences`/`localizeHrefs` + `finalizeLegacyMarkup`).
+- Boot перенесён в `components/runtime/RuntimeBoot.tsx` (без markup-пропа): StrictMode-safe — `destroyed`-флаг уничтожает boot-хэндл, разрешившийся после cleanup (dev double-mount не оставляет дублей канваса/утечек; проверено CDP-пробой на dev :3001: `canvases: 1`, `errors: none`).
+- `next.config.ts`: `reactStrictMode: true`.
+- `scripts/html-diff.mjs` снят с дежурства (guard «SSR = легаси-снимок» завершён); `regen-html-baseline.mjs` переведён на live-снятие всех 5 страниц × 10 локалей (normalize перенесён из html-diff) — **все 50 live-снапшотов байт-идентичны прежним синтезированным** (паритет live SSR ↔ легаси-синтез). Регрессия дальше — по эталонным скриншотам.
 
 ### A4. GDPR-страница ⬜
 

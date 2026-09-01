@@ -1,5 +1,4 @@
 import {
-  finalizeMarkup,
   makeTranslator,
   type Locale,
   type Translator,
@@ -42,16 +41,3 @@ export function getTranslator(locale: Locale): Translator {
 export { DEFAULT_LOCALE, LOCALES, isLocale, localePath } from "./core";
 export type { Locale } from "./core";
 
-/** Finalize a legacy markup snapshot for the given locale. */
-export function finalizeLegacyMarkup(options: {
-  markup: string;
-  locale: Locale;
-  path: string;
-}): string {
-  return finalizeMarkup({
-    markup: options.markup,
-    t: getTranslator(options.locale),
-    locale: options.locale,
-    path: options.path,
-  });
-}

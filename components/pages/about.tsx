@@ -13,8 +13,8 @@ import {
 import type { Translator } from "@/i18n/core";
 
 /**
- * About — JSX twin of components/legacy/markups/about.ts.
- * DOM must be 1:1 with the legacy snapshot (scripts/html-diff.mjs guards it).
+ * About — originalized JSX page (was components/legacy/markups/about.ts;
+ * the legacy snapshot was deleted in A3 — git history keeps it).
  */
 
 /** Roadmap table: [year, decision badge, decision, status, essence, comment]. */

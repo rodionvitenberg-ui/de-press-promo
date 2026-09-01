@@ -12,8 +12,8 @@ import {
 import type { Translator } from "@/i18n/core";
 
 /**
- * Values — JSX twin of components/legacy/markups/values.ts.
- * DOM must be 1:1 with the legacy snapshot (scripts/html-diff.mjs guards it).
+ * Values — originalized JSX page (was components/legacy/markups/values.ts;
+ * the legacy snapshot was deleted in A3 — git history keeps it).
  */
 
 type ValueItem = {

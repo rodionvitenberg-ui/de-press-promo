@@ -3,8 +3,8 @@
  * i18n coverage check (run: node --experimental-strip-types scripts/i18n-check.mjs)
  *
  *  1. Collects every localizable source string from the ru baseline snapshots
- *     (scripts/out/html-baseline — the normalized legacy DOM that
- *     scripts/html-diff.mjs guards; fx-parent letter blocks are renderer
+ *     (scripts/out/html-baseline — normalized live SSR captured by
+ *     scripts/regen-html-baseline.mjs; fx-parent letter blocks are renderer
  *     output, not sources) + fx phrases, PAGE_TITLE constants and t("…")
  *     literals in the JSX page modules / routes.
  *  2. Per locale: every Cyrillic source has a dictionary key; the live SSR

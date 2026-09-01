@@ -11,10 +11,10 @@ import {
 } from "./shared";
 
 /**
- * Contact — JSX twin of components/legacy/markups/contact.ts.
- * DOM must be 1:1 with the legacy snapshot (scripts/html-diff.mjs guards it).
+ * Contact — originalized JSX page (was components/legacy/markups/contact.ts;
+ * the legacy snapshot was deleted in A3 — git history keeps it).
  * The rotating sentences (div.js-sentences) ship as a compact JSON array —
- * the exact shape localizeSentences() produced for the legacy pipeline.
+ * the exact shape the legacy pipeline produced.
  */
 
 const SENTENCES = [

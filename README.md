@@ -16,7 +16,6 @@
 - `npm run build` → все страницы собираются
 - `npm run screenshots` — дифф против эталона `reference/screenshots/`
   (против dev :3001 или свежего `next start` :3111, `BASE_URL=…`)
-- Пока живы `components/legacy/markups/`: `node scripts/html-diff.mjs` — SSR-HTML «до vs после» по каждой странице × 10 локалей
 - Smoke: 200/404
 
 Остановка серверов: `pkill -f '[n]ext-server'` (паттерн `next start` процесс не ловит).
@@ -29,8 +28,7 @@
 | `npm run build` / `start` | Production |
 | `npm run lint` | ESLint |
 | `npm run screenshots` | Эталонные скриншоты (CDP, нужен запущенный dev/start) → `reference/screenshots/` |
-| `node scripts/regen-html-baseline.mjs` | Регенерация baseline-снапшотов для i18n-check/html-diff |
-| `node scripts/html-diff.mjs` | SSR-HTML «до vs после» (пока живы markups) |
+| `node scripts/regen-html-baseline.mjs` | Live-снятие нормализованных SSR-снапшотов для i18n-check |
 
 ## Ограничения
 

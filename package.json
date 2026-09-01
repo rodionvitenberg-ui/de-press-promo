@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "scene-data": "node scripts/extract-scene-data.mjs",
     "screenshots": "node scripts/reference-screenshots.mjs"
   },
   "dependencies": {

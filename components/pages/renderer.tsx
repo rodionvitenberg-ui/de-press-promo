@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import BootPage from "@/components/legacy/BootPage";
+import RuntimeBoot from "@/components/runtime/RuntimeBoot";
 import {
   FX_PHRASES,
   fxBlock,
@@ -10,11 +10,10 @@ import { DEFAULT_LOCALE, type Locale, type Translator } from "@/i18n/core";
 import { getTranslator } from "@/i18n";
 
 /**
- * JSX page renderer (originalization Phase 2) — replaces createLegacyPage.
- * A page module provides constants + a Content component; the DOM it renders
- * must be 1:1 with the legacy markup snapshot (verified by scripts/html-diff.mjs
- * against the captured baseline). The legacy boot (BootPage) keeps working on
- * top of this JSX until the own runtime lands.
+ * JSX page renderer (originalization Phase 2). A page module provides
+ * constants + a Content component; the DOM it renders is 1:1 with the legacy
+ * markup snapshot (verified against reference screenshots once the html-diff
+ * guard retired in A3). RuntimeBoot boots the own runtime on top of this JSX.
  */
 
 export type PageContentProps = {
@@ -49,7 +48,7 @@ export type PageOptions = {
 export function renderPage(mod: PageModule, options: PageOptions): ReactNode {
   const locale = options.locale ?? DEFAULT_LOCALE;
   return (
-    <BootPage
+    <RuntimeBoot
       bodyClass={mod.BODY_CLASS}
       dataTheme={mod.DATA_THEME}
       dataPage={mod.DATA_PAGE}
@@ -61,7 +60,7 @@ export function renderPage(mod: PageModule, options: PageOptions): ReactNode {
         path={options.path}
         href={(bare) => localePath(locale, bare)}
       />
-    </BootPage>
+    </RuntimeBoot>
   );
 }
 

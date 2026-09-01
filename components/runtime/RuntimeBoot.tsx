@@ -5,40 +5,35 @@ import { useEffect, useRef, type ReactNode } from "react";
 // Runtime asset root; the legacy bundle concatenated it with "/static/..." paths.
 const THEME = "";
 
-export type BootPageProps = {
+export type RuntimeBootProps = {
   bodyClass: string;
   dataTheme: string;
   dataPage: string;
-  /**
-   * Raw markup snapshot (legacy template renderer). When omitted, the page
-   * renders real JSX `children` inside the same root (components/pages).
-   */
-  markup?: string;
-  children?: ReactNode;
+  children: ReactNode;
   /** Sync <html lang> with the active locale (root layout ships "ru"). */
   htmlLang?: string;
 };
 
 /**
  * Page shell: sets the body class/theme/page, syncs <html lang> and boots the
- * own runtime (components/runtime/boot). The legacy main.js/detectizr/
- * modernizr vendor bundle is no longer loaded (plan A2). React does not
- * re-render this tree after mount; the runtime owns the DOM after boot.
+ * own runtime (components/runtime/boot). React does not re-render this tree
+ * after mount; the runtime owns the DOM after boot.
+ *
+ * StrictMode-safe: dev double-mount destroys the first runtime. The async boot
+ * may also resolve after cleanup already ran — the `destroyed` flag destroys
+ * such a late handle instead of leaking it.
  */
-export default function BootPage({
+export default function RuntimeBoot({
   bodyClass,
   dataTheme,
   dataPage,
-  markup,
   children,
   htmlLang,
-}: BootPageProps) {
-  const booted = useRef(false);
+}: RuntimeBootProps) {
   const runtimeRef = useRef<{ destroy: () => void } | null>(null);
 
   useEffect(() => {
-    if (booted.current) return;
-    booted.current = true;
+    let destroyed = false;
 
     if (htmlLang) {
       document.documentElement.lang = htmlLang;
@@ -55,13 +50,19 @@ export default function BootPage({
     window.Site = { assetsRoot: THEME };
 
     (async () => {
-      const { bootRuntime } = await import("../runtime/boot");
-      runtimeRef.current = await bootRuntime({ dataPage });
+      const { bootRuntime } = await import("./boot");
+      const handle = await bootRuntime({ dataPage });
+      if (destroyed) {
+        handle.destroy();
+        return;
+      }
+      runtimeRef.current = handle;
     })().catch((err) => {
       console.error("runtime boot failed:", err);
     });
 
     return () => {
+      destroyed = true;
       runtimeRef.current?.destroy();
       runtimeRef.current = null;
       document.body.className = prevClass;
@@ -72,15 +73,6 @@ export default function BootPage({
     };
   }, [bodyClass, dataTheme, dataPage, htmlLang]);
 
-  if (markup !== undefined) {
-    return (
-      <div
-        className="boot-page-root"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: markup }}
-      />
-    );
-  }
   return (
     <div className="boot-page-root" suppressHydrationWarning>
       {children}

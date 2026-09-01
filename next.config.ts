@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Large static 3D assets live under public/
-  // Avoid interfering with original client runtime paths
-  reactStrictMode: false,
+  // Own runtime is StrictMode-safe (RuntimeBoot destroys late boot handles);
+  // dev double-mount exercises the destroy path on every boot.
+  reactStrictMode: true,
   // Match origin URLs: /about/, /values/, …
   trailingSlash: true,
   // Hide the dev-mode indicator ("N" circle, bottom-left): it collided with
