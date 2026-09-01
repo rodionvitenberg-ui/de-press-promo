@@ -41,6 +41,15 @@ export type SceneDataJson = {
 /** Page slug from `data-page` / legacy `data-router-view`. */
 export type PageSlug = "home" | "about" | "values" | "contact";
 
+declare global {
+  interface Window {
+    /** Runtime asset root (legacy `window.Site.assetsRoot` — always ""). */
+    Site?: { assetsRoot: string };
+    disable_scene?: boolean;
+    disable_motion?: boolean;
+  }
+}
+
 /**
  * Page slug → island state (legacy page modules set these literally;
  * `desktop.json` has no CONTACT_STATE — the contact page reuses the legacy

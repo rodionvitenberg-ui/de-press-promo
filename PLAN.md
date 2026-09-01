@@ -38,11 +38,12 @@
 - Словарные правки: **не нужны**.
 - Верификация: реген baseline → html-diff 0 diff, i18n-check, build, эталонные скриншоты, smoke.
 
-### A2. Рантайм: включить свой, выкинуть вендор ⬜
+### A2. Рантайм: включить свой, выкинуть вендор ✅
 
-- Достроить недостающее в `components/runtime/`: `loader.ts` (`.site-loader`, percent, `lock-scroll`), scroll-engine (keypoints из `public/data/scene/*.json` + сплайны + mouse parallax — сверить с `components/runtime/island.ts` и контрактом), transitions (минимум: full page load уже работает).
-- Переключить boot: легаси `main.js`/`detectizr`/`modernizr` больше не грузятся (лаб-флаг `?boot=own` убрать; способ — `SiteRuntime` в `(legacy)/layout` или дефолтный boot в `BootPage` — на усмотрение агента-2, контракт: `components/runtime/contract.md`).
-- Прогон 12–14 эталонных состояний + мобильный путь (`disable_scene`), фикс-круг.
+- Сделано: `runtime/loader.ts` — точный порт легаси-лоадера (`.site-loader` → кольцо → `completed` → hide); boot в легаси-порядке: capabilities → DOM-модули → Loader.show → Loader.load (кольцо ∥ ассеты острова) → `loaded()` (retina SSAA) → `completed` (остров есть → show+intro, unlock в onComplete; нет → прямой unlock) → `InView.reset` (+500ms) → Loader.hide; `initMenu(getIsland)` — null-safe при позднем острове; `BootPage` — `bootRuntime` безусловный дефолт, вендорный `main.js`/`detectizr`/`modernizr` больше не грузятся (файлы сносятся в A3); сцен-типы переехали в `runtime/types.ts`.
+- Пиксельный паритет: `values`, `mobile/{home,about,values}` — 0 px против легаси (d422de2); `scroll-2`, cookie-зона — 0 px; `about` — 264 px (reveal `.appear-fade-up` у сгиба — свой рантайм раскрывает, легаси нет); menu/hover — детерминированные фазовые дельты tween/matcap-свапа (межпрогонная воспроизводимость 0.4–2%); top/scroll-1 — известный шиммер острова.
+- Эталоны пересняты: 12 состояний, `loaderWait` done ×12, `canvas` фиксируется в момент съёмки (desktop True на всех островных маршрутах — остров монтируется и на about; mobile False).
+- Верификация: tsc 0, lint 0 ошибок в коде проекта (3 в marketingskills/), build OK, html-diff OK 50/50 (SSR-HTML не изменился), реген baseline DONE 50, i18n-check OK (3 pre-existing), smoke 200/404.
 
 ### A3. Зачистка легаси ⬜
 

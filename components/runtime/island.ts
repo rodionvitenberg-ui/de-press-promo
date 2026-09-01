@@ -88,6 +88,17 @@ export class Island {
     return this.GL.load();
   }
 
+  /** Legacy `loaded()`: retina SSAA configuration once the assets landed. */
+  loaded(): void {
+    if (window.disable_scene) return;
+
+    if (window.devicePixelRatio > 1) {
+      this.GL.setSSAA(true);
+      this.GL.setSSAAQuality(1);
+      this.GL.setPixelRatio(1);
+    }
+  }
+
   /** Intro sequence: matcap crossfade (3s) + progress tween (1.8s) → unlock. */
   init(): void {
     if (window.disable_scene) return;

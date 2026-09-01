@@ -18,10 +18,18 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
    imagePath: '/static/assets/island/images/island/final/',
    dracoPath: '/static/assets/island/draco/',
    modelPath: '/static/assets/island/models/' })`.
-6. Интро (Island.init): delayedCall 0.1s → если у страницы initialMatcap —
-   `setMatcap(m0, m1)` + `setMatcapProgress(0→1)` за 3s Quad.easeOut; параллельно
-   `animationProgress 0 → scrollTarget` за 1.8s Quart.easeOut; onComplete → снять
-   `lock-scroll` (дальше включается in-view/lazy).
+6. Loader (`components/runtime/loader.ts`, точный порт легаси):
+   `.site-loader` → `is-visible` (1.2s) → параллельно фейк-процент кольца
+   (тики 100ms, cap 0.9, `strokeDashoffset = (130 − 130·p)·π`) и загрузка
+   ассетов острова → `loaded()` (retina: `setSSAA(true)`, `setSSAAQuality(1)`,
+   `setPixelRatio(1)` при devicePixelRatio > 1) → кольцо в 0 за 1s →
+   `completed` → `is-hidden`. На mobile/no-wasm загрузка мгновенна
+   (легаси `: true`), тайминги лоадера те же.
+7. По `completed` (легаси `Default.onLoaderCompleted`): остров есть →
+   `show()` + `init()` + `onResize()` (unlock — в onComplete интро);
+   острова нет → снять `lock-scroll` напрямую (мобильный путь).
+   `InView.reset()` (reveals + lazy) — через 500ms после `completed`;
+   `Loader.hide()` — параллельно.
 
 ## Island (сцена) — точный порт легаси
 
@@ -62,4 +70,5 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
   обычными `<a>` (full page load, каждый роут бутится заново). Overlay-переходы —
   отдельное улучшение после паритета.
 - Рантайм владеет DOM после boot (React не ре-рендерит дерево страниц).
-- Удаляется вендор в конце: `main.js`, `detectizr.js`, `modernizr.js`.
+- С A2 вендор `main.js`/`detectizr.js`/`modernizr.js` больше не загружается
+  (дефолтный boot — `components/runtime/boot`); файлы удаляются в A3.

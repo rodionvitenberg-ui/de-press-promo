@@ -235,12 +235,20 @@ async function captureDesktop(cdp, baseDir, route) {
   await navigate(cdp, `${BASE_URL}${route.path}`);
   const ready = await waitForPageReady(cdp);
   await sleep(INTRO_SETTLE_MS);
+  // canvas флаг фиксируем в момент съёмки, а не в unlock: loader.completed
+  // ждёт glLoad, канвас создаётся в конструкторе SceneGL — на островном пути
+  // флаг обязан быть true, но на unlock он плавает (гонка → недетерминизм).
+  const canvas = await evalJs(
+    cdp,
+    `!!document.querySelector(".scene-root canvas")`,
+  );
   await shoot(cdp, path.join(baseDir, `${route.name}.png`));
   manifest.push({
     device: "desktop",
     state: "top",
     route: route.path,
     ...ready,
+    canvas,
   });
 
   if (route.name !== "home") return manifest;
@@ -311,8 +319,12 @@ async function captureMobile(cdp, baseDir, route) {
   await navigate(cdp, `${BASE_URL}${route.path}`);
   const ready = await waitForPageReady(cdp);
   await sleep(INTRO_SETTLE_MS);
+  const canvas = await evalJs(
+    cdp,
+    `!!document.querySelector(".scene-root canvas")`,
+  );
   await shoot(cdp, path.join(baseDir, `${route.name}.png`));
-  return [{ device: "mobile", state: "top", route: route.path, ...ready }];
+  return [{ device: "mobile", state: "top", route: route.path, ...ready, canvas }];
 }
 
 // ---------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-import type { SceneDataJson } from "../BootPage";
+import type { SceneDataJson } from "../../runtime/types";
 
 /**
  * Options payload `main.js` passes to `new window.SceneGL({ ... })`

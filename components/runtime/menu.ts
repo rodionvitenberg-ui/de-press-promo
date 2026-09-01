@@ -10,7 +10,12 @@ export type MenuHandle = { destroy: () => void; isOpen: () => boolean };
 const OPEN_DELAY_MS = 800;
 const RUNNING_MS = 800;
 
-export function initMenu(island: Island | null): MenuHandle {
+/**
+ * The island may still be loading when the menu boots (legacy `Menu` held a
+ * singleton reference that was always valid — the accessor is the own-runtime
+ * equivalent). A null island (mobile `disable_scene`) skips scene calls.
+ */
+export function initMenu(getIsland: () => Island | null): MenuHandle {
   const button = document.querySelector<HTMLButtonElement>(
     ".site-header-button",
   );
@@ -28,7 +33,7 @@ export function initMenu(island: Island | null): MenuHandle {
     timer = window.setTimeout(() => {
       document.body.classList.add("menu-open");
       button.blur();
-      island?.menu();
+      getIsland()?.menu();
       open = true;
       timer = window.setTimeout(() => {
         document.body.classList.remove("menu-running");
@@ -43,7 +48,7 @@ export function initMenu(island: Island | null): MenuHandle {
     document.body.classList.add("menu-running");
     document.body.classList.remove("menu-open");
     button.classList.remove("is-active");
-    island?.leaveMenu();
+    getIsland()?.leaveMenu();
     open = false;
     timer = window.setTimeout(() => {
       document.body.classList.remove("menu-running");
