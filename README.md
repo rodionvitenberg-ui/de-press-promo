@@ -12,7 +12,7 @@
 - `npx tsc --noEmit` → 0 ошибок
 - `npm run lint`
 - `node --experimental-strip-types scripts/i18n-check.mjs` → OK
-  (перед прогоном: поднять сервер и выполнить `node scripts/regen-html-baseline.mjs`, снапшоты gitignored)
+  (перед прогоном: поднять сервер и выполнить `node --experimental-strip-types scripts/regen-html-baseline.mjs`, снапшоты gitignored)
 - `npm run build` → все страницы собираются
 - `npm run screenshots` — дифф против эталона `reference/screenshots/`
   (против dev :3001 или свежего `next start` :3111, `BASE_URL=…`)
@@ -28,7 +28,7 @@
 | `npm run build` / `start` | Production |
 | `npm run lint` | ESLint |
 | `npm run screenshots` | Эталонные скриншоты (CDP, нужен запущенный dev/start) → `reference/screenshots/` |
-| `node scripts/regen-html-baseline.mjs` | Live-снятие нормализованных SSR-снапшотов для i18n-check |
+| `node --experimental-strip-types scripts/regen-html-baseline.mjs` | Live-снятие нормализованных SSR-снапшотов для i18n-check |
 
 ## Ограничения
 

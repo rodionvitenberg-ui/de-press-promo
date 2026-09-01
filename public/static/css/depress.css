@@ -109,6 +109,80 @@
   padding-bottom: 2px;
 }
 
+/* Privacy — factual data inventory (adapted from GDPR-docs/PRIVACY.md).
+   Same quiet shell as .dp-safety: no runtime, no WebGL. */
+.dp-privacy {
+  min-height: 100vh;
+  background-color: #131417;
+  color: #fff;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.dp-privacy__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8vh 24px 12vh;
+}
+
+.dp-privacy__tag {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.5;
+  margin: 0 0 24px;
+}
+
+.dp-privacy h1 {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+
+.dp-privacy__lead {
+  font-size: 18px;
+  color: #fff;
+  opacity: 0.8;
+  margin: 0 0 40px;
+}
+
+.dp-privacy h2 {
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  margin: 48px 0 16px;
+  font-weight: 700;
+}
+
+.dp-privacy p {
+  margin: 0 0 16px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.dp-privacy ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.dp-privacy ul li {
+  margin-bottom: 12px;
+}
+
+.dp-privacy__back {
+  display: inline-block;
+  margin-top: 56px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 2px;
+}
+
 /* ==========================================================================
    EXPERIMENT — scene lighting without baked art.
    The island's look is baked (Tripo "night" matcap), so the page plays the same

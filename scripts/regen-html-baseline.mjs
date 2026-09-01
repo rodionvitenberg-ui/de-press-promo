@@ -24,6 +24,7 @@ const PAGES = [
   { name: "values", path: "/values/" },
   { name: "contact", path: "/contact/" },
   { name: "safety", path: "/safety/" },
+  { name: "privacy", path: "/privacy/" },
 ];
 
 mkdirSync(BASE, { recursive: true });
@@ -174,5 +175,5 @@ for (const locale of LOCALES) {
     console.log("regen (live):", `${locale}--${page.name}`);
   }
 }
-console.log("REGEN DONE 50");
+console.log(`REGEN DONE ${LOCALES.length * PAGES.length}`);
 

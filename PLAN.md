@@ -8,11 +8,11 @@
 
 - Ветка `main`, точка отсчёта — тег `pre-originalize`. **Один шаг = одна задача = один атомарный коммит.**
 - Контентная оригинализация исходного ТЗ закрыта: хедер, hero «Don't cry alone» (10 локалей), соц-блок, app-линк, музыка удалена, шторка меню, фирменный красный → белый, футер-линки, контакты, cookie-функционал, values (белая тема + контраст).
-- Все страницы — собственный JSX: `components/pages/{home,about,values,contact}.tsx` + safety, рендер через `renderPage` (`components/pages/renderer.tsx`). Фаза 2 (markups → JSX) завершена. `components/legacy/markups/` остались только как источник синтеза baseline для html-diff (`scripts/regen-html-baseline.mjs`).
-- Собственный рантайм написан и работает за лаб-флагом **`?boot=own`** (`components/legacy/BootPage.tsx` → `components/runtime/boot.ts`: capabilities → scene-data → island → cases/cookie/header/menu/reveals/table-expand/typed). **По умолчанию сайт всё ещё грузит легаси-вендор `public/static/js/main.js` (1.68 МБ) + `detectizr.js` + `modernizr.js`.**
+- Все страницы — собственный JSX: `components/pages/{home,about,values,contact}.tsx` + safety + privacy, рендер через `renderPage` (`components/pages/renderer.tsx`); safety/privacy — статические контентные страницы без рантайма (`components/legacy/{SafetyContent,PrivacyContent}.tsx`). Легаси-шаблоны (`components/legacy/markups/`) и `html-diff` снесены (A3).
+- Собственный рантайм — безусловный дефолт (A2): `components/runtime/RuntimeBoot.tsx` → `runtime/boot.ts` (capabilities → DOM-модули → loader → island → cases/cookie/header/menu/reveals/table-expand/typed). Легаси-вендор (`public/static/js/main.js` + detectizr + modernizr) удалён (A3).
 - GL-сцена уже собственная: `components/legacy/glscene/` (TypeScript/three), данные `public/data/scene/*.json` — первоисточник.
 - Словари: 10 локалей (ключ = RU-строка); ключ «Don't cry alone» есть во всех 10 — футер-фиксу словарные правки не нужны.
-- GDPR: документация пришла (`GDPR-docs/PRIVACY.md`, `CONTEXT.md`, `README.md`); самой страницы нет; ссылка «Подробнее о приватности» в куки-баре ведёт на `/values/` (заглушка).
+- GDPR: страница `/privacy/` реализована на всех 10 локалях (A4); ссылка «Подробнее о приватности» в куки-баре ведёт на неё. `GDPR-docs/` удаляются после приёмки пользователем.
 
 ## Кто что делает
 
@@ -52,11 +52,13 @@
 - `next.config.ts`: `reactStrictMode: true`.
 - `scripts/html-diff.mjs` снят с дежурства (guard «SSR = легаси-снимок» завершён); `regen-html-baseline.mjs` переведён на live-снятие всех 5 страниц × 10 локалей (normalize перенесён из html-diff) — **все 50 live-снапшотов байт-идентичны прежним синтезированным** (паритет live SSR ↔ легаси-синтез). Регрессия дальше — по эталонным скриншотам.
 
-### A4. GDPR-страница ⬜
+### A4. GDPR-страница ✅ (01.09.2026)
 
-- Маршрут и набор локалей — **согласовать с пользователем** (например `/privacy/`, все 10 или ru+en).
-- Контент — из `GDPR-docs/PRIVACY.md` (фактическая инвентаризация данных платформы), адаптировать под промо-сайт; `CONTEXT.md` — словарь терминов.
-- Куки-бар: «Подробнее о приватности» → на новую страницу. Белая тема куки-бара — после A2.
+- Решение пользователя: маршрут `/privacy/`, все 10 локалей.
+- `components/legacy/PrivacyContent.tsx` — фактическая инвентаризация из `GDPR-docs/PRIVACY.md`, адаптированная под промо-сайт (принципы / что хранится / чего нет / retention / проверяемость), тон safety-страницы; статическая страница без рантайма по паттерну `SafetyContent`. Стили `.dp-privacy` в `depress.css` (та же тихая оболочка, что `.dp-safety`).
+- Роуты `app/(legacy)/privacy/page.tsx` (ru) + `app/(legacy)/[lang]/privacy/page.tsx` (9 локалей, SSG; `/ru/privacy/` → 404 — паритет с safety).
+- Куки-бар: «Подробнее о приватности» → `href("/privacy/")`.
+- i18n: 28 новых ключей ×9 локалей; 4 переиспользованы из прежних страниц («Приватность», «Принципы», «Чего здесь нет», «← Вернуться на главную» — словарные значения сохранены). `i18n-check.mjs`: PAGES + privacy (6×10=60 снапшотов), T_SOURCE_FILES + PrivacyContent + оба privacy-роута; `regen-html-baseline.mjs`: PAGES + privacy, «REGEN DONE 50» → динамический счёт.
 - После приёмки — удалить `GDPR-docs/` (остаётся в git-истории).
 
 ### A5. Финальная вычитка текстов ⬜ (после B)
@@ -87,7 +89,6 @@
 
 ## Открытые решения (нужно решение пользователя)
 
-- GDPR: маршрут и набор локалей (A4).
 - Кейсы: контент/посыл/фоны/matcap — заполняется по ходу трека B.
 - Хостинг и домен (деплой): Vercel vs VPS рядом с `app.de-press.co` (учитывать объём статики).
 

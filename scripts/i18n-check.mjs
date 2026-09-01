@@ -30,6 +30,7 @@ const PAGES = [
   { name: "values", path: "/values/" },
   { name: "contact", path: "/contact/" },
   { name: "safety", path: "/safety/" },
+  { name: "privacy", path: "/privacy/" },
 ];
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3111";
 const CYRILLIC = /[\u0400-\u04FF]/;
@@ -41,11 +42,14 @@ const T_SOURCE_FILES = [
   "components/pages/values.tsx",
   "components/pages/contact.tsx",
   "components/legacy/SafetyContent.tsx",
+  "components/legacy/PrivacyContent.tsx",
   "app/(legacy)/page.tsx",
   "app/(legacy)/about/page.tsx",
   "app/(legacy)/values/page.tsx",
   "app/(legacy)/contact/page.tsx",
   "app/(legacy)/safety/page.tsx",
+  "app/(legacy)/privacy/page.tsx",
+  "app/(legacy)/[lang]/privacy/page.tsx",
 ];
 
 /** Snapshot lines → localizable strings (text tokens, attrs, js-sentences). */

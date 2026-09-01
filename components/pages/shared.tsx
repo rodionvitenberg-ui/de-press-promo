@@ -189,7 +189,7 @@ export function CookieBar({ t, href }: SharedProps) {
     <div className="site-cookie js-cookie">
       <p className="site-cookie__text">
         {tx(t, "Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. ")}
-        <a href={href("/values/")} target="_blank">{t("Подробнее о приватности")}</a>.
+        <a href={href("/privacy/")} target="_blank">{t("Подробнее о приватности")}</a>.
       </p>
 
       <div className="site-cookie__buttons">
