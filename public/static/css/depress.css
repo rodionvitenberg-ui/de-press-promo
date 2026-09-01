@@ -678,3 +678,36 @@ html[lang="ko"] .home-hero-title .fx-word:first-of-type {
 [data-router-view="values"] .values-link {
   color: #131419;
 }
+
+/* --- home cases: feelings («Если ты…») --------------------------------------
+   The card is the message now: the feeling word (.home-cases-name) and the
+   quiet tool offer (.link--caret) are visible on desktop too — main.css hides
+   both for no-touch. Scenes are stacked, so they join the legacy scene
+   choreography main.css gives only to .home-cases-headline/.home-cases-line:
+   invisible while the scene is inactive, faded in on is-visible, faded out on
+   leave. */
+
+.no-touchevents .home-cases-name,
+.no-touchevents .home-cases-content .link--caret {
+  display: block;
+}
+
+html:not(.disable-motion).no-touchevents .home-cases-name,
+html:not(.disable-motion).no-touchevents .home-cases-content .link--caret {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+html:not(.disable-motion).no-touchevents .home-cases-scene.is-visible .home-cases-name,
+html:not(.disable-motion).no-touchevents .home-cases-scene.is-visible .home-cases-content .link--caret {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-cases-name,
+html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-cases-content .link--caret {
+  display: none;
+}

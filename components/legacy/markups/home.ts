@@ -197,41 +197,35 @@ export const MARKUP = `<!-- Wrapper -->
         
 <section class="home-cases">
   <div class="center">
-    <h2 class="home-cases-title js-in-view appear-fade-up">Истории</h2>
+    <h2 class="home-cases-title js-in-view appear-fade-up">Если ты…</h2>
 
 
     <ul class="home-cases-list js-cases-list">
-              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="tomorrowland" data-matcap="18, 18"><span>Публичное</span> Монолог</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="navy-pier" data-matcap="7, 7"><span>Публичное</span> Я слышу тебя</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="msi-chicago" data-matcap="8, 8"><span>Публичное</span> Тихие фразы</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="this-was-louises-phone" data-matcap="11, 11"><span>Публичное</span> Похожая история</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="kikk-18" data-matcap="9, 9"><span>Автору</span> Pulse</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="the-kennedy-center" data-matcap="10, 10"><span>Автору</span> Hearers</a></li>
-              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="orw" data-matcap="12, 12"><span>Безопасность</span> Anti-Panic</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="tomorrowland" data-matcap="18, 18">Одиноко</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="navy-pier" data-matcap="7, 7">Изолированно</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="msi-chicago" data-matcap="8, 8">Неслышно</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="this-was-louises-phone" data-matcap="11, 11">Нетак</a></li>
+              <li class="js-in-view appear-fade-up"><a href="/about/" data-theme="orw" data-matcap="12, 12">Слишком</a></li>
           </ul>
   </div>
 
   <div class="home-cases-scenes">
-          <div class="home-cases-scene home-cases-scene--tomorrowland">
-        <h3 class="u-visually-hidden">Монолог</h3>
+<div class="home-cases-scene home-cases-scene--tomorrowland">
+        <h3 class="u-visually-hidden">Одиноко</h3>
 
         <div class="inner">
-          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Монолог</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Одиноко</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Облачко</p>
             
-            <p class="home-cases-name">Монолог</p>
+            <p class="home-cases-name">Одиноко</p>
             <p class="home-cases-text">
-                            
-                              <span class="home-cases-line">Твоя история — без лайков,</span>
+                              <span class="home-cases-line">Не потому, что вокруг никого.</span>
                               <span class="home-cases-line">
-без оценок и без гонки</span>
-                              <span class="home-cases-line">
-за вниманием.</span>
+А потому, что сказать некому.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Подробнее</span>
+              <span class="link--caret-text">Монолог</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
@@ -250,25 +244,21 @@ export const MARKUP = `<!-- Wrapper -->
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--navy-pier">
-        <h3 class="u-visually-hidden">Я слышу тебя</h3>
+        <h3 class="u-visually-hidden">Изолированно</h3>
 
         <div class="inner">
-          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Я слышу тебя</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Изолированно</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Реакция</p>
             
-            <p class="home-cases-name">Я слышу тебя</p>
+            <p class="home-cases-name">Изолированно</p>
             <p class="home-cases-text">
-                            
-                              <span class="home-cases-line">Единственная реакция здесь —</span>
+                              <span class="home-cases-line">Даже среди своих — как за стеклом.</span>
                               <span class="home-cases-line">
-не лайк, а присутствие:</span>
-                              <span class="home-cases-line">
-«я рядом, я услышал».</span>
+Всё слышишь. Тебя — нет.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Подробнее</span>
+              <span class="link--caret-text">Я слышу тебя</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
@@ -287,25 +277,21 @@ export const MARKUP = `<!-- Wrapper -->
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--msi-chicago">
-        <h3 class="u-visually-hidden">Тихие фразы</h3>
+        <h3 class="u-visually-hidden">Неслышно</h3>
 
         <div class="inner">
-          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Тихие фразы</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Неслышно</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Поддержка</p>
             
-            <p class="home-cases-name">Тихие фразы</p>
+            <p class="home-cases-name">Неслышно</p>
             <p class="home-cases-text">
-                            
-                              <span class="home-cases-line">Короткие слова поддержки. </span>
+                              <span class="home-cases-line">Ты говоришь. Слова падают.</span>
                               <span class="home-cases-line">
-Бережно, без споров </span>
-                              <span class="home-cases-line">
-и без публичных тредов.</span>
+Никто не поднимает.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Подробнее</span>
+              <span class="link--caret-text">Тихие фразы</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
@@ -324,25 +310,21 @@ export const MARKUP = `<!-- Wrapper -->
         </div>
       </div>
           <div class="home-cases-scene home-cases-scene--this-was-louises-phone">
-        <h3 class="u-visually-hidden">Похожая история</h3>
+        <h3 class="u-visually-hidden">Нетак</h3>
 
         <div class="inner">
-          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Похожая история</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Нетак</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Резонанс</p>
             
-            <p class="home-cases-name">Похожая история</p>
+            <p class="home-cases-name">Нетак</p>
             <p class="home-cases-text">
-                            
-                              <span class="home-cases-line">Чужой опыт, похожий на твой. </span>
+                              <span class="home-cases-line">Кажется, так чувствуешь только ты.</span>
                               <span class="home-cases-line">
-Связь через резонанс, </span>
-                              <span class="home-cases-line">
-а не обсуждение.</span>
+„Кажется“ — здесь главное слово.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Подробнее</span>
+              <span class="link--caret-text">Похожая история</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
@@ -360,96 +342,22 @@ export const MARKUP = `<!-- Wrapper -->
           </picture>
         </div>
       </div>
-          <div class="home-cases-scene home-cases-scene--kikk-18">
-        <h3 class="u-visually-hidden">Pulse</h3>
-
-        <div class="inner">
-          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Pulse</span></a>
-
-          <div class="home-cases-content">
-                          <p class="home-cases-headline">Автору</p>
-            
-            <p class="home-cases-name">Pulse</p>
-            <p class="home-cases-text">
-                            
-                              <span class="home-cases-line">Тихий пульс истории: её слышат — и это видно только тебе.</span>
-                          </p>
-            <p class="link link--caret">
-              <span class="link--caret-text">Подробнее</span>
-                <span class="svg svg-caret-right">
-  	<svg width="7" height="11">
-    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
-  	</svg>
-  </span>
-
-            </p>
-          </div>
-
-          <picture class="home-cases-picture">
-            <source data-srcset="/static/assets/images/cases/kikk-18/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/static/assets/images/cases/kikk-18/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/static/assets/images/cases/kikk-18/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/static/assets/images/cases/kikk-18/background-1440.png" alt="" class="js-lazy">
-          </picture>
-        </div>
-      </div>
-          <div class="home-cases-scene home-cases-scene--the-kennedy-center">
-        <h3 class="u-visually-hidden">Hearers</h3>
-
-        <div class="inner">
-          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Hearers</span></a>
-
-          <div class="home-cases-content">
-                          <p class="home-cases-headline">Автору</p>
-            
-            <p class="home-cases-name">Hearers</p>
-            <p class="home-cases-text">
-                            
-                              <span class="home-cases-line">Те, кто услышал историю.</span>
-                              <span class="home-cases-line">
-Список виден</span>
-                              <span class="home-cases-line">
-только её автору.</span>
-                          </p>
-            <p class="link link--caret">
-              <span class="link--caret-text">Подробнее</span>
-                <span class="svg svg-caret-right">
-  	<svg width="7" height="11">
-    	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
-  	</svg>
-  </span>
-
-            </p>
-          </div>
-
-          <picture class="home-cases-picture">
-            <source data-srcset="/static/assets/images/cases/the-kennedy-center/background-450.png" media="(max-width: 450px)">
-            <source data-srcset="/static/assets/images/cases/the-kennedy-center/background-815.png" media="(max-width: 815px)">
-            <source data-srcset="/static/assets/images/cases/the-kennedy-center/background-1015.png" media="(max-width: 1030px)">
-            <img data-src="/static/assets/images/cases/the-kennedy-center/background-1440.png" alt="" class="js-lazy">
-          </picture>
-        </div>
-      </div>
           <div class="home-cases-scene home-cases-scene--orw">
-        <h3 class="u-visually-hidden">Anti-Panic</h3>
+        <h3 class="u-visually-hidden">Слишком</h3>
 
         <div class="inner">
-          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Anti-Panic</span></a>
+          <a href="/about/" class="home-cases-link"><span class="u-visually-hidden">Слишком</span></a>
 
           <div class="home-cases-content">
-                          <p class="home-cases-headline">Безопасность</p>
             
-            <p class="home-cases-name">Anti-Panic</p>
+            <p class="home-cases-name">Слишком</p>
             <p class="home-cases-text">
-                            
-                              <span class="home-cases-line">Режим тишины, когда всё</span>
+                              <span class="home-cases-line">Когда всё слишком, даже хорошая новость — лишняя.</span>
                               <span class="home-cases-line">
-слишком. Лента и уведомления</span>
-                              <span class="home-cases-line">
-молчат, помощь — рядом.</span>
+Хочется куда-то, где тихо.</span>
                           </p>
             <p class="link link--caret">
-              <span class="link--caret-text">Подробнее</span>
+              <span class="link--caret-text">Anti-Panic</span>
                 <span class="svg svg-caret-right">
   	<svg width="7" height="11">
     	<use xlink:href="/static/assets/spritesheet.svg#caret-right"></use> 
@@ -467,7 +375,7 @@ export const MARKUP = `<!-- Wrapper -->
           </picture>
         </div>
       </div>
-      </div>
+                </div>
 </section>
 
         <section class="home-about js-in-view">

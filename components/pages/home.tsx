@@ -22,69 +22,49 @@ import type { Translator } from "@/i18n/core";
 type CaseItem = {
   theme: string;
   matcap: string;
-  group: string;
+  /** The feeling — list trigger and the big card name. */
   name: string;
-  headline: string;
   /** Exact template text per .home-cases-line (leading/trailing spaces matter). */
   lines: string[];
+  /** The quiet offer — tool name in the caret link. */
+  offer: string;
 };
 
 const CASES: CaseItem[] = [
   {
     theme: "tomorrowland",
     matcap: "18, 18",
-    group: "Публичное",
-    name: "Монолог",
-    headline: "Облачко",
-    lines: ["Твоя история — без лайков,", " без оценок и без гонки", " за вниманием."],
+    name: "Одиноко",
+    lines: ["Не потому, что вокруг никого.", " А потому, что сказать некому."],
+    offer: "Монолог",
   },
   {
     theme: "navy-pier",
     matcap: "7, 7",
-    group: "Публичное",
-    name: "Я слышу тебя",
-    headline: "Реакция",
-    lines: ["Единственная реакция здесь —", " не лайк, а присутствие:", " «я рядом, я услышал»."],
+    name: "Изолированно",
+    lines: ["Даже среди своих — как за стеклом.", " Всё слышишь. Тебя — нет."],
+    offer: "Я слышу тебя",
   },
   {
     theme: "msi-chicago",
     matcap: "8, 8",
-    group: "Публичное",
-    name: "Тихие фразы",
-    headline: "Поддержка",
-    lines: ["Короткие слова поддержки. ", " Бережно, без споров ", " и без публичных тредов."],
+    name: "Неслышно",
+    lines: ["Ты говоришь. Слова падают.", " Никто не поднимает."],
+    offer: "Тихие фразы",
   },
   {
     theme: "this-was-louises-phone",
     matcap: "11, 11",
-    group: "Публичное",
-    name: "Похожая история",
-    headline: "Резонанс",
-    lines: ["Чужой опыт, похожий на твой. ", " Связь через резонанс, ", " а не обсуждение."],
-  },
-  {
-    theme: "kikk-18",
-    matcap: "9, 9",
-    group: "Автору",
-    name: "Pulse",
-    headline: "Автору",
-    lines: ["Тихий пульс истории: её слышат — и это видно только тебе."],
-  },
-  {
-    theme: "the-kennedy-center",
-    matcap: "10, 10",
-    group: "Автору",
-    name: "Hearers",
-    headline: "Автору",
-    lines: ["Те, кто услышал историю.", " Список виден", " только её автору."],
+    name: "Нетак",
+    lines: ["Кажется, так чувствуешь только ты.", " „Кажется“ — здесь главное слово."],
+    offer: "Похожая история",
   },
   {
     theme: "orw",
     matcap: "12, 12",
-    group: "Безопасность",
-    name: "Anti-Panic",
-    headline: "Безопасность",
-    lines: ["Режим тишины, когда всё", " слишком. Лента и уведомления", " молчат, помощь — рядом."],
+    name: "Слишком",
+    lines: ["Когда всё слишком, даже хорошая новость — лишняя.", " Хочется куда-то, где тихо."],
+    offer: "Anti-Panic",
   },
 ];
 
@@ -97,7 +77,6 @@ function CaseScene({ item, t, href }: { item: CaseItem; t: Translator; href: (ba
           <span className="u-visually-hidden">{t(item.name)}</span>
         </a>
         <div className="home-cases-content">
-          <p className="home-cases-headline">{t(item.headline)}</p>
           <p className="home-cases-name">{t(item.name)}</p>
           <p className="home-cases-text">
             {item.lines.flatMap((line, i) =>
@@ -107,7 +86,7 @@ function CaseScene({ item, t, href }: { item: CaseItem; t: Translator; href: (ba
             )}
           </p>
           <p className="link link--caret">
-            <span className="link--caret-text">{t("Подробнее")}</span>{" "}
+            <span className="link--caret-text">{t(item.offer)}</span>{" "}
             <CaretRight />
           </p>
         </div>
@@ -185,14 +164,13 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
 
             <section className="home-cases">
               <div className="center">
-                <h2 className="home-cases-title js-in-view appear-fade-up">{t("Истории")}</h2>
+                <h2 className="home-cases-title js-in-view appear-fade-up">{t("Если ты…")}</h2>
 
                 <ul className="home-cases-list js-cases-list">
                   {CASES.map((item) => (
                     <li key={item.theme} className="js-in-view appear-fade-up">
                       <a href={href("/about/")} data-theme={item.theme} data-matcap={item.matcap}>
-                        <span>{t(item.group)}</span>
-                        {tx(t, ` ${item.name}`)}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
