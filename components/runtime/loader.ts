@@ -5,9 +5,9 @@ import { easeOutQuad, tween, type TweenHandle } from "./easing";
  * `.site-loader` show (`is-visible`, 1.2s) → fake ring percentage (100ms
  * ticks capped at 0.9, dashoffset = (130 − 130·p)·π) driven in parallel with
  * the island load → full-ring tween (1s, Quad.easeOut — the GSAP default
- * Power1 ease) that emits `completed` → hide (`is-hidden`). `slideIn`/
- * `slideOut` belong to the Highway page transitions and stay unported while
- * navigation is a full page load (plan A2 scope).
+ * Power1 ease) that emits `completed` → hide (`is-hidden`). The Highway
+ * `slideIn`/`slideOut` page transitions live in `runtime/transition.ts`
+ * (the curtain passes over full page loads).
  */
 export type LoaderHandle = {
   /** Resolves when the legacy loader emits `completed` (ring at 100%). */
@@ -25,10 +25,22 @@ export function initLoader(options: {
   glLoad: Promise<void>;
   /** Legacy `Island.loaded()` — retina SSAA config, runs at 100%. */
   onIslandLoaded: () => void;
+  /**
+   * Show the ring (`is-visible`) — direct page opens. A curtain-transition
+   * enter keeps the ring hidden under the cover (boot passes `false`).
+   */
+  show?: boolean;
 }): LoaderHandle {
   const root = document.querySelector<HTMLElement>(".site-loader");
   const progress =
     root?.querySelector<SVGGeometryElement>(".site-loader-percent") ?? null;
+
+  // Legacy CSS seeded the ring empty; the same initial dashoffset is set
+  // inline so the first tween starts from the empty ring even if the
+  // stylesheet has not applied yet.
+  if (progress && !progress.style.strokeDashoffset) {
+    progress.style.strokeDashoffset = String(130 * Math.PI);
+  }
 
   const tweens: TweenHandle[] = [];
   const timers: number[] = [];
@@ -60,8 +72,9 @@ export function initLoader(options: {
   };
 
   const completed = (async () => {
-    // Show: `is-visible` + the fixed 1.2s intro window.
-    root?.classList.add("is-visible");
+    // Show: `is-visible` + the fixed 1.2s intro window (skipped on a curtain
+    // transition enter — the transition curtain is the cover there).
+    if (options.show !== false) root?.classList.add("is-visible");
     await new Promise((resolve) =>
       timers.push(window.setTimeout(resolve, SHOW_MS)),
     );

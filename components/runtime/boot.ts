@@ -9,6 +9,13 @@ import { initMenu } from "./menu";
 import { initReveals } from "./reveals";
 import { loadSceneData } from "./scene-data";
 import { initTableExpand } from "./table-expand";
+import {
+  CURTAIN_MS,
+  NAV_HOLD_MS,
+  initTransitions,
+  isNavEnter,
+  startNavExit,
+} from "./transition";
 import { initTyped } from "./typed";
 import { PAGE_STATES, type PageSlug } from "./types";
 import type { IslandProfile } from "./island";
@@ -45,6 +52,11 @@ export async function bootRuntime(options: BootOptions): Promise<RuntimeHandle> 
   const caps = detectCapabilities();
   applyDeviceFlags(caps);
 
+  // Nav-enter: the layout inline script marked the page as opened under the
+  // transition curtain — the loader ring stays hidden and the curtain slides
+  // away after `completed` (+0.3s hold, see `startNavExit`).
+  const viaNav = isNavEnter();
+
   const cleanups: (() => void)[] = [];
   // Object holder: the island is created inside the glLoad closure — a plain
   // `let` would defeat TS control-flow analysis at the `completed` branch.
@@ -75,6 +87,9 @@ export async function bootRuntime(options: BootOptions): Promise<RuntimeHandle> 
   ) as PageSlug;
 
   const loader = initLoader({
+    // The ring shows on direct opens; a curtain-transition enter stays under
+    // the cover (the curtain is the preloader there).
+    show: !viaNav,
     // Legacy `Loader.load`: `: true` (instant) when the scene is disabled.
     glLoad: (async () => {
       if (!caps.wasm || window.disable_scene) return;
@@ -117,11 +132,16 @@ export async function bootRuntime(options: BootOptions): Promise<RuntimeHandle> 
   cleanups.push(menu.destroy);
   cleanups.push(initHeader(menu.isOpen));
   cleanups.push(initCookie());
+  cleanups.push(initTransitions());
 
   if (slug === "about") cleanups.push(initTableExpand(islandRef.current));
   if (slug === "contact") cleanups.push(initTyped());
 
   await loader.completed;
+
+  // Nav-enter: the curtain covered the whole load — hold briefly, then slide
+  // it out to the right (the page beneath is ready at this point).
+  if (viaNav) startNavExit(cleanups);
 
   // Legacy `Default.onLoaderCompleted`: island show/intro/resize (its
   // onComplete removes `lock-scroll`), or the plain unlock without a scene.
@@ -145,9 +165,12 @@ export async function bootRuntime(options: BootOptions): Promise<RuntimeHandle> 
   }
 
   // Legacy Default: `InView.reset()` runs 500ms after the loader completed.
+  // After a curtain transition the reveals wait until the curtain has left
+  // (hold + pass), so the entrance choreography plays in the open.
+  const revealDelay = viaNav ? NAV_HOLD_MS + CURTAIN_MS : IN_VIEW_DELAY_MS;
   const inViewTimer = window.setTimeout(() => {
     cleanups.push(initReveals().destroy);
-  }, IN_VIEW_DELAY_MS);
+  }, revealDelay);
   cleanups.push(() => window.clearTimeout(inViewTimer));
 
   return { destroy };

@@ -3,7 +3,9 @@ import type { Island } from "./island";
 /**
  * Fullscreen menu — port of the legacy `Menu` module:
  * click → `button.is-active`, after 800ms `body.menu-open` + scene MENU_STATE;
- * close reverses immediately under `body.menu-running` guard. Esc closes.
+ * close replays the same curtain pass (−100% → 0 → +100%) and drops
+ * `menu-open` at mid-pass — the page is revealed as the curtain slides away.
+ * Esc closes.
  */
 export type MenuHandle = { destroy: () => void; isOpen: () => boolean };
 
@@ -46,14 +48,19 @@ export function initMenu(getIsland: () => Island | null): MenuHandle {
     if (running || !open) return;
     running = true;
     document.body.classList.add("menu-running");
-    document.body.classList.remove("menu-open");
     button.classList.remove("is-active");
-    getIsland()?.leaveMenu();
-    open = false;
+    // The curtain replays the same left-to-right pass as on open. The menu
+    // stays visible under it while it covers the screen (first half of the
+    // 1.6s panel pass), then the page is revealed as the curtain slides away.
     timer = window.setTimeout(() => {
-      document.body.classList.remove("menu-running");
-      running = false;
-    }, RUNNING_MS);
+      document.body.classList.remove("menu-open");
+      getIsland()?.leaveMenu();
+      open = false;
+      timer = window.setTimeout(() => {
+        document.body.classList.remove("menu-running");
+        running = false;
+      }, RUNNING_MS);
+    }, OPEN_DELAY_MS);
   };
 
   const onClick = () => (open ? doClose() : doOpen());

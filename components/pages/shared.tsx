@@ -69,8 +69,8 @@ export function SiteLoader() {
         <span className="site-loader-sprite" />
         <div className="site-loader-progress">
           <svg>
-            <circle r="67" cx="68" cy="68" className="site-loader-stroke" />
-            <circle r="67" cx="68" cy="68" className="site-loader-percent" />
+            <circle r="65" cx="68" cy="68" className="site-loader-stroke" />
+            <circle r="65" cx="68" cy="68" className="site-loader-percent" />
           </svg>
         </div>
       </div>
@@ -106,8 +106,8 @@ export function SiteMenuPanel() {
 }
 
 const MENU_ITEMS = [
+  { key: "home", bare: "/", label: "Главная" },
   { key: "about", bare: "/about/", label: "О проекте" },
-  { key: "home", bare: "/", label: "Истории" },
   { key: "values", bare: "/values/", label: "Принципы" },
   { key: "contact", bare: "/contact/", label: "Связаться" },
 ];

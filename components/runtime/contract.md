@@ -24,7 +24,9 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
    ассетов острова → `loaded()` (retina: `setSSAA(true)`, `setSSAAQuality(1)`,
    `setPixelRatio(1)` при devicePixelRatio > 1) → кольцо в 0 за 1s →
    `completed` → `is-hidden`. На mobile/no-wasm загрузка мгновенна
-   (легаси `: true`), тайминги лоадера те же.
+   (легаси `: true`), тайминги лоадера те же. Кольцо видимо на прямых
+   открытиях (обложка с первого кадра — `html.dp-boot-load`, inline-скрипт
+   layout); при шторочном входе (`html.dp-nav-in`) — скрыто под шторкой.
 7. По `completed` (легаси `Default.onLoaderCompleted`): остров есть →
    `show()` + `init()` + `onResize()` (unlock — в onComplete интро);
    острова нет → снять `lock-scroll` напрямую (мобильный путь).
@@ -58,8 +60,9 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
 |---|---|
 | `.js-in-view` | IntersectionObserver → добавить `.in-view` (однократно); hero/`.fx-parent` каскад — чистый CSS по `.in-view` |
 | `.js-lazy` (+ `source[data-srcset]`) | lazy-подмена `data-src`/`data-srcset` при приближении (lozad-поведение, margin 300px); исключение: элементы с нулевым rect (скрытые сцены) прелоадятся сразу — IO их никогда не увидит |
-| `.site-header-button` | открыть/закрыть меню: `button.is-active`; через 800ms `body.menu-open`; сцена → MENU_STATE |
+| `.site-header-button` | открыть/закрыть меню: `button.is-active`; через 800ms `body.menu-open`; сцена → MENU_STATE. Закрытие — тот же проход шторки (`menu-running` 1.6s), `menu-open` снимается в середине (ещё через 800ms) — страница раскрывается уходом шторки вправо |
 | `body.menu-running` | блокировка повторных кликов на время анимации шторки |
+| `html.dp-nav-in` / `.dp-nav-cover` / `.dp-nav-out` + `.page-curtain` | шторочные переходы страниц (`runtime/transition.ts` + inline-скрипт `app/(legacy)/layout.tsx`): leave — внутренняя ссылка (кроме `/safety/`, внешних, `_blank`/`download`) ставит `sessionStorage["dp-nav"]`, покрывает экран (0.8s) и навигирует; enter — скрипт до первой отрисовки потребляет флаг → `dp-nav-in` (страница открывается уже покрытой); boot после loader `completed` держит 0.3s и уводит шторку вправо (`dp-nav-out`). Без флага скрипт ставит `dp-boot-load` — обложка прелоадера с первого кадра прямого открытия |
 | `.js-cookie` + `.js-cookie-accept`/`.js-cookie-deny` | нет `localStorage.acceptedCookie` → `.visible`; клик → записать `true`/`false`, снять `.visible` |
 | `.home-cases-list a[data-matcap][data-theme]` | hover → `body[data-theme=…]` + tween `setMatcap(a,b)`; уход → сброс на страницу; сцены `.home-cases-scene` получают `is-visible`/`is-hidden` (`has-delay` — стаггер) |
 | `.js-table-expand` (about) | клик → `.about-table.is-expanded` (однократно) + пересчёт анкеров скролла |
@@ -69,9 +72,9 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
 
 ## Границы владения
 
-- Next.js: роуты, SSG/SSR, `<Link>` не используется на этом этапе — навигация
-  обычными `<a>` (full page load, каждый роут бутится заново). Overlay-переходы —
-  отдельное улучшение после паритета.
+- Next.js: роуты, SSG/SSR, `<Link>` не используется — навигация обычными
+  `<a>` (full page load, каждый роут бутится заново); переходы — шторка
+  поверх загрузки (`runtime/transition.ts`).
 - Рантайм владеет DOM после boot (React не ре-рендерит дерево страниц).
 - С A2 вендор `main.js`/`detectizr.js`/`modernizr.js` больше не загружается
   (дефолтный boot — `components/runtime/boot`); файлы удаляются в A3.
