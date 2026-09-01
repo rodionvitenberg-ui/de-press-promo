@@ -127,7 +127,7 @@
 
 Кратко (полная версия — в README):
 
-- `npx tsc --noEmit` · `npm run lint` · i18n-check (перед прогоном: поднять сервер, `node scripts/regen-html-baseline.mjs`) · `npm run build` · `npm run screenshots` · html-diff (пока живы markups) · smoke 200/404.
+- `npx tsc --noEmit` · `npm run lint` · i18n-check (перед прогоном: поднять сервер, `node --experimental-strip-types scripts/regen-html-baseline.mjs`) · `npm run build` · `npm run screenshots` · smoke 200/404.
 - Серверы: dev :3001 / `next start` :3111 (свежий, `BASE_URL=…`); остановка `pkill -f '[n]ext-server'`.
 - Правило для агентов: Next.js в репо новее обучающих данных — перед кодом читать `node_modules/next/dist/docs/`.
 
