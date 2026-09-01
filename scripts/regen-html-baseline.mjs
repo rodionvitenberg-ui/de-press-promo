@@ -27,8 +27,9 @@ const MARKUP_PAGES = [
   ["home", homeMarkup, "/"],
   ["about", aboutMarkup, "/about/"],
   ["values", valuesMarkup, "/values/"],
+  ["contact", contactMarkup, "/contact/"],
 ];
-const LIVE_PAGES = [["contact", "/contact/"], ["safety", "/safety/"]];
+const LIVE_PAGES = [["safety", "/safety/"]];
 
 mkdirSync(BASE, { recursive: true });
 

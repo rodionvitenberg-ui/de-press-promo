@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { renderLegacyPage } from "@/components/legacy/createLegacyPage";
+import { renderPage } from "@/components/pages/renderer";
 import { DEFAULT_LOCALE, getTranslator, isLocale, LOCALES } from "@/i18n";
-import * as page from "@/components/legacy/markups/contact";
+import contact from "@/components/pages/contact";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!isLocale(lang) || lang === DEFAULT_LOCALE) return {};
   const t = getTranslator(lang);
   return {
-    title: t(page.PAGE_TITLE),
+    title: t(contact.PAGE_TITLE),
     description: t(
       "Написать de-press: помочь, участвовать в пилоте или поддержать проект. Кризис → 112/103 и /safety.",
     ),
@@ -27,5 +27,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LocalizedContactPage({ params }: Props) {
   const { lang } = await params;
   if (!isLocale(lang) || lang === DEFAULT_LOCALE) notFound();
-  return renderLegacyPage(page, { locale: lang, path: "/contact/" });
+  return renderPage(contact, { locale: lang, path: "/contact/" });
 }

@@ -95,9 +95,10 @@ function tokenize(html) {
   while ((t = re.exec(html))) {
     const seg = t[0];
     if (seg.startsWith("<")) {
-      // Canonicalize `attr=""` to a bare attribute — HTML treats them as the
-      // same attribute value (""), React always serializes the ="…" form.
-      let s = seg.replace(/=""/g, "");
+      // Canonicalize `attr=""` / `attr=''` to a bare attribute — HTML treats
+      // them as the same attribute value (""), React always serializes the
+      // ="…" form (the template had data-sentences='').
+      let s = seg.replace(/=['"]{2}/g, "");
       // React 19 passes legacy camelCase table attrs through unchanged;
       // HTML attribute names are case-insensitive → lowercase.
       s = s.replace(/cellPadding=/g, "cellpadding=").replace(/cellSpacing=/g, "cellspacing=");

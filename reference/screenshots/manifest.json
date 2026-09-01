@@ -36,7 +36,7 @@
     "route": "/about/",
     "booted": true,
     "locked": false,
-    "canvas": true,
+    "canvas": false,
     "loaderWait": "done"
   },
   {
