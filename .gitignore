@@ -42,3 +42,6 @@ next-env.d.ts
 
 # mirror HTML snapshots (regenerate via npm run mirror)
 /scripts/out/
+
+# agent material (not part of the repo)
+/marketingskills
