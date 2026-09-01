@@ -135,11 +135,26 @@ body::before {
   height: 100%;
   z-index: -2;
   pointer-events: none;
-  background:
-    radial-gradient(46% 30% at 50% 78%, rgba(240, 196, 140, 0.12), rgba(240, 196, 140, 0) 100%),
-    radial-gradient(80% 26% at 50% 102%, rgba(214, 166, 120, 0.10), rgba(214, 166, 120, 0) 70%),
-    radial-gradient(90% 70% at 50% 30%, rgba(104, 120, 185, 0.10), rgba(104, 120, 185, 0) 100%),
-    radial-gradient(130% 100% at 50% 50%, rgba(6, 8, 14, 0) 55%, rgba(6, 8, 14, 0.45) 100%);
+  background: radial-gradient(
+      46% 30% at 50% 78%,
+      rgba(240, 196, 140, 0.12),
+      rgba(240, 196, 140, 0) 100%
+    ),
+    radial-gradient(
+      80% 26% at 50% 102%,
+      rgba(214, 166, 120, 0.1),
+      rgba(214, 166, 120, 0) 70%
+    ),
+    radial-gradient(
+      90% 70% at 50% 30%,
+      rgba(104, 120, 185, 0.1),
+      rgba(104, 120, 185, 0) 100%
+    ),
+    radial-gradient(
+      130% 100% at 50% 50%,
+      rgba(6, 8, 14, 0) 55%,
+      rgba(6, 8, 14, 0.45) 100%
+    );
 }
 
 /* 3) the last section owns the horizon: dawn rises behind the ground fade */
@@ -152,17 +167,31 @@ body::before {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(60% 34% at 46% 100%, rgba(240, 196, 140, 0.13), rgba(240, 196, 140, 0) 100%),
-    radial-gradient(95% 55% at 50% 115%, rgba(214, 166, 120, 0.10), rgba(214, 166, 120, 0) 75%);
+  background: radial-gradient(
+      60% 34% at 46% 100%,
+      rgba(240, 196, 140, 0.13),
+      rgba(240, 196, 140, 0) 100%
+    ),
+    radial-gradient(
+      95% 55% at 50% 115%,
+      rgba(214, 166, 120, 0.1),
+      rgba(214, 166, 120, 0) 75%
+    );
 }
 
 /* 4) the menu shares the same environment (its art is hidden above) */
 .site-menu-back,
 .site-menu-panel {
-  background-image:
-    radial-gradient(46% 30% at 50% 78%, rgba(240, 196, 140, 0.12), rgba(240, 196, 140, 0) 100%),
-    radial-gradient(90% 70% at 50% 30%, rgba(104, 120, 185, 0.10), rgba(104, 120, 185, 0) 100%);
+  background-image: radial-gradient(
+      46% 30% at 50% 78%,
+      rgba(240, 196, 140, 0.12),
+      rgba(240, 196, 140, 0) 100%
+    ),
+    radial-gradient(
+      90% 70% at 50% 30%,
+      rgba(104, 120, 185, 0.1),
+      rgba(104, 120, 185, 0) 100%
+    );
 }
 
 /* ==========================================================================
@@ -182,7 +211,9 @@ body::before {
   font-weight: 400 900;
   font-display: swap;
   src: url("../assets/fonts/PlayfairDisplay-var-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -201,7 +232,9 @@ body::before {
   font-weight: 400;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-400-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -219,7 +252,9 @@ body::before {
   font-weight: 500;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-500-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -237,7 +272,9 @@ body::before {
   font-weight: 700;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-700-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -256,7 +293,9 @@ body::before {
   font-weight: 100;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-300-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -274,7 +313,9 @@ body::before {
   font-weight: 300;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-300-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -292,7 +333,9 @@ body::before {
   font-weight: 400;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-400-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -310,7 +353,9 @@ body::before {
   font-weight: 500;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-500-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -328,7 +373,9 @@ body::before {
   font-weight: 700;
   font-display: swap;
   src: url("../assets/fonts/FiraSans-700-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
@@ -384,12 +431,20 @@ body::before {
    line's hover response by .5s+. Re-assert the plain .link-line transition
    so the hover shrink answers immediately, like "Принципы". */
 html:not(.disable-motion) .home-hero-content .home-app-link .link-line {
-  transition: transform .5s cubic-bezier(.19, 1, .22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   transition-delay: 0s;
 }
 
-html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .link-line,
-html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .link-line--anim {
+html:not(.disable-motion)
+  .in-view.home-hero
+  .home-hero-content
+  .home-app-link
+  .link-line,
+html:not(.disable-motion)
+  .in-view.home-hero
+  .home-hero-content
+  .home-app-link
+  .link-line--anim {
   -webkit-transform: translateX(-20%) scaleX(1.2);
   transform: translateX(-20%) scaleX(1.2);
 }
@@ -404,8 +459,16 @@ html:not(.disable-motion) .in-view.home-hero .home-hero-content .home-app-link .
   transform: translateX(0) scaleX(1) !important;
 }
 
-html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link--under:hover .link-line,
-html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link--under:focus .link-line {
+html:not(.disable-motion)
+  .no-touchevents
+  .in-view.home-hero
+  .home-app-link.link--under:hover
+  .link-line,
+html:not(.disable-motion)
+  .no-touchevents
+  .in-view.home-hero
+  .home-app-link.link--under:focus
+  .link-line {
   -webkit-transform: translateX(0) scaleX(1);
   transform: translateX(0) scaleX(1);
 }
@@ -482,16 +545,16 @@ html:not(.disable-motion) .no-touchevents .in-view.home-hero .home-app-link.link
 }
 
 .menu-open .site-menu-slogan {
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-timing-function: cubic-bezier(.165, .84, .44, 1);
-  animation-timing-function: cubic-bezier(.165, .84, .44, 1);
+  -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-animation-name: uba4b19ff;
   animation-name: uba4b19ff;
-  -webkit-animation-delay: .6s;
-  animation-delay: .6s;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 .menu-close .site-menu-slogan {
@@ -535,9 +598,8 @@ html[lang="zh"] body,
 html[lang="ja"] body,
 html[lang="ko"] body {
   font-family: "Fira Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium",
-    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-    "Noto Sans CJK SC", "Noto Sans CJK JP", "Apple SD Gothic Neo",
-    "Malgun Gothic", sans-serif;
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    "Noto Sans CJK JP", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 html[lang="zh"] .fx-parent,
 html[lang="ja"] .fx-parent,
@@ -567,33 +629,32 @@ html[lang="ko"] .home-hero-title .fx-word:first-of-type {
 /* header sits below the full-screen dark panel (not visible), so the  */
 /* dark paint never shows against it.                                  */
 /* ------------------------------------------------------------------ */
-[data-theme=values] .dp-logo {
+[data-theme="values"] .dp-logo {
   color: #131419;
 }
 
-[data-theme=values] .site-header-button .button-bar {
+[data-theme="values"] .site-header-button .button-bar {
   background-color: #131419;
 }
 
-[data-theme=values] .site-header-cases,
-[data-theme=values] .site-header-posts {
+[data-theme="values"] .site-header-cases,
+[data-theme="values"] .site-header-posts {
   color: #131419;
 }
 
-[data-theme=values] .site-header-cases .svg,
-[data-theme=values] .site-header-posts .svg {
+[data-theme="values"] .site-header-cases .svg,
+[data-theme="values"] .site-header-posts .svg {
   fill: #131419;
 }
 
-[data-theme=values] .site-footer-block--address h3 {
+[data-theme="values"] .site-footer-block--address h3 {
   color: #131419;
 }
 
-[data-theme=values] .site-footer-title .baseline {
+[data-theme="values"] .site-footer-title .baseline {
   fill: #131419;
 }
 
-[data-router-view=values] .values-link {
+[data-router-view="values"] .values-link {
   color: #131419;
 }
-
