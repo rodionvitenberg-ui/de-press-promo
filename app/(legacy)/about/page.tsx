@@ -9,7 +9,7 @@ const t = getTranslator(DEFAULT_LOCALE);
 export const metadata: Metadata = {
   title: t(about.PAGE_TITLE),
   description: t(
-    "О проекте de-press: зачем тихая гавань, как устроены облачка и какие принципы мы не сломаем.",
+    "meta.about.description",
   ),
 };
 

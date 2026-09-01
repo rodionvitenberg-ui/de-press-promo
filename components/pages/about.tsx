@@ -19,44 +19,44 @@ import type { Translator } from "@/i18n/core";
 
 /** Roadmap table: [year, decision badge, decision, status, essence, comment]. */
 const TABLE_ROWS: string[][] = [
-  ["2024", "старт", "Проект", "Родился", "de-press переосмыслен как «тихая гавань»", "Некоммерческий, открытый код"],
-  ["2025", "инвариант", "Лайки", "Навсегда отменены", "Нет публичных лайков и рейтингов страдания", "Боль не собирает очки"],
-  ["2025", "инвариант", "Комментарии", "Навсегда отменены", "Нет публичных комментариев под историей", "Только тихие фразы"],
-  ["2025", "инвариант", "Чат", "Принято", "Чат инициирует только автор", "accept или Author Outreach"],
-  ["2025", "инвариант", "ИИ", "Принято", "ИИ всегда помечен", "Без диагнозов и toxic positivity"],
-  ["2025", "инвариант", "Карты эмоций", "Принято", "Только на устройстве пользователя", "ZK: сервер не видит"],
-  ["2025", "инвариант", "Anti-Panic", "Принято", "Важнее ленты и realtime", "Тишина важнее охвата"],
-  ["2025", "инвариант", "Кризис", "Принято", "112/103 и страница /safety", "Честность вместо запретов"],
-  ["2025", "инвариант", "Helper", "Принято", "Helper ≠ терапевт", "Присутствие, не лечение"],
-  ["2025", "не будет", "Треды", "Отменено", "Публичные обсуждения историй", "Приватно всё, кроме тишины"],
-  ["2025", "не будет", "Карта травм", "Отменено", "Серверное хранение состояний", "Только устройство"],
-  ["2025", "не будет", "AI-peer", "Отменено", "Скрытые роботы-собеседники", "Только помеченный ИИ"],
-  ["2025", "не будет", "Open matching", "Отменено", "Публичный поиск собеседников", "Решение за автором"],
-  ["2025", "не будет", "Голосовые", "Отменено", "WebRTC-комнаты", "Слишком шумно"],
-  ["2026", "в работе", "GL-модуль", "Пишется", "Собственная сцена вместо бандлов", "API 1:1 SceneGL"],
-  ["2026", "в работе", "Сцена", "Пишется", "JSON-стейты: камера, сплайны, matcap", "Catmull-Rom"],
-  ["2026", "в работе", "Нарратив", "Пишется", "История проекта вместо кейсов", ""],
-  ["2026", "в работе", "Модель", "Ищем", "Собственная 3D-модель", ""],
-  ["2026", "готово", "/safety", "Живёт", "Кризисная страница 112/103", ""],
-  ["2026", "в работе", "Промо", "Пишется", "Тексты и метаданные страниц", ""],
-  ["2026", "решение", "Приватность", "Принято", "Минимум данных, без трекеров", "Навсегда"],
-  ["2026", "решение", "Хостинг", "Принято", "Без рекламы и продажи данных", "Навсегда"],
-  ["2026", "в работе", "Доступность", "Пишется", "Контраст, клавиатура, читаемость", ""],
-  ["2026", "идея", "Локализация", "Открыто", "Сначала русский, потом English", ""],
-  ["2026", "открыто", "Исследование", "Идёт", "Что помогает: слушание vs советы", ""],
-  ["2026", "скоро", "Пилот", "2026", "Закрытый пилот сообщества", "Стучитесь на /contact/"],
-  ["2026", "дизайн", "Hearers", "Рисуем", "Виден только автору облачка", ""],
-  ["2026", "дизайн", "Pulse", "Рисуем", "Пульс истории — только автору", ""],
+  ["2024", "about.table.badge.start", "about.table.row.project", "about.table.stat.born", "about.table.essence.rebirth", "about.table.comment.nonprofit"],
+  ["2025", "about.table.badge.invariant", "about.table.row.likes", "about.table.stat.foreverCancelled", "about.table.essence.noLikeScores", "about.table.comment.painNoPoints"],
+  ["2025", "about.table.badge.invariant", "about.table.row.comments", "about.table.stat.foreverCancelled", "about.table.essence.noComments", "about.table.comment.quietPhrasesOnly"],
+  ["2025", "about.table.badge.invariant", "about.table.row.chat", "about.table.stat.accepted", "about.products.authorChat", "about.table.comment.acceptOutreach"],
+  ["2025", "about.table.badge.invariant", "about.table.row.ai", "about.table.stat.accepted", "about.table.essence.aiLabeled", "about.table.comment.noDiagnoses"],
+  ["2025", "about.table.badge.invariant", "about.table.row.emotionMaps", "about.table.stat.accepted", "about.table.essence.onDevice", "about.table.comment.zk"],
+  ["2025", "about.table.badge.invariant", "Anti-Panic", "about.table.stat.accepted", "about.table.essence.overFeed", "about.table.comment.silenceOverReach"],
+  ["2025", "about.table.badge.invariant", "about.table.row.crisis", "about.table.stat.accepted", "about.table.essence.crisisPath", "about.table.comment.honesty"],
+  ["2025", "about.table.badge.invariant", "Helper", "about.table.stat.accepted", "about.table.essence.helperNotTherapist", "about.table.comment.presence"],
+  ["2025", "about.table.badge.never", "about.table.row.threads", "about.table.stat.cancelled", "about.table.essence.noThreads", "about.table.comment.privacy"],
+  ["2025", "about.table.badge.never", "about.table.row.traumaMap", "about.table.stat.cancelled", "about.table.essence.noServerStates", "about.table.comment.deviceOnly"],
+  ["2025", "about.table.badge.never", "AI-peer", "about.table.stat.cancelled", "about.table.row.aiPeer", "about.table.comment.labeledOnly"],
+  ["2025", "about.table.badge.never", "Open matching", "about.table.stat.cancelled", "about.table.essence.noOpenMatching", "about.table.comment.authorDecides"],
+  ["2025", "about.table.badge.never", "about.table.row.voice", "about.table.stat.cancelled", "about.table.essence.noWebRTC", "about.table.comment.tooNoisy"],
+  ["2026", "about.table.badge.wip", "about.table.row.glModule", "about.table.stat.writing", "about.table.essence.ownScene", "API 1:1 SceneGL"],
+  ["2026", "about.table.badge.wip", "about.table.row.scene", "about.table.stat.writing", "about.table.essence.jsonStates", "Catmull-Rom"],
+  ["2026", "about.table.badge.wip", "about.table.row.narrative", "about.table.stat.writing", "about.table.essence.storyOverCases", ""],
+  ["2026", "about.table.badge.wip", "about.table.row.model", "about.table.stat.searching", "about.table.essence.ownModel", ""],
+  ["2026", "about.table.badge.done", "/safety", "about.table.stat.alive", "about.table.essence.safetyPage", ""],
+  ["2026", "about.table.badge.wip", "about.table.row.promo", "about.table.stat.writing", "about.table.essence.copyMeta", ""],
+  ["2026", "about.table.badge.decision", "common.privacy", "about.table.stat.accepted", "about.table.essence.minimalData", "about.table.comment.forever"],
+  ["2026", "about.table.badge.decision", "about.table.row.hosting", "about.table.stat.accepted", "about.table.essence.noAds", "about.table.comment.forever"],
+  ["2026", "about.table.badge.wip", "about.table.row.a11y", "about.table.stat.writing", "about.table.essence.a11y", ""],
+  ["2026", "about.table.badge.idea", "about.table.row.localization", "about.table.stat.open", "about.table.essence.ruThenEn", ""],
+  ["2026", "about.table.badge.open", "about.table.row.research", "about.table.stat.ongoing", "about.table.essence.listening", ""],
+  ["2026", "about.table.badge.soon", "about.table.row.pilot", "2026", "about.table.essence.pilot", "about.table.comment.contactUs"],
+  ["2026", "about.table.badge.design", "Hearers", "about.table.stat.drawing", "about.table.essence.hearersVisible", ""],
+  ["2026", "about.table.badge.design", "Pulse", "about.table.stat.drawing", "about.table.essence.pulseVisible", ""],
 ];
 
 const PRODUCTS: { text: string; small?: string }[] = [
-  { text: "Нет публичных лайков и рейтингов" },
-  { text: "Нет публичных комментариев" },
-  { text: "Чат инициирует только автор" },
-  { text: "Открытые технологии", small: "(открытый код, ИИ с честной меткой, WebRTC)" },
-  { text: "Эмоциональные карты — только на устройстве" },
-  { text: "Anti-Panic важнее ленты" },
-  { text: "Helper ≠ терапевт по умолчанию" },
+  { text: "about.products.noLikes" },
+  { text: "about.products.noComments" },
+  { text: "about.products.authorChat" },
+  { text: "about.products.openTech", small: "about.products.openTechNote" },
+  { text: "about.products.emotionMaps" },
+  { text: "about.products.antiPanic" },
+  { text: "about.products.helper" },
 ];
 
 const CLIENT_IMAGES = [
@@ -107,25 +107,25 @@ function AboutContent({ t, locale, path, href }: PageContentProps) {
 
           <div className="center">
             <header className="about-header about-header--1 js-in-view">
-              <h1 className="u-visually-hidden">{t("Мы строим тихую гавань — без лайков и рейтингов")}</h1>
+              <h1 className="u-visually-hidden">{t("about.hiddenTitle")}</h1>
 
-              <p className="about-headline about-headline--blue appear-fade-up">{t("Наше обязательство")}</p>
+              <p className="about-headline about-headline--blue appear-fade-up">{t("about.commitment")}</p>
               <Fx name="about-intro" className="about-title about-title--large fx-parent" t={t} />
             </header>
 
             <div className="about-item about-item--1 js-in-view">
-              <p className="about-headline appear-fade-up">{t("Для начала")}</p>
-              <p className="about-tagline appear-fade-up appear-delay--2">{t("de-press — эмпатичная платформа для эмоциональной поддержки. Наша миссия — исследовать, как тишина, истории и контроль автора заменяют механику лайков и рейтингов.")}</p>
+              <p className="about-headline appear-fade-up">{t("common.toStart")}</p>
+              <p className="about-tagline appear-fade-up appear-delay--2">{t("about.mission")}</p>
             </div>
 
             <div className="about-item about-item--2 js-in-view">
-              <p className="about-title about-title--small appear-fade-up">{t("И что это значит?")}</p>
+              <p className="about-title about-title--small appear-fade-up">{t("about.meaningTitle")}</p>
               <div className="about-text typeset appear-fade-up appear-delay--2">
-                <p>{t("Мы верим в силу истории и присутствия: «Я слышу тебя» заменяет лайк, тихая фраза — комментарий, а решение всегда за автором истории.")}</p>
+                <p>{t("about.meaningText")}</p>
                 <p>
-                  {t("Устал читать одинаковые описания проектов, которые притворяются другими?")}
+                  {t("about.tired")}
                   <br />
-                  {t("Хорошая новость: мы тоже. Поэтому сразу к делу — как устроена помощь здесь.")}
+                  {t("about.goodNews")}
                 </p>
               </div>
             </div>
@@ -144,19 +144,19 @@ function AboutContent({ t, locale, path, href }: PageContentProps) {
                   </li>
                 ))}
               </ul>
-              <CaretLink bare="/" label="Смотреть, как устроено" href={href} t={t} className="link link--caret js-in-view" />
+              <CaretLink bare="/" label="common.watchHowItWorks" href={href} t={t} className="link link--caret js-in-view" />
             </div>
 
             <header className="about-header about-header--2 js-in-view">
-              <h2 className="u-visually-hidden">{t("Инварианты и решения. Да, снова принципы.")}</h2>
+              <h2 className="u-visually-hidden">{t("about.invariants")}</h2>
 
-              <p className="about-headline appear-fade-up">{t("Что уже решено")}</p>
+              <p className="about-headline appear-fade-up">{t("about.decidedTitle")}</p>
               <Fx name="about-swagger" className="about-title fx-parent" t={t} />
             </header>
 
             <div className="about-item about-item--3 js-in-view appear-fade-up">
               <div className="about-text typeset">
-                <p>{t("Таблица — это наши принципы и статус проекта: что принято навсегда, что в работе, чего не будет. Не награды — обещания.")}</p>
+                <p>{t("about.tableIntro")}</p>
               </div>
             </div>
 
@@ -165,11 +165,11 @@ function AboutContent({ t, locale, path, href }: PageContentProps) {
                 <table cellPadding="0" cellSpacing="0">
                   <thead>
                     <tr>
-                      <th>{t("Год")}</th>
-                      <th>{t("Решение")}</th>
-                      <th>{t("Статус")}</th>
-                      <th>{t("Суть")}</th>
-                      <th>{t("Комментарий")}</th>
+                      <th>{t("about.table.year")}</th>
+                      <th>{t("about.table.decision")}</th>
+                      <th>{t("about.table.status")}</th>
+                      <th>{t("about.table.essence")}</th>
+                      <th>{t("about.table.comment")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -188,7 +188,7 @@ function AboutContent({ t, locale, path, href }: PageContentProps) {
             </div>
 
             <button className="about-table-more js-table-expand">
-              {tx(t, "Смотреть ещё   ")}
+              {tx(t, "about.table.more   ")}
               <span className="svg svg-cross">
                 <svg width="12" height="12">
                   <use xlinkHref="/static/assets/spritesheet.svg#cross" />
@@ -198,42 +198,42 @@ function AboutContent({ t, locale, path, href }: PageContentProps) {
 
 
             <div className="about-item about-item--4 js-in-view">
-              <p className="about-headline appear-fade-up">{t("Для начала")}</p>
-              <p className="about-tagline appear-fade-up appear-delay--2">{t("Наша цель — бережные опыты, о которых хочется рассказать тихо: без лайков и рейтингов, но с реальной пользой для тех, кому сейчас трудно.")}</p>
+              <p className="about-headline appear-fade-up">{t("common.toStart")}</p>
+              <p className="about-tagline appear-fade-up appear-delay--2">{t("about.goal")}</p>
             </div>
 
             <div className="about-item about-item--5 js-in-view">
-              <h2 className="about-title about-title--small appear-fade-up">{t("Тишина — в деталях")}</h2>
+              <h2 className="about-title about-title--small appear-fade-up">{t("about.detailsTitle")}</h2>
               <div className="about-text typeset appear-fade-up appear-delay--2">
                 <p>
-                  {t("«Будь гибкой, но держись своих принципов» — тут Элеонора права.")}
+                  {t("about.detailsQuote")}
                   <br />
-                  {t("Наш уклад вырос из опыта: успехов и провалов, тихих смен и чужих историй. Чем глубже понимаешь чужую боль, тем бережнее должна быть помощь. Вот и весь принцип.")}
+                  {t("about.detailsText")}
                 </p>
               </div>
             </div>
 
             <div className="about-item about-item--6 js-in-view appear-fade-up">
-              <h2 className="about-title about-title--small appear-fade-up">{t("Как здесь устроено")}</h2>
+              <h2 className="about-title about-title--small appear-fade-up">{t("about.howTitle")}</h2>
               <div className="about-text typeset appear-fade-up appear-delay--2">
-                <p>{t("Мы знаем своё дело, но не твою историю — и это правильно: настоящая помощь начинается со знакомства. Работать можно только вместе: с автором, с Helper’ами и теми, кто просто рядом (даже если это ночная переписка)")}</p>
-                <p>{t("Прежде чем что-то делать, мы всегда начинаем со знакомства.")}</p>
+                <p>{t("about.howText1")}</p>
+                <p>{t("about.howText2")}</p>
               </div>
             </div>
 
             <div className="about-item about-item--7 js-in-view appear-fade-up">
               <div className="about-text typeset">
-                <p>{t("Твоя история, твои ожидания, твой темп и твои границы — всё это важно, вплоть до любимого чая.")}</p>
-                <p>{t("Если тебе нужен просто исполнитель задач — без доверия и разговора, честно покажем, куда идти дальше.")}</p>
+                <p>{t("about.howText3")}</p>
+                <p>{t("about.howText4")}</p>
               </div>
 
-              <CaretLink bare="/values/" label="Ещё о принципах" href={href} t={t} className="link link--caret" />
+              <CaretLink bare="/values/" label="about.morePrinciples" href={href} t={t} className="link link--caret" />
             </div>
 
             <header className="about-header about-header--3 js-in-view">
-              <h2 className="u-visually-hidden">{t("Кто с нами")}</h2>
+              <h2 className="u-visually-hidden">{t("about.clients.hiddenTitle")}</h2>
 
-              <p className="about-headline appear-fade-up">{t("Нам доверяют истории")}</p>
+              <p className="about-headline appear-fade-up">{t("about.clients.headline")}</p>
               <Fx name="about-clients" className="about-title" t={t} />
             </header>
 
@@ -255,7 +255,7 @@ function AboutContent({ t, locale, path, href }: PageContentProps) {
   );
 }
 
-export const PAGE_TITLE = "О проекте — de-press";
+export const PAGE_TITLE = "meta.about.title";
 
 export default {
   BODY_CLASS: "lock-scroll",

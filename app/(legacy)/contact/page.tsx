@@ -9,7 +9,7 @@ const t = getTranslator(DEFAULT_LOCALE);
 export const metadata: Metadata = {
   title: t(contact.PAGE_TITLE),
   description: t(
-    "Написать de-press: помочь, участвовать в пилоте или поддержать проект. Кризис → 112/103 и /safety.",
+    "meta.contact.description",
   ),
 };
 

@@ -9,7 +9,7 @@ const t = getTranslator(DEFAULT_LOCALE);
 export const metadata: Metadata = {
   title: t(home.PAGE_TITLE),
   description: t(
-    "Эмпатичная платформа-тихая гавань: истории вместо лент, тишина вместо лайков, «Я слышу тебя» вместо оценок.",
+    "meta.home.description",
   ),
 };
 

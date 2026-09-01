@@ -16,10 +16,10 @@ import uk from "./dictionaries/uk.json";
 import zh from "./dictionaries/zh.json";
 
 /**
- * Dictionaries are gettext-style: keys are the exact normalized source
- * (Russian) strings. ru.json holds only intentional overrides (fx display
- * titles); every other string renders byte-identically for the default
- * locale. Missing keys fall back to the source string.
+ * Dictionaries are keyed by stable dot-keys shared across all 10 locales,
+ * and every dictionary is complete (ru.json included — the default locale
+ * resolves through its dictionary like everyone else). Missing keys fall
+ * back to the key itself.
  */
 const DICTIONARIES: Record<Locale, Record<string, string>> = {
   en,

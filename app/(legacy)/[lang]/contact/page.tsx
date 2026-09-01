@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t(contact.PAGE_TITLE),
     description: t(
-      "Написать de-press: помочь, участвовать в пилоте или поддержать проект. Кризис → 112/103 и /safety.",
+      "meta.contact.description",
     ),
   };
 }

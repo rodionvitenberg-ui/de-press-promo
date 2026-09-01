@@ -9,7 +9,7 @@ const t = getTranslator(DEFAULT_LOCALE);
 export const metadata: Metadata = {
   title: t(values.PAGE_TITLE),
   description: t(
-    "Десять принципов de-press: без лайков и рейтингов, без публичных комментариев, чат начинает только автор.",
+    "meta.values.description",
   ),
 };
 

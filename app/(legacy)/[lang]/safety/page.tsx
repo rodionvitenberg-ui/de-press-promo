@@ -16,9 +16,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!isLocale(lang) || lang === DEFAULT_LOCALE) return {};
   const t = getTranslator(lang);
   return {
-    title: t("Безопасность"),
+    title: t("meta.safety.title"),
     description: t(
-      "Кризисная страница de-press.co: если очень плохо прямо сейчас — телефоны экстренной помощи 112 и 103, шаги самопомощи.",
+      "meta.safety.description",
     ),
   };
 }

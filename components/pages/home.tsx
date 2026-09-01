@@ -22,48 +22,70 @@ import type { Translator } from "@/i18n/core";
 type CaseItem = {
   theme: string;
   matcap: string;
-  /** The feeling — list trigger and the big card name. */
+  /** The feeling (tool name for the returned legacy cases) — list trigger and the big card name. */
   name: string;
   /** Exact template text per .home-cases-line (leading/trailing spaces matter). */
   lines: string[];
   /** The quiet offer — tool name in the caret link. */
   offer: string;
+  /** Legacy-format cases (returned from pre-B1): group label shown in the list trigger. */
+  group?: string;
+  /** Legacy-format cases: the card headline above the big name. */
+  headline?: string;
 };
 
 const CASES: CaseItem[] = [
   {
     theme: "tomorrowland",
     matcap: "18, 18",
-    name: "Одиноко",
-    lines: ["Не потому, что вокруг никого.", " А потому, что сказать некому."],
-    offer: "Монолог",
+    name: "cases.lonely.name",
+    lines: ["cases.lonely.line1", " cases.lonely.line2"],
+    offer: "cases.offer.monologue",
   },
   {
     theme: "navy-pier",
     matcap: "7, 7",
-    name: "Изолированно",
-    lines: ["Даже среди своих — как за стеклом.", " Всё слышишь. Тебя — нет."],
-    offer: "Я слышу тебя",
+    name: "cases.isolated.name",
+    lines: ["cases.isolated.line1", " cases.isolated.line2"],
+    offer: "cases.offer.hearYou",
   },
   {
     theme: "msi-chicago",
     matcap: "8, 8",
-    name: "Неслышно",
-    lines: ["Ты говоришь. Слова падают.", " Никто не поднимает."],
-    offer: "Тихие фразы",
+    name: "cases.unheard.name",
+    lines: ["cases.unheard.line1", " cases.unheard.line2"],
+    offer: "cases.offer.quietPhrases",
   },
   {
     theme: "this-was-louises-phone",
     matcap: "11, 11",
-    name: "Нетак",
-    lines: ["Кажется, так чувствуешь только ты.", " „Кажется“ — здесь главное слово."],
-    offer: "Похожая история",
+    name: "cases.misfit.name",
+    lines: ["cases.misfit.line1", " cases.misfit.line2"],
+    offer: "cases.offer.similarStory",
+  },
+  {
+    theme: "kikk-18",
+    matcap: "9, 9",
+    name: "Pulse",
+    group: "cases.author",
+    headline: "cases.author",
+    lines: ["cases.pulse.line1"],
+    offer: "cases.offer.more",
+  },
+  {
+    theme: "the-kennedy-center",
+    matcap: "10, 10",
+    name: "Hearers",
+    group: "cases.author",
+    headline: "cases.author",
+    lines: ["cases.hearers.line1", " cases.hearers.line2", " cases.hearers.line3"],
+    offer: "cases.offer.more",
   },
   {
     theme: "orw",
     matcap: "12, 12",
-    name: "Слишком",
-    lines: ["Когда всё слишком, даже хорошая новость — лишняя.", " Хочется куда-то, где тихо."],
+    name: "cases.tooMuch.name",
+    lines: ["cases.tooMuch.line1", " cases.tooMuch.line2"],
     offer: "Anti-Panic",
   },
 ];
@@ -77,6 +99,9 @@ function CaseScene({ item, t, href }: { item: CaseItem; t: Translator; href: (ba
           <span className="u-visually-hidden">{t(item.name)}</span>
         </a>
         <div className="home-cases-content">
+          {item.headline ? (
+            <p className="home-cases-headline">{t(item.headline)}</p>
+          ) : null}
           <p className="home-cases-name">{t(item.name)}</p>
           <p className="home-cases-text">
             {item.lines.flatMap((line, i) =>
@@ -129,26 +154,26 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
             </picture>
 
             <section className="home-hero js-in-view">
-              <h2 className="u-visually-hidden">{t("Тебя услышат")}</h2>
+              <h2 className="u-visually-hidden">{t("home.hero.hiddenTitle")}</h2>
 
               <div className="center">
                 <Fx name="home-hero" className="home-hero-title fx-parent" t={t} />
 
                 <div className="home-hero-content">
                   <p className="lead">
-                    <span>{t("de-press — тихая гавань")}</span>{" "}
-                    <span>{t("для тех, кому сейчас")}</span>{" "}
-                    <span>{t("эмоционально тяжело.")}</span>
+                    <span>{t("home.hero.lead1")}</span>{" "}
+                    <span>{t("home.hero.lead2")}</span>{" "}
+                    <span>{t("home.hero.lead3")}</span>
                   </p>
 
                   <p>
-                    <span>{t("Вместо лайков, рейтингов и публичных реакций —")}</span>{" "}
-                    <span>{t("тишина, истории и человек рядом, который скажет:")}</span>{" "}
-                    <span>{t("«Я слышу тебя».")}</span>
+                    <span>{t("home.hero.sub1")}</span>{" "}
+                    <span>{t("home.hero.sub2")}</span>{" "}
+                    <span>{t("home.hero.sub3")}</span>
                   </p>
                   <a href="https://app.de-press.co" target="_blank" className="home-app-link link link--under">
                     {" "}
-                    <span className="link-label">{t("Открыть приложение")}</span>{" "}
+                    <span className="link-label">{t("home.hero.appLink")}</span>{" "}
                     <span className="link-line" />{" "}
                     <span className="link-line--anim" />{" "}
                   </a>
@@ -164,13 +189,20 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
 
             <section className="home-cases">
               <div className="center">
-                <h2 className="home-cases-title js-in-view appear-fade-up">{t("Если ты…")}</h2>
+                <h2 className="home-cases-title js-in-view appear-fade-up">{t("home.cases.title")}</h2>
 
                 <ul className="home-cases-list js-cases-list">
                   {CASES.map((item) => (
                     <li key={item.theme} className="js-in-view appear-fade-up">
                       <a href={href("/about/")} data-theme={item.theme} data-matcap={item.matcap}>
-                        {t(item.name)}
+                        {item.group ? (
+                          <>
+                            <span>{t(item.group)}</span>
+                            {tx(t, ` ${item.name}`)}
+                          </>
+                        ) : (
+                          t(item.name)
+                        )}
                       </a>
                     </li>
                   ))}
@@ -185,7 +217,7 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
             </section>
 
             <section className="home-about js-in-view">
-              <h2 className="u-visually-hidden">{t("Мы делаем место, где не бывает оценок")}</h2>
+              <h2 className="u-visually-hidden">{t("home.about.hiddenTitle")}</h2>
 
               <picture className="home-about-background js-in-view appear-fade">
                 <source data-srcset="/static/assets/images/home/about-xxs.png" media="(max-width: 450px)" />
@@ -196,25 +228,25 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
 
               <div className="center">
                 <header className="home-about-header js-in-view">
-                  <p className="home-about-headline appear-fade-up">{t("Так это устроено")}</p>
+                  <p className="home-about-headline appear-fade-up">{t("home.about.headline")}</p>
                   <Fx name="home-about" className="home-about-title fx-parent" t={t} />
                 </header>
 
                 <div className="home-about-content js-in-view">
                   <div className="home-about-text typeset">
                     <p className="appear-fade-up appear-delay--3">
-                      {t("de-press — некоммерческая эмпатичная платформа.")}
+                      {t("home.about.text1")}
                       <br />
-                      {t("Мы против токсичных механик соцсетей: вместо лайков, рейтингов и публичных комментариев здесь тишина, истории и бережная поддержка.")}
+                      {t("home.about.text2")}
                     </p>
                     <p className="appear-fade-up appear-delay--4">
-                      {t("Проект живёт на энтузиазме волонтёров и открытом коде. Мы верим: просить о помощи — нормально, а слышать друг друга — навык, которому можно учиться.")}
+                      {t("home.about.text3")}
                     </p>
                   </div>
 
-                  <a href={href("/values/")} className="home-about-link link link--under" title={t("Читать принципы")}>
+                  <a href={href("/values/")} className="home-about-link link link--under" title={t("home.about.link")}>
                     {" "}
-                    <span className="link-label">{t("Принципы")}</span>{" "}
+                    <span className="link-label">{t("shared.menu.values")}</span>{" "}
                     <span className="link-line" />{" "}
                     <span className="link-line--anim" />{" "}
                   </a>
@@ -231,7 +263,7 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
   );
 }
 
-export const PAGE_TITLE = "de-press — тебя услышат";
+export const PAGE_TITLE = "meta.home.title";
 
 export default {
   BODY_CLASS: "lock-scroll",

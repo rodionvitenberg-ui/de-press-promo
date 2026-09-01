@@ -27,7 +27,7 @@ export function SiteHeader({ t, href }: SharedProps) {
   return (
     <div className="site-header">
       <div className="site-header-title">
-        <a href={href("/")} className="site-header-logo" title={t("На главную — de-press")}>
+        <a href={href("/")} className="site-header-logo" title={t("shared.backHomeTitle")}>
           {" "}
           <span className="dp-logo">de-press<span className="dp-logo-tld">.co</span></span>{" "}
         </a>
@@ -40,7 +40,7 @@ export function SiteHeader({ t, href }: SharedProps) {
             <use xlinkHref="/static/assets/spritesheet.svg#caret-left" />
           </svg>
         </span>
-        {tx(t, " Безопасность")}
+        {tx(t, " meta.safety.title")}
       </a>{" "}
       <a href={href("/")} className="site-header-cases">
         {" "}
@@ -49,11 +49,11 @@ export function SiteHeader({ t, href }: SharedProps) {
             <use xlinkHref="/static/assets/spritesheet.svg#caret-left" />
           </svg>
         </span>
-        {tx(t, " Как устроено")}
+        {tx(t, " shared.header.howItWorks")}
       </a>
 
-      <button type="button" className="site-header-button" title={t("Открыть меню")}>
-        <span className="u-visually-hidden">{t("Открыть меню")}</span>{" "}
+      <button type="button" className="site-header-button" title={t("shared.menu.open")}>
+        <span className="u-visually-hidden">{t("shared.menu.open")}</span>{" "}
         <span className="button-bar button-bar--1" />{" "}
         <span className="button-bar button-bar--2" />{" "}
         <span className="button-bar button-bar--3" />
@@ -106,10 +106,10 @@ export function SiteMenuPanel() {
 }
 
 const MENU_ITEMS = [
-  { key: "home", bare: "/", label: "Главная" },
-  { key: "about", bare: "/about/", label: "О проекте" },
-  { key: "values", bare: "/values/", label: "Принципы" },
-  { key: "contact", bare: "/contact/", label: "Связаться" },
+  { key: "home", bare: "/", label: "shared.menu.home" },
+  { key: "about", bare: "/about/", label: "shared.menu.about" },
+  { key: "values", bare: "/values/", label: "shared.menu.values" },
+  { key: "contact", bare: "/contact/", label: "shared.menu.contact" },
 ];
 
 export const MENU_SOCIALS = [
@@ -171,7 +171,7 @@ export function SiteMenu({
 
         <div className="site-menu-footer">
           <div className="site-menu-content">
-            <p className="site-menu-slogan">{t("Don't cry alone")}</p>
+            <p className="site-menu-slogan">{t("shared.footer.slogan")}</p>
             <ul>
               {MENU_SOCIALS.map((s) => (
                 <SocialItem key={s.icon} s={s} t={t} />
@@ -188,13 +188,13 @@ export function CookieBar({ t, href }: SharedProps) {
   return (
     <div className="site-cookie js-cookie">
       <p className="site-cookie__text">
-        {tx(t, "Здесь нет рекламных трекеров и аналитики. Работает только необходимое — без этого сайт не откроется. Продолжая, ты соглашаешься с этим. ")}
-        <a href={href("/privacy/")}>{t("Подробнее о приватности")}</a>.
+        {tx(t, "shared.cookie.text ")}
+        <a href={href("/privacy/")}>{t("shared.cookie.privacy")}</a>.
       </p>
 
       <div className="site-cookie__buttons">
-        <button type="button" className="site-cookie__button js-cookie-accept">{t("Хорошо")}</button>
-        <button type="button" className="site-cookie__button js-cookie-deny">{t("Отклонить")}</button>
+        <button type="button" className="site-cookie__button js-cookie-accept">{t("shared.cookie.accept")}</button>
+        <button type="button" className="site-cookie__button js-cookie-deny">{t("shared.cookie.decline")}</button>
       </div>
     </div>
   );
@@ -213,21 +213,21 @@ export function SiteFooter({
       <div className="center">
         <div className="site-footer-top">
           <div className="site-footer-block site-footer-block--address appear-fade-up">
-            <h3>{t("Тишина")} <b>.</b></h3>
+            <h3>{t("common.word.silence")} <b>.</b></h3>
           </div>
 
           <div className="site-footer-block site-footer-block--address appear-fade-up appear-delay--1">
-            <h3>{t("Эмпатия")} <b>.</b></h3>
+            <h3>{t("common.word.empathy")} <b>.</b></h3>
           </div>
 
           <div className="site-footer-block site-footer-block--address appear-fade-up appear-delay--2">
-            <h3>{t("Забота")} <b>.</b></h3>
+            <h3>{t("common.word.care")} <b>.</b></h3>
           </div>
 
           <div className="site-footer-block site-footer-block--social appear-fade-up appear-delay--3">
             <h2 className="site-footer-title">
-              <span className="u-visually-hidden">{t("Написать нам")}</span>
-              <span className="site-footer-slogan">{t("Don't cry alone")}</span>
+              <span className="u-visually-hidden">{t("shared.footer.writeUs")}</span>
+              <span className="site-footer-slogan">{t("shared.footer.slogan")}</span>
             </h2>
 
             <ul>
@@ -240,19 +240,19 @@ export function SiteFooter({
 
         <div className="site-footer-bottom">
           <p className="site-footer-contact appear-fade-up">
-            {tx(t, "Хочешь помочь проекту — напиши: ")}
+            {tx(t, "shared.footer.help ")}
             <a href="mailto:hello@de-press.co">hello@de-press.co</a>
           </p>
 
           <div className="site-footer-right">
             <p className="site-footer-newsletter appear-fade-up appear-delay--4">
               <a href={href("/privacy/")}>
-                {tx(t, " Приватность ")}
+                {tx(t, " common.privacy ")}
               </a>
             </p>
 
             <div className="site-footer-languages appear-fade-up appear-delay--5">
-              {t("Язык:")}
+              {t("shared.footer.language")}
               <LangSwitcher locale={locale} path={path} />
             </div>
           </div>

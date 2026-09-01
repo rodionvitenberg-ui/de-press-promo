@@ -2,15 +2,21 @@
 /**
  * i18n coverage check (run: node --experimental-strip-types scripts/i18n-check.mjs)
  *
- *  1. Collects every localizable source string from the ru baseline snapshots
- *     (scripts/out/html-baseline — normalized live SSR captured by
- *     scripts/regen-html-baseline.mjs; fx-parent letter blocks are renderer
- *     output, not sources) + fx phrases, PAGE_TITLE constants and t("…")
- *     literals in the JSX page modules / routes.
- *  2. Per locale: every Cyrillic source has a dictionary key; the live SSR
- *     HTML (BASE_URL) carries no Cyrillic leaks (non-ru; switcher endonyms
- *     and the uk locale are exempt).
- *  3. Reports dictionary keys that match nothing (likely typos).
+ *  Dictionaries are keyed by stable dot-keys (home.hero.title, cases.*), and
+ *  all 10 locale files are complete — ru.json included.
+ *
+ *  1. Collects every dictionary key in use:
+ *     - t("…") literals, PAGE_TITLE constants and FX_PHRASES values from the
+ *       page modules / routes (a raw Cyrillic source left in code → failure);
+ *     - every text token of the ru baseline snapshots
+ *       (scripts/out/html-baseline — normalized live SSR captured by
+ *       scripts/regen-html-baseline.mjs) mapped back to its key through the
+ *       complete ru.json (value → key). This covers data-driven keys
+ *       (case cards, roadmap table cells, typed contact sentences).
+ *  2. Per locale: every collected key exists; every dictionary key is used;
+ *     all 10 dictionaries share the same key set; keys are dot-keys.
+ *  3. Live SSR (BASE_URL): no Cyrillic leaks on non-ru locales (switcher
+ *     endonyms and the uk locale are exempt).
  *
  *  Baseline snapshots are gitignored — run scripts/regen-html-baseline.mjs
  *  (with the server on BASE_URL) before this check.
@@ -34,6 +40,7 @@ const PAGES = [
 ];
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3111";
 const CYRILLIC = /[\u0400-\u04FF]/;
+const DOT_KEY = /^[a-z][a-z0-9]*(?:\.[a-z0-9-]+)+$/i;
 const NATIVE_VALUES = new Set(Object.values(NATIVE_NAMES));
 const T_SOURCE_FILES = [
   "components/pages/shared.tsx",
@@ -49,8 +56,19 @@ const T_SOURCE_FILES = [
   "app/(legacy)/contact/page.tsx",
   "app/(legacy)/safety/page.tsx",
   "app/(legacy)/privacy/page.tsx",
+  "app/(legacy)/[lang]/page.tsx",
+  "app/(legacy)/[lang]/about/page.tsx",
+  "app/(legacy)/[lang]/values/page.tsx",
+  "app/(legacy)/[lang]/contact/page.tsx",
+  "app/(legacy)/[lang]/safety/page.tsx",
   "app/(legacy)/[lang]/privacy/page.tsx",
 ];
+
+let failures = 0;
+const fail = (msg) => {
+  failures += 1;
+  console.error(`  ✗ ${msg}`);
+};
 
 /** Snapshot lines → localizable strings (text tokens, attrs, js-sentences). */
 function snapshotSources(lines, exclude) {
@@ -81,7 +99,7 @@ function snapshotSources(lines, exclude) {
     if (text) {
       const core = text[1].replace(/\s+/g, " ").trim();
       if (!core || exclude.has(core)) continue;
-      // div.js-sentences holds a JSON array — items are the real source keys.
+      // div.js-sentences holds a JSON array — items are the rendered strings.
       if (core.startsWith("[") && core.endsWith("]")) {
         try {
           for (const item of JSON.parse(core)) out.push(item);
@@ -125,16 +143,23 @@ function attrs(html) {
   return out;
 }
 
+/** A t()/PAGE_TITLE/FX source: dot-keys are collected, Cyrillic is a bug. */
+const sources = new Set();
+function collectSource(raw, file) {
+  const s = raw.replace(/\\n/g, "\n");
+  if (CYRILLIC.test(s)) {
+    fail(`raw Cyrillic source left in ${file}: ${JSON.stringify(s.slice(0, 60))}`);
+  }
+  if (DOT_KEY.test(s)) sources.add(s);
+}
+
 // ---------------------------------------------------------------------------
 
-const sources = new Set();
-// ru.json holds intentional display overrides (fx titles, the menu slogan) —
-// their values show up in the ru snapshots as texts but are not source keys.
-const ruOverrides = new Set(
-  Object.values(
-    JSON.parse(await readFile("i18n/dictionaries/ru.json", "utf8")),
-  ),
+// ru baseline tokens → keys through the complete ru.json (value → key).
+const ruDict = JSON.parse(
+  await readFile("i18n/dictionaries/ru.json", "utf8"),
 );
+const ruValueToKey = new Map(Object.entries(ruDict).map(([k, v]) => [v, k]));
 for (const page of PAGES) {
   let snapshot;
   try {
@@ -145,44 +170,59 @@ for (const page of PAGES) {
     );
     process.exit(1);
   }
-  for (const s of snapshotSources(snapshot.split("\n"), ruOverrides)) sources.add(s);
+  for (const s of snapshotSources(snapshot.split("\n"), new Set())) {
+    const key = ruValueToKey.get(s);
+    if (key) sources.add(key);
+  }
 }
 
-for (const key of Object.keys(FX_PHRASES)) sources.add(FX_PHRASES[key]);
+for (const key of Object.values(FX_PHRASES)) collectSource(key, "i18n/core.ts");
 for (const f of T_SOURCE_FILES) {
   const src = await readFile(f, "utf8");
-  // Two patterns: an apostrophe inside "Don't cry alone" must not cut the key.
-  for (const m of src.matchAll(/\bt\(\s*"([^"]+)"/g)) sources.add(m[1]);
-  for (const m of src.matchAll(/\bt\(\s*'([^']+)'/g)) sources.add(m[1]);
+  for (const m of src.matchAll(/\bt\(\s*"([^"]+)"/g)) collectSource(m[1], f);
+  for (const m of src.matchAll(/\bt\(\s*'([^']+)'/g)) collectSource(m[1], f);
   for (const m of src.matchAll(/export const PAGE_TITLE = "([^"]+)"/g)) {
-    sources.add(m[1]);
+    collectSource(m[1], f);
   }
 }
 
-let failures = 0;
-const fail = (msg) => {
-  failures += 1;
-  console.error(`  ✗ ${msg}`);
-};
-
+const dicts = {};
 for (const locale of LOCALES) {
-  const dict = JSON.parse(
+  dicts[locale] = JSON.parse(
     await readFile(`i18n/dictionaries/${locale}.json`, "utf8"),
   );
+}
+
+// All 10 dictionaries share the same key set, and every key is a dot-key.
+const baseKeys = Object.keys(dicts[DEFAULT_LOCALE]);
+for (const locale of LOCALES) {
+  const keys = Object.keys(dicts[locale]);
+  const extra = keys.filter((k) => !baseKeys.includes(k));
+  const missing = baseKeys.filter((k) => !keys.includes(k));
+  if (extra.length || missing.length) {
+    fail(
+      `${locale}: key set differs from ${DEFAULT_LOCALE} ` +
+        `(+${JSON.stringify(extra.slice(0, 3))} / -${JSON.stringify(missing.slice(0, 3))})`,
+    );
+  }
+  for (const key of keys) {
+    if (!DOT_KEY.test(key)) {
+      fail(`${locale}: non-dot key: ${JSON.stringify(key.slice(0, 60))}`);
+    }
+  }
+}
+
+for (const locale of LOCALES) {
+  const dict = dicts[locale];
   console.log(`\n== ${locale} ==`);
 
-  // Unused / suspicious keys (likely typos → silent no-op at render).
-  for (const key of Object.keys(dict)) {
-    if (!sources.has(key)) console.log(`  ⚠ unused key: ${JSON.stringify(key.slice(0, 60))}`);
+  for (const key of sources) {
+    if (!(key in dict)) fail(`${locale} missing key: ${JSON.stringify(key.slice(0, 70))}`);
   }
 
-  // Every Cyrillic source must be covered (unless locale is the default).
-  if (locale !== DEFAULT_LOCALE) {
-    for (const s of sources) {
-      if (CYRILLIC.test(s) && !NATIVE_VALUES.has(s) && !(s in dict)) {
-        fail(`${locale} missing key: ${JSON.stringify(s.slice(0, 70))}`);
-      }
-    }
+  // Unused / suspicious keys (likely typos → render as the raw key).
+  for (const key of Object.keys(dict)) {
+    if (!sources.has(key)) console.log(`  ⚠ unused key: ${JSON.stringify(key.slice(0, 60))}`);
   }
 
   if (locale === DEFAULT_LOCALE) continue;

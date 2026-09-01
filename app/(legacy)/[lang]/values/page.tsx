@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t(values.PAGE_TITLE),
     description: t(
-      "Десять принципов de-press: без лайков и рейтингов, без публичных комментариев, чат начинает только автор.",
+      "meta.values.description",
     ),
   };
 }

@@ -33,17 +33,17 @@ const ROWS: { modifier?: "right" | "center"; items: ValueItem[] }[] = [
       {
         n: 1,
         delay: 1,
-        title: ["Расти", "вместе с людьми,", "а не с лентой"],
+        title: ["values.p1.title1", "values.p1.title2", "values.p1.title3"],
         text: [
-          "Боль не собирает очки. Мы убираем механики, которые превращают чужую историю в соревнование.",
+          "values.p1.text",
         ],
       },
       {
         n: 2,
         delay: 2,
-        title: ["Каждый отвечает", "за свою", "тишину"],
+        title: ["values.p2.title1", "values.p2.title2", "values.p2.title3"],
         text: [
-          "Под чужой историей не место спорам. Только тихие фразы и резонанс — всё остальное приватно.",
+          "values.p2.text",
         ],
       },
     ],
@@ -53,17 +53,17 @@ const ROWS: { modifier?: "right" | "center"; items: ValueItem[] }[] = [
       {
         n: 3,
         delay: 1,
-        title: ["Гибко —", "и по-человечески", "бережно"],
+        title: ["values.p3.title1", "values.p3.title2", "values.p3.title3"],
         text: [
-          "Диалог — это приглашение, а не вторжение. Автор решает, кому ответить: accept или Author Outreach.",
+          "values.p3.text",
         ],
       },
       {
         n: 4,
         delay: 2,
-        title: ["Всегда", "рядом — онлайн"],
+        title: ["values.p4.title1", "values.p4.title2"],
         text: [
-          "Без скрытых роботов-собеседников, без диагнозов, без toxic positivity. Помощь машины — только с честной меткой.",
+          "values.p4.text",
         ],
       },
     ],
@@ -73,25 +73,25 @@ const ROWS: { modifier?: "right" | "center"; items: ValueItem[] }[] = [
       {
         n: 5,
         delay: 1,
-        title: ["В помощь верь,", "но проверяй"],
+        title: ["values.p5.title1", "values.p5.title2"],
         text: [
-          "Эмоциональные карты живут на устройстве пользователя (ZK). Сервер не видит и не хранит карту твоих состояний.",
+          "values.p5.text",
         ],
       },
       {
         n: 6,
         delay: 2,
-        title: ["Без привязки", "к платформе —", "открытый код"],
+        title: ["values.p6.title1", "values.p6.title2", "values.p6.title3"],
         text: [
-          "Когда плохо — не время охватов. Режим тишины и путь к /safety всегда важнее любого realtime.",
+          "values.p6.text",
         ],
       },
       {
         n: 7,
         delay: 3,
-        title: ["Развиваемся", "тихо и постоянно"],
+        title: ["values.p7.title1", "values.p7.title2"],
         text: [
-          "Мы не экстренная служба. При кризисе — 112, 103 и страница /safety. Это не отговорка, это честность.",
+          "values.p7.text",
         ],
       },
     ],
@@ -102,18 +102,18 @@ const ROWS: { modifier?: "right" | "center"; items: ValueItem[] }[] = [
       {
         n: 8,
         delay: 1,
-        title: ["Ценим долгие", "и тихие истории"],
+        title: ["values.p8.title1", "values.p8.title2"],
         text: [
-          "Helper — слушающий человек, а не врач. Мы не заменяем терапию и не притворяемся, что заменяем.",
+          "values.p8.text",
         ],
       },
       {
         n: 9,
         delay: 2,
-        title: ["Всё решает честный", "разговор"],
+        title: ["values.p9.title1", "values.p9.title2"],
         text: [
-          "Прозрачность — основа.",
-          "Никаких скрытых механик, тёмных паттернов и невидимых манипуляторов: как работает платформа, видно всем. Открытость — это и есть помощь.",
+          "values.p9.text1",
+          "values.p9.text2",
         ],
       },
     ],
@@ -124,9 +124,9 @@ const ROWS: { modifier?: "right" | "center"; items: ValueItem[] }[] = [
       {
         n: 10,
         delay: 1,
-        title: ["Мы слышим", "тебя"],
+        title: ["values.hear.title1", "values.hear.title2"],
         text: [
-          "Не на каждое сообщение нужен ответ. Присутствие без слов — тоже поддержка. Всё в заголовке.",
+          "values.hear.text",
         ],
       },
     ],
@@ -176,28 +176,28 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
 
       <div className="site-container" data-router-wrapper="">
         <main data-router-view="values" role="main">
-          <h1 className="u-visually-hidden">{t("Принципы")}</h1>
+          <h1 className="u-visually-hidden">{t("shared.menu.values")}</h1>
 
           <section className="values-hero">
             <h2 className="u-visually-hidden">
-              {t("Потому что культура — это не фича в роадмапе")}
+              {t("values.hiddenTitle")}
             </h2>
 
             <div className="center">
               <header className="values-hero-header js-in-view">
                 <p className="values-headline appear-fade-up">
-                  {t("Во что мы верим")}
+                  {t("values.believe")}
                 </p>
                 <Fx name="values-culture" className="values-title fx-parent" t={t} />
               </header>
 
               <div className="values-hero-content js-in-view">
                 <p className="values-headline appear-fade-up">
-                  {t("Для начала")}
+                  {t("common.toStart")}
                 </p>
                 <p className="values-text appear-fade-up appear-delay--2">
                   {t(
-                    "Всё, что мы строим, проходит через десять принципов. Через «не надо» и «зачем». Через тишину и уважение.",
+                    "values.intro",
                   )}
                 </p>
               </div>
@@ -208,7 +208,7 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
             <div className="center">
               <header className="values-list-header js-in-view">
                 <h2 className="u-visually-hidden">
-                  {t("Нет, это не правила ради правил...")}
+                  {t("values.notRules")}
                 </h2>
 
                 <img
@@ -219,7 +219,7 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
                 <Fx name="values-tgif" className="values-title fx-parent" t={t} />
 
                 <p className="values-subtitle appear-fade appear-delay--7">
-                  {t("Дальше — сами принципы...")}
+                  {t("values.next")}
                 </p>
               </header>
 
@@ -245,7 +245,7 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
 
               <footer className="values-list-footer js-in-view">
                 <h2 className="u-visually-hidden">
-                  {t("Мы всегда рады тем, кто умеет слышать")}
+                  {t("values.hearReady")}
                 </h2>
 
                 <img
@@ -258,10 +258,10 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
                 <a
                   href="mailto:hello@de-press.co"
                   className="values-link link link--under"
-                  title={t("Как помогать")}
+                  title={t("values.helpLink")}
                 >
                   {" "}
-                  <span className="link-label">{t("Как помогать")}</span>{" "}
+                  <span className="link-label">{t("values.helpLink")}</span>{" "}
                   <span className="link-line" />{" "}
                   <span className="link-line--anim" />{" "}
                 </a>
@@ -278,7 +278,7 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
   );
 }
 
-export const PAGE_TITLE = "Принципы — de-press";
+export const PAGE_TITLE = "meta.values.title";
 
 export default {
   BODY_CLASS: "lock-scroll",

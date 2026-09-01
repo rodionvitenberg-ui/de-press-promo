@@ -11,15 +11,15 @@ export function SafetyContent({ locale }: { locale: Locale }) {
   return (
     <div className="dp-safety">
       <main className="dp-safety__inner">
-        <p className="dp-safety__tag">{t("de-press.co · безопасность")}</p>
-        <h1>{t("Если сейчас очень плохо")}</h1>
+        <p className="dp-safety__tag">{t("safety.hiddenTitle")}</p>
+        <h1>{t("safety.nowTitle")}</h1>
         <p className="dp-safety__lead">
           {t(
-            "de-press.co — тихая гавань, но это не экстренная помощь. Если тебе угрожает опасность или приходят мысли о причинении себе вреда — обратись за помощью прямо сейчас. Ты не обязан справляться в одиночку.",
+            "safety.nowText",
           )}
         </p>
 
-        <h2>{t("Позвони — это бесплатно")}</h2>
+        <h2>{t("safety.callTitle")}</h2>
         <div className="dp-safety__phones">
           <a className="dp-safety__phone" href="tel:112">
             112
@@ -30,51 +30,51 @@ export function SafetyContent({ locale }: { locale: Locale }) {
         </div>
         <p className="dp-safety__note">
           {t(
-            "112 — единый номер экстренных служб, 103 — скорая помощь (в ряде стран). Номера работают с любого телефона, в том числе без денег на счёте.",
+            "safety.callText",
           )}
         </p>
 
-        <h2>{t("Что можно сделать прямо сейчас")}</h2>
+        <h2>{t("safety.stepsTitle")}</h2>
         <ol>
           <li>
             {t(
-              "Скажи живому человеку рядом — даже просто «мне плохо». Не нужно объяснять всё: одной фразы достаточно, чтобы тебя не оставили одного.",
+              "safety.step1",
             )}
           </li>
-          <li>{t("Позвони 112 или 103 и скажи, что тебе нужна помощь.")}</li>
+          <li>{t("safety.step2")}</li>
           <li>
             {t(
-              "Оставайся не один: попроси кого-то быть рядом, пока помощь не подойдёт.",
-            )}
-          </li>
-          <li>
-            {t(
-              "Если можешь — убери от себя то, чем можно себе навредить, и отойди от опасных мест.",
+              "safety.step3",
             )}
           </li>
           <li>
             {t(
-              "Дыши медленно: вдох на четыре счёта, выдох на шесть. Это не решает всё, но помогает пережить острую волну.",
+              "safety.step4",
+            )}
+          </li>
+          <li>
+            {t(
+              "safety.step5",
             )}
           </li>
         </ol>
 
-        <h2>{t("Чего здесь нет")}</h2>
+        <h2>{t("common.notHereTitle")}</h2>
         <p>
           {t(
-            "В de-press.co нет лайков, рейтингов и публичных комментариев. Твою историю услышат, но не оценят. Чат может начать только ты. ИИ-помощник всегда помечен, не ставит диагнозов и не заменяет людей.",
+            "safety.notHereText",
           )}
         </p>
 
-        <h2>{t("Если тяжело давно")}</h2>
+        <h2>{t("safety.longTermTitle")}</h2>
         <p>
           {t(
-            "de-press.co — не медицина и не замена терапии. Если состояние длится неделями или мешает жить — обратись к врачу или психотерапевту. Просить о помощи — нормально.",
+            "safety.longTermText",
           )}
         </p>
 
         <a className="dp-safety__back" href={localePath(locale, "/")}>
-          {t("← Вернуться на главную")}
+          {t("common.backHome")}
         </a>
       </main>
     </div>

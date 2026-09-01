@@ -3,9 +3,10 @@
  * Next server components and under `node --experimental-strip-types`
  * (scripts/i18n-check.mjs).
  *
- * Approach: gettext-style dictionaries keyed by the exact source (Russian)
- * string. Missing keys fall back to the source string, so a translation gap
- * can never break layout.
+ * Approach: dictionaries keyed by stable dot-keys (home.hero.title, cases.*,
+ * …) shared by all 10 locales; each dictionary is complete (ru included).
+ * Missing keys fall back to the key itself, so a translation gap is loud
+ * in review but never breaks layout worse than that.
  */
 
 export const LOCALES = [
@@ -99,17 +100,17 @@ export function fxBlock(phrase: string): string {
     .join("<br>\n");
   return html;
 }
-/** Named fx display titles: placeholder name → source phrase. */
+/** Named fx display titles: placeholder name → dictionary key. */
 export const FX_PHRASES: Record<string, string> = {
-  "home-hero": "Don't cry\nalone",
+  "home-hero": "fx.homeHero",
   "home-about":
-    "We're crafting\nemotional\nexperiences aimed\nat improving\nresults",
-  "about-intro": "We're just making Good Shit like it's 1996",
-  "about-clients": "Selected clients",
-  "about-swagger": "Our Swagger,\nHo we're sorry. Awards, right ?",
-  "values-culture": "Because company culture is more than a ping pong table",
-  "values-tgif": "No.\nIt is not your tgif happy hour either...",
-  "values-hiring": "We’re constantly hiring new talent",
+    "fx.homeAbout",
+  "about-intro": "fx.aboutIntro",
+  "about-clients": "fx.aboutClients",
+  "about-swagger": "fx.aboutSwagger",
+  "values-culture": "fx.valuesCulture",
+  "values-tgif": "fx.valuesTgif",
+  "values-hiring": "fx.valuesHiring",
 };
 
 const CARET_SVG = `<span class="svg svg-caret-right">

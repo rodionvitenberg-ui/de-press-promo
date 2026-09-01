@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t(privacy.PAGE_TITLE),
     description: t(
-      "Что de-press.co хранит и чего не хранит: анонимность как свойство системы, никаких трекеров, логов с IP и поведенческой аналитики.",
+      "meta.privacy.description",
     ),
   };
 }

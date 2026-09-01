@@ -18,40 +18,40 @@ import {
  */
 
 const SENTENCES = [
-  "Если тебе тоже тесно в лентах — напиши нам",
-  "Если хочешь помогать слышать — напиши нам",
-  "Если умеешь слушать без советов — напиши нам",
-  "Если хочешь в пилот — напиши нам",
-  "Если можешь поддержать проект — напиши нам",
-  "Если умеешь кодить — напиши нам",
-  "Если умеешь рисовать облачка — напиши нам",
-  "Если видишь дыру в приватности — напиши нам",
-  "Если хочешь переводить тишины — напиши нам",
-  "Если умеешь писать бережно — напиши нам",
-  "Если просто хочешь сказать привет — напиши нам",
-  "Если тебе плохо прямо сейчас — открой /safety",
-  "Если кризис — сразу 112 или 103",
-  "Если хочешь модерировать тишину — напиши нам",
-  "Если веришь, что помощь без лайков возможна — напиши нам",
-  "Если устал от токсичной позитивности — напиши нам",
-  "Если хочешь тестировать Anti-Panic — напиши нам",
-  "Если умеешь делать доступно — напиши нам",
-  "Если знаешь, как звучит «Я слышу тебя» на твоём языке — напиши нам",
-  "Если у тебя есть похожая история — напиши нам",
-  "Если хочешь стать Helper’ом — напиши нам",
-  "Если умеешь слышать молчание — напиши нам",
-  "Если тебя тошнит от рейтингов — напиши нам",
-  "Если хочешь помочь с открытым кодом — напиши нам",
-  "Если умеешь рисовать сцены — напиши нам",
-  "Если пишешь тексты, от которых легче — напиши нам",
-  "Если хочешь в команду исследования — напиши нам",
-  "Если умеешь считать честные метрики — напиши нам",
-  "Если задумался о приватности данных — напиши нам",
-  "Если хочешь просто почитать — начни с /values/",
-  "Если дочитал до конца — точно напиши нам",
-  "Если не знаешь, что написать — просто «привет»",
-  "Если завтра будет тяжело — /safety рядом",
-  "Если готов(а) — напиши нам",
+  "contact.invite.01",
+  "contact.invite.02",
+  "contact.invite.03",
+  "contact.invite.04",
+  "contact.invite.05",
+  "contact.invite.06",
+  "contact.invite.07",
+  "contact.invite.08",
+  "contact.invite.09",
+  "contact.invite.10",
+  "contact.invite.11",
+  "contact.invite.12",
+  "contact.invite.13",
+  "contact.invite.14",
+  "contact.invite.15",
+  "contact.invite.16",
+  "contact.invite.17",
+  "contact.invite.18",
+  "contact.invite.19",
+  "contact.invite.20",
+  "contact.invite.21",
+  "contact.invite.22",
+  "contact.invite.23",
+  "contact.invite.24",
+  "contact.invite.25",
+  "contact.invite.26",
+  "contact.invite.27",
+  "contact.invite.28",
+  "contact.invite.29",
+  "contact.invite.30",
+  "contact.invite.31",
+  "contact.invite.32",
+  "contact.invite.33",
+  "contact.invite.34",
 ];
 
 type Country = {
@@ -64,18 +64,18 @@ type Country = {
 const COUNTRIES: Country[] = [
   {
     map: "https://maps.app.goo.gl/QLrbQe5WPhrRh58b9",
-    name: "Тишина",
-    text: "Тишина: здесь нет лент и рейтингов. Облачко — монолог, «Я слышу тебя», тихие фразы и похожая история.",
+    name: "common.word.silence",
+    text: "contact.country.silence",
   },
   {
     map: "https://maps.app.goo.gl/pFgX1QnHKBYaRA3m9",
-    name: "Эмпатия",
-    text: "Эмпатия: Helper’ы читают и слышат. Чат начинает только автор. ИИ помечен всегда.",
+    name: "common.word.empathy",
+    text: "contact.country.empathy",
   },
   {
     map: "https://maps.app.goo.gl/pM9YBEdDGppzd3Po6",
-    name: "Забота",
-    text: "Забота: при кризисе — 112, 103 и страница /safety. Это не медицина, и мы честно об этом говорим.",
+    name: "common.word.care",
+    text: "contact.country.care",
   },
 ];
 
@@ -96,7 +96,7 @@ function ContactContent({ t, locale, path, href }: PageContentProps) {
 
       <div className="site-container" data-router-wrapper="">
         <main data-router-view="contact" role="main" data-sentences="">
-          <h1 className="u-visually-hidden">{t("Написать нам")}</h1>
+          <h1 className="u-visually-hidden">{t("shared.footer.writeUs")}</h1>
 
           <div className="js-sentences u-hidden">
             {JSON.stringify(SENTENCES.map((s) => t(s)))}
@@ -154,7 +154,7 @@ function ContactContent({ t, locale, path, href }: PageContentProps) {
                   </li>
                   <li>
                     <a href={href("/values/")} target="_blank">
-                      {t("Дайджест")}
+                      {t("contact.digestTitle")}
                     </a>
                   </li>
                   <li>
@@ -202,7 +202,7 @@ function ContactContent({ t, locale, path, href }: PageContentProps) {
   );
 }
 
-export const PAGE_TITLE = "Связаться — de-press";
+export const PAGE_TITLE = "meta.contact.title";
 
 export default {
   BODY_CLASS: "lock-scroll",
