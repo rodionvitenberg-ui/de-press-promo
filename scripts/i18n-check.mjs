@@ -37,6 +37,7 @@ const PAGES = [
   { name: "contact", path: "/contact/" },
   { name: "safety", path: "/safety/" },
   { name: "privacy", path: "/privacy/" },
+  { name: "support", path: "/support/" },
 ];
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3111";
 const CYRILLIC = /[\u0400-\u04FF]/;
@@ -49,6 +50,7 @@ const T_SOURCE_FILES = [
   "components/pages/values.tsx",
   "components/pages/contact.tsx",
   "components/pages/privacy.tsx",
+  "components/pages/support.tsx",
   "components/legacy/SafetyContent.tsx",
   "app/(legacy)/page.tsx",
   "app/(legacy)/about/page.tsx",
@@ -56,12 +58,14 @@ const T_SOURCE_FILES = [
   "app/(legacy)/contact/page.tsx",
   "app/(legacy)/safety/page.tsx",
   "app/(legacy)/privacy/page.tsx",
+  "app/(legacy)/support/page.tsx",
   "app/(legacy)/[lang]/page.tsx",
   "app/(legacy)/[lang]/about/page.tsx",
   "app/(legacy)/[lang]/values/page.tsx",
   "app/(legacy)/[lang]/contact/page.tsx",
   "app/(legacy)/[lang]/safety/page.tsx",
   "app/(legacy)/[lang]/privacy/page.tsx",
+  "app/(legacy)/[lang]/support/page.tsx",
 ];
 
 let failures = 0;

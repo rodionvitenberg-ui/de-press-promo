@@ -976,6 +976,253 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
     margin: 0 auto 10px;
   }
 }
+/* ==========================================================================
+   SUPPORT — de-press.co/support: the open treasury page. The content column
+   mirrors privacy (720px, same type scale); the wallet plate and its copy
+   button are the only new shapes.
+   ========================================================================== */
+
+[data-router-view="support"] {
+  padding-top: 260px;
+  padding-bottom: 240px;
+}
+
+@media (max-width: 47.99em) {
+  [data-router-view="support"] {
+    padding-top: 115px;
+    padding-bottom: 160px;
+  }
+}
+
+.support-header,
+.support-section {
+  max-width: 720px;
+}
+
+.support-headline {
+  margin-bottom: 30px;
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #fff;
+  font-size: 0.6428571429rem;
+  letter-spacing: 0.4em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.support-headline--blue {
+  color: rgba(187, 194, 229, 0.5);
+}
+
+.support-title {
+  margin: 0;
+  font-family: GT Sectra Display, Times, Georgia, serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #fff;
+  font-size: 5.7142857143rem;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+@media (max-width: 47.99em) {
+  .support-title {
+    font-size: 3.5714285714rem;
+  }
+}
+
+@media (max-width: 21.865em) {
+  .support-title {
+    font-size: 2.8571428571rem;
+  }
+}
+
+.support-lead {
+  margin: 30px 0 0;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.6428571429rem;
+  line-height: 1.5217391304;
+  color: rgba(160, 168, 220, 0.7);
+}
+
+.support-subtitle {
+  margin: 0 0 30px;
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2857142857rem;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.support-section {
+  margin-top: 120px;
+}
+
+@media (max-width: 47.99em) {
+  .support-section {
+    margin-top: 80px;
+  }
+}
+
+.support-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7857142857;
+  color: rgba(160, 168, 220, 0.7);
+}
+
+.support-list li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.support-list li + li {
+  margin-top: 18px;
+}
+
+.support-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(187, 194, 229, 0.5);
+}
+
+.support-text {
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7857142857;
+  color: rgba(160, 168, 220, 0.7);
+}
+
+/* The two gateway plates — name, note, compact address, copy + QR. */
+.support-wallet {
+  position: relative;
+  margin-top: 35px;
+  padding: 30px 32px;
+  border: 1px solid rgba(160, 168, 220, 0.2);
+}
+
+.support-wallet + .support-wallet {
+  margin-top: 30px;
+}
+
+.support-wallet-name {
+  margin: 0 0 12px;
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.support-wallet-text {
+  margin: 0;
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7857142857;
+  color: rgba(160, 168, 220, 0.7);
+}
+
+/* Compact 4+4 address; a click anywhere on the line copies the full string
+   (the runtime reads it from the plate's data-address). */
+.support-wallet-address {
+  margin: 22px 0 0;
+  font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 1.2142857143rem;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  color: #fff;
+  cursor: pointer;
+}
+
+.support-wallet-actions {
+  margin-top: 24px;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.support-wallet-copy {
+  padding: 14px 26px;
+  border: 1px solid rgba(187, 194, 229, 0.5);
+  background: none;
+  font-family: Gilroy, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.6428571429rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.support-wallet-copy:hover,
+.support-wallet-copy.is-copied {
+  border-color: #fff;
+}
+
+.support-wallet-copy.is-copied {
+  color: rgba(187, 194, 229, 0.9);
+}
+
+.support-wallet-qr-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.support-wallet-qr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  padding: 0;
+  border: 1px solid rgba(187, 194, 229, 0.5);
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.support-wallet-qr:hover,
+.support-wallet-qr[aria-expanded="true"] {
+  border-color: #fff;
+}
+
+/* The scanner pop floats above the button on a white plate so a phone
+   camera reads it straight off the dark page. */
+.support-wallet-qr-pop {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  z-index: 5;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid rgba(160, 168, 220, 0.2);
+}
+
+/* Scene layering mirrors privacy: the island stays behind the content column
+   in the hero and slides away behind it on scroll. */
+:not(.menu-open) [data-page="support"] .scene-root-inner {
+  z-index: -1;
+}
+
+@media (max-width: 64.365em) {
+  :not(.menu-open) [data-page="support"] .scene-root-inner {
+    z-index: 0;
+  }
+}
 
 /* --- UI-6: северное сияние — аврора-слой сверху справа (home + меню) ---------
    PNG-градиенты about/contact перекрашены под aurora borealis (пурпурная
@@ -1007,3 +1254,4 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
 .menu-open .site-menu-aurora {
   opacity: 1;
 }
+

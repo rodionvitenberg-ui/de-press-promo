@@ -321,5 +321,22 @@
   "privacy.verify.code": "The code holds no pixels, no ads, no browser fingerprinting.",
   "privacy.verify.practices": "Self-help practices run right in your browser and never leave your device.",
   "privacy.verify.selfHosted": "Every line above is a property of the code, not a promise. The platform is self-hostable: run your own instance and look into the database tables yourself.",
-  "meta.privacy.title": "Privacy — de-press"
+  "meta.privacy.title": "Privacy — de-press",
+  "meta.support.title": "Support — de-press",
+  "meta.support.description": "de-press is a quiet harbour with no ads, no subscriptions and no cut of anyone's pain. The project lives on people's support: USDC (Solana) or an EVM wallet — copy the address and send.",
+  "support.hiddenTitle": "The open treasury",
+  "support.title": "Support",
+  "support.lead": "de-press is a quiet harbour for people going through a hard time. There are no ads, subscriptions or a cut of anyone's pain here: the project sells nothing and lives on people's support. Every transfer helps this place stay online and free.",
+  "support.manifestTitle": "The 0% manifesto",
+  "support.manifest.noFee": "0% off sessions. The service never takes a percentage from conversations and help — not now, not after grants.",
+  "support.manifest.noSubscription": "No subscriptions. There is nothing to buy here: stories, listeners and silence are not goods.",
+  "support.manifest.noMonetize": "Pain is not monetized. No sales metrics on users' tears.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Any Solana wallet works: copy the address, send USDC — the transfer arrives in seconds and the network fee is pennies.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "If your funds live in Ethereum or its L2 networks — Arbitrum, Base, Optimism — this address is for you. It's the same across all EVM networks and works for Gitcoin donations.",
+  "support.treasuryTitle": "The treasury",
+  "support.gateway.copy": "Copy address",
+  "support.gateway.copied": "Copied",
+  "support.gateway.qr": "Show the QR code"
 }

@@ -39,7 +39,7 @@ export type SceneDataJson = {
 };
 
 /** Page slug from `data-page` / legacy `data-router-view`. */
-export type PageSlug = "home" | "about" | "values" | "contact" | "privacy";
+export type PageSlug = "home" | "about" | "values" | "contact" | "privacy" | "support";
 
 declare global {
   interface Window {
@@ -54,7 +54,8 @@ declare global {
  * Page slug → island state (legacy page modules set these literally;
  * `desktop.json` has no CONTACT_STATE — the contact page reuses the legacy
  * careers pose set, the same reuse the original site did. Privacy has its
- * own PRIVACY_STATE: the about pose raised and shifted right of the title).
+ * own PRIVACY_STATE: the about pose raised and shifted right of the title;
+ * support reuses that pose).
  */
 export const PAGE_STATES: Record<PageSlug, string> = {
   home: "HOME_STATE",
@@ -62,4 +63,5 @@ export const PAGE_STATES: Record<PageSlug, string> = {
   values: "VALUES_STATE",
   contact: "CAREERS_STATE",
   privacy: "PRIVACY_STATE",
+  support: "PRIVACY_STATE",
 };

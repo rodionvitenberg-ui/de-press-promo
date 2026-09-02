@@ -321,5 +321,22 @@
   "privacy.verify.code": "У коді немає ані пікселів, ані реклами, ані зняття відбитків браузера.",
   "privacy.verify.practices": "Практики самодопомоги працюють просто в браузері й не залишають твій пристрій.",
   "privacy.verify.selfHosted": "Кожен рядок вище — властивість коду, а не обіцянка. Платформа самохоститься: підними власний екземпляр і зазирни в таблиці бази сам.",
-  "meta.privacy.title": "Приватність — de-press"
+  "meta.privacy.title": "Приватність — de-press",
+  "meta.support.title": "Підтримати — de-press",
+  "meta.support.description": "de-press — тиха гавань без реклами, підписок і відсотка з чужого болю. Проєкт живе на підтримці людей: USDC (Solana) або EVM-гаманець — скопіюй адресу й надішли.",
+  "support.hiddenTitle": "Відкрита скарбниця",
+  "support.title": "Підтримати",
+  "support.lead": "de-press — тиха гавань для тих, кому емоційно важко. Тут немає реклами, підписок і відсотка з чужого болю: проєкт нічого не продає і живе на підтримці людей. Кожен переказ допомагає цьому місцю лишатися онлайн і безкоштовним.",
+  "support.manifestTitle": "Маніфест нульової комісії",
+  "support.manifest.noFee": "0% із сесій. Сервіс не бере відсотка з розмов і допомоги — ні зараз, ні після грантів.",
+  "support.manifest.noSubscription": "Без підписок. Тут нема чого купувати: історії, слухачі й тиша — не товар.",
+  "support.manifest.noMonetize": "Біль не монетизується. Жодних метрик продажів на слізах користувачів.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Підійде будь-який Solana-гаманець: скопіюй адресу, надішли USDC — переказ дійде за секунди, комісія мережі — копійки.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "Якщо твої кошти в Ethereum чи L2-мережах — Arbitrum, Base, Optimism, — надсилай на цю адресу. Вона одна й та сама в усіх EVM-мережах і підходить для донатів через Gitcoin.",
+  "support.treasuryTitle": "Скарбниця",
+  "support.gateway.copy": "Скопіювати адресу",
+  "support.gateway.copied": "Скопійовано",
+  "support.gateway.qr": "Показати QR-код"
 }

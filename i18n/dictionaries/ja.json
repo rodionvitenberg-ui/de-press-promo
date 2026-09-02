@@ -321,5 +321,22 @@
   "privacy.verify.code": "コードの中に、トラッキングピクセルも広告も、ブラウザのフィンガープリント採取もありません。",
   "privacy.verify.practices": "セルフケアの実践はブラウザの中で完結し、あなたの端末の外へ出ることはありません。",
   "privacy.verify.selfHosted": "ここまで書いたことは、口約束ではなくコードの性質です。プラットフォームはセルフホストできるので、自分のインスタンスを立てて、データベースのテーブルを自分の目で確かめられます。",
-  "meta.privacy.title": "プライバシー — de-press"
+  "meta.privacy.title": "プライバシー — de-press",
+  "meta.support.title": "支援する — de-press",
+  "meta.support.description": "de-press は、広告もサブスクも、誰かの痛みからの取り分もない静かな港です。プロジェクトは人々の支えで成り立っています：USDC（Solana）か EVM ウォレットで、アドレスをコピーして送るだけ。",
+  "support.hiddenTitle": "開かれた財源",
+  "support.title": "支援する",
+  "support.lead": "de-press は、心が疲れている人のための静かな港です。広告もサブスクも、誰かの痛みからの取り分もありません：プロジェクトは何も売らず、人々の支えで成り立っています。ひとつひとつの送金が、この場所をオンラインのまま、無料であり続ける助けになります。",
+  "support.manifestTitle": "ゼロ手数料のマニフェスト",
+  "support.manifest.noFee": "セッションは0%。サービスは対話と支援から決して取り分を取りません — 今も、助成金の後も。",
+  "support.manifest.noSubscription": "サブスクなし。ここに買うものはありません：物語も、聞き手も、静けさも商品ではありません。",
+  "support.manifest.noMonetize": "痛みは収益化されません。利用者の涙が売上の指標になることはありません。",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Solana ウォレットならどれでも使えます：アドレスをコピーして USDC を送るだけ。着金は数秒、ネットワーク手数料はごくわずかです。",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "資金が Ethereum や L2 ネットワーク（Arbitrum、Base、Optimism）にあるなら、このアドレスへ。どの EVM ネットワークでも同じアドレスで、Gitcoin での寄付にも使えます。",
+  "support.treasuryTitle": "財源",
+  "support.gateway.copy": "アドレスをコピー",
+  "support.gateway.copied": "コピーしました",
+  "support.gateway.qr": "QR コードを表示"
 }

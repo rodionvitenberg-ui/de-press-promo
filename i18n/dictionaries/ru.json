@@ -321,5 +321,22 @@
   "privacy.verify.code": "В коде нет ни пикселей, ни рекламы, ни снятия отпечатков браузера.",
   "privacy.verify.practices": "Практики самопомощи работают прямо в браузере и не покидают твоё устройство.",
   "privacy.verify.selfHosted": "Каждая строчка выше — свойство кода, а не обещание. Платформа самохостится: подними свой экземпляр и загляни в таблицы базы сам.",
-  "meta.privacy.title": "Приватность — de-press"
+  "meta.privacy.title": "Приватность — de-press",
+  "meta.support.title": "Поддержать — de-press",
+  "meta.support.description": "de-press — тихая гавань без рекламы, подписок и процента с чужой боли. Проект живёт на поддержке людей: USDC (Solana) или EVM-кошелёк — скопируй адрес и отправь.",
+  "support.hiddenTitle": "Открытая казна",
+  "support.title": "Поддержать",
+  "support.lead": "de-press — тихая гавань для тех, кому эмоционально тяжело. Здесь нет рекламы, подписок и процента с чужой боли: проект ничего не продаёт и живёт на поддержке людей. Каждый перевод помогает этому месту оставаться онлайн и бесплатным.",
+  "support.manifestTitle": "Манифест нулевой комиссии",
+  "support.manifest.noFee": "0% с сессий. Сервис не берёт процент с разговоров и помощи — ни сейчас, ни после грантов.",
+  "support.manifest.noSubscription": "Без подписок. Здесь нечего покупать: истории, слушатели и тишина — не товар.",
+  "support.manifest.noMonetize": "Боль не монетизируется. Никаких метрик продаж на слезах пользователей.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Подойдёт любой Solana-кошелёк: скопируй адрес, отправь USDC — перевод дойдёт за секунды, комиссия сети — копейки.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "Если твои средства в Ethereum или L2-сетях — Arbitrum, Base, Optimism, — отправляй на этот адрес. Он один и тот же во всех EVM-сетях и подходит для донатов через Gitcoin.",
+  "support.treasuryTitle": "Казна",
+  "support.gateway.copy": "Скопировать адрес",
+  "support.gateway.copied": "Скопировано",
+  "support.gateway.qr": "Показать QR-код"
 }

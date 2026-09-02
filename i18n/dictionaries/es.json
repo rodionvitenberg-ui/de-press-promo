@@ -321,5 +321,22 @@
   "privacy.verify.code": "En el código no hay píxeles, ni publicidad, ni captura de huellas del navegador.",
   "privacy.verify.practices": "Las prácticas de autoayuda funcionan directamente en tu navegador y nunca salen de tu dispositivo.",
   "privacy.verify.selfHosted": "Cada línea de arriba es una propiedad del código, no una promesa. La plataforma se autoaloja: monta tu propia instancia y mira las tablas de la base de datos tú mismo.",
-  "meta.privacy.title": "Privacidad — de-press"
+  "meta.privacy.title": "Privacidad — de-press",
+  "meta.support.title": "Apoyar — de-press",
+  "meta.support.description": "de-press es un puerto tranquilo sin publicidad, suscripciones ni porcentaje del dolor ajeno. El proyecto vive del apoyo de la gente: USDC (Solana) o una wallet EVM — copia la dirección y envía.",
+  "support.hiddenTitle": "La tesorería abierta",
+  "support.title": "Apoyar",
+  "support.lead": "de-press es un puerto tranquilo para quien lo está pasando mal. Aquí no hay publicidad, suscripciones ni porcentaje del dolor ajeno: el proyecto no vende nada y vive del apoyo de la gente. Cada transferencia ayuda a que este lugar siga en línea y sea gratuito.",
+  "support.manifestTitle": "El manifiesto del 0 %",
+  "support.manifest.noFee": "0 % de las sesiones. El servicio nunca toma un porcentaje de las conversaciones y la ayuda — ni ahora ni después de las subvenciones.",
+  "support.manifest.noSubscription": "Sin suscripciones. Aquí no hay nada que comprar: las historias, los oyentes y el silencio no son mercancía.",
+  "support.manifest.noMonetize": "El dolor no se monetiza. Ninguna métrica de ventas sobre las lágrimas de los usuarios.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Sirve cualquier wallet de Solana: copia la dirección, envía USDC — la transferencia llega en segundos y la comisión de la red son céntimos.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "Si tus fondos están en Ethereum o en redes L2 — Arbitrum, Base, Optimism —, envía a esta dirección. Es la misma en todas las redes EVM y sirve para donaciones a través de Gitcoin.",
+  "support.treasuryTitle": "La tesorería",
+  "support.gateway.copy": "Copiar dirección",
+  "support.gateway.copied": "Copiado",
+  "support.gateway.qr": "Mostrar el código QR"
 }

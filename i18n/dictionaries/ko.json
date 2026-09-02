@@ -321,5 +321,22 @@
   "privacy.verify.code": "코드 안에 추적 픽셀도, 광고도, 브라우저 지문 수집도 없습니다.",
   "privacy.verify.practices": "셀프 도우미 실천은 브라우저 안에서 바로 작동하고 절대 기기를 떠나지 않습니다.",
   "privacy.verify.selfHosted": "위의 모든 문장은 약속이 아니라 코드의 속성입니다. 플랫폼은 셀프호스팅이 가능하니, 직접 인스턴스를 띄우고 데이터베이스 테이블을 직접 확인해 보세요.",
-  "meta.privacy.title": "프라이버시 — de-press"
+  "meta.privacy.title": "프라이버시 — de-press",
+  "meta.support.title": "지원하기 — de-press",
+  "meta.support.description": "de-press는 광고도, 구독도, 타인의 아픔에서 가져가는 몫도 없는 조용한 항구입니다. 프로젝트는 사람들의 후원으로 운영됩니다: USDC(Solana) 또는 EVM 지갑으로 주소를 복사해 보내세요.",
+  "support.hiddenTitle": "열린 금고",
+  "support.title": "지원하기",
+  "support.lead": "de-press는 지금 힘든 사람들을 위한 조용한 항구입니다. 여기에는 광고도, 구독도, 타인의 아픔에서 가져가는 몫도 없습니다: 프로젝트는 아무것도 팔지 않고, 사람들의 후원으로 운영됩니다. 여러분의 송금 하나하나가 이곳이 온라인으로, 무료로 남도록 돕습니다.",
+  "support.manifestTitle": "제로 수수료 선언문",
+  "support.manifest.noFee": "세션 0%. 서비스는 대화와 도움에서 결코 퍼센트를 가져가지 않습니다 — 지금도, 그랜트를 받은 뒤에도.",
+  "support.manifest.noSubscription": "구독 없음. 여기 살 것이 없습니다: 이야기도, 듣는 사람도, 고요도 상품이 아닙니다.",
+  "support.manifest.noMonetize": "아픔은 수익화되지 않습니다. 이용자의 눈물이 판매 지표가 되는 일은 없습니다.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "어떤 Solana 지갑이든 괜찮습니다: 주소를 복사하고 USDC를 보내면 됩니다. 입금은 몇 초 만에 도착하고, 네트워크 수수료는 아주 적습니다.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "자산이 Ethereum이나 L2 네트워크(Arbitrum, Base, Optimism)에 있다면 이 주소로 보내세요. 모든 EVM 네트워크에서 같은 주소이며, Gitcoin 기부에도 사용할 수 있습니다.",
+  "support.treasuryTitle": "금고",
+  "support.gateway.copy": "주소 복사",
+  "support.gateway.copied": "복사됨",
+  "support.gateway.qr": "QR 코드 보기"
 }

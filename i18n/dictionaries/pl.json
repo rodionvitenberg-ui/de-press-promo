@@ -321,5 +321,22 @@
   "privacy.verify.code": "W kodzie nie ma pikseli, reklam ani zbierania odcisku przeglądarki.",
   "privacy.verify.practices": "Praktyki samopomocy działają wprost w przeglądarce i nigdy nie opuszczają twojego urządzenia.",
   "privacy.verify.selfHosted": "Każdy wiersz powyżej to cecha kodu, a nie obietnica. Platforma jest self-hostingowa: postaw własną instancję i zajrzyj do tabel bazy danych sam.",
-  "meta.privacy.title": "Prywatność — de-press"
+  "meta.privacy.title": "Prywatność — de-press",
+  "meta.support.title": "Wesprzyj — de-press",
+  "meta.support.description": "de-press to cicha przystań bez reklam, subskrypcji i procentu od cudzego bólu. Projekt żyje ze wsparcia ludzi: USDC (Solana) albo portfel EVM — skopiuj adres i wyślij.",
+  "support.hiddenTitle": "Otwarta kasa",
+  "support.title": "Wesprzyj",
+  "support.lead": "de-press to cicha przystań dla tych, którym jest ciężko. Nie ma tu reklam, subskrypcji ani procentu od cudzego bólu: projekt niczego nie sprzedaje i żyje ze wsparcia ludzi. Każdy przelew pomaga temu miejscu pozostać online i bezpłatnym.",
+  "support.manifestTitle": "Manifest zera prowizji",
+  "support.manifest.noFee": "0% od sesji. Serwis nigdy nie bierze procentu od rozmów i pomocy — ani teraz, ani po grantach.",
+  "support.manifest.noSubscription": "Bez subskrypcji. Nie ma tu nic do kupienia: historie, słuchacze i cisza nie są towarem.",
+  "support.manifest.noMonetize": "Ból nie jest monetyzowany. Żadnych metryk sprzedaży na łzach użytkowników.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Pasuje każdy portfel Solana: skopiuj adres, wyślij USDC — przelew dociera w kilka sekund, a prowizja sieci to grosze.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "Jeśli trzymasz środki w Ethereum lub sieciach L2 — Arbitrum, Base, Optimism — wysyłaj na ten adres. Jest taki sam we wszystkich sieciach EVM i nadaje się na darowizny przez Gitcoin.",
+  "support.treasuryTitle": "Kasa",
+  "support.gateway.copy": "Skopiuj adres",
+  "support.gateway.copied": "Skopiowano",
+  "support.gateway.qr": "Pokaż kod QR"
 }

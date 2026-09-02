@@ -321,5 +321,22 @@
   "privacy.verify.code": "Im Code stecken keine Pixel, keine Werbung, kein Browser-Fingerprinting.",
   "privacy.verify.practices": "Die Übungen zur Selbsthilfe laufen direkt im Browser und verlassen dein Gerät nie.",
   "privacy.verify.selfHosted": "Jede Zeile oben ist eine Eigenschaft des Codes, kein Versprechen. Die Plattform ist selbst hostbar: starte deine eigene Instanz und sieh dir die Tabellen der Datenbank selbst an.",
-  "meta.privacy.title": "Privatsphäre — de-press"
+  "meta.privacy.title": "Privatsphäre — de-press",
+  "meta.support.title": "Unterstützen — de-press",
+  "meta.support.description": "de-press ist ein ruhiger Hafen ohne Werbung, Abos und ohne Anteil am Schmerz anderer. Das Projekt lebt von der Unterstützung von Menschen: USDC (Solana) oder EVM-Wallet — Adresse kopieren und senden.",
+  "support.hiddenTitle": "Die offene Kasse",
+  "support.title": "Unterstützen",
+  "support.lead": "de-press ist ein ruhiger Hafen für Menschen, denen es seelisch schwerfällt. Hier gibt es keine Werbung, keine Abos und keinen Anteil am Schmerz anderer: das Projekt verkauft nichts und lebt von der Unterstützung von Menschen. Jede Überweisung hilft diesem Ort, online und kostenlos zu bleiben.",
+  "support.manifestTitle": "Das 0-%-Manifest",
+  "support.manifest.noFee": "0 % von Sitzungen. Der Dienst nimmt nie einen Anteil von Gesprächen und Hilfe — nicht jetzt, nicht nach Grants.",
+  "support.manifest.noSubscription": "Keine Abos. Hier gibt es nichts zu kaufen: Geschichten, Zuhörer und Stille sind keine Ware.",
+  "support.manifest.noMonetize": "Schmerz wird nicht monetarisiert. Keine Verkaufsmetriken auf den Tränen der Nutzer.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Jedes Solana-Wallet funktioniert: Adresse kopieren, USDC senden — die Überweisung kommt in Sekunden an, die Netzgebühr kostet nur wenige Cent.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "Wenn dein Geld in Ethereum oder seinen L2-Netzwerken liegt — Arbitrum, Base, Optimism —, sende an diese Adresse. Sie ist in allen EVM-Netzwerken dieselbe und eignet sich für Gitcoin-Spenden.",
+  "support.treasuryTitle": "Die Kasse",
+  "support.gateway.copy": "Adresse kopieren",
+  "support.gateway.copied": "Kopiert",
+  "support.gateway.qr": "QR-Code zeigen"
 }

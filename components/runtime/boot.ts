@@ -16,6 +16,7 @@ import {
   isNavEnter,
   startNavExit,
 } from "./transition";
+import { initSupportCopy } from "./support-copy";
 import { initTyped } from "./typed";
 import { PAGE_STATES, type PageSlug } from "./types";
 import type { IslandProfile } from "./island";
@@ -30,6 +31,7 @@ const PAGE_MATCAPS: Record<PageSlug, [number, number]> = {
   values: [1, 0],
   contact: [1, 0],
   privacy: [3, 3],
+  support: [3, 3],
 };
 
 /** Legacy `utils/mq` xl breakpoint (ruler--1190). */
@@ -139,6 +141,7 @@ export async function bootRuntime(options: BootOptions): Promise<RuntimeHandle> 
 
   if (slug === "about") cleanups.push(initTableExpand(islandRef.current));
   if (slug === "contact") cleanups.push(initTyped());
+  if (slug === "support") cleanups.push(initSupportCopy());
 
   await loader.completed;
 

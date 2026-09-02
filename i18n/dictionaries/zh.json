@@ -321,5 +321,22 @@
   "privacy.verify.code": "代码里没有追踪像素、没有广告，也不会采集浏览器指纹。",
   "privacy.verify.practices": "自助练习直接在你的浏览器里运行，从不离开你的设备。",
   "privacy.verify.selfHosted": "上面每一句都是代码本身的属性，不是口头承诺。平台可以自托管：搭一个自己的实例，亲自去看看数据库里的表。",
-  "meta.privacy.title": "隐私 — de-press"
+  "meta.privacy.title": "隐私 — de-press",
+  "meta.support.title": "支持 — de-press",
+  "meta.support.description": "de-press 是一个没有广告、没有订阅、不从他人的痛苦中抽成的安静港湾。项目靠大家的支持运转：USDC（Solana）或任何 EVM 钱包 —— 复制地址即可支持。",
+  "support.hiddenTitle": "公开的金库",
+  "support.title": "支持",
+  "support.lead": "de-press 是为正在经历艰难时刻的人准备的安静港湾。这里没有广告、订阅，也不从他人的痛苦中抽成：项目不卖任何东西，靠大家的支持运转。每一笔转账，都在帮助这个地方继续在线、继续免费。",
+  "support.manifestTitle": "零抽成宣言",
+  "support.manifest.noFee": "对话零抽成。服务永远不从交谈与帮助中拿走百分比 —— 现在不会，拿到资助之后也不会。",
+  "support.manifest.noSubscription": "没有订阅。这里没有可购买的东西：故事、倾听者和安静都不是商品。",
+  "support.manifest.noMonetize": "痛苦不被变现。用户的泪水不会变成销售指标。",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "任何 Solana 钱包都可以：复制地址，发送 USDC —— 转账几秒到账，网络手续费只有几分钱。",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "如果你的资产在以太坊或 L2 网络 —— Arbitrum、Base、Optimism —— 用这个地址即可。它在所有 EVM 网络中都是同一个地址，也可以通过 Gitcoin 捐赠。",
+  "support.treasuryTitle": "金库",
+  "support.gateway.copy": "复制地址",
+  "support.gateway.copied": "已复制",
+  "support.gateway.qr": "显示二维码"
 }

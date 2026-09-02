@@ -25,6 +25,7 @@ const PAGES = [
   { name: "contact", path: "/contact/" },
   { name: "safety", path: "/safety/" },
   { name: "privacy", path: "/privacy/" },
+  { name: "support", path: "/support/" },
 ];
 
 mkdirSync(BASE, { recursive: true });

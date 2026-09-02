@@ -321,5 +321,22 @@
   "privacy.verify.code": "No código não há pixels, anúncios nem coleta de impressão digital do navegador.",
   "privacy.verify.practices": "As práticas de autocuidado funcionam direto no navegador e nunca saem do seu dispositivo.",
   "privacy.verify.selfHosted": "Tudo o que está acima é uma propriedade do código, não uma promessa. A plataforma é self-hosted: suba sua própria instância e olhe as tabelas do banco de dados você mesmo.",
-  "meta.privacy.title": "Privacidade — de-press"
+  "meta.privacy.title": "Privacidade — de-press",
+  "meta.support.title": "Apoiar — de-press",
+  "meta.support.description": "de-press é um porto tranquilo sem anúncios, assinaturas nem porcentagem da dor alheia. O projeto vive do apoio das pessoas: USDC (Solana) ou uma carteira EVM — copie o endereço e envie.",
+  "support.hiddenTitle": "O tesouro aberto",
+  "support.title": "Apoiar",
+  "support.lead": "de-press é um porto tranquilo para quem está passando por um momento difícil. Aqui não há anúncios, assinaturas nem porcentagem da dor alheia: o projeto não vende nada e vive do apoio das pessoas. Cada transferência ajuda este lugar a seguir online e gratuito.",
+  "support.manifestTitle": "O manifesto da comissão zero",
+  "support.manifest.noFee": "0% das sessões. O serviço nunca tira uma porcentagem das conversas e da ajuda — nem agora, nem depois dos grants.",
+  "support.manifest.noSubscription": "Sem assinaturas. Aqui não há nada para comprar: histórias, ouvintes e silêncio não são mercadoria.",
+  "support.manifest.noMonetize": "A dor não é monetizada. Nenhuma métrica de vendas sobre as lágrimas dos usuários.",
+  "support.gateway.solana.name": "Solana & USDC (SPL)",
+  "support.gateway.solana.text": "Serve qualquer carteira Solana: copie o endereço, envie USDC — a transferência chega em segundos e a taxa da rede são centavos.",
+  "support.gateway.evm.name": "Ethereum / EVM (0x…)",
+  "support.gateway.evm.text": "Se seus fundos estão na Ethereum ou em redes L2 — Arbitrum, Base, Optimism —, envie para este endereço. Ele é o mesmo em todas as redes EVM e serve para doações pelo Gitcoin.",
+  "support.treasuryTitle": "O tesouro",
+  "support.gateway.copy": "Copiar endereço",
+  "support.gateway.copied": "Copiado",
+  "support.gateway.qr": "Mostrar o código QR"
 }
