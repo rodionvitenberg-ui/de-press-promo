@@ -42,14 +42,14 @@ export function SiteHeader({ t, href }: SharedProps) {
         </span>
         {tx(t, " meta.safety.title")}
       </a>{" "}
-      <a href={href("/")} className="site-header-cases">
+      <a href="https://app.de-press.co" target="_blank" className="site-header-cases">
         {" "}
         <span className="svg svg-caret-left">
           <svg width="6" height="11">
             <use xlinkHref="/static/assets/spritesheet.svg#caret-left" />
           </svg>
         </span>
-        {tx(t, " shared.header.howItWorks")}
+        {tx(t, " shared.header.toApp")}
       </a>
 
       <button type="button" className="site-header-button" title={t("shared.menu.open")}>
