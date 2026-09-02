@@ -92,12 +92,20 @@ export function SceneRoot() {
 
 export function SiteMenuBack() {
   return (
-    <picture className="site-menu-back">
-      <source data-srcset="/static/assets/images/menu/background-xxs.png" media="(max-width: 450px)" />
-      <source data-srcset="/static/assets/images/menu/background-m.png" media="(max-width: 815px)" />
-      <source data-srcset="/static/assets/images/menu/background-l.png" media="(max-width: 1030px)" />
-      <img data-src="/static/assets/images/menu/background-xl.png" className="js-lazy" alt="" />
-    </picture>
+    <>
+      <picture className="site-menu-back">
+        <source data-srcset="/static/assets/images/menu/background-xxs.png" media="(max-width: 450px)" />
+        <source data-srcset="/static/assets/images/menu/background-m.png" media="(max-width: 815px)" />
+        <source data-srcset="/static/assets/images/menu/background-l.png" media="(max-width: 1030px)" />
+        <img data-src="/static/assets/images/menu/background-xl.png" className="js-lazy" alt="" />
+      </picture>
+      <picture className="site-menu-aurora">
+        <source data-srcset="/static/assets/images/decorations/aurora-xxs.png" media="(max-width: 450px)" />
+        <source data-srcset="/static/assets/images/decorations/aurora-m.png" media="(max-width: 815px)" />
+        <source data-srcset="/static/assets/images/decorations/aurora-l.png" media="(max-width: 1030px)" />
+        <img data-src="/static/assets/images/decorations/aurora-xl.png" className="js-lazy" alt="" />
+      </picture>
+    </>
   );
 }
 

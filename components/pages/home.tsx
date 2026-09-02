@@ -142,6 +142,13 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
               <img data-src="/static/assets/images/home/background-xl.png" className="js-lazy" alt="" />
             </picture>
 
+            <picture className="home-aurora js-in-view appear-fade">
+              <source data-srcset="/static/assets/images/decorations/aurora-xxs.png" media="(max-width: 450px)" />
+              <source data-srcset="/static/assets/images/decorations/aurora-m.png" media="(max-width: 815px)" />
+              <source data-srcset="/static/assets/images/decorations/aurora-l.png" media="(max-width: 1030px)" />
+              <img data-src="/static/assets/images/decorations/aurora-xl.png" className="js-lazy" alt="" />
+            </picture>
+
             <section className="home-hero js-in-view">
               <h2 className="u-visually-hidden">{t("home.hero.hiddenTitle")}</h2>
 

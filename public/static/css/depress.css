@@ -976,3 +976,34 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
     margin: 0 auto 10px;
   }
 }
+
+/* --- UI-6: северное сияние — аврора-слой сверху справа (home + меню) ---------
+   PNG-градиенты about/contact перекрашены под aurora borealis (пурпурная
+   кромка сверху → бирюза → зелёные шторы снизу, тёмно-навий небосвод и
+   полупрозрачные края сохранены). Тот же набор (decorations/aurora-*.png —
+   перекрашенный about) добавлен слоем сверху справа на главную и в меню
+   (виден при menu-open/menu-close, поверх .site-menu-back z 990, под
+   .site-menu-panel z 999). Слой декоративный: pointer-events: none. */
+
+[data-router-view="home"] .home-aurora {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.site-menu-aurora {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 991;
+  pointer-events: none;
+  transition: opacity 0s;
+  opacity: 0;
+}
+
+.menu-close .site-menu-aurora,
+.menu-open .site-menu-aurora {
+  opacity: 1;
+}
