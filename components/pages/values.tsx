@@ -211,11 +211,6 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
                   {t("values.notRules")}
                 </h2>
 
-                <img
-                  data-src="/static/assets/images/values/background-leaves-1.png"
-                  className="leaves leaves--1 js-lazy"
-                />
-
                 <Fx name="values-tgif" className="values-title fx-parent" t={t} />
 
                 <p className="values-subtitle appear-fade appear-delay--7">
@@ -224,11 +219,6 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
               </header>
 
               <div className="values-list-items">
-                <img
-                  data-src="/static/assets/images/values/background-leaves-2.png"
-                  className="leaves leaves--2 js-lazy"
-                />
-
                 {ROWS.map((row, i) => (
                   <div
                     key={i}
@@ -247,11 +237,6 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
                 <h2 className="u-visually-hidden">
                   {t("values.hearReady")}
                 </h2>
-
-                <img
-                  data-src="/static/assets/images/values/background-leaves-3.png"
-                  className="leaves leaves--3 js-lazy"
-                />
 
                 <Fx name="values-hiring" className="values-title fx-parent" t={t} />
 

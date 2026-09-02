@@ -20,12 +20,15 @@ import { initTyped } from "./typed";
 import { PAGE_STATES, type PageSlug } from "./types";
 import type { IslandProfile } from "./island";
 
-/** Per-page matcap (legacy page modules set these literally). */
+/**
+ * Per-page island matcap [x, y] (legacy page modules set these literally;
+ * values/contact intentionally use the home texture per user feedback).
+ */
 const PAGE_MATCAPS: Record<PageSlug, [number, number]> = {
   home: [1, 0],
   about: [3, 3],
-  values: [2, 2],
-  contact: [4, 4],
+  values: [1, 0],
+  contact: [1, 0],
   privacy: [3, 3],
 };
 
