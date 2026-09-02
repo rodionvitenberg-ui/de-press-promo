@@ -897,46 +897,6 @@ html[lang="ko"] .home-hero-title .fx-word:first-of-type {
   letter-spacing: -2px;
 }
 /* ------------------------------------------------------------------ */
-/* p.19: values page — white theme.                                    */
-/* main.css paints [data-theme=values] #fb483f; p.19 flips that page   */
-/* to white (inline value edits in main.css). These rules cover the    */
-/* white-painted elements those edits don't reach — without them they  */
-/* vanish on white: the text logo, the burger bars, the mobile header  */
-/* links (+ their svg fill), the footer h3 headings («Тишина/Эмпатия/  */
-/* Забота»), the baseline svg wordmark and the «Как помогать» label    */
-/* (inherits .link--under's white). While the curtain is open the      */
-/* header sits below the full-screen dark panel (not visible), so the  */
-/* dark paint never shows against it.                                  */
-/* ------------------------------------------------------------------ */
-[data-theme="values"] .dp-logo {
-  color: #131419;
-}
-
-[data-theme="values"] .site-header-button .button-bar {
-  background-color: #131419;
-}
-
-[data-theme="values"] .site-header-cases,
-[data-theme="values"] .site-header-posts {
-  color: #131419;
-}
-
-[data-theme="values"] .site-header-cases .svg,
-[data-theme="values"] .site-header-posts .svg {
-  fill: #131419;
-}
-
-[data-theme="values"] .site-footer-block--address h3 {
-  color: #131419;
-}
-
-[data-theme="values"] .site-footer-title .baseline {
-  fill: #131419;
-}
-
-[data-router-view="values"] .values-link {
-  color: #131419;
-}
 
 /* --- home cases: feelings («Если ты…») --------------------------------------
    The card is the message now: the feeling word (.home-cases-name) and the

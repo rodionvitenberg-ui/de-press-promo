@@ -3727,7 +3727,7 @@ body {
 }
 .values-item-title {
   margin-bottom: 25px;
-  color: #131419;
+  color: #fff;
   font-size: 2.5rem;
   line-height: 1.2857142857;
 }
@@ -3741,7 +3741,7 @@ body {
 .values-item-index {
   position: relative;
   margin-bottom: 20px;
-  color: #000;
+  color: rgba(187, 194, 229, 0.4);
   font-size: 1.7857142857rem;
   line-height: 1;
   text-align: right;
@@ -3763,7 +3763,7 @@ body {
   content: "";
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #131419;
+  background-color: #fff;
 }
 .values-item-cross:before {
   height: 1px;
@@ -3778,7 +3778,7 @@ body {
   font-family: Heebo, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: rgba(19, 20, 25, 0.6);
+  color: rgba(187, 194, 229, 0.6);
   font-size: 1rem;
   line-height: 1.7857142857;
 }
@@ -4707,11 +4707,6 @@ body.menu-active .site-header-logo svg {
   }
 }
 @media (max-width: 47.99em) {
-  [data-theme="values"].header-sticky .site-header {
-    background-color: #fff;
-  }
-}
-@media (max-width: 47.99em) {
   .menu-active.header-sticky .site-header {
     transition:
       background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -5297,50 +5292,6 @@ body.menu-active .site-header-logo svg {
 .single-post .site-footer-languages:focus a:hover,
 .single-post .site-footer-languages:hover a:hover {
   background-color: #e6e6e6;
-}
-[data-theme="values"] .site-footer-block--address b,
-[data-theme="values"] .site-footer-block--address li,
-[data-theme="values"] .site-footer-block--address p,
-[data-theme="values"] .site-footer-block--social b,
-[data-theme="values"] .site-footer-block--social li,
-[data-theme="values"] .site-footer-block--social p {
-  color: #000;
-}
-[data-theme="values"] .site-footer-block--social a {
-  border-color: #131419;
-}
-[data-theme="values"] .site-footer-block--social .svg {
-  fill: #131419;
-}
-[data-theme="values"] .site-footer-bottom {
-  border-color: #000;
-}
-[data-theme="values"] .site-footer-contact {
-  color: #000;
-}
-[data-theme="values"] .site-footer-contact a:before {
-  background-color: rgba(19, 20, 25, 0.3);
-}
-[data-theme="values"] .site-footer-newsletter {
-  color: #131419;
-}
-[data-theme="values"] .site-footer-newsletter .svg {
-  fill: #131419;
-}
-[data-theme="values"] .site-footer-languages {
-  color: #000;
-}
-[data-theme="values"] .site-footer-languages .svg-caret-right {
-  fill: rgba(0, 0, 0, 0.5);
-}
-[data-theme="values"] .site-footer-languages a {
-  background-color: #131419;
-  color: #fff;
-}
-[data-theme="values"] .site-footer-languages:focus-within a:hover,
-[data-theme="values"] .site-footer-languages:focus a:hover,
-[data-theme="values"] .site-footer-languages:hover a:hover {
-  background-color: #111217;
 }
 .showreel {
   position: fixed;
@@ -11296,15 +11247,12 @@ html:not(.disable-motion) .post-medias-item:not(.in-view) {
     top: 360px;
   }
 }
-[data-router-view="values"] .line-anim {
-  background-color: #000;
-}
 [data-router-view="values"] .values-headline,
 [data-router-view="values"] .values-subtitle {
   font-family: Gilroy, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #000;
+  color: rgba(187, 194, 229, 0.4);
   font-size: 0.6428571429rem;
   letter-spacing: 0.4em;
   line-height: 2;
@@ -11329,7 +11277,7 @@ html:not(.disable-motion) .post-medias-item:not(.in-view) {
     serif;
   font-weight: 500;
   font-style: normal;
-  color: #131419;
+  color: #fff;
   letter-spacing: -0.04em;
   line-height: 0.9230769231;
 }
@@ -11340,16 +11288,9 @@ html:not(.disable-motion) .post-medias-item:not(.in-view) {
   font-family: Heebo, Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
-  color: #131419;
+  color: #fff;
   font-size: 1.6428571429rem;
   line-height: 1.5217391304;
-}
-[data-router-view="values"] .values-link .link-line,
-[data-router-view="values"] .values-link .link-line--anim {
-  background-color: #000;
-}
-[data-theme="values"] {
-  background-color: #fff;
 }
 [data-router-view="contact"] {
   position: relative;
