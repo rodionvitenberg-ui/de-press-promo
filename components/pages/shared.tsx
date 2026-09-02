@@ -118,6 +118,7 @@ const MENU_ITEMS = [
   { key: "about", bare: "/about/", label: "shared.menu.about" },
   { key: "values", bare: "/values/", label: "shared.menu.values" },
   { key: "contact", bare: "/contact/", label: "shared.menu.contact" },
+  { key: "support", bare: "/support/", label: "shared.menu.support" },
 ];
 
 export const MENU_SOCIALS = [
