@@ -257,10 +257,7 @@ export function SiteFooter({
             <p className="site-footer-newsletter appear-fade-up appear-delay--4">
               <a href={href("/privacy/")}>
                 {tx(t, "common.privacy")}
-              </a>
-            </p>
-
-            <p className="site-footer-newsletter appear-fade-up appear-delay--5">
+              </a>{" | "}
               <a href={href("/support/")}>
                 {tx(t, "common.support")}
               </a>
