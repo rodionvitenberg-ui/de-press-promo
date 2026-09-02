@@ -970,3 +970,15 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
 html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-cases-content .link--caret {
   display: none;
 }
+
+/* --- footer: «Тишина./Эмпатия./Забота.» — только десктоп ---------------------
+   Отзыв (UI-1): на мобилке три адресных блока футера убраны на всех страницах.
+   Breakpoint — тот же, на котором .site-footer-block и так складывается в
+   столбик. HTML/словари не тронуты: ключи common.word.* живут на contact
+   (имена стран), блоки остаются в DOM для десктопа. */
+
+@media (max-width: 47.99em) {
+  .site-footer-block--address {
+    display: none;
+  }
+}
