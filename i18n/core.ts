@@ -106,7 +106,6 @@ export const FX_PHRASES: Record<string, string> = {
   "home-about":
     "fx.homeAbout",
   "about-intro": "fx.aboutIntro",
-  "about-clients": "fx.aboutClients",
   "about-swagger": "fx.aboutSwagger",
   "values-culture": "fx.valuesCulture",
   "values-tgif": "fx.valuesTgif",

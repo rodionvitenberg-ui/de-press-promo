@@ -59,12 +59,6 @@ const PRODUCTS: { text: string; small?: string }[] = [
   { text: "about.products.helper" },
 ];
 
-const CLIENT_IMAGES = [
-  "Group-4590", "Group-4581", "Group-4589", "Group-4591", "Group-4577",
-  "Group-4585", "Group-4584", "Group-4579", "Group-4587", "Group-4583",
-  "Group-4588", "Group-4578", "Group-4582", "Group-4580", "Group-4586",
-];
-
 function CaretLink({ bare, label, href, t, className }: {
   bare: string;
   label: string;
@@ -228,21 +222,6 @@ function AboutContent({ t, locale, path, href }: PageContentProps) {
               </div>
 
               <CaretLink bare="/values/" label="about.morePrinciples" href={href} t={t} className="link link--caret" />
-            </div>
-
-            <header className="about-header about-header--3 js-in-view">
-              <h2 className="u-visually-hidden">{t("about.clients.hiddenTitle")}</h2>
-
-              <p className="about-headline appear-fade-up">{t("about.clients.headline")}</p>
-              <Fx name="about-clients" className="about-title" t={t} />
-            </header>
-
-            <div className="about-clients">
-              {CLIENT_IMAGES.map((name) => (
-                <div key={name} className="about-clients-item js-in-view appear-fade-up">
-                  <img src={`/app/uploads/2019/02/${name}.png`} alt="" />
-                </div>
-              ))}
             </div>
           </div>
         </main>
