@@ -114,6 +114,12 @@
 
 Верификация: tsc 0, lint 0 в коде проекта (3 pre-existing в marketingskills/), build OK, regen DONE 60 → i18n-check OK (3 pre-existing), smoke 200 ×11 маршрутов + 404 (/nonexistent, /ru/privacy), CDP-проба — 19 PASS (прямые открытия home/about, тайминги меню, safety без шторки, шторочный переход home→about с выходом вправо после загрузки, консоль — 0 ошибок). Эталоны скриншотов пересняты (12 состояний, без loaderWait-таймаутов) — menu/прелоадер изменились осознанно. Контракт синхронизирован (`components/runtime/contract.md`).
 
+## Мобильный фолбэк «собака → остров» — трек пользователя ✅ (02.09.2026)
+
+1. **Диагноз ✅** — легаси-PNG фолбэки `images/{home,menu,about,values}/island.png` содержали волка Dogstudio: переименование `dog.png → island.png` в `ee340de` не меняло содержимое. Видны только на мобилке под `.disable-scene` (`main.css`: home/about/values `:before` — `background-size: 100% auto`, menu `:after` — `cover`), на десктопе перекрыты GL-островом.
+2. **Замена ✅** — 4 PNG отрендерены из собственной GL-сцены (CDP против dev, desktop UA, DSF=1 — SSAA-конфиг эталонов; рендер-скрипт в /tmp, репо в рендер не вовлекался): home-top (matcap [1,0]), menu-state, about-top ([3,3]), values-top ([2,2]); прозрачный фон (solo-стиль гасит и фон `body` — он прокидывается на viewport даже при `visibility:hidden`), alpha-bbox кроп, contain-fit в размеры легаси (718×807 / 800×611 / 800×613 / 800×798). CSS/рантайм/контракт не тронуты; SSR-HTML не изменился (i18n-check/реген baseline не требуются).
+3. **Верификация ✅** — фрейминг сведён с эталонами маскированным диффом (DSF1 vs DSF2-direct: values 8.0/113.9, home 14.4/73.7; при DPI≥2 рантайм идёт мимо SSAA и даёт другие позы — DSF2 отбракован); эталоны пересняты (12 состояний, loader-timeout нет): mobile home/about/values — осознанно (волк → остров), desktop/contact — шиммер (≤1.4 mean RGB); smoke 200 ×6 страниц + ×4 ассета, 404 ×2; CDP-проба мобильного home: `disable-scene`, канваса нет, фолбэк `island.png` в боксе 400×450, консоль чистая.
+
 ## Открытые решения (нужно решение пользователя)
 
 - Кейсы: контент/посыл/фоны/matcap — заполняется по ходу трека B.
