@@ -44,4 +44,6 @@ next-env.d.ts
 /scripts/out/
 
 # agent material (not part of the repo)
+/marketingskills
+/copywriting
 /TASK_STATE.json
