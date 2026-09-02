@@ -255,7 +255,13 @@ export function SiteFooter({
           <div className="site-footer-right">
             <p className="site-footer-newsletter appear-fade-up appear-delay--4">
               <a href={href("/privacy/")}>
-                {tx(t, " common.privacy ")}
+                {tx(t, "common.privacy")}
+              </a>
+            </p>
+
+            <p className="site-footer-newsletter appear-fade-up appear-delay--5">
+              <a href={href("/support/")}>
+                {tx(t, "common.support")}
               </a>
             </p>
 
