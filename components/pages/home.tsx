@@ -22,16 +22,12 @@ import type { Translator } from "@/i18n/core";
 type CaseItem = {
   theme: string;
   matcap: string;
-  /** The feeling (case name key for the returned legacy cases) — list trigger and the big card name. */
+  /** The feeling — or the case name (dictionary key); list trigger and the big card name. */
   name: string;
   /** Exact template text per .home-cases-line (leading/trailing spaces matter). */
   lines: string[];
   /** The quiet offer — tool name in the caret link. */
   offer: string;
-  /** Legacy-format cases (returned from pre-B1): per-case «АВТОРУ» label — list trigger span and card headline share the key. */
-  group?: string;
-  /** Legacy-format cases: the card headline above the big name. */
-  headline?: string;
 };
 
 const CASES: CaseItem[] = [
@@ -67,8 +63,6 @@ const CASES: CaseItem[] = [
     theme: "kikk-18",
     matcap: "9, 9",
     name: "cases.pulse.name",
-    group: "cases.pulse.author",
-    headline: "cases.pulse.author",
     lines: ["cases.pulse.line1"],
     offer: "cases.offer.more",
   },
@@ -76,8 +70,6 @@ const CASES: CaseItem[] = [
     theme: "the-kennedy-center",
     matcap: "10, 10",
     name: "cases.hearers.name",
-    group: "cases.hearers.author",
-    headline: "cases.hearers.author",
     lines: ["cases.hearers.line1", " cases.hearers.line2", " cases.hearers.line3"],
     offer: "cases.offer.more",
   },
@@ -99,9 +91,6 @@ function CaseScene({ item, t, href }: { item: CaseItem; t: Translator; href: (ba
           <span className="u-visually-hidden">{t(item.name)}</span>
         </a>
         <div className="home-cases-content">
-          {item.headline ? (
-            <p className="home-cases-headline">{t(item.headline)}</p>
-          ) : null}
           <p className="home-cases-name">{t(item.name)}</p>
           <p className="home-cases-text">
             {item.lines.flatMap((line, i) =>
@@ -195,14 +184,7 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
                   {CASES.map((item) => (
                     <li key={item.theme} className="js-in-view appear-fade-up">
                       <a href={href("/about/")} data-theme={item.theme} data-matcap={item.matcap}>
-                        {item.group ? (
-                          <>
-                            <span>{t(item.group)}</span>
-                            {tx(t, ` ${item.name}`)}
-                          </>
-                        ) : (
-                          t(item.name)
-                        )}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
