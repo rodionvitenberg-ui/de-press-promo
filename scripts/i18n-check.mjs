@@ -155,11 +155,18 @@ function collectSource(raw, file) {
 
 // ---------------------------------------------------------------------------
 
-// ru baseline tokens → keys through the complete ru.json (value → key).
+// ru baseline tokens → keys through the complete ru.json (value → keys;
+// distinct keys may legitimately share a value, e.g. the per-case «АВТОРУ»
+// labels cases.pulse.author / cases.hearers.author).
 const ruDict = JSON.parse(
   await readFile("i18n/dictionaries/ru.json", "utf8"),
 );
-const ruValueToKey = new Map(Object.entries(ruDict).map(([k, v]) => [v, k]));
+const ruValueToKeys = new Map();
+for (const [key, value] of Object.entries(ruDict)) {
+  const keys = ruValueToKeys.get(value) ?? new Set();
+  keys.add(key);
+  ruValueToKeys.set(value, keys);
+}
 for (const page of PAGES) {
   let snapshot;
   try {
@@ -171,8 +178,7 @@ for (const page of PAGES) {
     process.exit(1);
   }
   for (const s of snapshotSources(snapshot.split("\n"), new Set())) {
-    const key = ruValueToKey.get(s);
-    if (key) sources.add(key);
+    for (const key of ruValueToKeys.get(s) ?? []) sources.add(key);
   }
 }
 

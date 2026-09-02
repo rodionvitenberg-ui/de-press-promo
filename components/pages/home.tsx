@@ -22,13 +22,13 @@ import type { Translator } from "@/i18n/core";
 type CaseItem = {
   theme: string;
   matcap: string;
-  /** The feeling (tool name for the returned legacy cases) — list trigger and the big card name. */
+  /** The feeling (case name key for the returned legacy cases) — list trigger and the big card name. */
   name: string;
   /** Exact template text per .home-cases-line (leading/trailing spaces matter). */
   lines: string[];
   /** The quiet offer — tool name in the caret link. */
   offer: string;
-  /** Legacy-format cases (returned from pre-B1): group label shown in the list trigger. */
+  /** Legacy-format cases (returned from pre-B1): per-case «АВТОРУ» label — list trigger span and card headline share the key. */
   group?: string;
   /** Legacy-format cases: the card headline above the big name. */
   headline?: string;
@@ -66,18 +66,18 @@ const CASES: CaseItem[] = [
   {
     theme: "kikk-18",
     matcap: "9, 9",
-    name: "Pulse",
-    group: "cases.author",
-    headline: "cases.author",
+    name: "cases.pulse.name",
+    group: "cases.pulse.author",
+    headline: "cases.pulse.author",
     lines: ["cases.pulse.line1"],
     offer: "cases.offer.more",
   },
   {
     theme: "the-kennedy-center",
     matcap: "10, 10",
-    name: "Hearers",
-    group: "cases.author",
-    headline: "cases.author",
+    name: "cases.hearers.name",
+    group: "cases.hearers.author",
+    headline: "cases.hearers.author",
     lines: ["cases.hearers.line1", " cases.hearers.line2", " cases.hearers.line3"],
     offer: "cases.offer.more",
   },
