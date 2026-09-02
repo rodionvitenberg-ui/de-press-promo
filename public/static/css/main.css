@@ -10848,11 +10848,11 @@ html:not(.disable-motion) .post-medias-item:not(.in-view) {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 80%;
+  height: 30%;
   width: 100%;
   content: "";
   z-index: 0;
-  background: linear-gradient(0deg, #131419 5%, rgba(19, 20, 25, 0));
+  background: linear-gradient(0deg, rgba(19, 20, 25, 0.9) 0%, rgba(19, 20, 25, 0) 100%);
 }
 [data-router-view="about"] .about-table-inner {
   position: relative;
