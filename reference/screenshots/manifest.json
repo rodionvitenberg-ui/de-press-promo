@@ -28,7 +28,7 @@
     "state": "case-hover",
     "route": "/",
     "expectedTheme": "tomorrowland",
-    "bodyTheme": "tomorrowland"
+    "bodyTheme": "home"
   },
   {
     "device": "desktop",
