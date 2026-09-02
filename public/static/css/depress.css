@@ -998,3 +998,21 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
     content: none;
   }
 }
+
+/* --- футер/мобайл: тире-разделитель и адрес — отдельными строками ------------
+   Отзыв (UI-3): на мобилке «Хочешь помочь проекту — напиши: — адрес» слито в
+   одну строку. Разделительная линия (a:before) и адрес ставятся столбиком
+   под призывом: линия по центру (своей ширины: 10px ≤28.115em / 28px выше),
+   адрес строкой ниже. Разметка/словари не тронуты (вариант подтверждён
+   пользователем). Десктоп не затронут — flex space-between остаётся. --- */
+@media (max-width: 47.99em) {
+  .site-footer-contact a {
+    display: block;
+    margin-top: 12px;
+  }
+
+  .site-footer-contact a:before {
+    display: block;
+    margin: 0 auto 10px;
+  }
+}
