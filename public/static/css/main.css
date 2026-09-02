@@ -5832,7 +5832,7 @@ body.menu-active .site-header-logo svg {
   font-style: normal;
   z-index: 2;
   color: #646d9e;
-  font-size: 0.5714285714rem;
+  font-size: 1.1428571429rem;
   letter-spacing: 0.5em;
   line-height: 1;
   text-transform: uppercase;
@@ -5840,7 +5840,7 @@ body.menu-active .site-header-logo svg {
 @media (max-width: 64.365em) {
   .home-cases-title {
     margin-bottom: 40px;
-    font-size: 0.7142857143rem;
+    font-size: 1.4285714286rem;
   }
 }
 @media (min-width: 64.375em) {
