@@ -6396,7 +6396,7 @@ body.menu-active .site-header-logo svg {
 .values-hero-content {
   height: auto;
   width: 260px;
-  margin-top: 145px;
+  margin-top: 100px;
   margin-right: 26px;
   margin-left: auto;
 }
@@ -6417,7 +6417,7 @@ body.menu-active .site-header-logo svg {
     position: relative;
     z-index: 2;
     width: 100%;
-    margin-top: 320px;
+    margin-top: 260px;
     padding-left: 0;
   }
 }
@@ -6508,48 +6508,12 @@ body.menu-active .site-header-logo svg {
 }
 @media (min-width: 48em) {
   .values-list-header {
-    position: absolute;
-    top: 1195px;
-    right: 38px;
-    height: auto;
-    width: 310px;
-  }
-}
-@media (min-width: 50.9375em) {
-  .values-list-header {
-    position: absolute;
-    top: 200px;
-    right: 35px;
-    height: auto;
-    width: auto;
-  }
-}
-@media (min-width: 64.375em) {
-  .values-list-header {
-    right: -72px;
+    margin-bottom: 100px;
   }
 }
 @media (min-width: 48em) {
   .values-list-footer {
-    position: absolute;
-    bottom: 5px;
-    left: 35px;
-    height: auto;
-    width: 310px;
-  }
-}
-@media (min-width: 50.9375em) {
-  .values-list-footer {
-    position: absolute;
-    bottom: 280px;
-    left: 45px;
-    height: auto;
-    width: auto;
-  }
-}
-@media (min-width: 64.375em) {
-  .values-list-footer {
-    left: 0;
+    margin-top: 140px;
   }
 }
 @media (max-width: 47.99em) {
@@ -6571,7 +6535,7 @@ body.menu-active .site-header-logo svg {
 }
 @media (min-width: 50.9375em) {
   .values-list-row + .values-list-row {
-    margin-top: 85px;
+    margin-top: 64px;
   }
 }
 @media (min-width: 48em) {
@@ -6595,18 +6559,12 @@ body.menu-active .site-header-logo svg {
 }
 @media (min-width: 50.9375em) {
   .values-list-row .values-item--4 {
-    margin-top: 255px;
-    margin-bottom: 10px;
-  }
-}
-@media (min-width: 50.9375em) {
-  .values-list-row .values-item--5 {
-    margin-bottom: -30px;
+    margin-top: 120px;
   }
 }
 @media (min-width: 50.9375em) {
   .values-list-row .values-item--10 {
-    margin-top: 430px;
+    margin-top: 140px;
   }
 }
 @media (min-width: 50.9375em) {
@@ -11077,7 +11035,7 @@ html:not(.disable-motion) .post-medias-item:not(.in-view) {
 }
 @media (min-width: 50.9375em) {
   [data-router-view="values"] {
-    padding-bottom: 480px;
+    padding-bottom: 200px;
   }
 }
 .disable-scene [data-router-view="values"]:before {
