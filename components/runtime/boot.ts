@@ -8,7 +8,6 @@ import { initLoader } from "./loader";
 import { initMenu } from "./menu";
 import { initReveals } from "./reveals";
 import { loadSceneData } from "./scene-data";
-import { initTableExpand } from "./table-expand";
 import {
   CURTAIN_MS,
   NAV_HOLD_MS,
@@ -139,7 +138,6 @@ export async function bootRuntime(options: BootOptions): Promise<RuntimeHandle> 
   cleanups.push(initCookie());
   cleanups.push(initTransitions());
 
-  if (slug === "about") cleanups.push(initTableExpand(islandRef.current));
   if (slug === "contact") cleanups.push(initTyped());
   if (slug === "support") cleanups.push(initSupportCopy());
 
