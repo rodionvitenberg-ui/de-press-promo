@@ -27,7 +27,12 @@ type ValueItem = {
   text: string[];
 };
 
-const ROWS: { modifier?: "right" | "center"; items: ValueItem[] }[] = [
+const ROWS: {
+  modifier?: "right" | "center";
+  /** Render the hiring footer inside this row (left cell on desktop). */
+  hiring?: boolean;
+  items: ValueItem[];
+}[] = [
   {
     items: [
       {
@@ -98,6 +103,7 @@ const ROWS: { modifier?: "right" | "center"; items: ValueItem[] }[] = [
   },
   {
     modifier: "right",
+    hiring: true,
     items: [
       {
         n: 8,
@@ -156,6 +162,29 @@ function ValueArticle({ item, t }: { item: ValueItem; t: Translator }) {
         )}
       </p>
     </article>
+  );
+}
+
+function ValuesHiring({ t }: { t: Translator }) {
+  return (
+    <footer className="values-list-footer js-in-view">
+      <h2 className="u-visually-hidden">
+        {t("values.hearReady")}
+      </h2>
+
+      <Fx name="values-hiring" className="values-title fx-parent" t={t} />
+
+      <a
+        href="mailto:hello@de-press.co"
+        className="values-link link link--under"
+        title={t("values.helpLink")}
+      >
+        {" "}
+        <span className="link-label">{t("values.helpLink")}</span>{" "}
+        <span className="link-line" />{" "}
+        <span className="link-line--anim" />{" "}
+      </a>
+    </footer>
   );
 }
 
@@ -229,28 +258,11 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
                     {row.items.map((item) => (
                       <ValueArticle key={item.n} item={item} t={t} />
                     ))}
+
+                    {row.hiring && <ValuesHiring t={t} />}
                   </div>
                 ))}
               </div>
-
-              <footer className="values-list-footer js-in-view">
-                <h2 className="u-visually-hidden">
-                  {t("values.hearReady")}
-                </h2>
-
-                <Fx name="values-hiring" className="values-title fx-parent" t={t} />
-
-                <a
-                  href="mailto:hello@de-press.co"
-                  className="values-link link link--under"
-                  title={t("values.helpLink")}
-                >
-                  {" "}
-                  <span className="link-label">{t("values.helpLink")}</span>{" "}
-                  <span className="link-line" />{" "}
-                  <span className="link-line--anim" />{" "}
-                </a>
-              </footer>
             </div>
           </section>
         </main>

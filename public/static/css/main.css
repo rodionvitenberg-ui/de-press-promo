@@ -6468,14 +6468,18 @@ body.menu-active .site-header-logo svg {
 .values-list-header {
   position: relative;
 }
-.values-list-footer .values-title,
 .values-list-header .values-title {
   font-size: 7.8571428571rem;
 }
+.values-list-footer .values-title {
+  font-size: 4.2857142857rem;
+}
 @media (max-width: 64.365em) {
-  .values-list-footer .values-title,
   .values-list-header .values-title {
     font-size: 5.7142857143rem;
+  }
+  .values-list-footer .values-title {
+    font-size: 2.9285714286rem;
   }
 }
 @media (max-width: 50.9275em) {
@@ -6512,11 +6516,21 @@ body.menu-active .site-header-logo svg {
   }
 }
 @media (min-width: 48em) {
-  .values-list-footer {
-    margin-top: 140px;
+  .values-list-row .values-list-footer {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+    width: 50%;
+    padding-right: 40px;
+    padding-left: 40px;
   }
 }
-@media (max-width: 47.99em) {
+@media (min-width: 50.9375em) {
+  .values-list-row .values-list-footer {
+    width: 33.33%;
+  }
+}
+@media (max-width: 50.9275em) {
   .values-list-footer {
     margin-top: 65px;
   }
@@ -6560,11 +6574,6 @@ body.menu-active .site-header-logo svg {
 @media (min-width: 50.9375em) {
   .values-list-row .values-item--4 {
     margin-top: 120px;
-  }
-}
-@media (min-width: 50.9375em) {
-  .values-list-row .values-item--10 {
-    margin-top: 140px;
   }
 }
 @media (min-width: 50.9375em) {
