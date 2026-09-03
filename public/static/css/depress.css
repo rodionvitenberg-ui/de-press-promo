@@ -1269,3 +1269,121 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
   opacity: 1;
 }
 
+
+/* --- сцена: плавное появление/уход острова -----------------------------------
+   Island.onScroll снимает .scene-root.is-visible, когда скролл проходит
+   последнюю ключевую точку состояния (у всех поз финальный кейпоинт имеет
+   visible: false) — на нижнем экране страницы остров исчезал мгновенно:
+   main.css переключает opacity 0↔1 без transition. Тайминг и изинг — те же,
+   что у .home-cases-scene выше по файлу (is-visible choreography). */
+
+.scene-root {
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* --- 404: страница не найдена -------------------------------------------------
+   Оригинальная страница (в легаси 404 не существовало). Сцена — поза контактов
+   (PAGE_STATES["not-found"] → CAREERS_STATE), фон — контактные PNG.
+   Типографика — по образцу [data-router-view="contact"] из main.css
+   (GT Sectra Display) и .home-hero-title (fx-заголовок «404.» с пер-буквенным
+   reveal на .in-view). Локаль разрешает клиентская обёртка
+   (components/pages/not-found-client.tsx) из первого сегмента URL. */
+
+[data-router-view="not-found"] {
+  position: relative;
+  padding-top: 330px;
+  padding-bottom: 110px;
+}
+
+[data-router-view="not-found"] .center {
+  position: relative;
+}
+
+[data-router-view="not-found"] .nf-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+[data-router-view="not-found"] .nf-title {
+  margin-bottom: 70px;
+  font-family: GT Sectra Display, Times, Georgia, serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #fff;
+  font-size: 8.5714285714rem;
+  letter-spacing: -0.04em;
+  line-height: 0.8916666667;
+}
+
+[data-router-view="not-found"] .nf-typed {
+  height: 150px;
+  max-width: 540px;
+  margin-bottom: 60px;
+  font-family: GT Sectra Display, Times, Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  font-size: 3.5714285714rem;
+  line-height: 1;
+}
+
+[data-router-view="not-found"] .nf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 25px 45px;
+}
+
+[data-router-view="not-found"] .nf-actions .link--caret {
+  color: #fff;
+}
+
+[data-router-view="not-found"] .nf-actions .svg {
+  fill: #fff;
+}
+
+[data-router-view="not-found"] .nf-write {
+  font-family: Heebo, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: rgba(160, 168, 220, 0.7);
+  font-size: 0.9285714286rem;
+  line-height: 1.9;
+  text-decoration: none;
+  transition: color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.no-touchevents [data-router-view="not-found"] .nf-write:focus,
+.no-touchevents [data-router-view="not-found"] .nf-write:hover {
+  color: #fff;
+}
+
+@media (max-width: 50.9275em) {
+  [data-router-view="not-found"] {
+    padding-top: 200px;
+    padding-bottom: 0;
+  }
+
+  [data-router-view="not-found"] .nf-title {
+    margin-bottom: 50px;
+    font-size: 5.7142857143rem;
+  }
+
+  [data-router-view="not-found"] .nf-typed {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 37.49em) {
+  [data-router-view="not-found"] {
+    padding-top: 160px;
+  }
+}
+
+@media (max-width: 21.865em) {
+  [data-router-view="not-found"] .nf-title {
+    font-size: 3.9285714286rem;
+  }
+}
+

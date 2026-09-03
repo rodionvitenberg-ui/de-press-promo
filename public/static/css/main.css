@@ -10847,7 +10847,7 @@ html:not(.disable-motion) .post-medias-item:not(.in-view) {
 }
 @media (min-width: 50.9375em) {
   [data-router-view="values"] {
-    padding-bottom: 200px;
+    padding-bottom: 320px;
   }
 }
 .disable-scene [data-router-view="values"]:before {

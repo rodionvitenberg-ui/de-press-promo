@@ -22,7 +22,8 @@ import type { IslandProfile } from "./island";
 
 /**
  * Per-page island matcap [x, y] (legacy page modules set these literally;
- * values/contact intentionally use the home texture per user feedback).
+ * values/contact/not-found intentionally use the home texture per user
+ * feedback).
  */
 const PAGE_MATCAPS: Record<PageSlug, [number, number]> = {
   home: [1, 0],
@@ -31,6 +32,7 @@ const PAGE_MATCAPS: Record<PageSlug, [number, number]> = {
   contact: [1, 0],
   privacy: [3, 3],
   support: [3, 3],
+  "not-found": [1, 0],
 };
 
 /** Legacy `utils/mq` xl breakpoint (ruler--1190). */
@@ -138,7 +140,7 @@ export async function bootRuntime(options: BootOptions): Promise<RuntimeHandle> 
   cleanups.push(initCookie());
   cleanups.push(initTransitions());
 
-  if (slug === "contact") cleanups.push(initTyped());
+  if (slug === "contact" || slug === "not-found") cleanups.push(initTyped());
   if (slug === "support") cleanups.push(initSupportCopy());
 
   await loader.completed;

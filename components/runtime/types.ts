@@ -38,8 +38,18 @@ export type SceneDataJson = {
   MATCAPS: SceneMatcap[];
 };
 
-/** Page slug from `data-page` / legacy `data-router-view`. */
-export type PageSlug = "home" | "about" | "values" | "contact" | "privacy" | "support";
+/**
+ * Page slug from `data-page` / legacy `data-router-view`.
+ * `not-found` — the 404 page (originalized, no legacy slug existed).
+ */
+export type PageSlug =
+  | "home"
+  | "about"
+  | "values"
+  | "contact"
+  | "privacy"
+  | "support"
+  | "not-found";
 
 declare global {
   interface Window {
@@ -64,4 +74,5 @@ export const PAGE_STATES: Record<PageSlug, string> = {
   contact: "CAREERS_STATE",
   privacy: "PRIVACY_STATE",
   support: "PRIVACY_STATE",
+  "not-found": "CAREERS_STATE",
 };

@@ -31,7 +31,9 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
    `show()` + `init()` + `onResize()` (unlock — в onComplete интро);
    острова нет → снять `lock-scroll` напрямую (мобильный путь).
    `InView.reset()` (reveals + lazy) — через 500ms после `completed`;
-   `Loader.hide()` — параллельно.
+   `Loader.hide()` — параллельно. Boot-порядок общий и для 404
+   (`app/not-found.tsx` → `not-found-client.tsx` → `bootRuntime` со slug
+   `not-found`).
 
 ## Island (сцена) — точный порт легаси
 
@@ -46,10 +48,12 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
   `N = min((S-TA)/|TA-TB|, 1)`; `value = lerp(VA, VB, N)`. Флаг `visible === false`
   у ключевой точки управляет `html классом` `.scene-root.is-visible`.
 - Состояния страниц: `home→HOME_STATE`, `about→ABOUT_STATE`, `values→VALUES_STATE`,
-  `contact→CAREERS_STATE`, `privacy→PRIVACY_STATE` (в JSON нет CONTACT_STATE —
-  контакт переиспользует легаси-careers позы; PRIVACY_STATE — оригинальная
-  поза about, поднятая и отзеркаленная вправо от заголовка; камера смотрит
-  с −Z (`stage.ts`), поэтому мир X+ = лево экрана — «вправо» это минус X). Меню: `setState('MENU_STATE') + setMatcap(1,0) +
+  `contact→CAREERS_STATE`, `privacy→PRIVACY_STATE`, `not-found→CAREERS_STATE`
+  (в JSON нет CONTACT_STATE — контакт переиспользует легаси-careers позы;
+  PRIVACY_STATE — оригинальная поза about, поднятая и отзеркаленная вправо от
+  заголовка; камера смотрит с −Z (`stage.ts`), поэтому мир X+ = лево экрана —
+  «вправо» это минус X; 404-страница — оригинализация без легаси-снапшота,
+  переиспользует позу контактов). Меню: `setState('MENU_STATE') + setMatcap(1,0) +
   setMatcapProgress(1) + setAnimationProgress(1, hard)`.
 - Initial matcap по страницам: home `[1,0]`, about `[3,3]`, values `[2,2]`,
   contact `[4,4]`, privacy `[3,3]`.
@@ -62,18 +66,24 @@ Highway router) + `public/data/scene/*.json`. Этот документ — ин
 | `.js-lazy` (+ `source[data-srcset]`) | lazy-подмена `data-src`/`data-srcset` при приближении (lozad-поведение, margin 300px); исключение: элементы с нулевым rect (скрытые сцены) прелоадятся сразу — IO их никогда не увидит |
 | `.site-header-button` | открыть/закрыть меню: `button.is-active`; через 800ms `body.menu-open`; сцена → MENU_STATE. Закрытие — тот же проход шторки (`menu-running` 1.6s), `menu-open` снимается в середине (ещё через 800ms) — страница раскрывается уходом шторки вправо |
 | `body.menu-running` | блокировка повторных кликов на время анимации шторки |
-| `html.dp-nav-in` / `.dp-nav-cover` / `.dp-nav-out` + `.page-curtain` | шторочные переходы страниц (`runtime/transition.ts` + inline-скрипт `app/(legacy)/layout.tsx`): leave — внутренняя ссылка (кроме `/safety/`, внешних, `_blank`/`download`) ставит `sessionStorage["dp-nav"]`, покрывает экран (0.8s) и навигирует; enter — скрипт до первой отрисовки потребляет флаг → `dp-nav-in` (страница открывается уже покрытой); boot после loader `completed` держит 0.3s и уводит шторку вправо (`dp-nav-out`). Без флага скрипт ставит `dp-boot-load` — обложка прелоадера с первого кадра прямого открытия |
+| `html.dp-nav-in` / `.dp-nav-cover` / `.dp-nav-out` + `.page-curtain` | шторочные переходы страниц (`runtime/transition.ts` + inline-скрипт `app/legacy-shell.tsx`, шэрится `(legacy)/layout.tsx` и root 404): leave — внутренняя ссылка (кроме `/safety/`, внешних, `_blank`/`download`) ставит `sessionStorage["dp-nav"]`, покрывает экран (0.8s) и навигирует; enter — скрипт до первой отрисовки потребляет флаг → `dp-nav-in` (страница открывается уже покрытой); boot после loader `completed` держит 0.3s и уводит шторку вправо (`dp-nav-out`). Без флага скрипт ставит `dp-boot-load` — обложка прелоадера с первого кадра прямого открытия |
 | `.js-cookie` + `.js-cookie-accept`/`.js-cookie-deny` | нет `localStorage.acceptedCookie` → `.visible`; клик → записать `true`/`false`, снять `.visible` |
 | `.home-cases-list a[data-matcap][data-theme]` | hover → `body[data-theme=…]` + tween `setMatcap(a,b)`; уход → сброс на страницу; сцены `.home-cases-scene` получают `is-visible`/`is-hidden` (`has-delay` — стаггер) |
-| `.js-typed` + `.js-sentences` (contact) | typewriter: содержимое `.js-sentences` — JSON-массив строк; печать/стирание по кругу, курсор `span.typed-cursor` |
+| `.js-typed` + `.js-sentences` (contact, not-found) | typewriter: содержимое `.js-sentences` — JSON-массив строк; печать/стирание по кругу, курсор `span.typed-cursor` |
 | Хедер | скролл: `scrollTop >= headerHeight` → `body.header-sticky`; вниз → `+header-is-hidden`, вверх → показать; при меню — sticky без hidden; первая прокрутка направления не имеет (legacy `previousScrollTop` стартует как undefined) |
 | `.ruler--*` | якоря KEYPOINTS — обязательны в разметке сцен (`.scene-root`) |
+| `.scene-root` | `is-visible` ставится/снимается по кейпоинтам (`visible: false` — уход на нижнем экране); уход/возврат плавные — `depress.css` даёт `.scene-root` transition opacity 0.4s |
 
 ## Границы владения
 
 - Next.js: роуты, SSG/SSR, `<Link>` не используется — навигация обычными
   `<a>` (full page load, каждый роут бутится заново); переходы — шторка
-  поверх загрузки (`runtime/transition.ts`).
+  поверх загрузки (`runtime/transition.ts`). Несовпадающие URL и `notFound()`
+  обслуживает корневой `app/not-found.tsx` (реальный 404-статус): он несёт
+  legacy-shell явно (`app/legacy-shell.tsx`), а локаль разрешает клиентская
+  обёртка `not-found-client.tsx` из первого сегмента URL — своп происходит до
+  первого чтения DOM рантаймом, `RuntimeBoot` получает константные пропсы
+  (без `htmlLang`), чтобы бут не перезапускался.
 - Рантайм владеет DOM после boot (React не ре-рендерит дерево страниц).
 - С A2 вендор `main.js`/`detectizr.js`/`modernizr.js` больше не загружается
   (дефолтный boot — `components/runtime/boot`); файлы удаляются в A3.

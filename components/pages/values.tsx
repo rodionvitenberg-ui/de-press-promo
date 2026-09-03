@@ -165,7 +165,13 @@ function ValueArticle({ item, t }: { item: ValueItem; t: Translator }) {
   );
 }
 
-function ValuesHiring({ t }: { t: Translator }) {
+function ValuesHiring({
+  t,
+  href,
+}: {
+  t: Translator;
+  href: (bare: string) => string;
+}) {
   return (
     <footer className="values-list-footer js-in-view">
       <h2 className="u-visually-hidden">
@@ -175,7 +181,7 @@ function ValuesHiring({ t }: { t: Translator }) {
       <Fx name="values-hiring" className="values-title fx-parent" t={t} />
 
       <a
-        href="mailto:hello@de-press.co"
+        href={href("/support/")}
         className="values-link link link--under"
         title={t("values.helpLink")}
       >
@@ -259,7 +265,7 @@ function ValuesContent({ t, locale, path, href }: PageContentProps) {
                       <ValueArticle key={item.n} item={item} t={t} />
                     ))}
 
-                    {row.hiring && <ValuesHiring t={t} />}
+                    {row.hiring && <ValuesHiring t={t} href={href} />}
                   </div>
                 ))}
               </div>
