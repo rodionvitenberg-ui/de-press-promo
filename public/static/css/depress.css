@@ -788,6 +788,20 @@ html.dp-boot-load .site-loader:not(.is-hidden) {
   place-items: center;
 }
 
+/* The tree-island mark centered inside the ring: the legacy .site-loader-sprite
+   slot (an empty span that ships without any CSS) carries the white logo and
+   shares the content grid cell with the progress ring, so both stay concentric. */
+.site-loader-sprite {
+  grid-area: 1 / 1;
+  width: 68px;
+  height: 68px;
+  background: url("/static/assets/images/loader/logo.png") center / contain no-repeat;
+}
+
+.site-loader-progress {
+  grid-area: 1 / 1;
+}
+
 .site-loader-progress svg {
   display: block;
   width: 136px;
