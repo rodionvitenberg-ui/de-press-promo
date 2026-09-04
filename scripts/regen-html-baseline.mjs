@@ -12,7 +12,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { LOCALES, DEFAULT_LOCALE } from "../i18n/core.ts";
+import { LOCALE_COOKIE, LOCALES } from "../i18n/core.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = join(ROOT, "scripts", "out", "html-baseline");
@@ -166,8 +166,11 @@ function normalize(html) {
 
 for (const locale of LOCALES) {
   for (const page of PAGES) {
-    const url = `${BASE_URL}${locale === DEFAULT_LOCALE ? "" : `/${locale}`}${page.path}`;
-    const res = await fetch(url);
+    // Clean public URL + the dp-locale cookie (proxy.ts picks the locale).
+    const url = `${BASE_URL}${page.path}`;
+    const res = await fetch(url, {
+      headers: { Cookie: `${LOCALE_COOKIE}=${locale}` },
+    });
     if (!res.ok) throw new Error(`${res.status} ${url}`);
     writeFileSync(
       join(BASE, `${locale}--${page.name}.html`),

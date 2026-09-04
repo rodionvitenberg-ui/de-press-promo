@@ -38,6 +38,13 @@ export function getTranslator(locale: Locale): Translator {
   return makeTranslator(DICTIONARIES[locale]);
 }
 
-export { DEFAULT_LOCALE, LOCALES, isLocale, localePath } from "./core";
+export {
+  DEFAULT_LOCALE,
+  LOCALE_COOKIE,
+  LOCALES,
+  isLocale,
+  localeFromHeader,
+  localePath,
+} from "./core";
 export type { Locale } from "./core";
 

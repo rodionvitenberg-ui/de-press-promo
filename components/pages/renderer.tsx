@@ -4,7 +4,6 @@ import {
   FX_PHRASES,
   fxBlock,
   languageSwitcherHTML,
-  localePath,
 } from "@/i18n/core";
 import { DEFAULT_LOCALE, type Locale, type Translator } from "@/i18n/core";
 import { getTranslator } from "@/i18n";
@@ -22,9 +21,10 @@ export type PageContentProps = {
   /** Bare route of the page, e.g. "/" — for the footer language switcher. */
   path: string;
   /**
-   * Localize a bare internal route ("/about/" → "/en/about/") — the JSX
-   * equivalent of localizeHrefs in the markup pipeline. External URLs pass
-   * through untouched.
+   * Resolve a bare internal route ("/about/" → "/about/"). All locales share
+   * the same clean URLs — the active language comes from the dp-locale cookie
+   * (proxy.ts), so no route is ever prefixed with a locale segment. External
+   * URLs pass through untouched.
    */
   href: (bare: string) => string;
 };
@@ -40,7 +40,7 @@ export type PageModule = {
 export type PageOptions = {
   /** Bare route of the page, e.g. "/" — for the footer language switcher. */
   path: string;
-  /** Defaults to the site default locale (ru, served at bare paths). */
+  /** Page locale; defaults to the site fallback locale (en). */
   locale?: Locale;
 };
 
@@ -58,7 +58,7 @@ export function renderPage(mod: PageModule, options: PageOptions): ReactNode {
         t={getTranslator(locale)}
         locale={locale}
         path={options.path}
-        href={(bare) => localePath(locale, bare)}
+        href={(bare) => bare}
       />
     </RuntimeBoot>
   );

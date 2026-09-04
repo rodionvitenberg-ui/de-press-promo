@@ -2,19 +2,18 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import support from "@/components/pages/support";
 import { renderPage } from "@/components/pages/renderer";
-import { DEFAULT_LOCALE, getTranslator, isLocale, LOCALES } from "@/i18n";
+import { getTranslator, isLocale, LOCALES } from "@/i18n";
 
 type Props = { params: Promise<{ lang: string }> };
 
+/** Internal locale pages: all 10 locales (proxy.ts picks the active one). */
 export function generateStaticParams() {
-  return LOCALES.filter((locale) => locale !== DEFAULT_LOCALE).map((lang) => ({
-    lang,
-  }));
+  return LOCALES.map((lang) => ({ lang }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  if (!isLocale(lang) || lang === DEFAULT_LOCALE) return {};
+  if (!isLocale(lang)) return {};
   const t = getTranslator(lang);
   return {
     title: t(support.PAGE_TITLE),
@@ -26,6 +25,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function LocalizedSupportPage({ params }: Props) {
   const { lang } = await params;
-  if (!isLocale(lang) || lang === DEFAULT_LOCALE) notFound();
+  if (!isLocale(lang)) notFound();
   return renderPage(support, { locale: lang, path: "/support/" });
 }

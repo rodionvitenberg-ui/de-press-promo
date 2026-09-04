@@ -335,6 +335,16 @@ async function main() {
   await cdp.send("Page.enable");
   await cdp.send("Runtime.enable");
 
+  // Reference baseline is the Russian content. Clean URLs choose the locale
+  // via the dp-locale cookie now (proxy.ts) — without it headless Chrome would
+  // negotiate en through Accept-Language and the whole baseline would shift.
+  await cdp.send("Network.setCookie", {
+    name: "dp-locale",
+    value: "ru",
+    url: BASE_URL,
+    path: "/",
+  });
+
   const manifest = [];
   try {
     for (const [width, height, mobile, ua, dirName] of [

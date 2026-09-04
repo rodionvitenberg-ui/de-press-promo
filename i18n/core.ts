@@ -24,7 +24,16 @@ export const LOCALES = [
 
 export type Locale = (typeof LOCALES)[number];
 
-export const DEFAULT_LOCALE: Locale = "ru";
+/**
+ * Fallback locale for requests without a stored choice and without a matching
+ * Accept-Language header. All 10 locales are served at the same clean URLs —
+ * the active one comes from the `LOCALE_COOKIE` cookie, so no locale lives on
+ * the path anymore.
+ */
+export const DEFAULT_LOCALE: Locale = "en";
+
+/** Cookie holding the active locale (read by proxy.ts and the client). */
+export const LOCALE_COOKIE = "dp-locale";
 
 /** Endonyms — the switcher always shows a language in its own words. */
 export const NATIVE_NAMES: Record<Locale, string> = {
@@ -44,9 +53,35 @@ export function isLocale(value: string): value is Locale {
   return (LOCALES as readonly string[]).includes(value);
 }
 
-/** Default locale lives at the bare path; the rest under /{locale}/… */
-export function localePath(locale: Locale, path: string): string {
-  return locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
+/**
+ * All locales share the same clean public paths — the locale never appears in
+ * the URL. This helper is kept as the single source of the rule (and for the
+ * switcher/scripts that used to build prefixed URLs): it now passes the path
+ * through untouched.
+ */
+export function localePath(_locale: Locale, path: string): string {
+  return path;
+}
+
+/**
+ * Best supported locale from an Accept-Language header (q-values respected,
+ * primary subtags only — zh-CN→zh, pt-BR→pt). Falls back to DEFAULT_LOCALE.
+ */
+export function localeFromHeader(header: string | null): Locale {
+  if (!header) return DEFAULT_LOCALE;
+  const tags = header
+    .split(",")
+    .map((part) => {
+      const [tag, q] = part.trim().split(";");
+      const quality = q ? Number.parseFloat(q.split("=")[1] ?? "") : 1;
+      return { tag: tag.trim().toLowerCase(), quality: Number.isFinite(quality) ? quality : 1 };
+    })
+    .sort((a, b) => b.quality - a.quality);
+  for (const { tag } of tags) {
+    const primary = tag.split("-")[0];
+    if (isLocale(primary)) return primary;
+  }
+  return DEFAULT_LOCALE;
 }
 
 export type Translator = (source: string) => string;
@@ -118,13 +153,18 @@ const CARET_SVG = `<span class="svg svg-caret-right">
   \t</svg>
   </span>`;
 
-/** Footer language switcher: one entry per locale, active first. */
+/**
+ * Footer language switcher: one entry per locale, active first. All entries
+ * point at the same clean path (no locale segment); an inactive entry carries
+ * ?dp-locale=<locale> so proxy.ts stores the choice in the cookie and reloads
+ * the page in that language.
+ */
 export function languageSwitcherHTML(current: Locale, path: string): string {
   const items = LOCALES.map((locale) => {
     const active = locale === current;
-    const href = localePath(locale, path);
+    const href = active ? path : `${path}${path.includes("?") ? "&" : "?"}${LOCALE_COOKIE}=${locale}`;
     return `              <li${active ? ' class="is-active"' : ""}>
-                  <a href="${href}" title="${NATIVE_NAMES[locale]}" data-router-disabled>
+                  <a href="${href}" title="${NATIVE_NAMES[locale]}" data-locale="${locale}" data-router-disabled>
                     ${active ? `${CARET_SVG}\n                    ` : ""}${NATIVE_NAMES[locale]}
 
                                       </a>

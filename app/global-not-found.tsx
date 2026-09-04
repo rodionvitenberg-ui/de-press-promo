@@ -9,8 +9,8 @@ import { LegacyShell } from "./legacy-shell";
  * document. Unlike app/not-found.tsx (route-level notFound()), this file
  * bypasses all layouts and must render its own <html>/<body> — so the legacy
  * shell (styles, page curtain, boot-state script) is included explicitly.
- * The document prerenders in the default locale; the requested URL's locale
- * segment is resolved by the client wrapper
+ * URLs carry no locale segment: the document prerenders in the fallback
+ * locale and the visitor's locale is resolved by the client wrapper
  * (components/pages/not-found-client.tsx) under the loader cover.
  */
 
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function GlobalNotFound() {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <LegacyShell>
           <NotFoundClient />

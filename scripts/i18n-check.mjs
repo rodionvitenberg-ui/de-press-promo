@@ -27,7 +27,7 @@ import {
   DEFAULT_LOCALE,
   NATIVE_NAMES,
   FX_PHRASES,
-  localePath,
+  LOCALE_COOKIE,
 } from "../i18n/core.ts";
 
 const PAGES = [
@@ -54,13 +54,6 @@ const T_SOURCE_FILES = [
   "components/pages/not-found.tsx",
   "components/legacy/SafetyContent.tsx",
   "app/not-found.tsx",
-  "app/(legacy)/page.tsx",
-  "app/(legacy)/about/page.tsx",
-  "app/(legacy)/values/page.tsx",
-  "app/(legacy)/contact/page.tsx",
-  "app/(legacy)/safety/page.tsx",
-  "app/(legacy)/privacy/page.tsx",
-  "app/(legacy)/support/page.tsx",
   "app/(legacy)/[lang]/page.tsx",
   "app/(legacy)/[lang]/about/page.tsx",
   "app/(legacy)/[lang]/values/page.tsx",
@@ -237,12 +230,15 @@ for (const locale of LOCALES) {
     if (!sources.has(key)) console.log(`  ⚠ unused key: ${JSON.stringify(key.slice(0, 60))}`);
   }
 
-  if (locale === DEFAULT_LOCALE) continue;
-
-  // Live SSR: no Cyrillic leaks (switcher endonyms and uk are intentional).
+  // Live SSR: no Cyrillic leaks (ru/uk are Cyrillic-content locales by design;
+  // switcher endonyms stay exempt for every locale).
+  if (locale === "ru" || locale === "uk") continue;
   for (const page of PAGES) {
-    const url = `${BASE_URL}${localePath(locale, page.path)}`;
-    const res = await fetch(url);
+    // Clean public URL + the dp-locale cookie (proxy.ts picks the locale).
+    const url = `${BASE_URL}${page.path}`;
+    const res = await fetch(url, {
+      headers: { Cookie: `${LOCALE_COOKIE}=${locale}` },
+    });
     if (!res.ok) {
       fail(`${page.name}: ${res.status} ${url}`);
       continue;

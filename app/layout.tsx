@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: {
-    default: "de-press.co — тихая гавань",
+    default: "de-press.co — a quiet harbor",
     template: "%s — de-press.co",
   },
   description:
-    "Некоммерческая эмпатичная платформа для эмоциональной поддержки. Тишина вместо лайков, истории вместо лент, контроль у автора.",
+    "A non-commercial, empathic platform for emotional support. Silence instead of likes, stories instead of feeds, control stays with the author.",
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
@@ -17,10 +17,12 @@ export const metadata: Metadata = {
 /**
  * Root layout: minimal shell.
  * Legacy CSS is loaded only in app/(legacy)/layout.tsx.
+ * <html lang> and the metadata default to the fallback locale (en) — real
+ * pages sync the active locale through RuntimeBoot and per-route metadata.
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );
