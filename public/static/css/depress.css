@@ -945,6 +945,29 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
   display: none;
 }
 
+/* --- home cases, desktop trigger list: two-line names keep the gap -------------
+   .home-cases-list li (main.css) has a FIXED height sized for a single text line
+   (140px = line-height 60px + 80px of air / 130px = 60 + 70 on the narrow
+   desktop). When a case name wraps to two lines, its text boxes (~120px) eat
+   that air and the next trigger sits right under the case. Switch the items to
+   flow layout: height follows the content, while the former air becomes a
+   constant bottom margin (140−60=80px / 130−60=70px). One-line items stay
+   pixel-identical (60px text + 80px margin = the old 140px track); two-line
+   items grow by their extra line and keep the same gap to the next case. --- */
+
+@media (min-width: 64.375em) {
+  .no-touchevents .home-cases-list li {
+    height: auto;
+    margin-bottom: 80px;
+  }
+}
+
+@media (min-width: 64.375em) and (max-width: 91.24em) {
+  .no-touchevents .home-cases-list li {
+    margin-bottom: 70px;
+  }
+}
+
 /* --- footer: «Тишина./Эмпатия./Забота.» — только десктоп ---------------------
    Отзыв (UI-1): на мобилке три адресных блока футера убраны на всех страницах.
    Breakpoint — тот же, на котором .site-footer-block и так складывается в
