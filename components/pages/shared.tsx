@@ -124,14 +124,14 @@ const MENU_ITEMS = [
 export const MENU_SOCIALS = [
   { href: "https://t.me/depresscoofficial", icon: "facebook", label: "Telegram" },
   { href: "https://x.com/soshallitbe5", icon: "x", label: "X" },
-  { href: "https://github.com/rodionvitenberg-ui/de-press.co", icon: "dribbble", label: "GitHub" },
+  { href: "https://github.com/rodionvitenberg-ui/de-press", icon: "dribbble", label: "GitHub" },
   { href: "mailto:hello@de-press.co", icon: "twitter", label: "E-mail" },
 ];
 
 export const FOOTER_SOCIALS = [
   { href: "https://t.me/depresscoofficial", icon: "facebook", label: "Tg" },
   { href: "https://x.com/soshallitbe5", icon: "x", label: "X" },
-  { href: "https://github.com/rodionvitenberg-ui/de-press.co", icon: "dribbble", label: "Gh" },
+  { href: "https://github.com/rodionvitenberg-ui/de-press", icon: "dribbble", label: "Gh" },
   { href: "mailto:hello@de-press.co", icon: "twitter", label: "@" },
 ];
 

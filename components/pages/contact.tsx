@@ -159,7 +159,7 @@ function ContactContent({ t, locale, path, href }: PageContentProps) {
                   </li>
                   <li>
                     <a
-                      href="https://github.com/rodionvitenberg-ui/de-press.co"
+                      href="https://github.com/rodionvitenberg-ui/de-press"
                       target="_blank"
                     >
                       {t("GitHub")}
