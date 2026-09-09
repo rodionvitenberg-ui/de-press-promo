@@ -175,8 +175,8 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
                   </a>
                   <ul>
                     <li><a href="https://t.me/depresscoofficial" target="_blank">{t("Telegram")}</a></li>
-                    <li><a href="https://x.com/soshallitbe5" target="_blank">{t("X")}</a></li>
-                    <li><a href="https://github.com/rodionvitenberg-ui/de-press" target="_blank">{t("GitHub")}</a></li>
+                    {/* Кнопка X скрыта до появления рабочего аккаунта: <li><a href="https://x.com/soshallitbe5" target="_blank">{t("X")}</a></li> */}
+                    <li><a href="https://github.com/de-pressco/de-press" target="_blank">{t("GitHub")}</a></li>
                     <li><a href="mailto:hello@de-press.co" target="_blank">{t("E-mail")}</a></li>
                   </ul>
                 </div>

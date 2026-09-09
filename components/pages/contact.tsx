@@ -142,11 +142,13 @@ function ContactContent({ t, locale, path, href }: PageContentProps) {
                       {t("Telegram")}
                     </a>
                   </li>
+                  {/* Кнопка X скрыта до появления рабочего аккаунта
                   <li>
                     <a href="https://x.com/soshallitbe5" target="_blank">
                       {t("X")}
                     </a>
                   </li>
+                  */}
                   <li>
                     <a href="mailto:hello@de-press.co" target="_blank">
                       {t("E-mail")}
@@ -159,7 +161,7 @@ function ContactContent({ t, locale, path, href }: PageContentProps) {
                   </li>
                   <li>
                     <a
-                      href="https://github.com/rodionvitenberg-ui/de-press"
+                      href="https://github.com/de-pressco/de-press"
                       target="_blank"
                     >
                       {t("GitHub")}
