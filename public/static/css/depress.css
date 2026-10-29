@@ -1292,6 +1292,29 @@ html.disable-motion.no-touchevents .home-cases-scene:not(.is-visible) .home-case
   opacity: 1;
 }
 
+/* --- мобильное меню: блок пунктов выше + остров дальше (фидбек с устройства) --
+   1) Пункты меню на телефоне прижаты к низу (main.css ≤50.9275em ставит
+      .site-menu .center justify-content:flex-end, ≤28.115em — padding-bottom
+      35px), поэтому на высоких экранах блок «уезжает» вниз. Поднимаем его
+      большим нижним паддингом: соцблок и список сдвигаются вверх вместе.
+   2) На мобиле (disable-scene) остров меню — PNG с альфой
+      (.disable-scene .site-menu:after, main.css: position 25% 50%,
+      size cover). На портретном экране cover растягивает 800x611 PNG до
+      100% высоты — модель занимает весь кадр и режется краями. Уменьшаем
+      до 75% высоты: остров целиком в кадре, вокруг — тот же навий фон.
+      Класс .disable-scene ставится только mobile-UA (capabilities.ts),
+      поэтому десктоп/планшет с WebGL не затронуты. */
+@media (max-width: 28.115em) {
+  .site-menu .center {
+    padding-bottom: 90px; /* main.css: 35px */
+  }
+}
+
+@media (max-width: 64.365em) {
+  .disable-scene .site-menu:after {
+    background-size: auto 75%; /* main.css: cover */
+  }
+}
 
 /* --- сцена: плавное появление/уход острова -----------------------------------
    Island.onScroll снимает .scene-root.is-visible, когда скролл проходит
