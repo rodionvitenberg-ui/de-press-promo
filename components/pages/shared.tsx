@@ -122,7 +122,6 @@ const MENU_ITEMS = [
 ];
 
 export const MENU_SOCIALS = [
-  { href: "https://t.me/depresscoofficial", icon: "facebook", label: "Telegram" },
   // Кнопка X скрыта до появления рабочего аккаунта — вернуть:
   // { href: "https://x.com/soshallitbe5", icon: "x", label: "X" },
   { href: "https://github.com/de-pressco/de-press", icon: "dribbble", label: "GitHub" },
@@ -130,7 +129,6 @@ export const MENU_SOCIALS = [
 ];
 
 export const FOOTER_SOCIALS = [
-  { href: "https://t.me/depresscoofficial", icon: "facebook", label: "Tg" },
   // Кнопка X скрыта до появления рабочего аккаунта — вернуть:
   // { href: "https://x.com/soshallitbe5", icon: "x", label: "X" },
   { href: "https://github.com/de-pressco/de-press", icon: "dribbble", label: "Gh" },

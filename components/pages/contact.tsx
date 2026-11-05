@@ -137,11 +137,6 @@ function ContactContent({ t, locale, path, href }: PageContentProps) {
                 </a>
 
                 <ul>
-                  <li>
-                    <a href="https://t.me/depresscoofficial" target="_blank">
-                      {t("Telegram")}
-                    </a>
-                  </li>
                   {/* Кнопка X скрыта до появления рабочего аккаунта
                   <li>
                     <a href="https://x.com/soshallitbe5" target="_blank">
