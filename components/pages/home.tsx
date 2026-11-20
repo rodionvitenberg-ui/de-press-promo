@@ -178,18 +178,6 @@ function HomeContent({ t, locale, path, href }: PageContentProps) {
                     <li><a href="https://github.com/de-pressco/de-press" target="_blank">{t("GitHub")}</a></li>
                     <li><a href="mailto:hello@de-press.co" target="_blank">{t("E-mail")}</a></li>
                   </ul>
-                  <a
-                    href="https://postyourstartup.com/startup/de-press?ref=badge"
-                    target="_blank"
-                    className="home-hero-badge"
-                  >
-                    <img
-                      src="https://postyourstartup.com/api/badge/de-press?theme=dark"
-                      alt="Featured on PostYourStartup"
-                      width={212}
-                      height={55}
-                    />
-                  </a>
                 </div>
               </div>
             </section>

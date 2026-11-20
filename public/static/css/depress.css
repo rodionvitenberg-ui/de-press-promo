@@ -631,21 +631,6 @@ html:not(.disable-motion)
   transform: translateX(0) scaleX(1);
 }
 
-/* --- home hero: PostYourStartup badge ---------------------------------------
-   Sits below the GitHub / E-mail list. An external <img> without the js-lazy
-   runtime, so the anchor is display:block with its own top margin (hero
-   rhythm), line-height: 0 kills the inline-image baseline gap. The hero
-   span/ul intro animations select neither the anchor nor the img. --- */
-.home-hero-badge {
-  display: block;
-  margin-top: 40px;
-  line-height: 0;
-}
-
-.home-hero-badge img {
-  display: block;
-}
-
 /* --- home hero: fx slogan box (roadmap p.2) --------------------------------
    The legacy fx title box (width 269px, fixed height 404px) was tuned for
    the old four-word slogan — one short word per line. The new slogan has
