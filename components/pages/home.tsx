@@ -78,7 +78,7 @@ const CASES: CaseItem[] = [
     matcap: "12, 12",
     name: "cases.tooMuch.name",
     lines: ["cases.tooMuch.line1", " cases.tooMuch.line2"],
-    offer: "Anti-Panic",
+    offer: "cases.offer.more",
   },
 ];
 

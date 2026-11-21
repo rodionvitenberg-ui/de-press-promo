@@ -29,7 +29,7 @@ export function SiteHeader({ t, href }: SharedProps) {
       <div className="site-header-title">
         <a href={href("/")} className="site-header-logo" title={t("shared.backHomeTitle")}>
           {" "}
-          <span className="dp-logo">de-press<span className="dp-logo-tld">.co</span></span>{" "}
+          <span className="dp-logo">Tarot Tree</span>{" "}
         </a>
       </div>
 
